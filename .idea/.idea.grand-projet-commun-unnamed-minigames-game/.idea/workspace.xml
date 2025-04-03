@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a00ae09-b838-4d4f-bf9b-bdf073dfff57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Fonts/Starborn SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/Starborn SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MainMenu&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "OptionsMenu",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\erosalie\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\erosalie\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\2022.3.32f1\Editor\Unity.exe" />
