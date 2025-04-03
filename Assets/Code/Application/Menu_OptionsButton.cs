@@ -18,6 +18,6 @@ public class Menu_OptionsButton : MonoBehaviour
     public void OptionsLoadScene()
     {
         _audioSource.PlayOneShot(soundButton);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1, LoadSceneMode.Additive);
     }
 }
