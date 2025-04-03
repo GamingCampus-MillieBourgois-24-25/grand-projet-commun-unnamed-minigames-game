@@ -1,0 +1,12 @@
+Génération du terrain par chunks : 
+
+* 1 chunk de terrain + un chunk de route + props = une tuile
+* Assemblage de tuiles en ligne
+* Défilement vers l'arrière en mode tapis roulant
+* génération à l'avant & disparition à l'arrière
+
+Assets : Terrain + route + props -> Assembler en un prefab de tuile
+
+
+Paramètres : 
+Vitesse de défilement
