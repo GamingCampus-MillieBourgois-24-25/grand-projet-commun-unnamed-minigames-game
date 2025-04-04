@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a00ae09-b838-4d4f-bf9b-bdf073dfff57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +30,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "OptionsMenu",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -49,18 +38,11 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\erosalie\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\2022.3.32f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.32f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\erosalie\Documents\GitHub\grand-projet-commun-unnamed-minigames-game -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\erosalie\Documents\GitHub\grand-projet-commun-unnamed-minigames-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -68,7 +50,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\2022.3.32f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.32f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\erosalie\Documents\GitHub\grand-projet-commun-unnamed-minigames-game -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\erosalie\Documents\GitHub\grand-projet-commun-unnamed-minigames-game" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -80,6 +62,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -90,6 +75,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -106,6 +94,7 @@
       <updated>1743671114286</updated>
       <workItem from="1743671116779" duration="1727000" />
       <workItem from="1743672899603" duration="866000" />
+      <workItem from="1743772742870" duration="461000" />
     </task>
     <servers />
   </component>
