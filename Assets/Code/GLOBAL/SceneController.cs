@@ -8,7 +8,7 @@ namespace Assets.Code.GLOBAL
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
 
-        private string loaded
+        private string loaded;
 
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
