@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using Axoloop.Global;
 using UnityEngine;
 
 namespace Assets.Code.GLOBAL
@@ -8,12 +8,17 @@ namespace Assets.Code.GLOBAL
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
 
-        private string loaded;
+        [SerializeField] GameObject _LoaderAnimationPrefab;
+
+        private ISceneManager _loadedScene;
 
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
-
+        private void Start()
+        {
+            
+        }
 
         #endregion
         #region METHODS-------------------------------------------------------------------------
@@ -23,7 +28,7 @@ namespace Assets.Code.GLOBAL
         #endregion
         #region API-----------------------------------------------------------------------------
 
-        public static bool ChangeScene(string sceneName)
+        public static bool ChangeActiveScene(ISceneManager targetScene)
         {
             return false;
         }
