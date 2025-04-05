@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Script for moving the tile
+ */
+
 public class MovingTile : MonoBehaviour
 {
 
