@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Axoloop.Global
 {
@@ -54,10 +55,10 @@ namespace Axoloop.Global
 
         [Header("Global Objects")]
         [SerializeField] AudioListener _globalAudioListener;
-        [SerializeField] EventSystemManager _eventSystemManager;
+        [SerializeField] EventSystem _eventSystem;
 
         public static AudioListener GlobalAudioListener { get => Instance._globalAudioListener; }
-        public static EventSystemManager GlobalEventSystemManager { get => Instance._eventSystemManager; }
+        public static EventSystem GlobalEventSystem { get => Instance._eventSystem; }
 
         // --------------------------------------------------------------------------------------------------------------------------
     }

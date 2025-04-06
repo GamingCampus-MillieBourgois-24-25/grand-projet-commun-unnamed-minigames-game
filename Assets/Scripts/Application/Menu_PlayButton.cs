@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Assets.Code.GLOBAL;
+using Axoloop.Global;
 
 public class Menu_PlayButton : MonoBehaviour
 {
@@ -18,6 +20,6 @@ public class Menu_PlayButton : MonoBehaviour
     public void PlayLoadScene()
     {
         _audioSource.PlayOneShot(soundPlay);
-        SceneManager.LoadScene(5);
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
     }
 }
