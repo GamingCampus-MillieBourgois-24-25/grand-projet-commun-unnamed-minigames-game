@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Axoloop.Global
@@ -20,7 +21,7 @@ namespace Axoloop.Global
         /// <summary>
         /// This method should handle the loading of the scene and its initialization
         /// </summary>
-        public void LoadScene();
+        public void LoadScene(Action<string> callBack);
 
         /// <summary>
         /// This method should handle the destruction of the scene, the transition and the unloading of the scene
@@ -30,12 +31,12 @@ namespace Axoloop.Global
         /// <summary>
         /// Fire this event when the scene is loaded and ready to be used
         /// </summary>
-        public Action<Scene> SceneReady { get; set; }
+        public Action<string> SceneLoaded { get; set; }
 
         /// <summary>
         /// Fire this event when the scene is completely unloaded
         /// </summary>
-        public Action SceneUnloaded { get; set; }
+        public Action<string> SceneUnloaded { get; set; }
     }
 
     /// <summary>

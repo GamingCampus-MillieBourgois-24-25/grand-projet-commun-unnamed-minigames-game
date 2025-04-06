@@ -122,7 +122,26 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &509492222
+--- !u!1 &1666061820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5754104542445662058, guid: f3dc4e862096bbd40aa57ce294aeedea,
+    type: 3}
+  m_PrefabInstance: {fileID: 6634026543158349955}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1666061824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666061820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5409d6580e927f7449df465712cbefea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startActive: 1
+--- !u!1001 &6634026543158349955
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -135,12 +154,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GLOBAL
       objectReference: {fileID: 0}
-    - target: {fileID: 3941591363945547101, guid: f3dc4e862096bbd40aa57ce294aeedea,
-        type: 3}
-      propertyPath: _LoaderAnimationPrefab
-      value: 
-      objectReference: {fileID: 8527972268388877358, guid: 817a4b369aad00c41b06419c1964d954,
-        type: 3}
     - target: {fileID: 5051077555749104462, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -194,10 +207,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5754104542445662058, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1666061824}
   m_SourcePrefab: {fileID: 100100000, guid: f3dc4e862096bbd40aa57ce294aeedea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 509492222}
+  - {fileID: 6634026543158349955}
