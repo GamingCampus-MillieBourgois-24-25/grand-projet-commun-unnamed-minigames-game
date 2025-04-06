@@ -21,9 +21,8 @@ public class GenerateTiles : MonoBehaviour
     {
         if (tile) 
         {
-            mainPosition = new Vector3(12, 7, -7);
-            Instantiate(tile, mainPosition, Quaternion.identity);
-            //Debug.Log(tile.Length);
+            check();
+            SettingUpTheScene();
         }
 
         else
@@ -36,5 +35,48 @@ public class GenerateTiles : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void check()
+    {
+        if (tile)
+        {
+            if (startPoint)
+            {
+                if (endPoint)
+                {
+                    return;
+                }
+                else
+                {
+                    Debug.Log("GenerateTile.cs : variable endPoint non assigné");
+                }
+            }
+            else
+            {
+                Debug.Log("GenerateTile.cs : variable startPoint non assigné");
+            }
+        }
+        else
+        {
+            Debug.Log("GenerateTile.cs : variable tilenon assigné");
+        }
+    }
+
+    void SettingUpTheScene()
+    {
+
+        mainPosition = new Vector3(12, 7, -7);
+        BoxCollider box;
+        float longueur;
+
+        Instantiate(tile, mainPosition, Quaternion.identity);
+
+        box = tile.GetComponent<BoxCollider>();
+        longueur = box.size.z * transform.localScale.z;
+
+        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur+10f), Quaternion.identity);
+        //Instantiate(tile, mainPosition, Quaternion.identity);
+
     }
 }
