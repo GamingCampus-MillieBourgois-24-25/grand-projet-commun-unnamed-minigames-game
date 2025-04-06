@@ -51,6 +51,15 @@ namespace Axoloop.Global
         public static float UIObjectFadeDuration { get => Instance.UI_Object_Fade_Duration; }
 
         // --------------------------------------------------------------------------------------------------------------------------
+
+        [Header("Global Objects")]
+        [SerializeField] AudioListener _globalAudioListener;
+        [SerializeField] EventSystemManager _eventSystemManager;
+
+        public static AudioListener GlobalAudioListener { get => Instance._globalAudioListener; }
+        public static EventSystemManager GlobalEventSystemManager { get => Instance._eventSystemManager; }
+
+        // --------------------------------------------------------------------------------------------------------------------------
     }
 
 }

@@ -14,11 +14,11 @@ namespace Axoloop.Scripts.Global
         #endregion
         #region COROUTINES----------------------------------------------------------------------
 
-        public static IEnumerator LoadingProcess(string sceneName, Action<string> onFinishedEvent)
+        public static IEnumerator LoadingProcess(string sceneName, Action<string> onFinishedCallback)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
-            asyncLoad.completed += (operation) => onFinishedEvent.Invoke(sceneName);
+            asyncLoad.completed += (operation) => onFinishedCallback.Invoke(sceneName);
 
             asyncLoad.allowSceneActivation = false;
 
@@ -32,11 +32,11 @@ namespace Axoloop.Scripts.Global
             }
         }
 
-        public static IEnumerator UnloadingProcess(string sceneName, Action<string> onFinishedEvent)
+        public static IEnumerator UnloadingProcess(string sceneName, Action<string> onFinishedCallback)
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(sceneName);
 
-            asyncUnload.completed += (operation) => onFinishedEvent.Invoke(sceneName);
+            asyncUnload.completed += (operation) => onFinishedCallback.Invoke(sceneName);
             asyncUnload.allowSceneActivation = false;
 
             while (!asyncUnload.isDone)

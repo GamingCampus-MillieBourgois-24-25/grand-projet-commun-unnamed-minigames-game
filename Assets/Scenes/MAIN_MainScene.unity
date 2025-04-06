@@ -135,12 +135,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GLOBAL
       objectReference: {fileID: 0}
-    - target: {fileID: 3941591363945547101, guid: f3dc4e862096bbd40aa57ce294aeedea,
-        type: 3}
-      propertyPath: _LoaderAnimationPrefab
-      value: 
-      objectReference: {fileID: 8527972268388877358, guid: 817a4b369aad00c41b06419c1964d954,
-        type: 3}
     - target: {fileID: 5051077555749104462, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: m_LocalPosition.x

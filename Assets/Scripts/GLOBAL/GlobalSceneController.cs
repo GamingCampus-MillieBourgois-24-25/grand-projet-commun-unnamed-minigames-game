@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.GLOBAL;
 using Axoloop.Global;
 using Axoloop.Global.UI;
+using Axoloop.Scripts.Global;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,9 +16,7 @@ namespace Assets.Code.GLOBAL
         [SerializeField] UIObjectGroup _BlackScreen;
 
         private ISceneManager _loadedScene;
-        private ISceneManager _loadedBackgroundScene;
         private ISceneManager _loadedOverlayScene;
-        private ISceneManager _loadingScene;
 
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
@@ -32,27 +31,58 @@ namespace Assets.Code.GLOBAL
 
         void InitialLoading()
         {
-            OpenScene(StartScreenSceneManager.Instance);
+            OpenScene(GameSettings.StartScene.name);
         }
 
         void SceneLoadedHandler(string sceneName)
         {
-            _loadingScene.SceneLoaded -= SceneLoadedHandler; // se désabonner immédiatement
+            Scene loadedScene = SceneManager.GetSceneByName(sceneName);
 
-            switch (_loadingScene.SceneLevel)
+            ISceneManager loadedSceneManager = FindSceneManagerInstance(loadedScene);
+
+            if(loadedSceneManager == null)
+            {
+                Debug.LogError($"Aucun ISceneManager trouvé dans la scène {sceneName}");
+                return;
+            }
+
+            UnloadOverlayScene();
+
+            switch (loadedSceneManager.SceneLevel)
             {
                 case SceneLevel.Level1:
-                    _loadedBackgroundScene = _loadingScene;
+                    _loadedScene?.UnloadScene();
+                    _loadedScene = loadedSceneManager;
                     break;
                 case SceneLevel.Level2:
-                    _loadedOverlayScene = _loadingScene;
+                    _loadedOverlayScene = loadedSceneManager;
                     break;
             }
 
-            var newScene = _loadedScene;
-            _loadedScene = null;
 
-            HideLoader();
+            HideLoader();   
+        }
+
+
+        /// <summary>
+        /// Find the SceneManager in the scene
+        /// </summary>
+        ISceneManager FindSceneManagerInstance(Scene targetScene)
+        {
+            ISceneManager sceneManager = null;
+            if (targetScene.IsValid())
+            {
+                GameObject[] rootGameObjects = targetScene.GetRootGameObjects();
+                foreach (GameObject rootGameObject in rootGameObjects)
+                {
+                    sceneManager = rootGameObject.GetComponent<ISceneManager>();
+                    if (sceneManager != null)
+                    {
+                        break;
+                    }
+                }
+            }
+            return sceneManager;
         }
 
         #endregion
@@ -64,15 +94,10 @@ namespace Assets.Code.GLOBAL
         /// Si la scène est de niveau 2, elle sera ouverte immédiatement.
         /// </summary>
         /// <param name="targetScene"></param>
-        public static void OpenScene(ISceneManager targetScene)
+        public static void OpenScene(string targetScene)
         {
-            UnloadOverlayScene(); //Immédiatement décharger toute scène de niveau 2 potentielle
             ShowLoader();
-
-            Instance._loadingScene = targetScene;
-
-            targetScene.LoadScene(Instance.SceneLoadedHandler); //nullReferenceException ici
-
+            Instance.StartCoroutine(SceneLoader.LoadingProcess(targetScene, Instance.SceneLoadedHandler));
         }
 
         /// <summary>
@@ -87,6 +112,7 @@ namespace Assets.Code.GLOBAL
 
         public static void ShowLoader()
         {
+            // TODO : Disable inputs when the loader is visible
             Instance._LoaderObject?.EnableComponent();
         }
 
