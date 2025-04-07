@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Localized: Jouer
     m_Metadata:
       m_Items: []
+  - m_Id: 3805798014976
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
