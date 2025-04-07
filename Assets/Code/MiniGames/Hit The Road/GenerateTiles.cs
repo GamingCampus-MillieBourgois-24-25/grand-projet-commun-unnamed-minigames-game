@@ -54,7 +54,8 @@ public class GenerateTiles : MonoBehaviour
             }
             else
             {
-                Debug.Log("GenerateTile.cs : variable startPoint non assigné");
+                //Debug.Log("GenerateTile.cs : variable startPoint non assigné");
+                startPoint = GameObject.Find("StartPoint");
             }
         }
         else
@@ -66,10 +67,11 @@ public class GenerateTiles : MonoBehaviour
     void SettingUpTheScene()
     {
 
-        mainPosition = new Vector3(12, 7, -7);
+        mainPosition = new Vector3(startPoint.transform.position.x, startPoint.transform.position.y, -7);
         BoxCollider box;
         float longueur;
 
+        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
         Instantiate(tile, mainPosition, Quaternion.identity);
 
         box = tile.GetComponent<BoxCollider>();
@@ -77,6 +79,6 @@ public class GenerateTiles : MonoBehaviour
 
         Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur+10f), Quaternion.identity);
         //Instantiate(tile, mainPosition, Quaternion.identity);
-
+        Debug.Log("longeur : " + longueur);
     }
 }

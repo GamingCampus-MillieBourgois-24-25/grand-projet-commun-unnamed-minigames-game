@@ -44,7 +44,18 @@ public class MovingTile : MonoBehaviour
     /*Petit probleme : teleport a coté du start poit et non dessus*/
     void TeleportToStartPoint()
     {
+        //transform.position = startPoint.transform.position;
+
+        Debug.Log("=== TELEPORT CHECK ===");
+        Debug.Log("Prefab Position (world): " + transform.position);
+        Debug.Log("Prefab Local Position: " + transform.localPosition);
+        Debug.Log("StartPoint Position (world): " + startPoint.transform.position);
+        Debug.Log("StartPoint Local Position: " + startPoint.transform.localPosition);
+
         transform.position = startPoint.transform.position;
+
+        Debug.Log("New Position (after teleport): " + transform.position);
+        Debug.Log("Offset (world): " + (transform.position - startPoint.transform.position));
     }
 
     void OnTriggerEnter(Collider other)
