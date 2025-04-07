@@ -19,12 +19,15 @@ public class OptionsManager : MonoBehaviour
 
     private void Start()
     {
+        LoadSettings();
         UpdateButtons();
     }
     
     public void ToggleBgm()
     {
         _bgmOn = !_bgmOn;
+        PlayerPrefs.SetInt("BgmOn", _bgmOn ? 1 : 0);
+        PlayerPrefs.Save();
         audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
         UpdateButtons();
     }
@@ -32,6 +35,8 @@ public class OptionsManager : MonoBehaviour
     public void ToggleSfx()
     {
         _sfxOn = !_sfxOn;
+        PlayerPrefs.SetInt("SfxOn", _sfxOn ? 1 : 0);
+        PlayerPrefs.Save();
         audioMixer.SetFloat("SFXVolume", _sfxOn ? 0f : -80f);
         UpdateButtons();
     }
@@ -40,10 +45,21 @@ public class OptionsManager : MonoBehaviour
     {
         _vibrationOn = !_vibrationOn;
         PlayerPrefs.SetInt("Vibration", _vibrationOn ? 1 : 0);
-        Handheld.Vibrate();
+        PlayerPrefs.Save();
+        if (_vibrationOn) Handheld.Vibrate();
         UpdateButtons();
     }
 
+    private void LoadSettings()
+    {
+        _bgmOn = PlayerPrefs.GetInt("BgmOn", 1) == 1;
+        _sfxOn = PlayerPrefs.GetInt("SfxOn", 1) == 1;
+        _vibrationOn = PlayerPrefs.GetInt("VibrationOn", 1) == 1;
+        
+        audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
+        audioMixer.SetFloat("SFXVolume", _sfxOn ? 0f : -80f);
+    }
+    
     private void UpdateButtons()
     {
         bgmButton.image.sprite = _bgmOn ? bgmOnSprite : bgmOffSprite;

@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundButton: {fileID: 8300000, guid: aedcd6623d52a334bb52600e395dfaa4, type: 3}
+  optionOpen: 0
 --- !u!114 &456585927
 MonoBehaviour:
   m_ObjectHideFlags: 0
