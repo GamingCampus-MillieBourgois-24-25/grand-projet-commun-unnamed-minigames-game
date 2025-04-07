@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3941591363945547101}
   - component: {fileID: 8006918068960584766}
   m_Layer: 0
-  m_Name: GLOBAL
+  m_Name: ROOT MAIN SCENE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
