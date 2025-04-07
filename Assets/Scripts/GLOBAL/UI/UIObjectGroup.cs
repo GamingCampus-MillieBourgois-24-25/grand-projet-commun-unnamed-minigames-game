@@ -38,14 +38,12 @@ namespace Axoloop.Global.UI
             _canvasGroupRef.alpha = 0;
             _canvasGroupRef.interactable = false;
             _canvasGroupRef.blocksRaycasts = false;
-            _isEnabled = false;
         }
         void SetEnabled()
         {
             _canvasGroupRef.alpha = _uiObjectGroupData.alpha;
             _canvasGroupRef.interactable = _uiObjectGroupData.interactable;
             _canvasGroupRef.blocksRaycasts = _uiObjectGroupData.blocksRaycasts;
-            _isEnabled = true;
         }
 
 
@@ -55,6 +53,7 @@ namespace Axoloop.Global.UI
         public void EnableComponent()
         {
             if (_isEnabled) return;
+            _isEnabled = true;
             StartCoroutine(EnableComponentCoroutine());
         }
 
@@ -64,6 +63,7 @@ namespace Axoloop.Global.UI
         public void DisableComponent()
         {
             if (!_isEnabled) return;
+            _isEnabled = false;
             StartCoroutine(DisableComponentCoroutine());
         }
 

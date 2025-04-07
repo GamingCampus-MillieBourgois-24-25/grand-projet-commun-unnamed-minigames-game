@@ -29,11 +29,13 @@ namespace Assets.Code.GLOBAL
         #endregion
         #region METHODS-------------------------------------------------------------------------
 
+        // charger la scène de départ au démarrage du jeu
         void InitialLoading()
         {
             OpenScene(GameSettings.StartScene.name);
         }
 
+        // logique post chargement de la scène
         void SceneLoadedHandler(string sceneName)
         {
             Scene loadedScene = SceneManager.GetSceneByName(sceneName);
@@ -65,7 +67,7 @@ namespace Assets.Code.GLOBAL
 
 
         /// <summary>
-        /// Find the SceneManager in the scene
+        /// Trouve le SceneManager dans une scène chargée donnée
         /// </summary>
         ISceneManager FindSceneManagerInstance(Scene targetScene)
         {
