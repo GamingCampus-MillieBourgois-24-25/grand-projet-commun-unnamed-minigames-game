@@ -22,7 +22,7 @@ public class GenerateTiles : MonoBehaviour
         if (tile) 
         {
             check();
-            SettingUpTheScene();
+            SettingUpTheScene2();
         }
 
         else
@@ -79,6 +79,25 @@ public class GenerateTiles : MonoBehaviour
 
         Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur+10f), Quaternion.identity);
         //Instantiate(tile, mainPosition, Quaternion.identity);
+        Debug.Log("longeur : " + longueur);
+    }
+
+    void SettingUpTheScene2()
+    {
+
+        mainPosition = new Vector3(startPoint.transform.position.x, startPoint.transform.position.y, -7);
+        BoxCollider box;
+        float longueur;
+
+        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
+        Instantiate(tile, mainPosition, Quaternion.identity);
+
+        box = tile.GetComponent<BoxCollider>();
+        longueur = box.size.z * transform.localScale.z;
+
+        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur + 10f), Quaternion.identity);
+        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -2*longueur + 10f), Quaternion.identity);
+        
         Debug.Log("longeur : " + longueur);
     }
 }
