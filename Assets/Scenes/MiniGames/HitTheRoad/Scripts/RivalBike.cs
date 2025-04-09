@@ -10,6 +10,10 @@ public class RivalBike : MonoBehaviour
     private bool isTurning = false;
     private bool hasDecided = false;
 
+    public ParticleSystem smokeParticles; // Référence au système de particules
+    public ParticleSystem explosionParticles; // Référence au système de particules d'explosion
+    public Rigidbody rb; // Référence au Rigidbody du RivalBike
+
     void Start()
     {
         int spawnType = Random.Range(0, 3);
@@ -28,6 +32,8 @@ public class RivalBike : MonoBehaviour
             transform.position = new Vector3(0, transform.position.y, transform.position.z);
             willTurn = true;
         }
+
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -93,6 +99,85 @@ public class RivalBike : MonoBehaviour
         if (other.CompareTag("DefeatTrigger"))  // Vérifie si c'est le trigger de défaite
         {
             VoxelGameManager.Instance.PlayerFails();  // Appelle la méthode de défaite
+            StartCoroutine(FinalAcceleration()); // Lance l'accélération finale
         }
     }
+
+    private void TriggerSmokeParticles()
+    {
+        if (smokeParticles != null)
+        {
+            Debug.Log("Déclenchement des particules de fumée");
+            smokeParticles.Play(); // Joue les particules de fumée
+
+            // Ajout de logs pour vérifier les paramètres des particules
+            Debug.Log("Nombre de particules : " + smokeParticles.particleCount);
+            Debug.Log("Position des particules : " + smokeParticles.transform.position);
+        }
+        else
+        {
+            Debug.LogWarning("Le système de particules de fumée n'est pas assigné");
+        }
+    }
+
+    private IEnumerator FinalAcceleration()
+    {
+        float duration = 1.5f; // Durée de l'accélération
+        float elapsedTime = 0f;
+        float initialSpeed = speed;
+        float finalSpeed = speed * 2; // Double la vitesse pour l'accélération finale
+
+        TriggerSmokeParticles(); // Déclenche les particules de fumée au début de l'accélération
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            float curvedT = EaseInOutBack(t); // Utilise la fonction d'animation EaseInOutBack
+            speed = Mathf.Lerp(initialSpeed, finalSpeed, curvedT);
+            yield return null;
+        }
+
+        speed = finalSpeed; // Assure que la vitesse finale est bien appliquée
+    }
+
+    private float EaseInOutBack(float t)
+    {
+        float c1 = 1.70158f;
+        float c2 = c1 * 1.525f;
+
+        return t < 0.5
+            ? (Mathf.Pow(2 * t, 2) * ((c2 + 1) * 2 * t - c2)) / 2
+            : (Mathf.Pow(2 * t - 2, 2) * ((c2 + 1) * (t * 2 - 2) + c2) + 2) / 2;
+    }
+
+    public void ExplodeAndEject()
+    {
+        StartCoroutine(ExplodeAndEjectCoroutine());
+    }
+
+    private IEnumerator ExplodeAndEjectCoroutine()
+    {
+        // Déclenche les particules d'explosion
+        if (explosionParticles != null)
+        {
+            explosionParticles.Play();
+        }
+
+        // Attends un court instant pour l'effet d'explosion
+        yield return new WaitForSeconds(0.2f);
+
+        // Applique une force d'éjection au RivalBike
+        if (rb != null)
+        {
+            rb.isKinematic = false; // Assurez-vous que le Rigidbody n'est pas kinematic
+            rb.AddForce(new Vector3(0, 1000, -1000), ForceMode.Impulse); // Applique une force vers le haut et vers l'arrière
+            rb.AddTorque(new Vector3(500, 500, 500)); // Ajoute une rotation pour un effet plus dramatique
+        }
+
+        // Désactive le RivalBike après un court délai
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+    }
 }
+

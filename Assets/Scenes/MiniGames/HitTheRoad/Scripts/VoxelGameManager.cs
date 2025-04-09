@@ -28,6 +28,13 @@ public class VoxelGameManager : MonoBehaviour
         defeatPanel.SetActive(false);
         // Affiche le panneau de victoire
         victoryPanel.SetActive(true);
+
+        // Déclenche l'explosion et l'éjection du RivalBike
+        RivalBike rival = FindObjectOfType<RivalBike>();
+        if (rival != null)
+        {
+            rival.ExplodeAndEject();
+        }
     }
 
     // Appelé lorsque le joueur échoue
@@ -40,5 +47,6 @@ public class VoxelGameManager : MonoBehaviour
         // Affiche le panneau de défaite
         defeatPanel.SetActive(true);
     }
-  
 }
+
+
