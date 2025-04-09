@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
 {
-    public void GenerateMinigame(int seed)
+    public void GenerateMinigame(int seed, int difficulty)
     {
         Random.InitState(seed);
 
