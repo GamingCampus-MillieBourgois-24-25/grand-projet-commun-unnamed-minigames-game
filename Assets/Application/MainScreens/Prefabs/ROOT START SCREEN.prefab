@@ -616,6 +616,7 @@ GameObject:
   - component: {fileID: 8064183281454457502}
   - component: {fileID: 8486239570152521544}
   - component: {fileID: 8311886268525061154}
+  - component: {fileID: 446916723129451895}
   m_Layer: 0
   m_Name: StartScreenUIManager
   m_TagString: Untagged
@@ -680,6 +681,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundButton: {fileID: 8300000, guid: aedcd6623d52a334bb52600e395dfaa4, type: 3}
+  optionOpen: 0
+--- !u!114 &446916723129451895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185775169861757148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc568dc31e753c5489ecfa31cbd32b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axolotSprite: {fileID: 334357445204836927}
+  _axolotSpritesList:
+  - {fileID: 21300000, guid: cb4996f679262e74e99543141d33c065, type: 3}
+  - {fileID: 21300000, guid: 071c1fa5a5b5a74438705c2ef2201e4a, type: 3}
+  - {fileID: 21300000, guid: a382451ffb0822746aaf712492b57d6a, type: 3}
 --- !u!1 &7247728864579892485
 GameObject:
   m_ObjectHideFlags: 0

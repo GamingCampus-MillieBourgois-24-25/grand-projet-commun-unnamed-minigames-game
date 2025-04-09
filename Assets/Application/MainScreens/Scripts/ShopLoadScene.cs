@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Assets.Code.GLOBAL;
+using Axoloop.Global;
 
 public class ShopLoadScene : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class ShopLoadScene : MonoBehaviour
 
     private void Start()
     {
-        //_audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource = gameObject.AddComponent<AudioSource>();
         shopOpen = false;
     }
 
@@ -17,8 +18,8 @@ public class ShopLoadScene : MonoBehaviour
     {
         if (shopOpen == false)
         {
-            //_audioSource.PlayOneShot(soundButton);
-            SceneManager.LoadScene(3, LoadSceneMode.Additive);
+            _audioSource.PlayOneShot(soundButton);
+            GlobalSceneController.OpenScene(GameSettings.ShopScene.name);
             shopOpen = true;
         }
     }

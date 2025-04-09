@@ -10,14 +10,14 @@ namespace Axoloop.Global
     {
         [Header("Developper Settings")]
 
-        [Tooltip("A utiliser si on a besoin d'une condition pour un éventuel mode Debbug")]
+        [Tooltip("A utiliser si on a besoin d'une condition pour un Ã©ventuel mode Debbug")]
         [SerializeField] bool _DebugMode = false;
 
-        [Tooltip("A activer pour renseigner une scène de test et la tester facilement avec l'application")]
+        [Tooltip("A activer pour renseigner une scÃ¨ne de test et la tester facilement avec l'application")]
         [SerializeField] bool _isTesting = false;
         [SerializeField] SceneAsset _TestingScene;
 
-        [Tooltip("A activer pour que l'application entière soit exécutée mais que la scène de test soit tout le temps ouverte au lieu du mini-jeu prévu")]
+        [Tooltip("A activer pour que l'application entiÃ¨re soit exÃ©cutÃ©e mais que la scÃ¨ne de test soit tout le temps ouverte au lieu du mini-jeu prÃ©vu")]
         [SerializeField] bool _TestInFullApp = false;
 
         public static bool DebugMode { get => Instance._DebugMode; }
@@ -66,7 +66,7 @@ namespace Axoloop.Global
 }
 
 
-// Ctrl + M + O pour déplier toutes les régions
+// Ctrl + M + O pour dÃ©plier toutes les rÃ©gions
 #region PROPERTIES----------------------------------------------------------------------
 
 
