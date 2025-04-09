@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a00ae09-b838-4d4f-bf9b-bdf073dfff57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/AccountIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/france-flag-icon-256.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/musical-note.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/optionIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/united-kingdom-flag-icon-256.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/vibrate.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Assets/UI Elements/OptionsMenu/volume.png.meta" beforeDir="false" />
+    <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Application/Menu_OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Application/Menu_OptionsButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Application/Menu_PlayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Application/Menu_PlayButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Boutique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Boutique.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Paramètres.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Paramètres.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_PlayMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_PlayMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +22,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Code/Application/Menu_PlayButton1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Application/ShopUnloadScene.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -42,7 +35,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "OptionsMenu",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "PlayMenu",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -52,9 +46,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\erosalie\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\nbellonaitoussekri\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -99,13 +93,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a00ae09-b838-4d4f-bf9b-bdf073dfff57" name="Changes" comment="" />
+      <changelist id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="" />
       <created>1743671114286</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743671114286</updated>
       <workItem from="1743671116779" duration="1727000" />
       <workItem from="1743672899603" duration="866000" />
+      <workItem from="1743772742870" duration="824000" />
+      <workItem from="1744185127312" duration="2267000" />
     </task>
     <servers />
   </component>
