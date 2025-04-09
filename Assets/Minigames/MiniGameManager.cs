@@ -1,7 +1,8 @@
+using Axoloop.Global;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MiniGameManager : MonoBehaviour
+public class MiniGameManager : SingletonMB<MiniGameManager>
 {
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex = 0;

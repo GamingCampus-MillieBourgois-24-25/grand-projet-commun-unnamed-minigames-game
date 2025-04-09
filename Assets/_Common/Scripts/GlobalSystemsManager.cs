@@ -2,25 +2,23 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Gère l'EventSystem pour éviter les conflits entre plusieurs scènes.
+/// Gère l'EventSystem et l'AudioListener pour éviter les conflits entre plusieurs scènes.
 /// </summary>
-public class EventSystemManager : MonoBehaviour
+public class GlobalSystemManager : MonoBehaviour
 {
     private EventSystem _eventSystem;
+    private AudioListener _audioListener;
 
     void Awake()
     {
-        _eventSystem = GetComponent<EventSystem>();
-        if (_eventSystem == null)
-        {
-            Debug.LogError("EventSystemManager doit être attaché à un GameObject avec un EventSystem.");
-            return;
-        }
+        _eventSystem = GetComponentInChildren<EventSystem>();
+        _audioListener = GetComponentInChildren<AudioListener>();
 
-        // Désactiver l'EventSystem si la scène est chargée en mode additif
+        // Désactiver les composants si la scène est chargée en mode additif
         if (IsSceneAdditive())
         {
             _eventSystem.enabled = false;
+            _audioListener.enabled = false;
         }
     }
 
