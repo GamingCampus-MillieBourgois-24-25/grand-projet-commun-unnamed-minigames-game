@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class VoxelGameManager : MonoBehaviour
@@ -39,4 +40,5 @@ public class VoxelGameManager : MonoBehaviour
         // Affiche le panneau de défaite
         defeatPanel.SetActive(true);
     }
+  
 }
