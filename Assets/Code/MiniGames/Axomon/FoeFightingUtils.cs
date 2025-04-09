@@ -11,8 +11,6 @@ public static class FoeFightingUtils
         FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
 
 
-        DifficultyMeter difficultyParam = DifficultyMeter.Easy;
-
         for (int i = 0; i < 2; i++)
         {
             int RandomNumberPicked = Random.Range(0, attackList.Count);
@@ -27,7 +25,7 @@ public static class FoeFightingUtils
         }
 
 
-        if (difficultyParam == DifficultyMeter.Easy)
+        if (shuffleMode == DifficultyMeter.Easy)
         {
 
             for (int i = 0; i < attacks.Count; i++)

@@ -3,9 +3,9 @@ using System;
 using UnityEngine;
 using static Foe;
 
-public class MorsureAttack : MonoBehaviour, IAttack
+public class BreathAttack : MonoBehaviour, IAttack
 {
-    public FoeType attackType => FoeType.Food;
+    public FoeType attackType => FoeType.Wind;
 
     public void PlayAttack(Action<FoeType> hitCallBack)
     {
