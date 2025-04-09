@@ -18,6 +18,6 @@ public class Menu_PlayButton : MonoBehaviour
     public void PlayLoadScene()
     {
         _audioSource.PlayOneShot(soundPlay);
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(2);
     }
 }
