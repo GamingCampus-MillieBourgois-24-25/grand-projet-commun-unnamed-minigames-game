@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
 {
-    public void GenerateMinigame(int seed, int difficulty)
+    public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
     {
         Random.InitState(seed);
+
+        DifficultyMeter difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
 
 
     }
 
+    
+
     public void InitializeMinigame()
     {
+
     }
 
     public void StartMinigame()

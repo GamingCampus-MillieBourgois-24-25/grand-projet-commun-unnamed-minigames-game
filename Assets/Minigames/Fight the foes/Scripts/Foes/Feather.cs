@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Firefox : Foe
+public class Feather : Foe
 {
-    FoeType FoeType = FoeType.Fire;
+    FoeType FoeType = FoeType.Wind;
 
     [SerializeField] Sprite DeadSprite;
 

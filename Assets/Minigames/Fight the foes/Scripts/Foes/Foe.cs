@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,33 +10,36 @@ public enum FoeType
     Food,
     Wind
 }
+
+[RequireComponent(typeof(SpriteRenderer))]
 public class Foe : MonoBehaviour
 {
-    public string Name {  get; set; }
-    public Sprite AliveSprite { get; set; }
-    public Sprite DeadSprite { get; set; }
+    public string Name {  get; private set; }
+    [SerializeField] protected Sprite AliveSprite;
+    //public Sprite DeadSprite { get; private set; }
+    [SerializeField] protected FoeType foeType;
 
-    public FoeType FoeType { get; private set; }
+    public FoeType FoeType => foeType;
 
-    // Start is called before the first frame update
-    void Start()
+    protected SpriteRenderer spriteRenderer;
+
+
+    protected virtual void Start()
     {
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = AliveSprite;
     }
 
-    // Update is called once per frame
-    void Update()
+    protected virtual void Attack(Action callBack)
     {
-
+        callBack?.Invoke();
     }
 
-    void Attack()
+    protected virtual void Die(Action callBack)
     {
-
+        callBack?.Invoke();
     }
 
-    void Die()
-    {
 
-    }
+
 }
