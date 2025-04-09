@@ -10,7 +10,7 @@ public class Random_Axolot : MonoBehaviour
 
     private int _lastIndex = -1;
 
-    void Awake()
+    void Start()
     {
         ChangeAxolot();
     }

@@ -7,36 +7,11 @@
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT MAIN MENU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT MAIN MENU.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_PlayMenu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_PlayMenu.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Menu_OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Menu_OptionsButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Menu_PlayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Menu_PlayButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopLoadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopLoadScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/_Common/Resources/UI Elements/OptionsMenu/cross 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/_Common/Resources/UI Elements/OptionsMenu/cross 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/_Common/Resources/UI Elements/PlayMenu/roue_menu_principal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/_Common/Resources/UI Elements/PlayMenu/roue_menu_principal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Fonts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Fonts/Starborn SDF.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Fonts/Starborn SDF.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Fonts/Starborn.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Fonts/Starborn.otf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/GameIcon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/GameIcon.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/GameTitle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/GameTitle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/AllButton.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/AllButton.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/MainMixer.mixer" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/MainMixer.mixer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/PlayButton.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Resources/Sounds/PlayButton.mp3.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Scripts/BaseClasses/SingletonMB.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/Scripts/BaseClasses/SingletonMB.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Scripts/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/Scripts/GameSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Random_Axolot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Random_Axolot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +36,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "PlayMenu",
+    "git-widget-placeholder": "DEBUGMERGE",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,7 +101,7 @@
       <workItem from="1743671116779" duration="1727000" />
       <workItem from="1743672899603" duration="866000" />
       <workItem from="1743772742870" duration="824000" />
-      <workItem from="1744185127312" duration="4931000" />
+      <workItem from="1744185127312" duration="6339000" />
     </task>
     <servers />
   </component>
@@ -142,24 +117,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_Common/Scripts/GlobalSceneController.cs</url>
-          <line>39</line>
-          <properties documentPath="C:\Users\nbellonaitoussekri\Desktop\grand-projet-commun-unnamed-minigames-game\Assets\_Common\Scripts\GlobalSceneController.cs" containingFunctionPresentation="Method 'SceneLoadedHandler'">
-            <startOffsets>
-              <option value="1213" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1214" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

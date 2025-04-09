@@ -130,26 +130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 585369786269645436, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2228872912395505662}
-    - target: {fileID: 585369786269645436, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadShopScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2273013224905600443, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2228872912395505661}
-    - target: {fileID: 2273013224905600443, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OptionsLoadScene
-      objectReference: {fileID: 0}
     - target: {fileID: 2846794590837903227, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -200,17 +180,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4216016826781031236, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216016826781031236, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a3c218c5cd73a3b469cd24b45d957a46,
-        type: 3}
     - target: {fileID: 8722187169749603186, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       propertyPath: m_Name
@@ -219,32 +188,46 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7361232063740672339, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2228872912395505663}
   m_SourcePrefab: {fileID: 100100000, guid: caeb6e08e13c04342b1caed598565a0a, type: 3}
---- !u!114 &2228872912395505661 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8264724336368421360, guid: caeb6e08e13c04342b1caed598565a0a,
+--- !u!1 &2228872912395505661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7361232063740672339, guid: caeb6e08e13c04342b1caed598565a0a,
     type: 3}
   m_PrefabInstance: {fileID: 2228872912395505660}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e6bc642f7893df40907d7a70d009622, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2228872912395505662 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5775785749051728481, guid: caeb6e08e13c04342b1caed598565a0a,
+  m_CorrespondingSourceObject: {fileID: 3060992356987374189, guid: caeb6e08e13c04342b1caed598565a0a,
     type: 3}
   m_PrefabInstance: {fileID: 2228872912395505660}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45a15f63c0fb9184cadf24bdafad01b0, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2228872912395505663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228872912395505661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed03397602e0f349a0026384966f1ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _score: 100
+  wheel: {fileID: 2228872912395505662}
+  rotationDuration: 5
+  easeType: 27
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
