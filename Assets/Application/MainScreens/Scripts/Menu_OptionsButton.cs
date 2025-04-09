@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Assets.Code.GLOBAL;
+using Axoloop.Global;
 
 public class Menu_OptionsButton : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Menu_OptionsButton : MonoBehaviour
         if (optionOpen == false)
         {
             _audioSource.PlayOneShot(soundButton);
-            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+            GlobalSceneController.OpenScene(GameSettings.SettingsScene.name);
             optionOpen = true;
         }
     }
