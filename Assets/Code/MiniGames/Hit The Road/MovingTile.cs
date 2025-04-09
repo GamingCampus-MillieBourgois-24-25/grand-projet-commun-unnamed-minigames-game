@@ -34,7 +34,11 @@ public class MovingTile : MonoBehaviour
         else
         {
             startPoint = GameObject.Find("StartPoint");
-            if (!startPoint)
+            if (startPoint)
+            {
+                Debug.Log("MovingTile.cs : variable startPoint trouvé dans la hiérarchie");
+            }
+            else
             {
                 Debug.Log("MovingTile.cs : variable startPoint non trouvé dans la hiérarchie");
             }
