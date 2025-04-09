@@ -21,7 +21,14 @@ EditorBuildSettings:
     path: "Assets/Application/MainScreens/Scenes/MAIN_Param\xE8tres.unity"
     guid: 5afce3819ff1adb438ecaf534c47f003
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity
+=======
+    path: Assets/Scenes/Application/MAIN_PlayMenu.unity
+    guid: e817f08b33410774ebd31c989ce17d02
+  - enabled: 1
+    path: Assets/Scenes/Application/MAIN_Boutique.unity
+>>>>>>> master
     guid: cfdc4f6afc7cb0d4a8974134dbba6003
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4515f03a2992a864ea49a057a8c4daa5,
