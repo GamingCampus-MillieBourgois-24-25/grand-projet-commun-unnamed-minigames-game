@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using Assets.Code.GLOBAL;
 
 public class Options_Back : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class Options_Back : MonoBehaviour
     }
     public void CloseScene()
     {
-        SceneManager.UnloadSceneAsync(1);
+        GlobalSceneController.UnloadOverlayScene();
         _menuOptionsButton.optionOpen = false;
     }
 }
