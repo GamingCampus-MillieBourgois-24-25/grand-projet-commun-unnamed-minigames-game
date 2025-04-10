@@ -40,6 +40,7 @@ public class RivalBike : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
+        // Démarrer immédiatement le virage si nécessaire
         if (willTurn && hasDecided && !isTurning)
         {
             isTurning = true;
@@ -63,28 +64,32 @@ public class RivalBike : MonoBehaviour
 
     private IEnumerator SmoothTurn(float targetX)
     {
-        float duration = 0.6f;
+        float duration = 0.4f; // Réduire la durée pour un virage plus rapide
         float elapsedTime = 0f;
 
         Vector3 startPosition = transform.position;
-        Vector3 endPosition = new Vector3(targetX, startPosition.y, startPosition.z + 3f);
+        Vector3 endPosition = new Vector3(targetX, startPosition.y, startPosition.z + 5f); // Avance légèrement pendant le virage
 
-        float maxLeanAngle = 15f;
+        float maxLeanAngle = 30f; // Augmenter l'angle pour une inclinaison plus réaliste
 
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
+
+            // Utiliser une interpolation lissée pour un mouvement fluide
             float curvedT = Mathf.SmoothStep(0, 1, t);
             transform.position = Vector3.Lerp(startPosition, endPosition, curvedT);
 
+            // Inclinaison de la moto pendant le virage
             float leanDirection = Mathf.Sign(targetX - startPosition.x);
-            float currentLean = Mathf.Lerp(0, leanDirection * maxLeanAngle, Mathf.Sin(Mathf.PI * curvedT));
+            float currentLean = Mathf.Lerp(0, leanDirection * maxLeanAngle, curvedT);
             transform.rotation = Quaternion.Euler(0, 0, -currentLean);
 
             yield return null;
         }
 
+        // Réinitialiser l'inclinaison après le virage
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
@@ -125,9 +130,9 @@ public class RivalBike : MonoBehaviour
         float duration = 1.5f; // Durée de l'accélération
         float elapsedTime = 0f;
         float initialSpeed = speed;
-        float finalSpeed = speed * 2; // Double la vitesse pour l'accélération finale
+        float finalSpeed = speed * 6; // Double la vitesse pour l'accélération finale
 
-        TriggerSmokeParticles(); // Déclenche les particules de fumée au début de l'accélération
+         // Déclenche les particules de fumée au début de l'accélération
 
         while (elapsedTime < duration)
         {
@@ -139,6 +144,7 @@ public class RivalBike : MonoBehaviour
         }
 
         speed = finalSpeed; // Assure que la vitesse finale est bien appliquée
+        TriggerSmokeParticles();
     }
 
     private float EaseInOutBack(float t)
@@ -165,7 +171,7 @@ public class RivalBike : MonoBehaviour
         }
 
         // Attends un court instant pour l'effet d'explosion
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         // Applique une force d'éjection au RivalBike
         if (rb != null)
@@ -180,4 +186,3 @@ public class RivalBike : MonoBehaviour
         gameObject.SetActive(false);
     }
 }
-
