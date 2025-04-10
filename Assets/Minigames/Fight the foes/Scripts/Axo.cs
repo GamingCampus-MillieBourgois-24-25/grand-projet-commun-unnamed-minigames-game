@@ -1,33 +1,35 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Axoloop.Global;
 using UnityEngine;
 
-public class Axo : SingletonMB<Axo>
+
+namespace AxoLoop.Minigames.FightTheFoes
 {
-    [SerializeField] protected Sprite AliveSprite;
-    private SpriteRenderer spriteRenderer;
-
-    void Start()
+    public class Axo : SingletonMB<Axo>
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = AliveSprite;
-    }
+        [SerializeField] protected Sprite AliveSprite;
+        private SpriteRenderer spriteRenderer;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        void Start()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = AliveSprite;
+        }
 
-    public void Spawn(Action callBack)
-    {
-        callBack?.Invoke();
-    }
+        // Update is called once per frame
+        void Update()
+        {
 
-    public void Die(Action callBack)
-    {
-        callBack?.Invoke();
+        }
+
+        public void Spawn(Action callBack)
+        {
+            callBack?.Invoke();
+        }
+
+        public void Die(Action callBack)
+        {
+            callBack?.Invoke();
+        }
     }
 }

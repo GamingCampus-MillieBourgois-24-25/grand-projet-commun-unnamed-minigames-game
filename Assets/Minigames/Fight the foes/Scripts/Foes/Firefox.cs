@@ -1,24 +1,26 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Firefox : Foe
+namespace AxoLoop.Minigames.FightTheFoes
 {
-    FoeType FoeType = FoeType.Fire;
-
-    [SerializeField] Sprite DeadSprite;
-
-    protected override void Die(Action callBack)
+    public class Firefox : Foe
     {
-        StartCoroutine(PlayDeathAnimation(() => base.Die(callBack)));
-        
-    }
+        FoeType FoeType = FoeType.Fire;
 
-    IEnumerator PlayDeathAnimation(Action callBack)
-    {
-        spriteRenderer.sprite = DeadSprite;
-        yield return new WaitForSeconds(2);
-        callBack.Invoke();
+        [SerializeField] Sprite DeadSprite;
+
+        protected override void Die(Action callBack)
+        {
+            StartCoroutine(PlayDeathAnimation(() => base.Die(callBack)));
+
+        }
+
+        IEnumerator PlayDeathAnimation(Action callBack)
+        {
+            spriteRenderer.sprite = DeadSprite;
+            yield return new WaitForSeconds(2);
+            callBack.Invoke();
+        }
     }
 }

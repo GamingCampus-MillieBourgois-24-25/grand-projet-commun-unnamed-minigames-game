@@ -2,11 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+
 namespace AxoLoop.Minigames.FightTheFoes
 {
-    public class Slime : Foe
+    public class Cookie : Foe
     {
-        FoeType FoeType = FoeType.Liquid;
+        FoeType FoeType = FoeType.Food;
 
         [SerializeField] Sprite DeadSprite;
 

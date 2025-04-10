@@ -1,20 +1,22 @@
 
 using System;
 using UnityEngine;
-using static Foe;
 
-public class DrinkAttack : MonoBehaviour, IAttack
+namespace AxoLoop.Minigames.FightTheFoes
 {
-    public FoeType attackType => FoeType.Liquid;
-
-    public void PlayAttack(Action<FoeType> hitCallBack)
+    public class DrinkAttack : MonoBehaviour, IAttack
     {
-        //start attack
-        //...
-        //Attack hit
-        hitCallBack.Invoke(attackType);
-        //..
-        // Attack end
-        return;
+        public FoeType attackType => FoeType.Liquid;
+
+        public void PlayAttack(Action<FoeType> hitCallBack)
+        {
+            //start attack
+            //...
+            //Attack hit
+            hitCallBack.Invoke(attackType);
+            //..
+            // Attack end
+            return;
+        }
     }
 }
