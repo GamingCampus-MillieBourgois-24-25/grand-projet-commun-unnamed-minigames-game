@@ -36,7 +36,7 @@ namespace Axoloop.Scripts.Global
         {
             AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(sceneName);
 
-            if(onFinishedCallback != null)
+            if (onFinishedCallback != null)
                 asyncUnload.completed += (operation) => onFinishedCallback.Invoke(sceneName);
 
             asyncUnload.allowSceneActivation = false;

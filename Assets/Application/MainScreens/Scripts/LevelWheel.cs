@@ -1,18 +1,17 @@
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
 using Image = UnityEngine.UI.Image;
 
 public class LevelWheel : MonoBehaviour
 {
     [SerializeField] private float _score;
     [SerializeField] private Image wheel;
-    
+
     [SerializeField] private float rotationDuration = 5f;
     [SerializeField] private Ease easeType = Ease.OutBack;
 
     private float _lastTargetRotation = -1f;
-    
+
     public float Score
     {
         get => _score;
