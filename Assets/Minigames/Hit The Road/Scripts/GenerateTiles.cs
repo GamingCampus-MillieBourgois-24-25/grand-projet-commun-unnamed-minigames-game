@@ -8,6 +8,8 @@ using UnityEngine;
 
 public class GenerateTiles : MonoBehaviour
 {
+    int tileScale = 5;
+
     public GameObject tile;
     public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
     public GameObject endPoint; 
@@ -22,7 +24,8 @@ public class GenerateTiles : MonoBehaviour
         if (tile) 
         {
             check();
-            SettingUpTheScene2();
+            //SettingUpTheScene2();
+            SettingUpTheDesertScene();
         }
 
         else
@@ -62,6 +65,24 @@ public class GenerateTiles : MonoBehaviour
         {
             Debug.Log("GenerateTile.cs : variable tilenon assigné");
         }
+    }
+
+    void SettingUpTheDesertScene()
+    {
+        mainPosition = new Vector3(0, 0, 0);
+        BoxCollider box;
+        float longueur;
+
+        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
+        Instantiate(tile, mainPosition, Quaternion.identity);
+
+        box = tile.GetComponent<BoxCollider>();
+        longueur = box.size.z * transform.localScale.z;
+
+        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur), Quaternion.identity);
+        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -2 * longueur), Quaternion.identity);
+
+        Debug.Log("longeur : " + longueur);
     }
 
     void SettingUpTheScene()

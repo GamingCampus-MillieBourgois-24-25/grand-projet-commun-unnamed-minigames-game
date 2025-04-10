@@ -62,11 +62,17 @@ public class MovingTile : MonoBehaviour
         Debug.Log("Offset (world): " + (transform.position - startPoint.transform.position));
     }
 
+    void TeleportToPointZero()
+    {
+        transform.position = new Vector3(0,0,0);
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EndPoint"))
         {
-            TeleportToStartPoint();
+            //TeleportToStartPoint();
+            TeleportToPointZero();  
             Debug.Log("Collision entre "+gameObject.name+" et "+other.gameObject.name);
             Debug.Log("Position : "+transform.position+" - "+startPoint.transform.position);
         }
