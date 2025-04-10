@@ -7,7 +7,7 @@ public class Menu_Score : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _textScore;
     public LevelWheel _LevelWheel;
-    void Start()
+    void Update()
     {
         _textScore.text = _LevelWheel.Score.ToString("n0");
     }
