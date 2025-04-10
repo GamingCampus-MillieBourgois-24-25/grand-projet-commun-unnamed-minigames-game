@@ -44,7 +44,7 @@ public class OptionsManager : MonoBehaviour
     public void ToggleVibration()
     {
         _vibrationOn = !_vibrationOn;
-        PlayerPrefs.SetInt("Vibration", _vibrationOn ? 1 : 0);
+        PlayerPrefs.SetInt("VibrationOn", _vibrationOn ? 1 : 0);
         PlayerPrefs.Save();
         if (_vibrationOn) Handheld.Vibrate();
         UpdateButtons();
