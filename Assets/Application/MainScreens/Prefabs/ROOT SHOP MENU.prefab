@@ -773,11 +773,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2846794590837903227}
-  - component: {fileID: 5599292499474504347}
   - component: {fileID: 91077009569929994}
   - component: {fileID: 3077172182927356676}
   - component: {fileID: 7050136090654919888}
   - component: {fileID: 6766389851799654931}
+  - component: {fileID: 3665431200207961448}
   m_Layer: 0
   m_Name: ROOT SHOP MENU
   m_TagString: Untagged
@@ -802,18 +802,6 @@ Transform:
   - {fileID: 7849610675739177718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5599292499474504347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8722187169749603186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deff3f5384654444ab9fdd4aa611ec8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &91077009569929994
 AudioListener:
   m_ObjectHideFlags: 0
@@ -867,6 +855,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf1c5c6906554134e9e3b58822bb4011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3665431200207961448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8722187169749603186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98aa730ef91de214db2e3b7d33b8c2f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8749074894873464696
