@@ -10,7 +10,7 @@ namespace Assets.Scripts.GLOBAL
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
 
-        public string SceneName { get => "MAIN_MainMenu"; }
+        public string SceneName { get => "MAIN_Menu_Principal"; }
 
         public SceneLevel SceneLevel { get => SceneLevel.Level1; }
 
