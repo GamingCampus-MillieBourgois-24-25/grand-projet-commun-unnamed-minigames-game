@@ -205,6 +205,11 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8151793373612380980, guid: df7105fc6bd31664692a1ec54feff8c7,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -388,6 +393,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      propertyPath: tileSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 637672713519061026, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_IsActive
@@ -451,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 2952372737408988035, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.2
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 3259107824842649500, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
@@ -718,6 +728,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -1532.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6749250970495544704, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7670676131675575391, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -751,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 8220636819695515844, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 142.7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8606339549949029971, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}

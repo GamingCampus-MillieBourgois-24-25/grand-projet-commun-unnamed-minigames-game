@@ -9,6 +9,7 @@ using UnityEngine;
 public class GenerateTiles : MonoBehaviour
 {
     int tileScale = 5;
+    public float tileSpeed = 40f;
 
     public GameObject tile;
     public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
@@ -69,56 +70,16 @@ public class GenerateTiles : MonoBehaviour
 
     void SettingUpTheDesertScene()
     {
+        mainPosition.z = 50f;
+        Instantiate(tile, mainPosition, Quaternion.identity);
+
         mainPosition = new Vector3(0, 0, 0);
-        BoxCollider box;
-        float longueur;
-
-        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
         Instantiate(tile, mainPosition, Quaternion.identity);
 
-        box = tile.GetComponent<BoxCollider>();
-        longueur = box.size.z * transform.localScale.z;
-
-        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur), Quaternion.identity);
-        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -2 * longueur), Quaternion.identity);
-
-        Debug.Log("longeur : " + longueur);
-    }
-
-    void SettingUpTheScene()
-    {
-
-        mainPosition = new Vector3(startPoint.transform.position.x, startPoint.transform.position.y, -7);
-        BoxCollider box;
-        float longueur;
-
-        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
+        mainPosition.z = -50f;
         Instantiate(tile, mainPosition, Quaternion.identity);
-
-        box = tile.GetComponent<BoxCollider>();
-        longueur = box.size.z * transform.localScale.z;
-
-        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur+10f), Quaternion.identity);
-        //Instantiate(tile, mainPosition, Quaternion.identity);
-        Debug.Log("longeur : " + longueur);
-    }
-
-    void SettingUpTheScene2()
-    {
-
-        mainPosition = new Vector3(startPoint.transform.position.x, startPoint.transform.position.y, -7);
-        BoxCollider box;
-        float longueur;
-
-        //Instantiate(tile, startPoint.transform.position, Quaternion.identity);
-        Instantiate(tile, mainPosition, Quaternion.identity);
-
-        box = tile.GetComponent<BoxCollider>();
-        longueur = box.size.z * transform.localScale.z;
-
-        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -longueur + 10f), Quaternion.identity);
-        Instantiate(tile, new Vector3(mainPosition.x, mainPosition.y, -2*longueur + 10f), Quaternion.identity);
         
-        Debug.Log("longeur : " + longueur);
+        tile.GetComponent<MovingTile>().setSpeed(tileSpeed);
     }
+ 
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 public class MovingTile : MonoBehaviour
 {
 
-    public float speed = 1f;
+    public float speed = 15f;
     public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
 
 
@@ -64,7 +64,7 @@ public class MovingTile : MonoBehaviour
 
     void TeleportToPointZero()
     {
-        transform.position = new Vector3(0,0,0);
+        transform.position += new Vector3(0, 0, 150);
     }
 
     void OnTriggerEnter(Collider other)
@@ -74,8 +74,16 @@ public class MovingTile : MonoBehaviour
             //TeleportToStartPoint();
             TeleportToPointZero();  
             Debug.Log("Collision entre "+gameObject.name+" et "+other.gameObject.name);
-            Debug.Log("Position : "+transform.position+" - "+startPoint.transform.position);
+            //Debug.Log("Position : "+transform.position+" - "+startPoint.transform.position);
         }
     }
+    public float getSpeed()
+    {
+        return speed;
+    }
 
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
+    }
 }
