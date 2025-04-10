@@ -13,10 +13,9 @@ public class ShopLoadScene : MonoBehaviour
 
     public void LoadShopScene()
     {
-        if (shopOpen == false)
-        {
+
             GlobalSceneController.OpenScene(GameSettings.ShopScene.name);
-            shopOpen = true;
-        }
+
+
     }
 }
