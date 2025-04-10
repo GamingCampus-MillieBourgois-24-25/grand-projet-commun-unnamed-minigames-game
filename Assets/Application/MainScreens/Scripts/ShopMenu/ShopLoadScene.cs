@@ -1,6 +1,6 @@
-using UnityEngine;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
+using UnityEngine;
 
 public class ShopLoadScene : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class ShopLoadScene : MonoBehaviour
     public void LoadShopScene()
     {
 
-            GlobalSceneController.OpenScene(GameSettings.ShopScene.name);
+        GlobalSceneController.OpenScene(GameSettings.ShopScene.name);
 
 
     }
