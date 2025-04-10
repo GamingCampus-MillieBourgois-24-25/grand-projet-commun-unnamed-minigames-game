@@ -141,6 +141,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+--- !u!1 &178139621 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7804140965199515917, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &178139623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178139621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5088300c1ec8948a469832c93c7823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Shop.Title
+--- !u!1 &1159693544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4462408500173886052, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1159693546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159693544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5088300c1ec8948a469832c93c7823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: MainMenu.Play
 --- !u!1001 &2228872912395505660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -208,6 +246,14 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4462408500173886052, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1159693546}
+    - targetCorrespondingSourceObject: {fileID: 7804140965199515917, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 178139623}
     - targetCorrespondingSourceObject: {fileID: 8037134971339836685, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       insertIndex: -1

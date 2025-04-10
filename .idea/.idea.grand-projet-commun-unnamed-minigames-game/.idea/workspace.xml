@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/WheelRotator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/WheelRotator.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT MAIN MENU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT MAIN MENU.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT SHOP MENU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT SHOP MENU.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Random_Axolot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Random_Axolot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "DEBUGMERGE",
+    "git-widget-placeholder": "Merging Localization",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -101,7 +106,8 @@
       <workItem from="1743671116779" duration="1727000" />
       <workItem from="1743672899603" duration="866000" />
       <workItem from="1743772742870" duration="824000" />
-      <workItem from="1744185127312" duration="6339000" />
+      <workItem from="1744185127312" duration="8047000" />
+      <workItem from="1744272717693" duration="4483000" />
     </task>
     <servers />
   </component>
