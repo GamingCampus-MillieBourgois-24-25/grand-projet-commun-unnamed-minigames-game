@@ -18,7 +18,9 @@ public class FoeFightingController : SingletonMB<FoeFightingController>, IMiniga
 
     public void InitializeMinigame()
     {
-
+        Axo axo = new Axo();
+        axo.Spawn(null);
+        //méthode pour invoquer les ennemis
     }
 
     public void StartMinigame()
