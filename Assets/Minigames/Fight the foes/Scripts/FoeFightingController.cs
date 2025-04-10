@@ -11,7 +11,7 @@ public class FoeFightingController : SingletonMB<FoeFightingController>, IMiniga
 
         DifficultyMeter difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
 
-
+        List<Foe> gameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 3);
     }
 
     

@@ -25,6 +25,25 @@ public static class FoeFightingUtils
         return difficulty1;
     }
 
+    public static List<Foe> GenerateEnnemies(List<Foe> foes, int nbEnemies)
+    {
+        List<Foe> gameFoes = new List<Foe>();
+        if (foes.Count != 0)
+        {
+            for (int i = 0; i < nbEnemies; i++)
+            {
+                int foePicked = Random.Range(0, foes.Count);
+                gameFoes.Add(foes[foePicked]);
+            }
+        }
+        else
+        {
+            Debug.LogError("Liste d'ennemis vide ou introuvable");
+            return null;
+        }
+        return gameFoes;
+    }
+
 
     public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<IAttack> attackList)
     {

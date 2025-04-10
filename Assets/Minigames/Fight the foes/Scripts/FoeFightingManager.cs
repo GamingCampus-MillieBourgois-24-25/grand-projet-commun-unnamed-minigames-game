@@ -8,12 +8,12 @@ using static Foe;
 public class FoeFightingManager : SingletonMB<FoeFightingManager>
 {
 
-    [SerializeField] List<IAttack> attackList = new List<IAttack>();
     FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
+
 
     public void PlayAttack(FoeType type)
     {
-        var attack = attackList.FirstOrDefault(item => item.attackType == type);
+        var attack = FoeFightMinigameData.AttackList.FirstOrDefault(item => item.attackType == type);
 
         if(attack == null)
         {
