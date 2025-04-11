@@ -1,5 +1,4 @@
-﻿using Assets.Scripts.GLOBAL;
-using Axoloop.Global;
+﻿using Axoloop.Global;
 using Axoloop.Global.UI;
 using Axoloop.Scripts.Global;
 using UnityEngine;
@@ -42,7 +41,7 @@ namespace Assets.Code.GLOBAL
 
             ISceneManager loadedSceneManager = FindSceneManagerInstance(loadedScene);
 
-            if(loadedSceneManager == null)
+            if (loadedSceneManager == null)
             {
                 Debug.LogError($"Aucun ISceneManager trouvé dans la scène {sceneName}");
                 return;
@@ -62,7 +61,7 @@ namespace Assets.Code.GLOBAL
             }
 
 
-            HideLoader();   
+            HideLoader();
         }
 
 

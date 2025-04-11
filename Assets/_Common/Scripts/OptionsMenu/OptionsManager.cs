@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -12,7 +10,7 @@ public class OptionsManager : MonoBehaviour
     public Sprite bgmOnSprite, bgmOffSprite;
     public Sprite sfxOnSprite, sfxOffSprite;
     public Sprite vibrationOnSprite, vibrationOffSprite;
-    
+
     private bool _bgmOn = false;
     private bool _sfxOn = false;
     private bool _vibrationOn = false;
@@ -22,7 +20,7 @@ public class OptionsManager : MonoBehaviour
         LoadSettings();
         UpdateButtons();
     }
-    
+
     public void ToggleBgm()
     {
         _bgmOn = !_bgmOn;
@@ -44,7 +42,7 @@ public class OptionsManager : MonoBehaviour
     public void ToggleVibration()
     {
         _vibrationOn = !_vibrationOn;
-        PlayerPrefs.SetInt("Vibration", _vibrationOn ? 1 : 0);
+        PlayerPrefs.SetInt("VibrationOn", _vibrationOn ? 1 : 0);
         PlayerPrefs.Save();
         if (_vibrationOn) Handheld.Vibrate();
         UpdateButtons();
@@ -55,11 +53,11 @@ public class OptionsManager : MonoBehaviour
         _bgmOn = PlayerPrefs.GetInt("BgmOn", 1) == 1;
         _sfxOn = PlayerPrefs.GetInt("SfxOn", 1) == 1;
         _vibrationOn = PlayerPrefs.GetInt("VibrationOn", 1) == 1;
-        
+
         audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
         audioMixer.SetFloat("SFXVolume", _sfxOn ? 0f : -80f);
     }
-    
+
     private void UpdateButtons()
     {
         bgmButton.image.sprite = _bgmOn ? bgmOnSprite : bgmOffSprite;

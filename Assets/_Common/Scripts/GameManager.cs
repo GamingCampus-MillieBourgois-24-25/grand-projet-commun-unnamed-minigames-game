@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace Axoloop.Global
 {
     public class GameManager : SingletonMB<GameManager>
@@ -14,7 +10,7 @@ namespace Axoloop.Global
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
-    
+
 
         #endregion
         #region METHODS-------------------------------------------------------------------------

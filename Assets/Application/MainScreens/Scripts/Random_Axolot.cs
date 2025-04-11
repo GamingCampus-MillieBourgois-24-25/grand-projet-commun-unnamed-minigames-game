@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +16,7 @@ public class Random_Axolot : MonoBehaviour
     public void ChangeAxolot()
     {
         int newIndex;
-        
+
         do
         {
             newIndex = Random.Range(1, 4);

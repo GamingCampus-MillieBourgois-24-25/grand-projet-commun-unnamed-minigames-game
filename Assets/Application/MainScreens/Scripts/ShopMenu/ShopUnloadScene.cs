@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Assets.Code.GLOBAL;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ShopUnloadScene : MonoBehaviour
 {
@@ -13,7 +11,7 @@ public class ShopUnloadScene : MonoBehaviour
     }
     public void CloseScene()
     {
-        SceneManager.UnloadSceneAsync(3);
+        GlobalSceneController.UnloadOverlayScene();
         shopLoadSceneButton.shopOpen = false;
     }
 }
