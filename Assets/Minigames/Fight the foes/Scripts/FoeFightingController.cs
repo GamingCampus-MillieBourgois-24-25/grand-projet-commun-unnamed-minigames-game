@@ -6,24 +6,26 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
     {
+        DifficultyMeter difficulty;
         public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             Random.InitState(seed);
 
-            DifficultyMeter difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
+           difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
 
-            List<Foe> gameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 3);
+            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 3);
         }
 
         public void InitializeMinigame()
         {
-            Axo axo = new Axo();
-            axo.Spawn(null);
-            //méthode pour invoquer les ennemis
+            FoeFightMinigameData.Axo.Spawn(null);
+            FoeFightingUtils.EnnemySpawn(FoeFightMinigameData.GameFoes);
         }
 
         public void StartMinigame()
         {
+            FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackList);
+            //enable inputs
         }
 
     }

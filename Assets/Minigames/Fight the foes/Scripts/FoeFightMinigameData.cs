@@ -14,11 +14,13 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] Foe currentFoe;
         [SerializeField] List<IAttack> attackList = new List<IAttack>();
         [SerializeField] List<Foe> foesList = new List<Foe>();
+        [SerializeField] List<Foe> gameFoes = new List<Foe>();
         [SerializeField] Axo axo;
 
         public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
         public static List<IAttack> AttackList { get => Instance.attackList; set => Instance.attackList = value; }
         public static List<Foe> FoesList { get => Instance.foesList; set => Instance.foesList = value; }
+        public static List<Foe> GameFoes { get => Instance.gameFoes; set => Instance.gameFoes = value; }
         public static Axo Axo { get => Instance.axo; set => Instance.axo = value; }
     }
 }

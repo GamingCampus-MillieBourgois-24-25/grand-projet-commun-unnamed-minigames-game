@@ -7,7 +7,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     public class FoeFightingManager : SingletonMB<FoeFightingManager>
     {
 
-        FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
+        FoeType foeType;
 
 
         public void PlayAttack(FoeType type)
@@ -25,9 +25,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void OnAttackHit(FoeType attackType)
         {
+            foeType = FoeFightMinigameData.CurrentFoe.FoeType;
             if (attackType == foeType)
             {
-                // FoeFightMinigameData.CurrentFoe.Die();
+                FoeFightMinigameData.GameFoes.RemoveAt(0);
 
             }
             else
