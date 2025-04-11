@@ -214,7 +214,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 2340}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.75
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 4892615408293970443}
   - component: {fileID: 4183140046394644520}
   - component: {fileID: 899471290930117761}
+  - component: {fileID: 7466339676501383217}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -506,6 +507,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7466339676501383217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279253524075857972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5088300c1ec8948a469832c93c7823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Settings.Account
 --- !u!1 &3056544706863490921
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00051375, y: 150}
+  m_AnchoredPosition: {x: 0, y: 150}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7992297044108668106
@@ -627,7 +641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5690710702464973698}
+      - m_Target: {fileID: 213540889317126833}
         m_TargetAssemblyTypeName: OptionsManager, Assembly-CSharp
         m_MethodName: ToggleVibration
         m_Mode: 1
@@ -712,6 +726,7 @@ GameObject:
   - component: {fileID: 8470678959940978126}
   - component: {fileID: 2442159608527008770}
   - component: {fileID: 1528251567941927401}
+  - component: {fileID: 821648504670826089}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -736,7 +751,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 485.4966, y: 166.00311}
+  m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2442159608527008770
 CanvasRenderer:
@@ -836,6 +851,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &821648504670826089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097866374849816233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5088300c1ec8948a469832c93c7823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Setting.Title
 --- !u!1 &4153154486614582290
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,7 +874,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8211484378408815063}
   - component: {fileID: 249552409334491408}
-  - component: {fileID: 5690710702464973698}
+  - component: {fileID: 3293942960042921362}
+  - component: {fileID: 213540889317126833}
   m_Layer: 0
   m_Name: OptionsManager
   m_TagString: Untagged
@@ -882,7 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _menuOptionsButton: {fileID: 0}
---- !u!114 &5690710702464973698
+--- !u!114 &3293942960042921362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -891,7 +920,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4153154486614582290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eeb83b4571313d4b87e6c5b5541d744, type: 3}
+  m_Script: {fileID: 11500000, guid: caf1d26d60166ca40bc5c5f552235e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frenchButton: {fileID: 1920117891778122639}
+  englishButton: {fileID: 1520289241024951262}
+  frenchButtonOn: {fileID: 21300000, guid: 62f255d82a608414c8a22415ce574899, type: 3}
+  frenchButtonOff: {fileID: 21300000, guid: fb8996ab951ab8e48bd2ae57fd3cd6fe, type: 3}
+  englishButtonOn: {fileID: 21300000, guid: 8e6b7045f1a71b241bef72cb0e65b714, type: 3}
+  englishButtonOff: {fileID: 21300000, guid: 3e255ee9cb7e58a4a9fa501b7918e17f, type: 3}
+--- !u!114 &213540889317126833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4153154486614582290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 873fb276b37967f4688327114dd9bfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: b906ff24f34c7ae4e808b3347e14243a, type: 2}
@@ -1159,16 +1206,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Code.Application.Localization.LocaleSelector, Assembly-CSharp
-        m_MethodName: ChangeLocale
-        m_Mode: 3
+      - m_Target: {fileID: 3293942960042921362}
+        m_TargetAssemblyTypeName: Assets.SimpleLocalization.SetLocalizeText, Assembly-CSharp
+        m_MethodName: SetLocalization
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: French
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6034990666036766125
@@ -1283,7 +1330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 150}
+  m_AnchoredPosition: {x: 100, y: 150}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4371085263927756560
@@ -1368,7 +1415,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5690710702464973698}
+      - m_Target: {fileID: 213540889317126833}
         m_TargetAssemblyTypeName: OptionsManager, Assembly-CSharp
         m_MethodName: ToggleBgm
         m_Mode: 1
@@ -1585,16 +1632,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Code.Application.Localization.LocaleSelector, Assembly-CSharp
-        m_MethodName: ChangeLocale
-        m_Mode: 3
+      - m_Target: {fileID: 3293942960042921362}
+        m_TargetAssemblyTypeName: Assets.SimpleLocalization.SetLocalizeText, Assembly-CSharp
+        m_MethodName: SetLocalization
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: English
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7054887624038861314
@@ -1633,7 +1680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -110, y: 150}
+  m_AnchoredPosition: {x: -100, y: 150}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5503905324017151471
@@ -1718,7 +1765,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5690710702464973698}
+      - m_Target: {fileID: 213540889317126833}
         m_TargetAssemblyTypeName: OptionsManager, Assembly-CSharp
         m_MethodName: ToggleSfx
         m_Mode: 1
@@ -1767,7 +1814,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -100}
-  m_SizeDelta: {x: 500, y: 122.402405}
+  m_SizeDelta: {x: 500, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3844000046576338871
 CanvasRenderer:
