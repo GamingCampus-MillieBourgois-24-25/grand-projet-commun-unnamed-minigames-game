@@ -4,7 +4,7 @@ public class PlayerBike : MonoBehaviour
 {
     public float moveSpeed = 10f;
     public float laneOffset = 2.5f;
-    private Vector3 targetPosition;
+    [SerializeField] private Vector3 targetPosition;
     private bool isMoving = false;
     private bool hasMoved = false;
     private bool hasCollided = false;
@@ -22,6 +22,7 @@ public class PlayerBike : MonoBehaviour
                 Invoke(nameof(CheckForFail), defeatCheckDelay); // attends 1s avant de checker si t’as raté
             }
         }
+
     }
 
     public void MoveLeft()

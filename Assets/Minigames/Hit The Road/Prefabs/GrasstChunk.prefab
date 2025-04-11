@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1652341787671717841}
   - component: {fileID: 8151793373612380980}
   m_Layer: 0
-  m_Name: DesertChunk1
+  m_Name: GrasstChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b809ac65bf5211f4294dc270caad35c1, type: 2}
+  - {fileID: 6699446615349125189, guid: 7269a461f684dce478ea474e4a10c8cd, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1697,6 +1697,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: sable_chunk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1681879928699230284, guid: 69e5599408de05f43ae0ce65afe385aa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6699446615349125189, guid: 2eaad07fdc5f50841ac27d73272714aa,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1771,6 +1777,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sable_chunk
       objectReference: {fileID: 0}
+    - target: {fileID: 1681879928699230284, guid: 69e5599408de05f43ae0ce65afe385aa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c1be0f984b6afac4ca5de8480010d36d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1845,6 +1856,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: sable_chunk (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1681879928699230284, guid: 69e5599408de05f43ae0ce65afe385aa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6699446615349125189, guid: 2fd08bafb153d4a4e8e7ce7c94f40e6c,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2321,6 +2338,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: sable_chunk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1681879928699230284, guid: 69e5599408de05f43ae0ce65afe385aa,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 6699446615349125189, guid: c8e41fcf702ff6a4a8f3d2b4e1a86cb3,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

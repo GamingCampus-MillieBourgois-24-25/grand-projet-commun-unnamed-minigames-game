@@ -386,7 +386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: tile
       value: 
-      objectReference: {fileID: 1193003259171492940, guid: df7105fc6bd31664692a1ec54feff8c7,
+      objectReference: {fileID: 1193003259171492940, guid: d0e5e552d5e41574a9d136a9946957f5,
         type: 3}
     - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
@@ -396,7 +396,7 @@ PrefabInstance:
     - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: tileSpeed
-      value: 40
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 637672713519061026, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
@@ -461,7 +461,7 @@ PrefabInstance:
     - target: {fileID: 2952372737408988035, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -100
+      value: -135.1
       objectReference: {fileID: 0}
     - target: {fileID: 3259107824842649500, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
