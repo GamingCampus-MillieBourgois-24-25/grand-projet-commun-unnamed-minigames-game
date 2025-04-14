@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TableId: 1j0E0lnmt3PEIZuIKbaC5oUDxl-FOmVJkpvf-GY6PPEY
   Sheets:
-  - Name: LocalizationText
+  - Name: Feuille 1
     Id: 0
-    TextAsset: {fileID: 4900000, guid: 33a1e36519376bf4b91374c73929075b, type: 3}
+    TextAsset: {fileID: 4900000, guid: 0067a793e0c005b4f8fb42f836a8c831, type: 3}
   SaveFolder: {fileID: 102900000, guid: c392831e85f928548b8494fefd912562, type: 3}

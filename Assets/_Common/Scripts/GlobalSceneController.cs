@@ -100,6 +100,8 @@ namespace Assets.Code.GLOBAL
             ShowLoader();
             Instance.StartCoroutine(SceneLoader.LoadingProcess(targetScene, Instance.SceneLoadedHandler));
         }
+        
+        
 
         /// <summary>
         /// Si une scène de niveau 2 est ouverte, elle sera déchargée.

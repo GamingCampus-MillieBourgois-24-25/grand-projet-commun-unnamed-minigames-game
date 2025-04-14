@@ -8,6 +8,7 @@ TagManager:
   - DefeatTrigger
   - EndPoint
   - Tuile
+  - Persistent
   layers:
   - Default
   - TransparentFX
