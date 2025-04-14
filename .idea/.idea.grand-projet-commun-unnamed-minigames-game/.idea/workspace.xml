@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Application/Menu_OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Application/Menu_OptionsButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Application/Menu_PlayButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Application/Menu_PlayButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Boutique.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Boutique.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Paramètres.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_Paramètres.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_PlayMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Application/MAIN_PlayMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT SETTING MENU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT SETTING MENU.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Prefabs/ROOT START SCREEN.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,26 +31,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "PlayMenu",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;FIX__UI&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\nbellonaitoussekri\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\2022.3.32f1\Editor\Unity.exe" />
@@ -101,7 +100,9 @@
       <workItem from="1743671116779" duration="1727000" />
       <workItem from="1743672899603" duration="866000" />
       <workItem from="1743772742870" duration="824000" />
-      <workItem from="1744185127312" duration="2267000" />
+      <workItem from="1744185127312" duration="8047000" />
+      <workItem from="1744272717693" duration="5654000" />
+      <workItem from="1744378802927" duration="1367000" />
     </task>
     <servers />
   </component>

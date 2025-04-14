@@ -4,9 +4,9 @@ using UnityEngine;
 namespace Axoloop.Global
 {
     /// <summary>
-    /// Classe permetant de faire très simplement un Singleton
+    /// Classe permetant de faire trÃ¨s simplement un Singleton
     /// </summary>
-    /// <typeparam name="T">Utiliser le même type que le singleton</typeparam>
+    /// <typeparam name="T">Utiliser le mÃªme type que le singleton</typeparam>
     public class SingletonMB<T> : MonoBehaviour where T : SingletonMB<T>
     {
         public static T Instance { get; private set; }

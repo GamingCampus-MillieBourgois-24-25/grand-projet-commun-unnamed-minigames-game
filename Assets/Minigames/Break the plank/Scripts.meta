@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Minigames/Break the plank/Scripts.meta
 guid: 4c372b8bde00f594c82d03bd59c0d18f
+=======
+guid: 2166c83be6c9fbd4a9d0af8fbc52d484
+>>>>>>> HitTheRoad_proto:Assets/Scenes/MiniGames/AxoTiming/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

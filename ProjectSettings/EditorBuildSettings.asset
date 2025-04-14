@@ -4,5 +4,22 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Common/MAIN_MainScene.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
+  - enabled: 1
+    path: Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity
+    guid: 6744a29f488521144a2e3e21130a7516
+  - enabled: 1
+    path: Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity
+    guid: 36f42e4076812bf45bb0402d79f621d0
+  - enabled: 1
+    path: "Assets/Application/MainScreens/Scenes/MAIN_Param\xE8tres.unity"
+    guid: 5afce3819ff1adb438ecaf534c47f003
+  - enabled: 1
+    path: Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity
+    guid: cfdc4f6afc7cb0d4a8974134dbba6003
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: f285d866f47e3b24182c02e8fe3fb428, type: 2}
