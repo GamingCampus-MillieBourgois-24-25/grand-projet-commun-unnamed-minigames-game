@@ -19,7 +19,7 @@ public class Random_Axolot : MonoBehaviour
 
         do
         {
-            newIndex = Random.Range(1, 4);
+            newIndex = Random.Range(0, 9);
         }
         while (newIndex == _lastIndex);
 
