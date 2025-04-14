@@ -1,32 +1,28 @@
 using DG.Tweening;
 using UnityEngine;
+using TMPro;
 using Image = UnityEngine.UI.Image;
 
 public class LevelWheel : MonoBehaviour
 {
-    [SerializeField] private float _score;
     [SerializeField] private Image wheel;
-
     [SerializeField] private float rotationDuration = 5f;
     [SerializeField] private Ease easeType = Ease.OutBack;
-
+    [SerializeField] private TextMeshProUGUI _textScore;
+    
     private float _lastTargetRotation = -1f;
-
-    public float Score
+    void Start()
     {
-        get => _score;
-        set => _score = value;
-    }
-    void Update()
-    {
-        float targetRotation = GetTargetRotationFromScore(_score);
-
-        // Si on a changé de palier de score
+        int score = ScoreManager.Instance.GetScore();
+        float targetRotation = GetTargetRotationFromScore(score);
+        
         if (!Mathf.Approximately(targetRotation, _lastTargetRotation))
         {
             AnimateWheel(targetRotation);
             _lastTargetRotation = targetRotation;
         }
+        
+        _textScore.text = score.ToString("n0");
     }
 
     private void AnimateWheel(float rotationZ)
