@@ -6,23 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/LocalizationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/LocalizationManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Prefabs/ROOT HIT THE ROAD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Prefabs/ROOT HIT THE ROAD.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/MovingTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/MovingTile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Minigames/Match the stars/Scripts/MatchingGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Match the stars/Scripts/MatchingGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/PlayerBike.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/PlayerBike.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/LocalizationText.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/Localization/LocalizationText.csv.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/LocalizationSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SimpleLocalization/Resources/LocalizationSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Common/Prefabs/ROOT MAIN SCENE.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/Prefabs/ROOT MAIN SCENE.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Scripts/GlobalSceneController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/Scripts/GlobalSceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +103,7 @@
       <workItem from="1744185127312" duration="8047000" />
       <workItem from="1744272717693" duration="5654000" />
       <workItem from="1744378802927" duration="1367000" />
-      <workItem from="1744633648965" duration="6937000" />
+      <workItem from="1744633648965" duration="8815000" />
     </task>
     <servers />
   </component>
