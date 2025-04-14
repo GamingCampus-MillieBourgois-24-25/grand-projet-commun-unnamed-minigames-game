@@ -6,12 +6,15 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
     {
+        [SerializeField] ButtonController[] attackButtons;
+        [SerializeField] ButtonController blockButton;
+        
         DifficultyMeter difficulty;
         public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             Random.InitState(seed);
 
-           difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
+            difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
 
             FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 3);
         }
@@ -19,14 +22,48 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void InitializeMinigame()
         {
             FoeFightMinigameData.Axo.Spawn(null);
-            FoeFightingUtils.EnnemySpawn(FoeFightMinigameData.GameFoes);
         }
 
         public void StartMinigame()
         {
-            FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackList);
-            //enable inputs
+            NextRound();
         }
 
+
+
+        public void NextRound()
+        {
+            if (!FoeFightingUtils.EnnemySpawn(FoeFightMinigameData.GameFoes))
+            {
+                // no more ennemies : win
+            }
+            BeginTurn();
+        }
+
+        void BeginTurn()
+        {
+            FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackList);
+            for (int i = 0; i < 2; i++)
+            {
+                attackButtons[i].SetButtonType(FoeFightMinigameData.CurrentAttacks[i]);
+                attackButtons[i].enabled = true;
+            }
+        }
+
+        public void FoeTurn(bool blocking)
+        {
+            //foe attack
+
+            if (!blocking)
+            {
+                //game over
+            }
+            else
+            {
+                // tank
+            }
+
+            BeginTurn();//nextTurn
+        }
     }
 }

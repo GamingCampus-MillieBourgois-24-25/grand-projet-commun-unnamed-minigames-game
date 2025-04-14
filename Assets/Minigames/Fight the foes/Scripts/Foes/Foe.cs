@@ -8,7 +8,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         Liquid,
         Fire,
         Food,
-        Wind
+        Wind, 
     }
 
     [RequireComponent(typeof(SpriteRenderer))]
@@ -30,12 +30,12 @@ namespace AxoLoop.Minigames.FightTheFoes
             spriteRenderer.sprite = AliveSprite;
         }
 
-        protected virtual void Attack(Action callBack)
+        protected virtual void AttackAnimation(Action callBack)
         {
             callBack?.Invoke();
         }
 
-        protected virtual void Die(Action callBack)
+        protected virtual void DieAnimation(Action callBack)
         {
             callBack?.Invoke();
         }

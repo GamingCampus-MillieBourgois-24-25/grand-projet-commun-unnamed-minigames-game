@@ -11,9 +11,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         [SerializeField] Sprite DeadSprite;
 
-        protected override void Die(Action callBack)
+        protected override void DieAnimation(Action callBack)
         {
-            StartCoroutine(PlayDeathAnimation(() => base.Die(callBack)));
+            StartCoroutine(PlayDeathAnimation(() => base.DieAnimation(callBack)));
 
         }
 

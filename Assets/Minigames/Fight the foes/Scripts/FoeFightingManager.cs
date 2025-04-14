@@ -8,16 +8,17 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
 
         FoeType foeType;
+        private bool blocking = false;
 
 
         public void PlayAttack(FoeType type)
         {
             var attack = FoeFightMinigameData.AttackList.FirstOrDefault(item => item.attackType == type);
 
+            blocking = false;
             if (attack == null)
             {
-                Debug.LogError("Pas d'attaque correspondant au type souhaité");
-                return;
+                blocking = true;
             }
 
             attack.PlayAttack(OnAttackHit);
@@ -28,12 +29,14 @@ namespace AxoLoop.Minigames.FightTheFoes
             foeType = FoeFightMinigameData.CurrentFoe.FoeType;
             if (attackType == foeType)
             {
+                // réaction à l'attaque efficace
                 FoeFightMinigameData.GameFoes.RemoveAt(0);
-
+                FoeFightingController.Instance.NextRound();
             }
             else
             {
-                //nothing happen, pokemon turn
+                // réaction aux attaques inéfficaces
+                FoeFightingController.Instance.FoeTurn(blocking);
             }
         }
 
