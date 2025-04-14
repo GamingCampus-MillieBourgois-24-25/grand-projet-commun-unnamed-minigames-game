@@ -180,6 +180,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MiniGameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364123340020995454, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8722187169749603186, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       propertyPath: m_Name
@@ -188,8 +224,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7361232063740672339, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2228872912395505662}
   m_SourcePrefab: {fileID: 100100000, guid: caeb6e08e13c04342b1caed598565a0a, type: 3}
+--- !u!1 &2228872912395505661 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7361232063740672339, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2228872912395505662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228872912395505661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 882d588e91ad3a241b02b19619c5c7ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minigames:
+  - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
+  - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
+  - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

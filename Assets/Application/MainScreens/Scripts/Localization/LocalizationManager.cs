@@ -17,7 +17,7 @@ namespace Assets.SimpleLocalization.Scripts
         public static event Action OnLocalizationChanged = () => { }; 
 
         public static Dictionary<string, Dictionary<string, string>> Dictionary = new();
-        public static string _language;
+        public static string _language = "English";
 
 		/// <summary>
 		/// Get or set language.
