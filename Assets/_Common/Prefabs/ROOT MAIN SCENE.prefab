@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6611976732874601990}
   - component: {fileID: 8596298037516272410}
   - component: {fileID: 7818080230778137772}
+  - component: {fileID: 8763094407693590346}
   m_Layer: 0
   m_Name: ROOT MAIN SCENE
   m_TagString: Persistent
@@ -135,6 +136,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
   - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
   - {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
+--- !u!114 &8763094407693590346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065501564649373458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eb5395993a469d46b4afe3d8401c5e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 100
 --- !u!1 &5754104542445662058
 GameObject:
   m_ObjectHideFlags: 0
