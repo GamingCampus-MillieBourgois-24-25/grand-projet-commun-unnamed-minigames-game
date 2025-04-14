@@ -1590,7 +1590,6 @@ GameObject:
   - component: {fileID: 8264724336368421360}
   - component: {fileID: 5775785749051728481}
   - component: {fileID: 2326500350817873010}
-  - component: {fileID: 1083165466727164990}
   - component: {fileID: 6454641720795016455}
   m_Layer: 0
   m_Name: PlayMenuManager
@@ -1652,24 +1651,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed03397602e0f349a0026384966f1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 550
   wheel: {fileID: 3060992356987374189}
   rotationDuration: 5
   easeType: 27
---- !u!114 &1083165466727164990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7361232063740672339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a36a686a179fe447b12c6c21b3b9a87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   _textScore: {fileID: 4404392836802086685}
-  _LevelWheel: {fileID: 2326500350817873010}
 --- !u!114 &6454641720795016455
 MonoBehaviour:
   m_ObjectHideFlags: 0

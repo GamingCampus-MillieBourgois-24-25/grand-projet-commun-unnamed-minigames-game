@@ -1,11 +1,11 @@
+using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MiniGameManager : SingletonMB<MiniGameManager>
 {
     public Minigame[] minigames;  // Liste des mini-jeux
-    private int currentMiniGameIndex = 0;
+    private int currentMiniGameIndex;
 
     public void LoadNextMinigame()
     {
@@ -13,12 +13,26 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         {
             Minigame nextGame = minigames[currentMiniGameIndex];
             Debug.Log($"Chargement du mini-jeu : {nextGame.minigameName}");
-            SceneManager.LoadScene(nextGame.sceneName);
+            GlobalSceneController.OpenScene(nextGame.sceneName);
             currentMiniGameIndex++;
         }
         else
         {
-            Debug.Log("Tous les mini-jeux ont été joués !");
+            Debug.Log("Tous les mini-jeux ont ï¿½tï¿½ jouï¿½s !");
+        }
+    }
+
+    public void ClearScene()
+    {
+        GameObject[] rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+        foreach (GameObject obj in rootObjects)
+        {
+            if (!obj.CompareTag("Persistent") && obj.name != "DontDestroyOnLoad")
+            {
+                GameObject.Destroy(obj);
+            }
         }
     }
 }
+
+

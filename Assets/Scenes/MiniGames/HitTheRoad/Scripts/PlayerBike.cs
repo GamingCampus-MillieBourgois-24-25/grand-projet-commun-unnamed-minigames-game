@@ -19,7 +19,7 @@ public class PlayerBike : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
             {
                 isMoving = false;
-                Invoke(nameof(CheckForFail), defeatCheckDelay); // attends 1s avant de checker si t’as raté
+                Invoke(nameof(CheckForFail), defeatCheckDelay); // attends 1s avant de checker si tï¿½as ratï¿½
             }
         }
 
