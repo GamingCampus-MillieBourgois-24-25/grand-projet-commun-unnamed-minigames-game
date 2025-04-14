@@ -1,50 +1,57 @@
-
+using Assets.Code.GLOBAL;
+using Axoloop.Global;
 using UnityEngine;
 
 public class VoxelGameManager : MonoBehaviour
 {
     public static VoxelGameManager Instance;
     public GameObject victoryPanel; // Panneau de victoire
-    public GameObject defeatPanel;  // Panneau de dÈfaite
+    public GameObject defeatPanel;  // Panneau de d√©faite
 
-    private bool hasWon = false; // VÈrifie si le joueur a gagnÈ
+    private bool hasWon = false; // V√©rifie si le joueur a gagn√©
 
     void Awake()
     {
         Instance = this;
-        // Assurez-vous que les deux panneaux sont dÈsactivÈs au dÈbut
+        // Assurez-vous que les deux panneaux sont d√©sactiv√©s au d√©but
         victoryPanel.SetActive(false);
         defeatPanel.SetActive(false);
     }
 
-    // AppelÈ lorsque le joueur gagne
+    // Appel√© lorsque le joueur gagne
     public void PlayerWins()
     {
-        if (hasWon) return; // Si la victoire a dÈj‡ ÈtÈ atteinte, rien ne se passe
+        if (hasWon) return; // Si la victoire a d√©j√† √©t√© atteinte, rien ne se passe
         Debug.Log("Victoire !");
-        hasWon = true; // Marque que le joueur a gagnÈ
+        hasWon = true; // Marque que le joueur a gagn√©
 
-        // DÈsactive le panneau de dÈfaite si la victoire est dÈclenchÈe
+        // D√©sactive le panneau de d√©faite si la victoire est d√©clench√©e
         defeatPanel.SetActive(false);
         // Affiche le panneau de victoire
         victoryPanel.SetActive(true);
 
-        // DÈclenche l'explosion et l'Èjection du RivalBike
+        // D√©clenche l'explosion et l'√©jection du RivalBike
         RivalBike rival = FindObjectOfType<RivalBike>();
         if (rival != null)
         {
             rival.ExplodeAndEject();
         }
+        MiniGameManager.Instance.ClearScene();
+        MiniGameManager.Instance.LoadNextMinigame();
     }
 
-    // AppelÈ lorsque le joueur Èchoue
+    // Appel√© lorsque le joueur √©choue
     public void PlayerFails()
     {
-        if (hasWon) return; // Si le joueur a dÈj‡ gagnÈ, ignore la dÈfaite
-        Debug.Log("DÈfaite !");
-        // DÈsactive le panneau de victoire si la dÈfaite est dÈclenchÈe
+        if (hasWon) return; // Si le joueur a d√©j√† gagn√©, ignore la d√©faite
+        Debug.Log("D√©faite !");
+        
+        MiniGameManager.Instance.ClearScene();
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+        
+        // D√©sactive le panneau de victoire si la d√©faite est d√©clench√©e
         victoryPanel.SetActive(false);
-        // Affiche le panneau de dÈfaite
+        // Affiche le panneau de d√©faite
         defeatPanel.SetActive(true);
     }
 }

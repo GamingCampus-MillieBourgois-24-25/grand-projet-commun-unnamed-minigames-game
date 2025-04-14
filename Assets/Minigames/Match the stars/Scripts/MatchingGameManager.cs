@@ -9,18 +9,18 @@ public class MatchingGameManager : MonoBehaviour
     [Header("Pattern Settings")]
     public List<Sprite> allSymbols; // Liste de tous les symboles disponibles
     public Image[] patternSlots; // Les 3 slots qui affichent le motif cible
-    public Image[] playerSlots; // Slots où le joueur place ses choix
+    public Image[] playerSlots; // Slots oï¿½ le joueur place ses choix
 
     [Header("UI Elements")]
-    public Transform centerSymbolsPanel; // Panel contenant les symboles sélectionnables
+    public Transform centerSymbolsPanel; // Panel contenant les symboles sï¿½lectionnables
     public GameObject symbolPrefab; // Prefab d'un symbole interactif
     public TextMeshProUGUI timerText; // Texte du timer
     public TextMeshProUGUI victoryText; // Texte de victoire
 
     [Header("Game Settings")]
-    public float gameTime = 10f; // Temps imparti pour compléter le pattern
+    public float gameTime = 10f; // Temps imparti pour complï¿½ter le pattern
     private float timer;
-    private List<Sprite> patternToMatch; // Liste du motif à reproduire
+    private List<Sprite> patternToMatch; // Liste du motif ï¿½ reproduire
     private bool isGameActive = false;
 
     void Start()
@@ -104,12 +104,7 @@ public class MatchingGameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Échec ! Réessaie !");
+            Debug.Log("ï¿½chec ! Rï¿½essaie !");
         }
-    }
-
-    void LoadNextMinigame()
-    {
-        FindObjectOfType<MiniGameManager>().LoadNextMinigame();
     }
 }
