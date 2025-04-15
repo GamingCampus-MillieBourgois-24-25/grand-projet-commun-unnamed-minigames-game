@@ -1,13 +1,15 @@
 Génération du terrain par chunks : 
 
-* 1 chunk de terrain + un chunk de route + props = une tuile
-* Assemblage de tuiles en ligne
-* Défilement vers l'arrière en mode tapis roulant
-* génération à l'avant & disparition à l'arrière
+* 1 chunk de terrain + un chunk de route + props = une tuile : done
+* Assemblage de tuiles en ligne : done
+* Défilement vers l'arrière en mode tapis roulant : done
+* génération à l'avant & disparition à l'arrière : done 
 
-Assets : Terrain + route + props -> Assembler en un prefab de tuile
-
+Assets : Terrain + route + props -> Assembler en un prefab de tuile : presque fini
 
 Paramètres : 
 Vitesse de défilement
+
+Une tuile verte en mode forêt, une en jaune pour du sable et une autre en blanche pour de la neige et y mettre des particules pour simuler de la neige 
+Ajouter plus d'une moto.
 
