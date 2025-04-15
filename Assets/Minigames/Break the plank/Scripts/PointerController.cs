@@ -61,6 +61,10 @@ public class PointerController : MonoBehaviour
         {
             successCount++;
             moveSpeed += speedIncrease;
+
+            // Déclenche une vibration
+            Handheld.Vibrate();
+
             Debug.Log($"Succès {successCount}/{successNeeded}");
 
             if (successCount >= successNeeded)
