@@ -4,7 +4,8 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance {get; private set;}
 
-    [SerializeField] private int score = 100;
+    [SerializeField] private int totalScore = 0;
+    [SerializeField] private int currentScore = 0;
 
     private void Awake()
     {
@@ -15,35 +16,37 @@ public class ScoreManager : MonoBehaviour
         }
         Instance = this;
     }
-
-    private void Update()
+    
+    public int AddTotalScore(int amount)
     {
-        //Test
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            AddScore(10);
-        }
-    }
-
-    public void AddScore(int amount)
-    {
-        score += amount;
+        totalScore += amount;
+        return totalScore;
     }
     
-    public void SubtractScore(int amount)
+    public int GetTotalScore()
     {
-        score -= amount;
-        if (score < 0) score = 0;
+        return totalScore;
     }
 
-    public int GetScore()
+    public void ResetTotalScore()
     {
-        return score;
+        totalScore = 0;
+    }
+    
+    public int AddCurrentScore(int amount)
+    {
+        currentScore += amount;
+        return currentScore;
+    }
+    
+    public int GetCurrentScore()
+    {
+        return currentScore;
     }
 
-    public void ResetScore()
+    public void ResetCurrentScore()
     {
-        score = 0;
+        currentScore = 0;
     }
 }
 

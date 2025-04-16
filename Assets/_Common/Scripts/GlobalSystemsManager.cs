@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 /// <summary>
-/// Gère l'EventSystem et l'AudioListener pour éviter les conflits entre plusieurs scènes.
+/// Gï¿½re l'EventSystem et l'AudioListener pour ï¿½viter les conflits entre plusieurs scï¿½nes.
 /// </summary>
 public class GlobalSystemManager : MonoBehaviour
 {
@@ -14,8 +14,8 @@ public class GlobalSystemManager : MonoBehaviour
         _eventSystem = GetComponentInChildren<EventSystem>();
         _audioListener = GetComponentInChildren<AudioListener>();
 
-        // Désactiver les composants si la scène est chargée en mode additif
-        if (IsSceneAdditive())
+        // Dï¿½sactiver les composants si la scï¿½ne est chargï¿½e en mode additif
+        if (IsSceneAdditive() && _eventSystem && _audioListener)
         {
             _eventSystem.enabled = false;
             _audioListener.enabled = false;
@@ -24,7 +24,7 @@ public class GlobalSystemManager : MonoBehaviour
 
     private bool IsSceneAdditive()
     {
-        // Si plus d'une scène est chargée, on considère que cette scène est additive
+        // Si plus d'une scï¿½ne est chargï¿½e, on considï¿½re que cette scï¿½ne est additive
         return UnityEngine.SceneManagement.SceneManager.sceneCount > 1;
     }
 }

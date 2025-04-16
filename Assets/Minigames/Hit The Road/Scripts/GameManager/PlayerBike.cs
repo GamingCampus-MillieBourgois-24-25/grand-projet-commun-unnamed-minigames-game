@@ -16,13 +16,12 @@ public class PlayerBike : MonoBehaviour
         if (isMoving)
         {
             transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
-            if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
+            if (Vector3.Distance(transform.position, targetPosition) < 0.1f && RivalBike.Instance.rivalPassed)
             {
                 isMoving = false;
-                Invoke(nameof(CheckForFail), defeatCheckDelay); // attends 1s avant de checker si t�as rat�
+                Invoke(nameof(VoxelGameManager.Instance.PlayerFails), defeatCheckDelay); // attends 1s avant de checker si t�as rat�
             }
         }
-
     }
 
     public void MoveLeft()
@@ -56,27 +55,9 @@ public class PlayerBike : MonoBehaviour
         if (other.CompareTag("RivalBike"))
         {
             hasCollided = true;
-            CancelInvoke(nameof(CheckForFail));
+            CancelInvoke(nameof(VoxelGameManager.Instance.PlayerFails));
             VoxelGameManager.Instance.PlayerWins();
         }
     }
-
-    private void CheckForFail()
-    {
-        if (hasCollided) return;
-
-        RivalBike rival = FindObjectOfType<RivalBike>();
-        if (rival == null) return;
-
-        float rivalZ = rival.transform.position.z;
-        float playerZ = transform.position.z;
-
-        bool rivalHasPassed = rivalZ > playerZ + 1f;
-        bool playerIsOnWrongLane = Mathf.Abs(transform.position.x - rival.GetFinalLane()) > 0.1f;
-
-        if (rivalHasPassed || playerIsOnWrongLane)
-        {
-            VoxelGameManager.Instance.PlayerFails();
-        }
-    }
+    
 }
