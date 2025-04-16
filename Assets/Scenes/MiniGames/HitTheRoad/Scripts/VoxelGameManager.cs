@@ -39,7 +39,7 @@ public class VoxelGameManager : MonoBehaviour
         }
         MiniGameManager.Instance.ClearScene();
         ScoreManager.Instance.AddScore(10);
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
     }
 
     // Appelé lorsque le joueur échoue
