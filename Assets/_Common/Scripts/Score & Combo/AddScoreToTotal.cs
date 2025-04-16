@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AddScoreToTotal : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _currentScore;
+    private void Start()
     {
-        
+        CalulTotalScore();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void CalulTotalScore()
     {
-        
+        _currentScore = ScoreManager.Instance.GetCurrentScore();
+        ScoreManager.Instance.AddTotalScore(_currentScore);
     }
 }
