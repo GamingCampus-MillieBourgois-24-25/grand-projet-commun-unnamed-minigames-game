@@ -7,6 +7,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
 
+
     public void LoadNextMinigame()
     {
         if (currentMiniGameIndex < minigames.Length)

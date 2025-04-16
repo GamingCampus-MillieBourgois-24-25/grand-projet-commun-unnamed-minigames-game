@@ -55,12 +55,14 @@ namespace Assets.Scripts.GLOBAL
         /// <summary>
         /// Asynchronously unloads the scene and fire the SceneUnloaded event when the scene is unloaded
         /// </summary>
-        public void UnloadScene()
+        public void UnloadScene(Action<string> callBack = null)
         {
+            SceneUnloaded += callBack;
             DisableScene();
             PlayUnloadTransition();
             StartCoroutine(SceneLoader.UnloadingProcess(SceneName, SceneUnloaded));
         }
+
 
 
 
