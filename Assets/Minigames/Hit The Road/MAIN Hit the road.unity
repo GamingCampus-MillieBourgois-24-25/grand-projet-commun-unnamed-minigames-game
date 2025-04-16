@@ -460,45 +460,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1330317341581512135, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529744764504565056, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.647
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529744764504565056, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.492
-      objectReference: {fileID: 0}
-    - target: {fileID: 1529744764504565056, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.239
-      objectReference: {fileID: 0}
-    - target: {fileID: 3854168499672019114, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.297742
-      objectReference: {fileID: 0}
     - target: {fileID: 5403036228487259694, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: m_Name
       value: ROOT HIT THE ROAD
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197121025547136354, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 8197121025547136354, guid: 148a96fc7d24d154f855d53803ee9e4f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8606339549949029971, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
