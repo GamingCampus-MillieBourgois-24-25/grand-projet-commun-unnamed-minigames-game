@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/TransitionMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/TransitionMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/SnowBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/SnowBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/Scripts/GlobalSystemsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/Scripts/GlobalSystemsManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/HitTheRoadSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -105,13 +105,14 @@
       <workItem from="1744272717693" duration="5654000" />
       <workItem from="1744378802927" duration="1367000" />
       <workItem from="1744633648965" duration="8815000" />
-      <workItem from="1744788352425" duration="8602000" />
+      <workItem from="1744788352425" duration="10919000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />

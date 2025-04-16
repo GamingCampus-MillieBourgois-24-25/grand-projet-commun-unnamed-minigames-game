@@ -58,7 +58,7 @@ public class VoxelGameManager : MonoBehaviour
             MiniGameManager.Instance.isWin = false;
         }
         
-        MiniGameManager.Instance.MiniGameWinned(hasWon);
+        MiniGameManager.Instance.MiniGameFinished(hasWon);
     }
 }
 
