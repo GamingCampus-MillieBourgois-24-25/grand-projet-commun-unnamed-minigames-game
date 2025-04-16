@@ -6,7 +6,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class Firefox : Foe
     {
-        FoeType FoeType = FoeType.Fire;
+        public override FoeType FoeType => FoeType.Fire;
 
         [SerializeField] SpriteRenderer DeadSprite; 
 

@@ -6,7 +6,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class Slime : Foe
     {
-        FoeType FoeType = FoeType.Liquid;
+        public override FoeType FoeType => FoeType.Liquid;
 
         [SerializeField] SpriteRenderer DeadSprite;
 

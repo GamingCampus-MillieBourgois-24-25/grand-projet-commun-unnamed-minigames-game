@@ -16,9 +16,8 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         public string Name { get; private set; }
         [SerializeField] protected SpriteRenderer AliveSprite;
-        [SerializeField] protected FoeType foeType;
 
-        public FoeType FoeType => foeType;
+        public virtual FoeType FoeType { get; }
 
         protected virtual void Start()
         {
