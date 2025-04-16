@@ -15,19 +15,14 @@ namespace AxoLoop.Minigames.FightTheFoes
     public class Foe : MonoBehaviour
     {
         public string Name { get; private set; }
-        [SerializeField] protected Sprite AliveSprite;
-        //public Sprite DeadSprite { get; private set; }
+        [SerializeField] protected SpriteRenderer AliveSprite;
         [SerializeField] protected FoeType foeType;
 
         public FoeType FoeType => foeType;
 
-        protected SpriteRenderer spriteRenderer;
-
-
         protected virtual void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = AliveSprite;
+
         }
 
         protected virtual void AttackAnimation(Action callBack)

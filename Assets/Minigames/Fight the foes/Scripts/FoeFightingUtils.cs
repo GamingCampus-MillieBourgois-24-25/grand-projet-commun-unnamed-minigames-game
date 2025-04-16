@@ -44,17 +44,6 @@ namespace AxoLoop.Minigames.FightTheFoes
             return gameFoes;
         }
 
-        public static bool EnnemySpawn(List<Foe> gamefoes)
-        {
-            if (gamefoes.Count != 0)
-            {
-                FoeFightMinigameData.CurrentFoe = gamefoes[0];
-                return true;
-            }
-            return false;
-        }
-
-
         public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<IAttack> attackList)
         {
             List<FoeType> attacks = new();

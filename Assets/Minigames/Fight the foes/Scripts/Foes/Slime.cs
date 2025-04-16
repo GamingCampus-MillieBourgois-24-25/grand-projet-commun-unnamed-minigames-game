@@ -8,7 +8,13 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         FoeType FoeType = FoeType.Liquid;
 
-        [SerializeField] Sprite DeadSprite;
+        [SerializeField] SpriteRenderer DeadSprite;
+
+        protected override void Start()
+        {
+            base.Start();
+            DeadSprite.color = new Vector4(1, 1, 1, 0);
+        }
 
         protected override void DieAnimation(Action callBack)
         {
@@ -18,8 +24,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         IEnumerator PlayDeathAnimation(Action callBack)
         {
-            spriteRenderer.sprite = DeadSprite;
-            yield return new WaitForSeconds(2);
+            AliveSprite.enabled = false;
+            yield return new WaitForSeconds(1f);
             callBack.Invoke();
         }
     }

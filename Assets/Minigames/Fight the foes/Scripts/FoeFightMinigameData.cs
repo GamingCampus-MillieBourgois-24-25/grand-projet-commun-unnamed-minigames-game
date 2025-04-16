@@ -11,11 +11,11 @@ namespace AxoLoop.Minigames.FightTheFoes
     [RequireComponent(typeof(SpriteRenderer))]
     public class FoeFightMinigameData : SingletonMB<FoeFightMinigameData>
     {
-        [SerializeField] Foe currentFoe;
+        Foe currentFoe;
         [SerializeField] List<IAttack> attackList = new List<IAttack>();
-        [SerializeField] List<FoeType> currentAttacks = new List<FoeType>();
+        List<FoeType> currentAttacks = new List<FoeType>();
         [SerializeField] List<Foe> foesList = new List<Foe>();
-        [SerializeField] List<Foe> gameFoes = new List<Foe>();
+        List<Foe> gameFoes = new List<Foe>();
         [SerializeField] Axo axo;
 
         public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }

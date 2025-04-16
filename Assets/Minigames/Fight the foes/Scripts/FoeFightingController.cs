@@ -8,7 +8,8 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         [SerializeField] ButtonController[] attackButtons;
         [SerializeField] ButtonController blockButton;
-        
+        [SerializeField] GameObject spawnPoint;
+
         DifficultyMeter difficulty;
         public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
@@ -33,7 +34,11 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void NextRound()
         {
-            if (!FoeFightingUtils.EnnemySpawn(FoeFightMinigameData.GameFoes))
+            if (FoeFightMinigameData.GameFoes.Count > 0)
+            {
+                FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPoint.transform.position, Quaternion.identity);                    
+            }
+            else
             {
                 // no more ennemies : win
             }
