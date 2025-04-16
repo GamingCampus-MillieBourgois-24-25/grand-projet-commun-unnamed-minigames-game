@@ -301,6 +301,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e8e164d5c986a54dab213288f1fdad1, type: 3}
+--- !u!4 &1194363075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2605713577029966128, guid: 148a96fc7d24d154f855d53803ee9e4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 9077328109070111810}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1234671491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,6 +420,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cc7fde383f4e564b9db8abdd97a992d, type: 3}
+--- !u!1 &1545767061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545767062}
+  m_Layer: 6
+  m_Name: EmptyObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545767062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545767061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1194363075}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1569545878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8197121025547136354, guid: 148a96fc7d24d154f855d53803ee9e4f,
@@ -953,6 +990,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      propertyPath: emptyObject
+      value: 
+      objectReference: {fileID: 1545767061}
     - target: {fileID: 890392939891493221, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: orthographic size
@@ -1041,6 +1083,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2605713577029966128, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1545767062}
     - targetCorrespondingSourceObject: {fileID: 6199677668376573669, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       insertIndex: -1
