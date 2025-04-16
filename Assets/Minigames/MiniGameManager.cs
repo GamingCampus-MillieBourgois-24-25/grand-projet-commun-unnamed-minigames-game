@@ -7,6 +7,11 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
 
+    public void MiniGameWinned(bool victory)
+    {
+        
+    }
+    
     public void LoadNextMinigame()
     {
         currentMiniGameIndex = 0;
