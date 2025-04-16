@@ -14,6 +14,7 @@ public class GenerateTiles : MonoBehaviour
     public GameObject tile;
     public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
     public GameObject endPoint; 
+    public GameObject emptyObject;
     /*Position for the front tile, the tile rendered by the camera, and the last tile*/
     Vector3 frontPosition;
     Vector3 mainPosition;
@@ -62,6 +63,10 @@ public class GenerateTiles : MonoBehaviour
                 startPoint = GameObject.Find("StartPoint");
             }
         }
+        else if (!emptyObject)
+        {
+            emptyObject = GameObject.Find("EmptyObject");
+        }
         else
         {
             Debug.Log("GenerateTile.cs : variable tilenon assigné");
@@ -71,13 +76,13 @@ public class GenerateTiles : MonoBehaviour
     void SettingUpTheDesertScene()
     {
         mainPosition.z = 50f;
-        Instantiate(tile, mainPosition, Quaternion.identity);
+        Instantiate(tile, mainPosition, Quaternion.identity,emptyObject.transform);
 
         mainPosition = new Vector3(0, 0, 0);
-        Instantiate(tile, mainPosition, Quaternion.identity);
+        Instantiate(tile, mainPosition, Quaternion.identity, emptyObject.transform);
 
         mainPosition.z = -50f;
-        Instantiate(tile, mainPosition, Quaternion.identity);
+        Instantiate(tile, mainPosition, Quaternion.identity, emptyObject.transform);
         
         tile.GetComponent<MovingTile>().setSpeed(tileSpeed);
     }

@@ -1,6 +1,7 @@
 ﻿using Axoloop.Global;
 using Axoloop.Global.UI;
 using Axoloop.Scripts.Global;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -99,6 +100,22 @@ namespace Assets.Code.GLOBAL
         {
             ShowLoader();
             Instance.StartCoroutine(SceneLoader.LoadingProcess(targetScene, Instance.SceneLoadedHandler));
+        }
+
+        public static void ReloadScene()
+        {
+            string targetScene = Instance._loadedScene.SceneName;
+            ShowBlackScreen();
+            ShowLoader();
+
+            Action<string> sceneUnloaded = null; 
+            sceneUnloaded = (string sceneName) =>
+                {
+                    Instance._loadedScene.SceneUnloaded -= sceneUnloaded; 
+                    Instance._loadedScene = null;
+                    OpenScene(sceneName);
+                };
+            Instance._loadedScene?.UnloadScene(sceneUnloaded);
         }
         
         

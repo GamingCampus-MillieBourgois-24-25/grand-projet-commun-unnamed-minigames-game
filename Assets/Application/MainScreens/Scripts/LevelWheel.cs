@@ -13,7 +13,7 @@ public class LevelWheel : MonoBehaviour
     private float _lastTargetRotation = -1f;
     void Start()
     {
-        int score = ScoreManager.Instance.GetScore();
+        int score = ScoreManager.Instance.GetTotalScore();
         float targetRotation = GetTargetRotationFromScore(score);
         
         if (!Mathf.Approximately(targetRotation, _lastTargetRotation))

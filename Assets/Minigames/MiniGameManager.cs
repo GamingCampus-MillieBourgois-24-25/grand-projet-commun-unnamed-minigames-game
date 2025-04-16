@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -6,9 +9,44 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 {
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
+    public bool isWin;
 
+    public void MiniGameFinished(bool victory)
+    {
+        if (victory)
+        {
+            Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
+            
+            StartCoroutine(DelayAfterWin(Step2));
+            
+        }
+
+        if (!victory)
+        {
+            StartCoroutine(DelayAfterLose());
+        }
+    }
+    private IEnumerator DelayAfterWin(Action callback)
+    {
+        yield return new WaitForSeconds(2f);
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+        callback.Invoke();
+    }
+
+    private IEnumerator DelayAfterLose()
+    {
+        yield return new WaitForSeconds(2f);
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+    }
+
+    private IEnumerator DelayToStartMiniGame()
+    {
+        yield return new WaitForSeconds(1f);
+        LoadNextMinigame();
+    }
     public void LoadNextMinigame()
     {
+        currentMiniGameIndex = 0;
         if (currentMiniGameIndex < minigames.Length)
         {
             Minigame nextGame = minigames[currentMiniGameIndex];
@@ -19,18 +57,6 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         else
         {
             Debug.Log("Tous les mini-jeux ont �t� jou�s !");
-        }
-    }
-
-    public void ClearScene()
-    {
-        GameObject[] rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
-        foreach (GameObject obj in rootObjects)
-        {
-            if (!obj.CompareTag("Persistent") && obj.name != "DontDestroyOnLoad")
-            {
-                GameObject.Destroy(obj);
-            }
         }
     }
 }

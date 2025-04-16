@@ -46,4 +46,9 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log($"Niveau {currentLevel} | SafeZone X: {newX} | Largeur: {newWidth}");
     }
+
+    public float GetCurrentSpeed()
+    {
+        return baseSpeed + (currentLevel - 1) * speedIncrement;
+    }
 }
