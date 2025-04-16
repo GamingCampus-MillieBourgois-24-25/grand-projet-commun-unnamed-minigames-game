@@ -19,12 +19,12 @@ namespace Axoloop.Global
         /// <summary>
         /// This method should handle the loading of the scene and its initialization
         /// </summary>
-        public void LoadScene(Action<string> callBack);
+        public void LoadScene(Action<string> callBack = null);
 
         /// <summary>
         /// This method should handle the destruction of the scene, the transition and the unloading of the scene
         /// </summary>
-        public void UnloadScene();
+        public void UnloadScene(Action<string> callback = null);
 
         /// <summary>
         /// Fire this event when the scene is loaded and ready to be used

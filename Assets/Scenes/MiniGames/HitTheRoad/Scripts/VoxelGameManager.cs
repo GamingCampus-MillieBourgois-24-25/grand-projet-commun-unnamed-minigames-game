@@ -1,7 +1,7 @@
+using System.Collections;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class VoxelGameManager : MonoBehaviour
 {
@@ -37,9 +37,8 @@ public class VoxelGameManager : MonoBehaviour
         {
             rival.ExplodeAndEject();
         }
-        MiniGameManager.Instance.ClearScene();
-        ScoreManager.Instance.AddScore(10);
-        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+
+        StartCoroutine(DelayAfterWin());
     }
 
     // Appelé lorsque le joueur échoue
@@ -47,14 +46,28 @@ public class VoxelGameManager : MonoBehaviour
     {
         if (hasWon) return; // Si le joueur a déjà gagné, ignore la défaite
         Debug.Log("Défaite !");
-        
-        MiniGameManager.Instance.ClearScene();
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+
+        StartCoroutine(DelayAfterLose());
         
         // Désactive le panneau de victoire si la défaite est déclenchée
         victoryPanel.SetActive(false);
         // Affiche le panneau de défaite
         defeatPanel.SetActive(true);
+    }
+
+    private IEnumerator DelayAfterWin()
+    {
+        yield return new WaitForSeconds(2f);
+        MiniGameManager.Instance.ClearScene();
+        ScoreManager.Instance.AddScore(10);
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+    }
+
+    private IEnumerator DelayAfterLose()
+    {
+        yield return new WaitForSeconds(2f);
+        MiniGameManager.Instance.ClearScene();
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
     }
 }
 
