@@ -1325,7 +1325,6 @@ GameObject:
   - component: {fileID: 3288200742556362636}
   - component: {fileID: 7670328084806732526}
   - component: {fileID: 7829244486677229854}
-  - component: {fileID: 5893279724701752962}
   m_Layer: 0
   m_Name: Score&ComboManager
   m_TagString: Untagged
@@ -1370,18 +1369,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6cceb9fcc30f8045a19bdba83f8ff07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5893279724701752962
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5728760458500790963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c45453ecf66f69489e367bf7f22df1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6023264383200156466
