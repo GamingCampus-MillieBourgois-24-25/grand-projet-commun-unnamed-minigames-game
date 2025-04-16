@@ -1,6 +1,7 @@
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class VoxelGameManager : MonoBehaviour
 {
@@ -37,7 +38,8 @@ public class VoxelGameManager : MonoBehaviour
             rival.ExplodeAndEject();
         }
         MiniGameManager.Instance.ClearScene();
-        MiniGameManager.Instance.LoadNextMinigame();
+        ScoreManager.Instance.AddScore(10);
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
     }
 
     // Appelé lorsque le joueur échoue
