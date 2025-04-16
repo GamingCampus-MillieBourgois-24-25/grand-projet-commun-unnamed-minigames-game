@@ -9,6 +9,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 
     public void LoadNextMinigame()
     {
+        currentMiniGameIndex = 0;
         if (currentMiniGameIndex < minigames.Length)
         {
             Minigame nextGame = minigames[currentMiniGameIndex];
