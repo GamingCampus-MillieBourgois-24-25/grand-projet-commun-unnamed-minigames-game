@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -9,11 +11,14 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     private int currentMiniGameIndex;
     public bool isWin;
 
-    public void MiniGameWinned(bool victory)
+    public void MiniGameFinished(bool victory)
     {
         if (victory)
         {
-            StartCoroutine(DelayAfterWin());
+            Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
+            
+            StartCoroutine(DelayAfterWin(Step2));
+            
         }
 
         if (!victory)
@@ -21,18 +26,23 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
             StartCoroutine(DelayAfterLose());
         }
     }
-    private IEnumerator DelayAfterWin()
+    private IEnumerator DelayAfterWin(Action callback)
     {
         yield return new WaitForSeconds(2f);
-        MiniGameManager.Instance.ClearScene();
         GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+        callback.Invoke();
     }
 
     private IEnumerator DelayAfterLose()
     {
         yield return new WaitForSeconds(2f);
-        MiniGameManager.Instance.ClearScene();
         GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+    }
+
+    private IEnumerator DelayToStartMiniGame()
+    {
+        yield return new WaitForSeconds(1f);
+        LoadNextMinigame();
     }
     public void LoadNextMinigame()
     {
@@ -47,18 +57,6 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         else
         {
             Debug.Log("Tous les mini-jeux ont �t� jou�s !");
-        }
-    }
-
-    public void ClearScene()
-    {
-        GameObject[] rootObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
-        foreach (GameObject obj in rootObjects)
-        {
-            if (!obj.CompareTag("Persistent") && obj.name != "DontDestroyOnLoad")
-            {
-                GameObject.Destroy(obj);
-            }
         }
     }
 }
