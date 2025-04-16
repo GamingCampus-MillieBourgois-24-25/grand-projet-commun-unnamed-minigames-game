@@ -180,6 +180,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 970362470237953722, guid: 1b4c2dca03ae4f34abefd6d1e777fffe,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1193003259171492940, guid: 1b4c2dca03ae4f34abefd6d1e777fffe,
         type: 3}
       propertyPath: m_Name
@@ -962,6 +967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ROOT HIT THE ROAD
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403036228487259694, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Persistent
       objectReference: {fileID: 0}
     - target: {fileID: 6199677668376573669, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
