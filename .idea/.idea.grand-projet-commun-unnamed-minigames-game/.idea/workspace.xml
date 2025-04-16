@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/z_Others/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/z_Others/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-    </list>
+    <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +98,7 @@
       <workItem from="1744272717693" duration="5654000" />
       <workItem from="1744378802927" duration="1367000" />
       <workItem from="1744633648965" duration="8815000" />
-      <workItem from="1744788352425" duration="1663000" />
+      <workItem from="1744788352425" duration="2634000" />
     </task>
     <servers />
   </component>
