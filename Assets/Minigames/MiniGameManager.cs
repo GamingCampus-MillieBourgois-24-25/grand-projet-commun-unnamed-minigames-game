@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -6,12 +7,33 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 {
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
+    public bool isWin;
 
     public void MiniGameWinned(bool victory)
     {
-        
+        if (victory)
+        {
+            StartCoroutine(DelayAfterWin());
+        }
+
+        if (!victory)
+        {
+            StartCoroutine(DelayAfterLose());
+        }
     }
-    
+    private IEnumerator DelayAfterWin()
+    {
+        yield return new WaitForSeconds(2f);
+        MiniGameManager.Instance.ClearScene();
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+    }
+
+    private IEnumerator DelayAfterLose()
+    {
+        yield return new WaitForSeconds(2f);
+        MiniGameManager.Instance.ClearScene();
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+    }
     public void LoadNextMinigame()
     {
         currentMiniGameIndex = 0;
