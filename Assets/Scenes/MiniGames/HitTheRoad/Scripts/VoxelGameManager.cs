@@ -9,7 +9,7 @@ public class VoxelGameManager : MonoBehaviour
     public GameObject victoryPanel; // Panneau de victoire
     public GameObject defeatPanel;  // Panneau de défaite
 
-    private bool hasWon = false; // Vérifie si le joueur a gagné
+    private bool hasWon; // Vérifie si le joueur a gagné
 
     void Awake()
     {
@@ -22,52 +22,43 @@ public class VoxelGameManager : MonoBehaviour
     // Appelé lorsque le joueur gagne
     public void PlayerWins()
     {
-        if (hasWon) return; // Si la victoire a déjà été atteinte, rien ne se passe
-        Debug.Log("Victoire !");
-        hasWon = true; // Marque que le joueur a gagné
-
-        // Désactive le panneau de défaite si la victoire est déclenchée
-        defeatPanel.SetActive(false);
-        // Affiche le panneau de victoire
-        victoryPanel.SetActive(true);
-
-        // Déclenche l'explosion et l'éjection du RivalBike
-        RivalBike rival = FindObjectOfType<RivalBike>();
-        if (rival != null)
-        {
-            rival.ExplodeAndEject();
-        }
-
-        StartCoroutine(DelayAfterWin());
+        EndGame(true);
     }
 
     // Appelé lorsque le joueur échoue
     public void PlayerFails()
     {
-        if (hasWon) return; // Si le joueur a déjà gagné, ignore la défaite
-        Debug.Log("Défaite !");
+        EndGame(false);
+    }
 
-        StartCoroutine(DelayAfterLose());
+    public void EndGame(bool won)
+    {
+        hasWon = won;
+
+        if (won)
+        {
+            Debug.Log("Victoire !");
+            defeatPanel.SetActive(false);
+            victoryPanel.SetActive(true);
+
+            RivalBike rival = FindObjectOfType<RivalBike>();
+            if (rival != null)
+            {
+                rival.ExplodeAndEject();
+            }
+
+            MiniGameManager.Instance.isWin = true;
+        }
+        else
+        {
+            Debug.Log("Défaite !");
+            victoryPanel.SetActive(false);
+            defeatPanel.SetActive(true);
+
+            MiniGameManager.Instance.isWin = false;
+        }
         
-        // Désactive le panneau de victoire si la défaite est déclenchée
-        victoryPanel.SetActive(false);
-        // Affiche le panneau de défaite
-        defeatPanel.SetActive(true);
-    }
-
-    private IEnumerator DelayAfterWin()
-    {
-        yield return new WaitForSeconds(2f);
-        MiniGameManager.Instance.ClearScene();
-        ScoreManager.Instance.AddScore(10);
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
-    }
-
-    private IEnumerator DelayAfterLose()
-    {
-        yield return new WaitForSeconds(2f);
-        MiniGameManager.Instance.ClearScene();
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+        MiniGameManager.Instance.MiniGameWinned(hasWon);
     }
 }
 
