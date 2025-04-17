@@ -28,6 +28,6 @@ public class ComboManager : MonoBehaviour
 
     public void ResetCombo()
     {
-        combo = 0;
+        combo = 1;
     }
 }
