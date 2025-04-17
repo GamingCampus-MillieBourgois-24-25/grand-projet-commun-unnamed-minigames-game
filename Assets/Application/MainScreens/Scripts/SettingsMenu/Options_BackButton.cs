@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Options_Back : MonoBehaviour
 {
-    [SerializeField] private Menu_OptionsButton _menuOptionsButton;
+    private Menu_OptionsButton _menuOptionsButton;
 
     private void Start()
     {
@@ -12,6 +12,5 @@ public class Options_Back : MonoBehaviour
     public void CloseScene()
     {
         GlobalSceneController.UnloadOverlayScene();
-        _menuOptionsButton.optionOpen = false;
     }
 }

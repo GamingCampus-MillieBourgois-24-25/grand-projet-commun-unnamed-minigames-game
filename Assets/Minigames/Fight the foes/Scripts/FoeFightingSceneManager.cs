@@ -6,18 +6,13 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class FoeFightingSceneManager : BaseSceneManager<FoeFightingSceneManager>, ISceneManager
     {
-        // Ctrl + M + O pour déplier toutes les régions
+        // Ctrl + M + O pour dï¿½plier toutes les rï¿½gions
         #region PROPERTIES----------------------------------------------------------------------
 
         public override string SceneName { get => "MAIN Fight The Foes"; }
              
         public override SceneLevel SceneLevel { get => SceneLevel.Level1; }
-
-        public Action<string> SceneLoaded { get; set; }
-
-        public Action<string> SceneUnloaded { get; set; }
-
-
+        
 
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
