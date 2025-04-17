@@ -25,6 +25,7 @@ public class ScoreManager : MonoBehaviour
     
     public int GetTotalScore()
     {
+        totalScore = PlayerPrefs.GetInt("totalscore");
         return totalScore;
     }
 

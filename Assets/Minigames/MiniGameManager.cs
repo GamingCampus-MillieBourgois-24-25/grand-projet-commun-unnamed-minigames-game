@@ -10,6 +10,8 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
     public bool isWin;
+    [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
+    
 
     public void MiniGameFinished(bool victory)
     {
@@ -18,7 +20,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
             Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
             
             StartCoroutine(DelayAfterWin(Step2));
-            
+            _calculScoreAndCombo.OnMiniGameWon();
         }
 
         if (!victory)
