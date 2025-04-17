@@ -21,7 +21,7 @@ public class LevelWheel : MonoBehaviour
             AnimateWheel(targetRotation);
             _lastTargetRotation = targetRotation;
         }
-        
+
         _textScore.text = score.ToString("n0");
     }
 
