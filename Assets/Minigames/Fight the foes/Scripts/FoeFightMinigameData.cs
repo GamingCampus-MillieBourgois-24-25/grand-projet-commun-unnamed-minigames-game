@@ -13,6 +13,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         Foe currentFoe;
         [SerializeField] List<IAttack> attackList = new List<IAttack>();
+        [SerializeField] List<AttackObject> attackObjectList = new List<AttackObject>();
         List<FoeType> currentAttacks = new List<FoeType>();
         [SerializeField] List<Foe> foesList = new List<Foe>();
         List<Foe> gameFoes = new List<Foe>();
@@ -20,6 +21,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
         public static List<IAttack> AttackList { get => Instance.attackList; set => Instance.attackList = value; }
+        public static List<AttackObject> AttackObjectList { get => Instance.attackObjectList; set => Instance.attackObjectList = value; }
         public static List<FoeType> CurrentAttacks { get => Instance.currentAttacks; set => Instance.currentAttacks = value; }
         public static List<Foe> FoesList { get => Instance.foesList; set => Instance.foesList = value; }
         public static List<Foe> GameFoes { get => Instance.gameFoes; set => Instance.gameFoes = value; }

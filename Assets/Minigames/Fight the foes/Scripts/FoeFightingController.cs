@@ -36,7 +36,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             if (FoeFightMinigameData.GameFoes.Count > 0)
             {
-                FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPoint.transform.position, Quaternion.identity);                    
+                FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPoint.transform.position, Quaternion.identity);                  
             }
             else
             {
@@ -50,7 +50,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackList);
             for (int i = 0; i < 2; i++)
             {
-                attackButtons[i].SetButtonType(FoeFightMinigameData.CurrentAttacks[i]);
+                attackButtons[i].SetButtonData(FoeFightMinigameData.CurrentAttacks[i]);
                 attackButtons[i].enabled = true;
             }
         }
