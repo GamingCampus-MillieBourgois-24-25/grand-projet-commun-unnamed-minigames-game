@@ -4,7 +4,7 @@ public class ComboManager : MonoBehaviour
 {
     public static ComboManager Instance {get; private set;}
 
-    [SerializeField] private int combo = 0;
+    [SerializeField] private int combo = 1;
 
     private void Awake()
     {
@@ -28,6 +28,6 @@ public class ComboManager : MonoBehaviour
 
     public void ResetCombo()
     {
-        combo = 0;
+        combo = 1;
     }
 }

@@ -1,13 +1,24 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.SimpleLocalization.Scripts
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class LocalizeTextTMP : MonoBehaviour
     {
-        public string LocalizationKey;
+        [SerializeField] private string _localizationKey;
+        public string LocalizationKey
+        {
+            get => _localizationKey;
+            set
+            {
+                if (value != _localizationKey)
+                {
+                    _localizationKey = value;
+                    Localize();
+                }
+            }
+        }
 
         public void Start()
         {

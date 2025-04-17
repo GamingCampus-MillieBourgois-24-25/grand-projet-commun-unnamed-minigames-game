@@ -7,13 +7,13 @@ public class ComboCounter : MonoBehaviour
     {
         int _combo = ComboManager.Instance.GetCombo();
         
-        if (_combo <= 2)
+        if (_combo <= 1)
         {
             comboText.enabled = false;
         }
         else
         {
-            comboText.text = _combo.ToString("n0");
+            comboText.text = "x" + _combo.ToString("n0");
         }
     }
 }
