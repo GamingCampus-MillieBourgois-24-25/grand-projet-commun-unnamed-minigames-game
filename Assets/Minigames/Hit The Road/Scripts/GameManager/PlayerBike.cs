@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerBike : MonoBehaviour
@@ -19,7 +20,7 @@ public class PlayerBike : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPosition) < 0.1f && RivalBike.Instance.rivalPassed)
             {
                 isMoving = false;
-                Invoke(nameof(VoxelGameManager.Instance.PlayerFails), defeatCheckDelay); // attends 1s avant de checker si t�as rat�
+                Invoke(nameof(VoxelGameManager.Instance.PlayerFails), defeatCheckDelay);
             }
         }
     }
@@ -48,6 +49,28 @@ public class PlayerBike : MonoBehaviour
         isMoving = true;
     }
 
+    public void MoveToWaypoint(Vector3 waypoint, float duration)
+    {
+        StartCoroutine(MoveToWaypointCoroutine(waypoint, duration));
+    }
+
+    private IEnumerator MoveToWaypointCoroutine(Vector3 waypoint, float duration)
+    {
+        Vector3 startPosition = transform.position;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+
+            transform.position = Vector3.Lerp(startPosition, waypoint, t);
+            yield return null;
+        }
+
+        transform.position = waypoint; // Assurer la position finale
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (hasCollided) return;
@@ -59,5 +82,5 @@ public class PlayerBike : MonoBehaviour
             VoxelGameManager.Instance.PlayerWins();
         }
     }
-    
+
 }
