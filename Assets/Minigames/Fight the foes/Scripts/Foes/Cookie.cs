@@ -6,8 +6,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class Cookie : Foe
     {
-        FoeType FoeType = FoeType.Food;
 
+        public override FoeType FoeType => FoeType.Food;
+        
         [SerializeField] SpriteRenderer DeadSprite;
 
         protected override void Start()

@@ -3,19 +3,24 @@ using UnityEngine;
 
 public class RivalBike : MonoBehaviour
 {
+    public static RivalBike Instance;
+    
     public float speed = 12f;
     private float laneOffset = 2.5f;
     private bool willTurn = false;
-    private float finalLane;
+    public float finalLane;
     private bool isTurning = false;
     private bool hasDecided = false;
-
+    public bool rivalPassed;
+    
     public ParticleSystem smokeParticles; // Référence au système de particules
     public ParticleSystem explosionParticles; // Référence au système de particules d'explosion
     public Rigidbody rb; // Référence au Rigidbody du RivalBike
 
     void Start()
     {
+        Instance = this;
+        
         int spawnType = Random.Range(0, 3);
         if (spawnType == 0) // gauche
         {
@@ -103,9 +108,11 @@ public class RivalBike : MonoBehaviour
     {
         if (other.CompareTag("DefeatTrigger"))  // Vérifie si c'est le trigger de défaite
         {
+            rivalPassed = true;
             VoxelGameManager.Instance.PlayerFails();  // Appelle la méthode de défaite
             StartCoroutine(FinalAcceleration()); // Lance l'accélération finale
         }
+        rivalPassed = false;
     }
 
     private void TriggerSmokeParticles()

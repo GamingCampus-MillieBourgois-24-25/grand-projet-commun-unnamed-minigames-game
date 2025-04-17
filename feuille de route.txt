@@ -10,6 +10,8 @@ Assets : Terrain + route + props -> Assembler en un prefab de tuile : presque fi
 Paramètres : 
 Vitesse de défilement
 
-Une tuile verte en mode forêt, une en jaune pour du sable et une autre en blanche pour de la neige et y mettre des particules pour simuler de la neige 
-Ajouter plus d'une moto.
+Une tuile verte en mode forêt, une en jaune pour du sable et une autre en blanche pour de la neige et y mettre des particules pour simuler de la neige -> done
 
+Ajouter plus d'une moto et mettre les assets dans la tuile ->
+
+Faire en sorte que le jeu lance au hasard une des variante -> 

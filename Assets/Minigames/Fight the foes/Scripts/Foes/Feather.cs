@@ -6,8 +6,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class Feather : Foe
     {
-        FoeType FoeType = FoeType.Wind;
-
+        public override FoeType FoeType => FoeType.Wind;
         [SerializeField] SpriteRenderer DeadSprite;
 
         protected override void Start()
