@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1652341787671717841}
   - component: {fileID: 8151793373612380980}
   m_Layer: 0
-  m_Name: GrasstChunk
+  m_Name: GrassChunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

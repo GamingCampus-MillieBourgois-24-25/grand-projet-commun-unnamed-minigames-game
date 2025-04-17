@@ -10,7 +10,7 @@ public class MovingTile : MonoBehaviour
 {
 
     public float speed = 15f;
-    public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
+    //public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
     
 
     void Update()
@@ -29,10 +29,8 @@ public class MovingTile : MonoBehaviour
     {
         if (other.CompareTag("EndPoint"))
         {
-            //TeleportToStartPoint();
             TeleportToPointZero();  
             Debug.Log("Collision entre "+gameObject.name+" et "+other.gameObject.name);
-            //Debug.Log("Position : "+transform.position+" - "+startPoint.transform.position);
         }
     }
     public float getSpeed()
