@@ -11,6 +11,7 @@ public class MovingTile : MonoBehaviour
 
     public float speed = 15f;
     //public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
+    private int nbRivals = 0;
     
 
     void Update()
