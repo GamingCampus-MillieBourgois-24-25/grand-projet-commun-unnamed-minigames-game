@@ -6,6 +6,7 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] private int totalScore = 0;
     [SerializeField] private int currentScore = 0;
+    private int _amount;
 
     private void Awake()
     {
@@ -38,12 +39,18 @@ public class ScoreManager : MonoBehaviour
     public int AddCurrentScore(int amount)
     {
         currentScore += amount;
+        _amount = amount;
         return currentScore;
     }
     
     public int GetCurrentScore()
     {
         return currentScore;
+    }
+    
+    public int GetAmount()
+    {
+        return _amount;
     }
 
     public void ResetCurrentScore()
