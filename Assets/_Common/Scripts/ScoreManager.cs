@@ -15,11 +15,13 @@ public class ScoreManager : MonoBehaviour
             return;
         }
         Instance = this;
+        totalScore = PlayerPrefs.GetInt("totalscore");
     }
     
     public int AddTotalScore(int amount)
     {
         totalScore += amount;
+        PlayerPrefs.SetInt("totalscore",totalScore);
         return totalScore;
     }
     

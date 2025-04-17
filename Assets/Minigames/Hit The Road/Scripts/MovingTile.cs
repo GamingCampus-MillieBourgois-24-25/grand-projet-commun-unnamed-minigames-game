@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /*
  * Script for moving the tile
  */
@@ -11,6 +12,7 @@ public class MovingTile : MonoBehaviour
 
     public float speed = 15f;
     //public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
+    private int nbRivals = 0;
     
 
     void Update()
@@ -41,5 +43,10 @@ public class MovingTile : MonoBehaviour
     public void setSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    public string getName()
+    {
+        return name;
     }
 }

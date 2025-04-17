@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -10,15 +9,16 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     public Minigame[] minigames;  // Liste des mini-jeux
     private int currentMiniGameIndex;
     public bool isWin;
+    [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
+    
 
     public void MiniGameFinished(bool victory)
     {
         if (victory)
         {
             Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
-            
             StartCoroutine(DelayAfterWin(Step2));
-            
+            _calculScoreAndCombo.OnMiniGameWon();
         }
 
         if (!victory)
