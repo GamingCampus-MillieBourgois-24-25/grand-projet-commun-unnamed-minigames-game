@@ -6,10 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/MAIN Hit the road.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/SnowBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/SnowBehavior.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MiniGames/HitTheRoad/Scripts/VoxelGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Menu_OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Menu_OptionsButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Options_BackButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Options_BackButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingSceneManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +110,8 @@
       <workItem from="1744272717693" duration="5654000" />
       <workItem from="1744378802927" duration="1367000" />
       <workItem from="1744633648965" duration="8815000" />
-      <workItem from="1744788352425" duration="10919000" />
+      <workItem from="1744788352425" duration="12027000" />
+      <workItem from="1744871768664" duration="2365000" />
     </task>
     <servers />
   </component>

@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class ShopUnloadScene : MonoBehaviour
 {
-    [SerializeField] private ShopLoadScene shopLoadSceneButton;
+    private ShopLoadScene _shopLoadSceneButton;
 
     private void Start()
     {
-        shopLoadSceneButton = FindObjectOfType<ShopLoadScene>();
+        _shopLoadSceneButton = FindObjectOfType<ShopLoadScene>();
     }
     public void CloseScene()
     {
         GlobalSceneController.UnloadOverlayScene();
-        shopLoadSceneButton.shopOpen = false;
     }
 }

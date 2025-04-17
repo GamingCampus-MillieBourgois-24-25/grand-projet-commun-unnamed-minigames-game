@@ -1,10 +1,8 @@
 using Axoloop.Global;
-using Axoloop.Scripts.Global;
-using System;
 
 public class SettingsSceneManager : BaseSceneManager<SettingsSceneManager>, ISceneManager
 {
-    public override string SceneName { get => "MAIN_Param�tres"; }
+    public override string SceneName { get => "MAIN_Parametres"; }
 
     public override SceneLevel SceneLevel { get => SceneLevel.Level2; }
 
