@@ -32,7 +32,7 @@ public class CalculScoreAndCombo : MonoBehaviour
     {
         _currentScore = ScoreManager.Instance.GetCurrentScore();
         ScoreManager.Instance.AddTotalScore(_currentScore);
-        PlayerPrefs.SetInt("totalscore",_currentScore);
+        
     }
 
 }
