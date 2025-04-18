@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AxoLoop.Minigames.FightTheFoes
 {
@@ -11,11 +12,11 @@ namespace AxoLoop.Minigames.FightTheFoes
         Wind, 
     }
 
-    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Image))]
     public class Foe : MonoBehaviour
     {
         public string Name { get; private set; }
-        [SerializeField] protected SpriteRenderer AliveSprite;
+        [SerializeField] protected Image AliveSprite;
 
         public virtual FoeType FoeType { get; }
 

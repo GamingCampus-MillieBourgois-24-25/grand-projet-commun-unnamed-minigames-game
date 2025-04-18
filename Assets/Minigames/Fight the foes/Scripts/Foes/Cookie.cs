@@ -8,13 +8,10 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
 
         public override FoeType FoeType => FoeType.Food;
-        
-        [SerializeField] SpriteRenderer DeadSprite;
 
         protected override void Start()
         {
             base.Start();
-            DeadSprite.color = new Vector4(1, 1, 1, 0);
         }
 
         protected override void DieAnimation(Action callBack)
