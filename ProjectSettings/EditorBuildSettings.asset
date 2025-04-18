@@ -27,5 +27,7 @@ EditorBuildSettings:
     path: Assets/Minigames/Hit The Road/MAIN Hit the road.unity
     guid: fbdcddd94b8df2940958dd7451a0d817
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4515f03a2992a864ea49a057a8c4daa5,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: f285d866f47e3b24182c02e8fe3fb428, type: 2}
