@@ -18,8 +18,11 @@ public class LevelWheel : MonoBehaviour
         
         if (!Mathf.Approximately(targetRotation, _lastTargetRotation))
         {
-            AnimateWheel(targetRotation);
-            _lastTargetRotation = targetRotation;
+            if (score != 0)
+            {
+                AnimateWheel(targetRotation);
+                _lastTargetRotation = targetRotation;
+            }
         }
         
         _textScore.text = score.ToString("n0");
