@@ -18,7 +18,7 @@ public class ButtonController : MonoBehaviour
 
     private void Start()
     {
-        localizer = GetComponent<LocalizeTextTMP>();
+        localizer = GetComponentInChildren<LocalizeTextTMP>();
         Image attackImage = GetComponent<Image>();
     }
 

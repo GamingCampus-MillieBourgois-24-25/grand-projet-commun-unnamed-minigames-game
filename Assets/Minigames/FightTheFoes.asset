@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41ba9d236e024224cac94796bc950bfd, type: 3}
-  m_Name: DrinkAttack
+  m_Script: {fileID: 11500000, guid: 824152cb908883444bb83f48eeab24ba, type: 3}
+  m_Name: FightTheFoes
   m_EditorClassIdentifier: 
-  attackType: 0
-  attackName: FightTheFoes.Drink
-  attackColor: {r: 0.6784314, g: 0.8313726, b: 0.909804, a: 1}
-  attackIcon: {fileID: -651355409, guid: b9ae04929ae6734428f48f6391d17ef6, type: 3}
+  minigameName: Fight The Foes
+  sceneName: MAIN Fight The Foes
+  minigameIcon: {fileID: 0}
+  scoreToUnlock: 0

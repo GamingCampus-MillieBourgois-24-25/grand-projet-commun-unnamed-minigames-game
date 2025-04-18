@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 3
   attackName: FightTheFoes.Breath
-  attackColor: {r: 0.7843138, g: 0.9176471, b: 0.8431373, a: 0}
+  attackColor: {r: 0.7843138, g: 0.9176471, b: 0.8431373, a: 1}
   attackIcon: {fileID: 645489567, guid: b9ae04929ae6734428f48f6391d17ef6, type: 3}
