@@ -1,6 +1,4 @@
 using Axoloop.Global;
-using Axoloop.Scripts.Global;
-using System;
 
 public class ShopSceneManager : BaseSceneManager<ShopSceneManager>, ISceneManager
 {

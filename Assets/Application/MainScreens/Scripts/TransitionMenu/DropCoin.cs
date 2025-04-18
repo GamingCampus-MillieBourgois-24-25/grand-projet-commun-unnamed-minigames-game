@@ -1,22 +1,38 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System.Collections;
 
 public class DropCoin : MonoBehaviour
 {
-    [SerializeField] private RectTransform _imageToDrop;
-    [SerializeField] private float _startY = 1250f;
-    [SerializeField] private float _endY = -260f;
-    [SerializeField] private float _duration = 3f;
+    [SerializeField] private RectTransform _imagePrefab;
+    [SerializeField] private RectTransform _parent;
+    [SerializeField] private Vector2 _spawnPosition = new Vector2(0f, 1250f);
+    [SerializeField] private float _endY = -260f; 
+    private float _duration = 1f;
+    private int _coinCount; 
+    private float _spawnInterval = 0.05f;
 
     void Start()
     {
-        // Positionner l'image au départ
-        Vector2 startPos = _imageToDrop.anchoredPosition;
-        startPos.y = _startY;
-        _imageToDrop.anchoredPosition = startPos;
+        StartCoroutine(SpawnCoins());
+    }
 
-        // Lancer l'animation vers la position de fin
-        _imageToDrop.DOAnchorPosY(_endY, _duration);
+    private IEnumerator SpawnCoins()
+    {
+        _coinCount = ScoreManager.Instance.GetAmount();
+        if (_coinCount > 30) _coinCount = 30;
+        for (int i = 0; i < _coinCount; i++)
+        {
+            if (i > 0)
+                yield return new WaitForSeconds(_spawnInterval);
+
+            RectTransform coin = Instantiate(_imagePrefab, _parent);
+            coin.anchoredPosition = _spawnPosition;
+
+            coin.DOAnchorPosY(_endY, _duration)
+                .SetEase(Ease.Linear)
+                .OnComplete(() => Destroy(coin.gameObject));
+        }
     }
 }

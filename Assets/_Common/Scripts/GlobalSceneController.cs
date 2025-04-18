@@ -32,7 +32,7 @@ namespace Assets.Code.GLOBAL
         // charger la scène de départ au démarrage du jeu
         void InitialLoading()
         {
-            OpenScene(GameSettings.StartScene.name);
+            OpenScene(GameSettings.StartScene);
         }
 
         // logique post chargement de la scène
