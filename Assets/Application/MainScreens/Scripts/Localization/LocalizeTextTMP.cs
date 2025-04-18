@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 namespace Assets.SimpleLocalization.Scripts
 {
@@ -7,6 +8,8 @@ namespace Assets.SimpleLocalization.Scripts
     public class LocalizeTextTMP : MonoBehaviour
     {
         [SerializeField] private string _localizationKey;
+        private TextMeshProUGUI tmp;
+        
         public string LocalizationKey
         {
             get => _localizationKey;
@@ -22,6 +25,7 @@ namespace Assets.SimpleLocalization.Scripts
 
         public void Start()
         {
+            tmp = GetComponent<TextMeshProUGUI>();
             Localize();
             LocalizationManager.OnLocalizationChanged += Localize;
         }
@@ -33,7 +37,8 @@ namespace Assets.SimpleLocalization.Scripts
 
         private void Localize()
         {
-            GetComponent<TextMeshProUGUI>().text = LocalizationManager.Localize(LocalizationKey);
+            if (string.IsNullOrEmpty(_localizationKey)) return;
+            tmp.text = LocalizationManager.Localize(LocalizationKey);
         }
     }
 }

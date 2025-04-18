@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 2
   attackName: FightTheFoes.Fang
-  attackColor: {r: 0.7607844, g: 0.34509805, b: 0.26666668, a: 0}
+  attackColor: {r: 0.7607844, g: 0.34509805, b: 0.26666668, a: 1}
   attackIcon: {fileID: -2012026659, guid: b9ae04929ae6734428f48f6391d17ef6, type: 3}

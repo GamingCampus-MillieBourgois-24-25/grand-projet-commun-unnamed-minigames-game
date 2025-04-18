@@ -13,15 +13,15 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void PlayAttack(FoeType type)
         {
-            var attack = FoeFightMinigameData.AttackList.FirstOrDefault(item => item.attackType == type);
+            var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
 
             blocking = false;
-            if (attack == null)
+            if (attackObject == null)
             {
                 blocking = true;
             }
 
-            attack.PlayAttack(OnAttackHit);
+            attackObject.attack.PlayAttack(OnAttackHit);
         }
 
         void OnAttackHit(FoeType attackType)

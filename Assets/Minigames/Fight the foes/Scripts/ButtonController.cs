@@ -18,7 +18,7 @@ public class ButtonController : MonoBehaviour
 
     private void Start()
     {
-        localizer = GetComponent<LocalizeTextTMP>();
+        localizer = GetComponentInChildren<LocalizeTextTMP>();
         Image attackImage = GetComponent<Image>();
     }
 
@@ -41,7 +41,7 @@ public class ButtonController : MonoBehaviour
     {
         var attack =  FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == typeData);
         buttonType = attack.attackType;
-        localizer.LocalizationKey = attack.attackName;
+        //localizer.LocalizationKey = attack.attackName;
         attackIcon.sprite = attack.attackIcon;
         attackImage.color = attack.attackColor;
     }

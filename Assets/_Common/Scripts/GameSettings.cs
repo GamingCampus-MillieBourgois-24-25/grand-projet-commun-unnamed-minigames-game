@@ -10,14 +10,15 @@ namespace Axoloop.Global
         //[Tooltip("A utiliser si on a besoin d'une condition pour un éventuel mode Debbug")]
         //[SerializeField] bool _DebugMode = false;
 
-        //[Tooltip("A activer pour renseigner une scène de test et la tester facilement avec l'application")]
-        //[SerializeField] bool _isTesting = false;
-
+        [Tooltip("A activer pour renseigner une scène de test et la tester facilement avec l'application")]
+        [SerializeField] bool _isTesting = false;
+        [SerializeField] string testScene;
         //[Tooltip("A activer pour que l'application entière soit exécutée mais que la scène de test soit tout le temps ouverte au lieu du mini-jeu prévu")]
         //[SerializeField] bool _TestInFullApp = false;
 
         //public static bool DebugMode { get => Instance._DebugMode; }
-        //public static bool IsTesting { get => Instance._isTesting; }
+        public static bool IsTesting { get => Instance._isTesting; }
+        public static string TestScene { get => Instance.testScene; }
         //public static bool TestInFullApp { get => Instance._TestInFullApp; }
 
 

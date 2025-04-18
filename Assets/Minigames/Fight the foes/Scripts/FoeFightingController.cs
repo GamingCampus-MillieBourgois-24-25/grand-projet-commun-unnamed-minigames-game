@@ -11,6 +11,13 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] GameObject spawnPoint;
 
         DifficultyMeter difficulty;
+
+        public void Start()
+        {
+            GenerateMinigame(4, MinigameDifficultyLevel.Easy);
+            InitializeMinigame();
+            StartMinigame();
+        }
         public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             Random.InitState(seed);
@@ -47,7 +54,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void BeginTurn()
         {
-            FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackList);
+            FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackObjectList);
             for (int i = 0; i < 2; i++)
             {
                 attackButtons[i].SetButtonData(FoeFightMinigameData.CurrentAttacks[i]);

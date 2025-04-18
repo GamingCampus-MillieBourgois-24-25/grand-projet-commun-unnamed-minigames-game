@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AxoLoop.Minigames.FightTheFoes
 {
@@ -8,7 +9,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         public override FoeType FoeType => FoeType.Fire;
 
-        [SerializeField] SpriteRenderer DeadSprite; 
+        [SerializeField] Image DeadSprite; 
 
         protected override void Start()
         {
