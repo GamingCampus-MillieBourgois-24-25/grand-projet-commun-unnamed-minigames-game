@@ -22,7 +22,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         IEnumerator PlayDeathAnimation(Action callBack)
         {
-            AliveSprite.enabled = false;
+            //AliveSprite.enabled = false;
             yield return new WaitForSeconds(1f);
             callBack.Invoke();
         }

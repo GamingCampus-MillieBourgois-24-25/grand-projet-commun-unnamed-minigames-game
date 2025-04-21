@@ -12,11 +12,11 @@ namespace AxoLoop.Minigames.FightTheFoes
         Wind, 
     }
 
-    [RequireComponent(typeof(Image))]
+    [RequireComponent(typeof(SpriteRenderer))]
     public class Foe : MonoBehaviour
     {
         public string Name { get; private set; }
-        [SerializeField] protected Image AliveSprite;
+        [SerializeField] protected SpritesGroup AliveSprite;
 
         public virtual FoeType FoeType { get; }
 

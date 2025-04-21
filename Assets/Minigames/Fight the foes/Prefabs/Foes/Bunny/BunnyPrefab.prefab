@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8837033043212540217}
   - component: {fileID: 6835901396746198642}
   m_Layer: 6
-  m_Name: SlimePrefab 2
+  m_Name: BunnyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
