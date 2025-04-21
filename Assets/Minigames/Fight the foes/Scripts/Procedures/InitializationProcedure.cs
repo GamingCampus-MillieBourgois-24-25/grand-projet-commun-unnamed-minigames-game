@@ -16,12 +16,8 @@ namespace Assets.Minigames.FightTheFoes.Procedures
 
         void SpawnAxo()
         {
-            axo.Spawn(DisplayUI);
+            
         }
 
-        void DisplayUI()
-        {
-
-        }
     }
 }
