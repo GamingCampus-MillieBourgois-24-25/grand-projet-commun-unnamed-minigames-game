@@ -909,13 +909,31 @@ PrefabInstance:
     - target: {fileID: 4223640256413790987, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
         type: 3}
       propertyPath: foesList.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4223640256413790987, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
         type: 3}
       propertyPath: foesList.Array.data[0]
       value: 
       objectReference: {fileID: 5375016190793485317, guid: e25dd9ae86ff28b44b5eb977f438b216,
+        type: 3}
+    - target: {fileID: 4223640256413790987, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
+        type: 3}
+      propertyPath: foesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 5471260948335320115, guid: 88ba9627847a2d84e8432ac77906df07,
+        type: 3}
+    - target: {fileID: 4223640256413790987, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
+        type: 3}
+      propertyPath: foesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 323630062243816939, guid: 1e1cd25b30761fe4caf545bcd0fc6dba,
+        type: 3}
+    - target: {fileID: 4223640256413790987, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
+        type: 3}
+      propertyPath: foesList.Array.data[3]
+      value: 
+      objectReference: {fileID: 3390067750643925658, guid: 63e8b5283e32981469b6137943e3097a,
         type: 3}
     - target: {fileID: 4261794287455030948, guid: 8c0cbb1551605394c8a8e4ccce283fc9,
         type: 3}
