@@ -13,15 +13,15 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void PlayAttack(FoeType type)
         {
-            var attack = FoeFightMinigameData.AttackList.FirstOrDefault(item => item.attackType == type);
+            var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
 
             blocking = false;
-            if (attack == null)
+            if (attackObject == null)
             {
                 blocking = true;
             }
 
-            attack.PlayAttack(OnAttackHit);
+            attackObject.attack.PlayAttack(OnAttackHit);
         }
 
         void OnAttackHit(FoeType attackType)
@@ -30,13 +30,12 @@ namespace AxoLoop.Minigames.FightTheFoes
             if (attackType == foeType)
             {
                 // réaction à l'attaque efficace
-                FoeFightMinigameData.GameFoes.RemoveAt(0);
-                FoeFightingController.Instance.NextRound();
+                FoeFightMinigameData.CurrentFoe.DieAnimation(() => FoeFightingController.Instance.CurrentFoeKilled());
             }
             else
             {
                 // réaction aux attaques inéfficaces
-                FoeFightingController.Instance.FoeTurn(blocking);
+                FoeFightMinigameData.CurrentFoe.TankAnimation(() => FoeFightingController.Instance.FoeTurn(blocking));
             }
         }
 

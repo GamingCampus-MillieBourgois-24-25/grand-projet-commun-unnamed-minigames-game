@@ -8,12 +8,10 @@ namespace AxoLoop.Minigames.FightTheFoes
     public class Axo : SingletonMB<Axo>
     {
         [SerializeField] protected Sprite AliveSprite;
-        private SpriteRenderer spriteRenderer;
 
         void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = AliveSprite;
+
         }
 
         // Update is called once per frame
@@ -22,13 +20,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         }
 
-        public void Spawn(Action callBack)
-        {
-            callBack?.Invoke();
-        }
-
         public void Die(Action callBack)
         {
+            Destroy(Instance.gameObject);
             callBack?.Invoke();
         }
     }

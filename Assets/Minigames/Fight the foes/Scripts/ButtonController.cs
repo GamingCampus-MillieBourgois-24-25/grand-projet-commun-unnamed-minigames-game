@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Assets.SimpleLocalization.Scripts;
 using AxoLoop.Minigames.FightTheFoes;
 using UnityEngine;
+using UnityEngine.UI;
 
+[RequireComponent(typeof(LocalizeTextTMP))]
 public class ButtonController : MonoBehaviour
 {
 
     public FoeType buttonType { get; private set; }
+    [SerializeField] SpriteRenderer attackIcon;
+    [SerializeField] Image attackImage;
 
-    public void SetButtonType(FoeType buttonTypeParam)
+    LocalizeTextTMP localizer;
+
+    private void Start()
     {
-        buttonType = buttonTypeParam;
+        localizer = GetComponentInChildren<LocalizeTextTMP>();
+        Image attackImage = GetComponent<Image>();
     }
 
     private void OnEnable()
@@ -26,5 +35,14 @@ public class ButtonController : MonoBehaviour
     public void OnClick()
     {
         FoeFightingManager.Instance.PlayAttack(buttonType);
+    }
+
+    public void SetButtonData(FoeType typeData)
+    {
+        var attack =  FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == typeData);
+        buttonType = attack.attackType;
+        localizer.LocalizationKey = attack.attackName;
+        attackIcon.sprite = attack.attackIcon;
+        attackImage.color = attack.attackColor;
     }
 }
