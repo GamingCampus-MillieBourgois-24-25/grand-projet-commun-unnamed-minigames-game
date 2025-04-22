@@ -9,21 +9,26 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         [SerializeField] protected Sprite AliveSprite;
 
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         public void Die(Action callBack)
         {
             Destroy(Instance.gameObject);
             callBack?.Invoke();
+        }
+
+        public void PlayAttack(FoeType targetType, Action callBack)
+        {
+            switch (targetType)
+            {
+                case FoeType.Liquid: 
+                    break;
+                case FoeType.Food: 
+                    break;
+                case FoeType.Wind: 
+                    break;
+                case FoeType.Fire: 
+                    break;
+            }
         }
     }
 }

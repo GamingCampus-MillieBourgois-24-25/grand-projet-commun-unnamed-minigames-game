@@ -21,7 +21,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 blocking = true;
             }
 
-            attackObject.attack.PlayAttack(OnAttackHit);
+            FoeFightMinigameData.Axo.PlayAttack(attackObject.attackType, () => OnAttackHit(attackObject.attackType));
         }
 
         void OnAttackHit(FoeType attackType)
