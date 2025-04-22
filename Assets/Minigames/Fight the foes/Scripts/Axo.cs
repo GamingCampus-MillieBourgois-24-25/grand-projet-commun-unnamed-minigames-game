@@ -9,6 +9,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         [SerializeField] protected Sprite AliveSprite;
 
+        private Action attackCallback;
 
         public void Die(Action callBack)
         {
@@ -18,6 +19,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void PlayAttack(FoeType targetType, Action callBack)
         {
+            attackCallback = callBack;
             switch (targetType)
             {
                 case FoeType.Liquid: 
@@ -29,6 +31,13 @@ namespace AxoLoop.Minigames.FightTheFoes
                 case FoeType.Fire: 
                     break;
             }
+        }
+
+
+        public void AttackTouched()
+        {
+            attackCallback?.Invoke();
+            attackCallback = null;
         }
     }
 }
