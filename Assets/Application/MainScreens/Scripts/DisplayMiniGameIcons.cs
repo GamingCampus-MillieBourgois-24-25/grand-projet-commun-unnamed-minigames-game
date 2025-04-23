@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,21 +7,35 @@ public class DisplayMiniGameIcons : MonoBehaviour
     public Image[] spritesMiniGames;
     public Sprite lockIcons, workIcons;
 
-    private int Score = ScoreManager.Instance.GetTotalScore();
+    public static DisplayMiniGameIcons Instance;
+    
+    private int _score;
 
-    private void UpdateIcons()
+    private void Start()
     {
-        for (int i = 0; i < MiniGameManager.Instance.minigames.Length - 1; i++)
+        Instance = this;
+        UpdateIcons();
+    }
+
+    public void UpdateIcons()
+    {
+        _score = ScoreManager.Instance.GetTotalScore();
+        for (int i = 0; i < MiniGameManager.Instance.minigames.Length; i++)
         {
-            if (MiniGameManager.Instance.minigames[i].scoreToUnlock <= Score)
+            var minigame = MiniGameManager.Instance.minigames[i];
+
+            if (minigame == null)
             {
-                spritesMiniGames[i].sprite = MiniGameManager.Instance.minigames[i].minigameIcon;
+                spritesMiniGames[i].sprite = workIcons;
             }
-            
-            spritesMiniGames[i].sprite = lockIcons;
-            
-            if (MiniGameManager.Instance.minigames[i] == null) spritesMiniGames[i].sprite = workIcons;
-            
+            else if (minigame.scoreToUnlock <= _score)
+            {
+                spritesMiniGames[i].sprite = minigame.minigameIcon;
+            }
+            else
+            {
+                spritesMiniGames[i].sprite = lockIcons;
+            }
         }
     }
 }

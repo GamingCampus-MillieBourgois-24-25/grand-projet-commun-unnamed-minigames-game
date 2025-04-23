@@ -28,15 +28,16 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     }
     private IEnumerator DelayAfterWin(Action callback)
     {
-        yield return new WaitForSeconds(2.5f);
-        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+        yield return new WaitForSeconds(2f);
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene);
         callback.Invoke();
     }
 
     private IEnumerator DelayAfterLose()
     {
         yield return new WaitForSeconds(2f);
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene.name);
+        DisplayMiniGameIcons.Instance.UpdateIcons();
+        GlobalSceneController.OpenScene(GameSettings.MainMenuScene);
     }
 
     private IEnumerator DelayToStartMiniGame()

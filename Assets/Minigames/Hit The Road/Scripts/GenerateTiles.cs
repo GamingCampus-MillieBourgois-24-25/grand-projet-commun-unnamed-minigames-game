@@ -47,7 +47,7 @@ public class GenerateTiles : MonoBehaviour
 
     void SettingUpTheScene()
     {
-        index = Random.Range(0, tile.Length);
+        index = Random.Range(0, tile.Length-1);
 
         mainPosition.z = 50f;
         Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
@@ -59,6 +59,9 @@ public class GenerateTiles : MonoBehaviour
         Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
 
         tile[index].GetComponent<MovingTile>().setSpeed(tileSpeed);
+        
+        Debug.Log(tile[index].GetComponent<MovingTile>().getName() + " index :"+ index);
+        Debug.Log(" length :" + (tile.Length-1));
     }
     
 }

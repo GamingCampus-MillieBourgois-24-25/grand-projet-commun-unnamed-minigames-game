@@ -1,0 +1,2030 @@
+fileFormatVersion: 2
+guid: 2dbbbb7d32863cc4aaf86a2d7735cb5e
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: iris_gauche_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 295
+      y: 1323
+      width: 45
+      height: 58
+    spriteID: 6114bb772e6d734418e898daf3a3f92c
+    spriteBone:
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: -36.042328, y: 8.807861, z: 0}
+      rotation: {x: 0, y: 0, z: 0.77025604, w: 0.63773483}
+      length: 181.98872
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 45, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 58}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 45, y: 58}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 295, y: 1323}
+    spritePosition: {x: 504, y: 488}
+  - name: iris_droit_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 348
+      y: 1323
+      width: 45
+      height: 58
+    spriteID: 23cb329ba17640d40acbf38d7c4d3324
+    spriteBone:
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: 73.95767, y: 13.807861, z: 0}
+      rotation: {x: 0, y: 0, z: 0.77025604, w: 0.63773483}
+      length: 181.98872
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 45, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 58}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 45, y: 58}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 348, y: 1323}
+    spritePosition: {x: 394, y: 483}
+  - name: oeil_gauche_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 861
+      y: 4
+      width: 130
+      height: 109
+    spriteID: 789060a3b08ed0f4aafc5e610386a7f4
+    spriteBone:
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: -17.042358, y: 32.80789, z: 0}
+      rotation: {x: 0, y: 0, z: 0.77025604, w: 0.63773483}
+      length: 181.98872
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 130, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 109}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 130, y: 109}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 861, y: 4}
+    spritePosition: {x: 485, y: 464}
+  - name: oeil_droit_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 295
+      y: 1207
+      width: 122
+      height: 108
+    spriteID: 1d866c0d85f541d4f920456da10c482c
+    spriteBone:
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: 139.95767, y: 38.80786, z: 0}
+      rotation: {x: 0, y: 0, z: 0.77025604, w: 0.63773483}
+      length: 181.98872
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 122, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 108}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 122, y: 108}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 295, y: 1207}
+    spritePosition: {x: 328, y: 458}
+  - name: tete_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 419
+      height: 488
+    spriteID: 0da9730a66d8c9641992a5631c5918fc
+    spriteBone:
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 203.57227, y: -180.10217, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91272
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: 374.9126, y: -0.00007586622, z: 0}
+      rotation: {x: 0, y: 0, z: 0.09554591, w: 0.99542505}
+      length: 181.98877
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 419, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 488}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 419, y: 488}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 263, y: 302}
+  - name: patte_droit_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 861
+      y: 301
+      width: 150
+      height: 80
+    spriteID: 84e39f570bd49854ba102f84e362f6e7
+    spriteBone:
+    - name: JAMBE DROITE
+      guid: 8069bd1e5bd1464418f1cc8712205e3d
+      position: {x: 73.275696, y: 236.75177, z: 0}
+      rotation: {x: 0, y: 0, z: -0.70203817, w: 0.71213937}
+      length: 194.0586
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 80}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 80}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 861, y: 301}
+    spritePosition: {x: 482, y: 48}
+  - name: jambe_gauche_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 91
+      y: 1792
+      width: 78
+      height: 205
+    spriteID: e7e40e01202fc1547acde75bac7bc0fb
+    spriteBone:
+    - name: JAMBE DROITE
+      guid: 8069bd1e5bd1464418f1cc8712205e3d
+      position: {x: 40.275696, y: 201.75171, z: 0}
+      rotation: {x: 0, y: 0, z: -0.70203817, w: 0.71213937}
+      length: 194.0586
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 78, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 205}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 78, y: 205}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 91, y: 1792}
+    spritePosition: {x: 515, y: 83}
+  - name: patte_droit_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 861
+      y: 121
+      width: 150
+      height: 82
+    spriteID: d46d11467e208e843bb7ab823ebad73f
+    spriteBone:
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 71.947876, y: 239.60275, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7045756, w: 0.709629}
+      length: 194.0437
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 82}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 82}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 861, y: 121}
+    spritePosition: {x: 308, y: 50}
+  - name: jambe_droit_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 295
+      y: 996
+      width: 79
+      height: 203
+    spriteID: 9a2f40f3c18e634499e3fba0f42c74dc
+    spriteBone:
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 167.38394, y: 87.243515, z: 0}
+      rotation: {x: 0, y: 0, z: -0.99998534, w: 0.0054208254}
+      length: 194.0437
+      parentId: 1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 125.572266, y: 34.897827, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91272
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 79, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 203}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 79, y: 203}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 295, y: 996}
+    spritePosition: {x: 341, y: 87}
+  - name: corps_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 431
+      y: 4
+      width: 422
+      height: 406
+    spriteID: 552f6672f8ef23546a8f64561907d716
+    spriteBone:
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 208.57227, y: 25.897835, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91272
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 422, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 406}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 422, y: 406}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 431, y: 4}
+    spritePosition: {x: 258, y: 96}
+  - name: queu_renard_eteint
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 996
+      width: 283
+      height: 390
+    spriteID: 7a8a567672464ca41bd7e7c9a678ad6d
+    spriteBone:
+    - name: QUEUE
+      guid: a972c028ed5504842a6e5094cb255331
+      position: {x: 276.02536, y: 25.689209, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9282885, w: 0.37186083}
+      length: 188.71
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 283, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 390}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 283, y: 390}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 996}
+    spritePosition: {x: 27, y: 196}
+  - name: tete_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 500
+      width: 419
+      height: 488
+    spriteID: db2036e367584c240b985de6704cdab9
+    spriteBone:
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 203.57227, y: -180.10217, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91272
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: 374.9126, y: -0.00008479303, z: 0}
+      rotation: {x: 0, y: 0, z: 0.09554591, w: 0.99542505}
+      length: 181.98877
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 419, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 488}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 419, y: 488}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 1
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 500}
+    spritePosition: {x: 263, y: 302}
+  - name: patte_droit_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 431
+      y: 832
+      width: 150
+      height: 80
+    spriteID: b89190222f47fd14691a932a9241f05e
+    spriteBone:
+    - name: JAMBE DROITE
+      guid: 8069bd1e5bd1464418f1cc8712205e3d
+      position: {x: 73.275696, y: 236.75171, z: 0}
+      rotation: {x: 0, y: 0, z: -0.70203817, w: 0.71213937}
+      length: 194.0586
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 80}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 80}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 431, y: 832}
+    spritePosition: {x: 482, y: 48}
+  - name: jambe_gauche_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 177
+      y: 1792
+      width: 78
+      height: 205
+    spriteID: 7c7a1ce2d07b7ca41b5a71a3f13f034e
+    spriteBone:
+    - name: JAMBE DROITE
+      guid: 8069bd1e5bd1464418f1cc8712205e3d
+      position: {x: 40.275696, y: 201.75171, z: 0}
+      rotation: {x: 0, y: 0, z: -0.70203817, w: 0.71213937}
+      length: 194.0586
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 78, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 205}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 78, y: 205}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 177, y: 1792}
+    spritePosition: {x: 515, y: 83}
+  - name: patte_droit_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 861
+      y: 211
+      width: 150
+      height: 82
+    spriteID: 4ed1dd495cf50d043a870237df19049e
+    spriteBone:
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 71.947876, y: 239.60275, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7045756, w: 0.709629}
+      length: 194.0437
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 82}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 150, y: 82}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 861, y: 211}
+    spritePosition: {x: 308, y: 50}
+  - name: jambe_droit_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1792
+      width: 79
+      height: 203
+    spriteID: 9d09bcd26fa6c424bb21226fc5ace179
+    spriteBone:
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 38.947845, y: 202.60278, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7045756, w: 0.709629}
+      length: 194.0437
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 79, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 203}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 79, y: 203}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1792}
+    spritePosition: {x: 341, y: 87}
+  - name: corps_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 431
+      y: 418
+      width: 422
+      height: 406
+    spriteID: b8979712f7a2fa0478031148e70ba5b1
+    spriteBone:
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 208.57227, y: 25.897827, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91272
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: QUEUE
+      guid: a972c028ed5504842a6e5094cb255331
+      position: {x: 99.1864, y: 163.91452, z: 0}
+      rotation: {x: 0, y: 0, z: 0.39515164, w: 0.91861594}
+      length: 188.71
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 422, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 406}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 422, y: 406}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 431, y: 418}
+    spritePosition: {x: 258, y: 96}
+  - name: queu_renard
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1394
+      width: 283
+      height: 390
+    spriteID: 89b8a5c8ab97fe0418cb814759160a93
+    spriteBone:
+    - name: QUEUE
+      guid: a972c028ed5504842a6e5094cb255331
+      position: {x: 276.02536, y: 25.689209, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9282885, w: 0.37186083}
+      length: 188.71
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 352.94785, y: 93.60278, z: 0}
+      rotation: {x: 0, y: 0, z: -0.7045756, w: 0.709629}
+      length: 194.0437
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 283, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 390}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 283, y: 390}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1394}
+    spritePosition: {x: 27, y: 196}
+  characterData:
+    bones:
+    - name: CORPS
+      guid: 75af6abb25b09cb428e9865dc3a74040
+      position: {x: 466.57227, y: 121.897835, z: 0}
+      rotation: {x: 0, y: 0, z: 0.70579916, w: 0.708412}
+      length: 374.91266
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: TETE
+      guid: 026e45035f9b5a1459bc27ba03a6c089
+      position: {x: 374.9126, y: -0.0000746939, z: 0}
+      rotation: {x: 0, y: 0, z: 0.09554591, w: 0.99542505}
+      length: 181.98875
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    - name: QUEUE
+      guid: a972c028ed5504842a6e5094cb255331
+      position: {x: 99.186356, y: 163.91452, z: 0}
+      rotation: {x: 0, y: 0, z: 0.39515167, w: 0.91861594}
+      length: 188.71
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    - name: JAMBE DROITE
+      guid: 8069bd1e5bd1464418f1cc8712205e3d
+      position: {x: 163.18059, y: -88.10109, z: 0}
+      rotation: {x: 0, y: -0, z: -0.9999596, w: 0.008990123}
+      length: 194.05856
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    - name: JAMBE GAUCHE
+      guid: 789c323cd439fc643b1af6b00c51fcd5
+      position: {x: 167.38368, y: 87.24351, z: 0}
+      rotation: {x: 0, y: -0, z: -0.99998534, w: 0.0054208534}
+      length: 194.04369
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294901760
+    parts:
+    - spritePosition:
+        x: 504
+        y: 488
+        width: 45
+        height: 58
+      spriteId: 6114bb772e6d734418e898daf3a3f92c
+      bones: 01000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 394
+        y: 483
+        width: 45
+        height: 58
+      spriteId: 23cb329ba17640d40acbf38d7c4d3324
+      bones: 01000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 485
+        y: 464
+        width: 130
+        height: 109
+      spriteId: 789060a3b08ed0f4aafc5e610386a7f4
+      bones: 01000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 328
+        y: 458
+        width: 122
+        height: 108
+      spriteId: 1d866c0d85f541d4f920456da10c482c
+      bones: 01000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 263
+        y: 302
+        width: 419
+        height: 488
+      spriteId: 0da9730a66d8c9641992a5631c5918fc
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 482
+        y: 48
+        width: 150
+        height: 80
+      spriteId: 84e39f570bd49854ba102f84e362f6e7
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 515
+        y: 83
+        width: 78
+        height: 205
+      spriteId: e7e40e01202fc1547acde75bac7bc0fb
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 308
+        y: 50
+        width: 150
+        height: 82
+      spriteId: d46d11467e208e843bb7ab823ebad73f
+      bones: 04000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 341
+        y: 87
+        width: 79
+        height: 203
+      spriteId: 9a2f40f3c18e634499e3fba0f42c74dc
+      bones: 0400000000000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 258
+        y: 96
+        width: 422
+        height: 406
+      spriteId: 552f6672f8ef23546a8f64561907d716
+      bones: 00000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 27
+        y: 196
+        width: 283
+        height: 390
+      spriteId: 7a8a567672464ca41bd7e7c9a678ad6d
+      bones: 02000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 263
+        y: 302
+        width: 419
+        height: 488
+      spriteId: db2036e367584c240b985de6704cdab9
+      bones: 0000000001000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 482
+        y: 48
+        width: 150
+        height: 80
+      spriteId: b89190222f47fd14691a932a9241f05e
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 515
+        y: 83
+        width: 78
+        height: 205
+      spriteId: 7c7a1ce2d07b7ca41b5a71a3f13f034e
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 308
+        y: 50
+        width: 150
+        height: 82
+      spriteId: 4ed1dd495cf50d043a870237df19049e
+      bones: 04000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 341
+        y: 87
+        width: 79
+        height: 203
+      spriteId: 9d09bcd26fa6c424bb21226fc5ace179
+      bones: 04000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 258
+        y: 96
+        width: 422
+        height: 406
+      spriteId: b8979712f7a2fa0478031148e70ba5b1
+      bones: 0000000002000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 27
+        y: 196
+        width: 283
+        height: 390
+      spriteId: 89b8a5c8ab97fe0418cb814759160a93
+      bones: 0200000004000000
+      parentGroup: 0
+      order: 0
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0.66104823, y: 0.14240766}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0.66104823, y: 0.14240766}
+  documentAlignment: 9
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Teinte/Saturation 1
+    spriteName: Teinte/Saturation 1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: db7967791427d3147ab1f86be34f075a
+    layerID: 58
+    mosaicPosition: {x: 401, y: 1323}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: yeux
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6eb5de7ef96372247a4d8e13b83608b1
+    layerID: 85
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: iris_gauche_renard
+    spriteName: iris_gauche_renard
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 6114bb772e6d734418e898daf3a3f92c
+    layerID: 71
+    mosaicPosition: {x: 295, y: 1323}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: iris_droit_renard
+    spriteName: iris_droit_renard
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 23cb329ba17640d40acbf38d7c4d3324
+    layerID: 70
+    mosaicPosition: {x: 348, y: 1323}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: oeil_gauche_renard
+    spriteName: oeil_gauche_renard
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 789060a3b08ed0f4aafc5e610386a7f4
+    layerID: 69
+    mosaicPosition: {x: 861, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: oeil_droit_renard
+    spriteName: oeil_droit_renard
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 1d866c0d85f541d4f920456da10c482c
+    layerID: 68
+    mosaicPosition: {x: 295, y: 1207}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Renard_eteint
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d953063c8c37e264d8c87ff8f17e0776
+    layerID: 59
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: tete_renard_eteint
+    spriteName: tete_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 0da9730a66d8c9641992a5631c5918fc
+    layerID: 77
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: patte_droit_renard_eteint
+    spriteName: patte_droit_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 84e39f570bd49854ba102f84e362f6e7
+    layerID: 84
+    mosaicPosition: {x: 861, y: 301}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_gauche_renard_eteint
+    spriteName: jambe_gauche_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: e7e40e01202fc1547acde75bac7bc0fb
+    layerID: 83
+    mosaicPosition: {x: 91, y: 1792}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: patte_droit_renard_eteint
+    spriteName: patte_droit_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: d46d11467e208e843bb7ab823ebad73f
+    layerID: 87
+    mosaicPosition: {x: 861, y: 121}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_droit_renard_eteint
+    spriteName: jambe_droit_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 9a2f40f3c18e634499e3fba0f42c74dc
+    layerID: 88
+    mosaicPosition: {x: 295, y: 996}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: corps_renard_eteint
+    spriteName: corps_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 552f6672f8ef23546a8f64561907d716
+    layerID: 89
+    mosaicPosition: {x: 431, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: queu_renard_eteint
+    spriteName: queu_renard_eteint
+    isGroup: 0
+    parentIndex: 6
+    spriteID: 7a8a567672464ca41bd7e7c9a678ad6d
+    layerID: 90
+    mosaicPosition: {x: 4, y: 996}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Renard
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 4f3142422f314ef428813c83596e0b4a
+    layerID: 72
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: tete_renard
+    spriteName: tete_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: db2036e367584c240b985de6704cdab9
+    layerID: 67
+    mosaicPosition: {x: 4, y: 500}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: patte_droit_renard
+    spriteName: patte_droit_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: b89190222f47fd14691a932a9241f05e
+    layerID: 66
+    mosaicPosition: {x: 431, y: 832}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_gauche_renard
+    spriteName: jambe_gauche_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 7c7a1ce2d07b7ca41b5a71a3f13f034e
+    layerID: 65
+    mosaicPosition: {x: 177, y: 1792}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: patte_droit_renard
+    spriteName: patte_droit_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 4ed1dd495cf50d043a870237df19049e
+    layerID: 64
+    mosaicPosition: {x: 861, y: 211}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_droit_renard
+    spriteName: jambe_droit_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 9d09bcd26fa6c424bb21226fc5ace179
+    layerID: 63
+    mosaicPosition: {x: 4, y: 1792}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: corps_renard
+    spriteName: corps_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: b8979712f7a2fa0478031148e70ba5b1
+    layerID: 62
+    mosaicPosition: {x: 431, y: 418}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: queu_renard
+    spriteName: queu_renard
+    isGroup: 0
+    parentIndex: 14
+    spriteID: 89b8a5c8ab97fe0418cb814759160a93
+    layerID: 61
+    mosaicPosition: {x: 4, y: 1394}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting:
+  - spriteId: db7967791427d3147ab1f86be34f075a
+    name: Teinte/Saturation 1
+    layerId: 58
+    flatten: 0
+    isGroup: 0
+    importLayer: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 1
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
