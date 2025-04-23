@@ -134,6 +134,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcbc12224ebb843468013bcf315955de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1592107984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4281936877014216430, guid: ebea0878f3d14b447977a9effd34e01a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3282712365941772527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3282712365941772527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -207,13 +213,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ROOT_Break_the_plank
       objectReference: {fileID: 0}
+    - target: {fileID: 7505846373427083674, guid: ebea0878f3d14b447977a9effd34e01a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491711813146174460, guid: ebea0878f3d14b447977a9effd34e01a,
+        type: 3}
+      propertyPath: axoTransform
+      value: 
+      objectReference: {fileID: 1592107984}
     - target: {fileID: 8491711813146174460, guid: ebea0878f3d14b447977a9effd34e01a,
         type: 3}
       propertyPath: levelManager
       value: 
       objectReference: {fileID: 1232038482}
+    - target: {fileID: 8491711813146174460, guid: ebea0878f3d14b447977a9effd34e01a,
+        type: 3}
+      propertyPath: spectatorPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8142113440792280689, guid: ebea0878f3d14b447977a9effd34e01a, type: 3}
+    - {fileID: 7505846373427083674, guid: ebea0878f3d14b447977a9effd34e01a, type: 3}
+    - {fileID: 6645629299181319274, guid: ebea0878f3d14b447977a9effd34e01a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebea0878f3d14b447977a9effd34e01a, type: 3}
