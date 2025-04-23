@@ -30,12 +30,14 @@ namespace Axoloop.Global
         [SerializeField] string Transition_Scene;
         [SerializeField] string Settings_Scene;
         [SerializeField] string Shop_Scene;
+        [SerializeField] string Revive_Scene;
 
         public static string StartScene { get => Instance.Start_Screen; }
         public static string MainMenuScene { get => Instance.Main_Menu_Scene; }
         public static string TransitionScene { get => Instance.Transition_Scene; }
         public static string SettingsScene { get => Instance.Settings_Scene; }
         public static string ShopScene { get => Instance.Shop_Scene; }
+        public static string ReviveScene { get => Instance.Revive_Scene; }
 
 
         // --------------------------------------------------------------------------------------------------------------------------
