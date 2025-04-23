@@ -6,6 +6,6 @@ public class ShopLoadScene : MonoBehaviour
 {
     public void LoadShopScene()
     {
-        GlobalSceneController.OpenScene(GameSettings.ShopScene.name);
+        GlobalSceneController.OpenScene(GameSettings.ShopScene);
     }
 }

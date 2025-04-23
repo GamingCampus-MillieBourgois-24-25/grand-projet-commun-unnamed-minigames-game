@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 8223721267973453103}
   - component: {fileID: 7733089342744508692}
   - component: {fileID: 696398115238512889}
-  - component: {fileID: 5469710025852796009}
   m_Layer: 0
   m_Name: TransitionMenuManager
   m_TagString: Untagged
@@ -314,27 +313,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b853e282f074ecb4b8a0900a8510ba69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _imageToDrop: {fileID: 616473006305464325}
-  _startY: 560
+  _imagePrefab: {fileID: 616473006305464325}
+  _parent: {fileID: 7658061062111674183}
+  _spawnPosition: {x: -196, y: 1250}
   _endY: -1000
-  _duration: 1
---- !u!114 &5469710025852796009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606126543993512603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b02d9cd9c8c60404daf3a43b264003cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _panel: {fileID: 225254743454997384}
-  _delay: 2
-  _duration: 1
-  _endX: 0
-  _ease: 7
+  _duration: 0.5
+  _coinCount: 50
 --- !u!1 &610848698929913293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,10 +1205,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 72
   m_fontSizeBase: 48
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -1790,10 +1774,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
+  m_fontSize: 72
   m_fontSizeBase: 90
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0

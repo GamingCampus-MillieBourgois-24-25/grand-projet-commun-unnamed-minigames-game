@@ -6,6 +6,6 @@ public class Menu_OptionsButton : MonoBehaviour
 {
     public void OptionsLoadScene()
     {
-        GlobalSceneController.OpenScene(GameSettings.SettingsScene.name);
+        GlobalSceneController.OpenScene(GameSettings.SettingsScene);
     }
 }

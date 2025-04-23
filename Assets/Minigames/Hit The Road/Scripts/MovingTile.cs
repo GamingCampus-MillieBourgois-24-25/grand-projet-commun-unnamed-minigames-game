@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 /*
  * Script for moving the tile
  */
@@ -42,5 +43,10 @@ public class MovingTile : MonoBehaviour
     public void setSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    public string getName()
+    {
+        return name;
     }
 }
