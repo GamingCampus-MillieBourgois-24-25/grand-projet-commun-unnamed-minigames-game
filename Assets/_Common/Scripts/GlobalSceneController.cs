@@ -32,7 +32,14 @@ namespace Assets.Code.GLOBAL
         // charger la scène de départ au démarrage du jeu
         void InitialLoading()
         {
-            OpenScene(GameSettings.StartScene);
+            if (GameSettings.IsTesting)
+            {
+                OpenScene(GameSettings.TestScene);
+            }
+            else
+            {
+                OpenScene(GameSettings.StartScene);
+            }
         }
 
         // logique post chargement de la scène

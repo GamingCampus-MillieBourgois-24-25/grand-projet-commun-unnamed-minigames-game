@@ -44,7 +44,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             return gameFoes;
         }
 
-        public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<IAttack> attackList)
+        public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<AttackObject> attackList)
         {
             List<FoeType> attacks = new();
             FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
