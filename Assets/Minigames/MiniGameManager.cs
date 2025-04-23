@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class MiniGameManager : SingletonMB<MiniGameManager>
 {
-    public Minigame[] minigames;  // Liste des mini-jeux
-    private int currentMiniGameIndex;
-    public bool isWin;
+    [SerializeField] public Minigame[] minigames;
     [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
     
 
@@ -48,13 +49,14 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     }
     public void LoadNextMinigame()
     {
-        currentMiniGameIndex = 0;
-        if (currentMiniGameIndex < minigames.Length)
+        List<Minigame> validMinigames = minigames.Where(m => m != null).ToList();
+        if (validMinigames.Count > 0)
         {
-            Minigame nextGame = minigames[currentMiniGameIndex];
+            Minigame nextGame = validMinigames[Random.Range(0, validMinigames.Count)];
+            
             Debug.Log($"Chargement du mini-jeu : {nextGame.minigameName}");
+            
             GlobalSceneController.OpenScene(nextGame.sceneName);
-            currentMiniGameIndex++;
         }
         else
         {

@@ -46,16 +46,12 @@ public class VoxelGameManager : MonoBehaviour
             {
                 rival.ExplodeAndEject();
             }
-
-            MiniGameManager.Instance.isWin = true;
         }
         else
         {
             Debug.Log("Défaite !");
             victoryPanel.SetActive(false);
             defeatPanel.SetActive(true);
-
-            MiniGameManager.Instance.isWin = false;
         }
         
         MiniGameManager.Instance.MiniGameFinished(hasWon);
