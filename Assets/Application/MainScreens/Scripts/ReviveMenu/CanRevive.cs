@@ -4,18 +4,18 @@ using UnityEngine.UI;
 
 public class CanRevive : MonoBehaviour
 {
-    public Button ReviveButtonWithAD, ReviveButtonWithTicket;
-    public TextMeshProUGUI ticketText;
+    [SerializeField] private Button ReviveButtonWithAD, ReviveButtonWithTicket;
+    [SerializeField] private TextMeshProUGUI ticketText;
 
     private void Start()
     {
         CanPlayerRevive();
-        ticketText.text += TryRevive.Instance.ticket.ToString();
+        ticketText.text += TryRevive.Instance.GetTicket().ToString();
     }
 
-    public void CanPlayerRevive()
+    private void CanPlayerRevive()
     {
-        if (TryRevive.Instance.ticket == 0)
+        if (TryRevive.Instance.GetTicket() == 0)
         {
             ReviveButtonWithTicket.interactable = false;
         }
