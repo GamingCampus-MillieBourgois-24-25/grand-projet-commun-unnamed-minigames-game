@@ -28,8 +28,9 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     }
     private IEnumerator DelayAfterWin(Action callback)
     {
-        yield return new WaitForSeconds(2f);
-        GlobalSceneController.OpenScene(GameSettings.TransitionScene);
+   
+        yield return new WaitForSeconds(2.5f);
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
         callback.Invoke();
     }
 
@@ -41,7 +42,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 
     private IEnumerator DelayToStartMiniGame()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         LoadNextMinigame();
     }
     public void LoadNextMinigame()
