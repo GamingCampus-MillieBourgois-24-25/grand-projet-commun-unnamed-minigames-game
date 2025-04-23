@@ -14,6 +14,8 @@ public class PointerController : MonoBehaviour
     public Text startText;
     public Text victoryText;
     public Text loseText; // Référence au texte "Lose"
+    [Header("Références supplémentaires")]
+    public LevelManager levelManager; // Référence au LevelManager
 
     [Header("Images d'États")]
     public GameObject axoVictory; // PNG pour la victoire
@@ -32,7 +34,7 @@ public class PointerController : MonoBehaviour
     private Vector3 targetPosition;
     private bool canMove = false;
     private int successCount = 0;
-    private int successNeeded = 3;
+    private int successNeeded = 2;
     private int failCount = 0; // Compteur d'échecs
 
     private Transform mainCameraTransform;
@@ -43,19 +45,39 @@ public class PointerController : MonoBehaviour
 
     void Start()
     {
+        // Validation des références
+        if (pointA == null || pointB == null)
+        {
+            Debug.LogError("Les points A et B ne sont pas assignés !");
+            return;
+        }
+
         pointerTransform = GetComponent<RectTransform>();
+        if (pointerTransform == null)
+        {
+            Debug.LogError("RectTransform manquant sur l'objet PointerController !");
+            return;
+        }
+
         targetPosition = pointB.position;
 
         // Récupère la caméra principale
         mainCamera = Camera.main;
-        mainCameraTransform = mainCamera.transform;
-        originalCameraPosition = mainCameraTransform.position;
-
-        // Configure le post-traitement
-        postProcessingVolume = mainCamera.GetComponent<Volume>();
-        if (postProcessingVolume != null)
+        if (mainCamera != null)
         {
-            postProcessingVolume.profile.TryGet(out depthOfField);
+            mainCameraTransform = mainCamera.transform;
+            originalCameraPosition = mainCameraTransform.position;
+
+            // Configure le post-traitement
+            postProcessingVolume = mainCamera.GetComponent<Volume>();
+            if (postProcessingVolume != null)
+            {
+                postProcessingVolume.profile.TryGet(out depthOfField);
+            }
+        }
+        else
+        {
+            Debug.LogError("Caméra principale introuvable !");
         }
 
         // Assurez-vous que le texte "Lose" est désactivé au début
@@ -70,9 +92,12 @@ public class PointerController : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        startText.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        startText.gameObject.SetActive(false);
+        if (startText != null)
+        {
+            startText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            startText.gameObject.SetActive(false);
+        }
         canMove = true;
     }
 
@@ -99,8 +124,30 @@ public class PointerController : MonoBehaviour
         return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
     }
 
+    IEnumerator HammerEffect()
+    {
+        Vector3 originalPosition = pointerTransform.position; // Sauvegarde la position initiale
+        Vector3 hammerPosition = originalPosition + new Vector3(0, -20f, 0); // Position légèrement en dessous
+
+        // Descend le pointeur
+        pointerTransform.position = hammerPosition;
+        yield return new WaitForSeconds(0.1f); // Attente courte pour l'effet de descente
+
+        // Remonte le pointeur à sa position initiale
+        pointerTransform.position = originalPosition;
+    }
+
     void CheckSuccess()
     {
+        // Lance l'effet de marteau
+        StartCoroutine(HammerEffect());
+
+        if (safeZone == null)
+        {
+            Debug.LogError("Safe Zone non assignée !");
+            return;
+        }
+
         if (RectTransformUtility.RectangleContainsScreenPoint(safeZone, pointerTransform.position, null))
         {
             successCount++;
@@ -114,10 +161,14 @@ public class PointerController : MonoBehaviour
             // Affiche l'image de réussite
             ShowAxoState(axoSuccess);
 
-            // Déclenche le zoom immédiatement après 2 réussites
-            if (successCount == 2)
+            // Change la position de la safeZone via le LevelManager
+            if (levelManager != null)
             {
-                StartCoroutine(ZoomAndFocusEffect());
+                levelManager.UpdateSafeZone(); // Met à jour la Safe Zone
+            }
+            else
+            {
+                Debug.LogError("LevelManager non assigné !");
             }
 
             // Vérifie si le joueur a gagné
@@ -151,6 +202,8 @@ public class PointerController : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
+        if (mainCameraTransform == null) yield break;
+
         float elapsed = 0f;
 
         while (elapsed < shakeDuration)
@@ -183,59 +236,13 @@ public class PointerController : MonoBehaviour
             victoryText.gameObject.SetActive(true);
         }
 
-        // Déclenche le zoom et les effets
-        yield return StartCoroutine(ZoomAndFocusEffect());
-
         yield return new WaitForSeconds(2f);
         LoadNextMiniGame();
-    }
-
-
-
-    IEnumerator ZoomAndFocusEffect()
-    {
-        float targetOrthographicSize = 5f; // Taille orthographique cible pour le zoom
-        float zoomDuration = 1f; // Durée du zoom
-        float elapsedTime = 0f;
-
-        float initialOrthographicSize = mainCamera.orthographicSize;
-
-        // Vérifie si l'effet Depth of Field est disponible
-        if (depthOfField != null)
-        {
-            depthOfField.active = true; // Active l'effet
-        }
-
-        // Paramètres initiaux et cibles pour le flou
-        float initialFocusDistance = 30f; // Distance initiale de mise au point
-        float targetFocusDistance = 10f;  // Distance cible de mise au point
-        float initialAperture = 5.6f;    // Ouverture initiale
-        float targetAperture = 2.8f;     // Ouverture cible (plus petite = plus de flou)
-
-        while (elapsedTime < zoomDuration)
-        {
-            elapsedTime += Time.deltaTime;
-
-            // Interpolation de la taille orthographique
-            mainCamera.orthographicSize = Mathf.Lerp(initialOrthographicSize, targetOrthographicSize, elapsedTime / zoomDuration);
-
-            // Interpolation de la mise au point et de l'ouverture
-            if (depthOfField != null)
-            {
-                depthOfField.focusDistance.value = Mathf.Lerp(initialFocusDistance, targetFocusDistance, elapsedTime / zoomDuration);
-                depthOfField.aperture.value = Mathf.Lerp(initialAperture, targetAperture, elapsedTime / zoomDuration);
-            }
-
-            yield return null;
-        }
-
-        Debug.Log("Zoom et effet de mise au point terminés.");
     }
 
     void LoadNextMiniGame()
     {
         Debug.Log("Chargement du prochain mini-jeu...");
-        // Ici, ajoute le code pour charger ton prochain mini-jeu
         // Exemple si tu veux charger une nouvelle scène :
         // SceneManager.LoadScene("MAIN Hit the road");
     }
