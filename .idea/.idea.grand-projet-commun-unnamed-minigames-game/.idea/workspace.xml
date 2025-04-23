@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +32,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "LocalizeText",
+    "git-widget-placeholder": "Merging WheelIcons",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,6 +103,7 @@
       <workItem from="1744633648965" duration="8815000" />
       <workItem from="1744788352425" duration="12027000" />
       <workItem from="1744871768664" duration="11699000" />
+      <workItem from="1745393197216" duration="2524000" />
     </task>
     <servers />
   </component>
