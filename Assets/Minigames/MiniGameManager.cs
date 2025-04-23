@@ -38,7 +38,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     {
         yield return new WaitForSeconds(2f);
         DisplayMiniGameIcons.Instance.UpdateIcons();
-        GlobalSceneController.OpenScene(GameSettings.MainMenuScene);
+        GlobalSceneController.OpenScene(GameSettings.ReviveScene);
     }
 
     private IEnumerator DelayToStartMiniGame()

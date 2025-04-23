@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Fight the foes/Scenes/MAIN Fight The Foes.unity
     guid: dac6b53748ec11e408fcca2c79aa62d7
+  - enabled: 1
+    path: Assets/Application/MainScreens/Scenes/MAIN_Revive.unity
+    guid: 6761ab6d702d0a342ad00bf1bcf6682f
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4515f03a2992a864ea49a057a8c4daa5,
       type: 2}
