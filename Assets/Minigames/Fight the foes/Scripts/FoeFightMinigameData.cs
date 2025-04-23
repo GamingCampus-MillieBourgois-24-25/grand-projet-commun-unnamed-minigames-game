@@ -8,7 +8,6 @@ namespace AxoLoop.Minigames.FightTheFoes
     /// <summary>
     /// Singleton qui contient les données de la minijeu
     /// </summary>
-    [RequireComponent(typeof(SpriteRenderer))]
     public class FoeFightMinigameData : SingletonMB<FoeFightMinigameData>
     {
         /// <summary>

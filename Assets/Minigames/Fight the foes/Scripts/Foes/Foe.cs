@@ -25,7 +25,6 @@ namespace AxoLoop.Minigames.FightTheFoes
         protected virtual void Start()
         {
             animator = GetComponent<Animator>();
-            animator.Play("Idle");
         }
 
 
@@ -46,13 +45,13 @@ namespace AxoLoop.Minigames.FightTheFoes
         public virtual void DieAnimation(Action callBack)
         {
             currentCallback = callBack;
-            animator.SetTrigger("TankTrigger");
+            animator.SetTrigger("DieTrigger");
         }
 
         public virtual void TankAnimation(Action callBack)
         {
             currentCallback = callBack;
-            animator.SetTrigger("DieTrigger");
+            animator.SetTrigger("TankTrigger");
         }
 
     }

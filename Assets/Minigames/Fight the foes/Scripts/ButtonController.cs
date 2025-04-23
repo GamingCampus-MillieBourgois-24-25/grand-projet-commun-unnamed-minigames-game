@@ -6,7 +6,6 @@ using AxoLoop.Minigames.FightTheFoes;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(LocalizeTextTMP))]
 public class ButtonController : MonoBehaviour
 {
 

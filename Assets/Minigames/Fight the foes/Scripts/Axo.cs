@@ -5,11 +5,17 @@ using UnityEngine;
 
 namespace AxoLoop.Minigames.FightTheFoes
 {
+    [RequireComponent(typeof(Animator))]
     public class Axo : SingletonMB<Axo>
     {
         [SerializeField] protected Sprite AliveSprite;
-
+        private Animator animator;
         private Action attackCallback;
+
+        private void Start()
+        {
+            animator = GetComponent<Animator>();
+        }
 
         public void Die(Action callBack)
         {
@@ -17,20 +23,10 @@ namespace AxoLoop.Minigames.FightTheFoes
             callBack?.Invoke();
         }
 
-        public void PlayAttack(FoeType targetType, Action callBack)
+        public void PlayAttack(AnimationClip attack, Action callBack)
         {
             attackCallback = callBack;
-            switch (targetType)
-            {
-                case FoeType.Liquid: 
-                    break;
-                case FoeType.Food: 
-                    break;
-                case FoeType.Wind: 
-                    break;
-                case FoeType.Fire: 
-                    break;
-            }
+            animator.Play(attack.name);
         }
 
 
