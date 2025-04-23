@@ -27,8 +27,8 @@ public class PointerController : MonoBehaviour
     [Header("Paramètres")]
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float speedIncrease = 10f;
-    [SerializeField] private float shakeDuration = 0.2f; // Durée de la vibration
-    [SerializeField] private float shakeMagnitude = 0.1f; // Intensité de la vibration
+    [SerializeField] private float shakeDuration = 0.15f; // Durée de la vibration
+    [SerializeField] private float shakeMagnitude = 0.08f; // Intensité de la vibration
 
     private RectTransform pointerTransform;
     private Vector3 targetPosition;
@@ -42,6 +42,7 @@ public class PointerController : MonoBehaviour
     private Camera mainCamera;
     private Volume postProcessingVolume;
     private DepthOfField depthOfField;
+
 
     void Start()
     {
