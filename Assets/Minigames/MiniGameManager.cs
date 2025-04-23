@@ -18,6 +18,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         {
             Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
             StartCoroutine(DelayAfterWin(Step2));
+            
             _calculScoreAndCombo.OnMiniGameWon();
         }
 

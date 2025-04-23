@@ -20,6 +20,7 @@ public class DisplayMiniGameIcons : MonoBehaviour
     public void UpdateIcons()
     {
         _score = ScoreManager.Instance.GetTotalScore();
+        
         for (int i = 0; i < MiniGameManager.Instance.minigames.Length; i++)
         {
             var minigame = MiniGameManager.Instance.minigames[i];
