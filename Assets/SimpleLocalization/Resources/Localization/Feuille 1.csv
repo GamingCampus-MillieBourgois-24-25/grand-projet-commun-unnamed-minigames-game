@@ -5,3 +5,9 @@ MainMenu.Play,Play,Jouer
 Setting.Title,Settings,Parametre
 Settings.Account,Account,Compte
 StartScreen.Play,Play,Jouer
+FightTheFoes.Fang,Bite,Morsure
+FightTheFoes.Drink,Drink,Boire
+FightTheFoes.Breath,Air blast,Souffle
+FightTheFoes.Water,Water jet,Jet d'eau
+Revive.Title,Revive,Resusciter
+Revive.Ticket,Tickets : ,Billets : 
