@@ -18,6 +18,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         {
             Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
             StartCoroutine(DelayAfterWin(Step2));
+            
             _calculScoreAndCombo.OnMiniGameWon();
         }
 
@@ -28,7 +29,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     }
     private IEnumerator DelayAfterWin(Action callback)
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         GlobalSceneController.OpenScene(GameSettings.TransitionScene);
         callback.Invoke();
     }
@@ -36,12 +37,13 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     private IEnumerator DelayAfterLose()
     {
         yield return new WaitForSeconds(2f);
+        DisplayMiniGameIcons.Instance.UpdateIcons();
         GlobalSceneController.OpenScene(GameSettings.MainMenuScene);
     }
 
     private IEnumerator DelayToStartMiniGame()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
         LoadNextMinigame();
     }
     public void LoadNextMinigame()
