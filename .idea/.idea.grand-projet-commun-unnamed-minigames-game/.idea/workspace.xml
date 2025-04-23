@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/GameManager/VoxelGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Hit The Road/Scripts/GameManager/VoxelGameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MiniGameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/CanRevive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/CanRevive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/TryRevive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/TryRevive.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Revive",
+    "git-widget-placeholder": "FixScripts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,7 +108,7 @@
       <workItem from="1744633648965" duration="8815000" />
       <workItem from="1744788352425" duration="12027000" />
       <workItem from="1744871768664" duration="11699000" />
-      <workItem from="1745393197216" duration="7507000" />
+      <workItem from="1745393197216" duration="7884000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@ using Axoloop.Global;
 
 public class TryRevive : MonoBehaviour
 {
-    public int ticket;
+    [SerializeField] private int ticket;
     public static TryRevive Instance;
 
     private void Awake()
@@ -13,7 +13,7 @@ public class TryRevive : MonoBehaviour
         Instance = this;
     }
 
-    public void ReviveWithTIcket()
+    public void ReviveWithTicket()
     {
         if (ticket <= 0)
         {
@@ -33,5 +33,10 @@ public class TryRevive : MonoBehaviour
     public void DontRevive()
     {
         GlobalSceneController.OpenScene(GameSettings.MainMenuScene);
+    }
+
+    public int GetTicket()
+    {
+        return ticket;
     }
 }
