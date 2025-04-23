@@ -21,7 +21,7 @@ public class RivalBike : MonoBehaviour
     {
         Instance = this;
         
-        int spawnType = Random.Range(0, 3);
+        int spawnType = Random.Range(0, 2);
         if (spawnType == 0) // gauche
         {
             transform.position = new Vector3(-laneOffset, transform.position.y, transform.position.z);
@@ -98,10 +98,7 @@ public class RivalBike : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    public float GetFinalLane()
-    {
-        return finalLane;
-    }
+
 
     // Détecter si le RivalBike a dépassé un point de défaite
     private void OnTriggerEnter(Collider other)
@@ -191,5 +188,10 @@ public class RivalBike : MonoBehaviour
         // Désactive le RivalBike après un court délai
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
+    }
+
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }

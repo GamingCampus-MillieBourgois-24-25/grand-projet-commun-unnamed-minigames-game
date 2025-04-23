@@ -30,7 +30,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     {
    
         yield return new WaitForSeconds(2.5f);
-        GlobalSceneController.OpenScene(GameSettings.TransitionScene.name);
+        GlobalSceneController.OpenScene(GameSettings.TransitionScene);
         callback.Invoke();
     }
 
