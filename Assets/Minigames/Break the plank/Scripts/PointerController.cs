@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class PointerController : MonoBehaviour
 {
@@ -12,6 +14,13 @@ public class PointerController : MonoBehaviour
     public Text startText;
     public Text victoryText;
     public Text loseText; // Référence au texte "Lose"
+
+    [Header("Images d'États")]
+    public GameObject axoVictory; // PNG pour la victoire
+    public GameObject axoLose; // PNG pour la défaite
+    public GameObject axoWaiting; // PNG pour l'attente du premier clic
+    public GameObject axoPointerMove; // PNG pour le mouvement du pointeur
+    public GameObject axoSuccess; // PNG pour une réussite
 
     [Header("Paramètres")]
     [SerializeField] private float moveSpeed = 100f;
@@ -28,6 +37,9 @@ public class PointerController : MonoBehaviour
 
     private Transform mainCameraTransform;
     private Vector3 originalCameraPosition;
+    private Camera mainCamera;
+    private Volume postProcessingVolume;
+    private DepthOfField depthOfField;
 
     void Start()
     {
@@ -35,12 +47,23 @@ public class PointerController : MonoBehaviour
         targetPosition = pointB.position;
 
         // Récupère la caméra principale
-        mainCameraTransform = Camera.main.transform;
+        mainCamera = Camera.main;
+        mainCameraTransform = mainCamera.transform;
         originalCameraPosition = mainCameraTransform.position;
+
+        // Configure le post-traitement
+        postProcessingVolume = mainCamera.GetComponent<Volume>();
+        if (postProcessingVolume != null)
+        {
+            postProcessingVolume.profile.TryGet(out depthOfField);
+        }
 
         // Assurez-vous que le texte "Lose" est désactivé au début
         if (loseText != null)
             loseText.gameObject.SetActive(false);
+
+        // Affiche l'image d'attente
+        ShowAxoState(axoWaiting);
 
         StartCoroutine(StartGame());
     }
@@ -56,6 +79,9 @@ public class PointerController : MonoBehaviour
     void Update()
     {
         if (!canMove) return;
+
+        // Affiche l'image de mouvement du pointeur
+        ShowAxoState(axoPointerMove);
 
         pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
@@ -85,8 +111,20 @@ public class PointerController : MonoBehaviour
 
             Debug.Log($"Succès {successCount}/{successNeeded}");
 
+            // Affiche l'image de réussite
+            ShowAxoState(axoSuccess);
+
+            // Déclenche le zoom immédiatement après 2 réussites
+            if (successCount == 2)
+            {
+                StartCoroutine(ZoomAndFocusEffect());
+            }
+
+            // Vérifie si le joueur a gagné
             if (successCount >= successNeeded)
+            {
                 StartCoroutine(ShowVictoryAndChangeGame());
+            }
         }
         else
         {
@@ -103,6 +141,7 @@ public class PointerController : MonoBehaviour
     void ShowLoseText()
     {
         canMove = false; // Arrête le mouvement
+        ShowAxoState(axoLose); // Affiche l'image de défaite
         if (loseText != null)
         {
             loseText.gameObject.SetActive(true); // Affiche le texte "Lose"
@@ -130,9 +169,67 @@ public class PointerController : MonoBehaviour
     IEnumerator ShowVictoryAndChangeGame()
     {
         canMove = false;
-        victoryText.gameObject.SetActive(true);
+
+        // Affiche l'image de réussite (axoSuccess)
+        ShowAxoState(axoSuccess);
+        yield return new WaitForSeconds(2f); // Attente de 2 secondes
+
+        // Affiche l'image de victoire (axoVictory)
+        ShowAxoState(axoVictory);
+
+        // Affiche le texte de victoire en même temps
+        if (victoryText != null)
+        {
+            victoryText.gameObject.SetActive(true);
+        }
+
+        // Déclenche le zoom et les effets
+        yield return StartCoroutine(ZoomAndFocusEffect());
+
         yield return new WaitForSeconds(2f);
         LoadNextMiniGame();
+    }
+
+
+
+    IEnumerator ZoomAndFocusEffect()
+    {
+        float targetOrthographicSize = 5f; // Taille orthographique cible pour le zoom
+        float zoomDuration = 1f; // Durée du zoom
+        float elapsedTime = 0f;
+
+        float initialOrthographicSize = mainCamera.orthographicSize;
+
+        // Vérifie si l'effet Depth of Field est disponible
+        if (depthOfField != null)
+        {
+            depthOfField.active = true; // Active l'effet
+        }
+
+        // Paramètres initiaux et cibles pour le flou
+        float initialFocusDistance = 30f; // Distance initiale de mise au point
+        float targetFocusDistance = 10f;  // Distance cible de mise au point
+        float initialAperture = 5.6f;    // Ouverture initiale
+        float targetAperture = 2.8f;     // Ouverture cible (plus petite = plus de flou)
+
+        while (elapsedTime < zoomDuration)
+        {
+            elapsedTime += Time.deltaTime;
+
+            // Interpolation de la taille orthographique
+            mainCamera.orthographicSize = Mathf.Lerp(initialOrthographicSize, targetOrthographicSize, elapsedTime / zoomDuration);
+
+            // Interpolation de la mise au point et de l'ouverture
+            if (depthOfField != null)
+            {
+                depthOfField.focusDistance.value = Mathf.Lerp(initialFocusDistance, targetFocusDistance, elapsedTime / zoomDuration);
+                depthOfField.aperture.value = Mathf.Lerp(initialAperture, targetAperture, elapsedTime / zoomDuration);
+            }
+
+            yield return null;
+        }
+
+        Debug.Log("Zoom et effet de mise au point terminés.");
     }
 
     void LoadNextMiniGame()
@@ -141,5 +238,18 @@ public class PointerController : MonoBehaviour
         // Ici, ajoute le code pour charger ton prochain mini-jeu
         // Exemple si tu veux charger une nouvelle scène :
         // SceneManager.LoadScene("MAIN Hit the road");
+    }
+
+    void ShowAxoState(GameObject activeAxo)
+    {
+        // Désactive toutes les images
+        if (axoVictory != null) axoVictory.SetActive(false);
+        if (axoLose != null) axoLose.SetActive(false);
+        if (axoWaiting != null) axoWaiting.SetActive(false);
+        if (axoPointerMove != null) axoPointerMove.SetActive(false);
+        if (axoSuccess != null) axoSuccess.SetActive(false);
+
+        // Active uniquement l'image correspondant à l'état actuel
+        if (activeAxo != null) activeAxo.SetActive(true);
     }
 }
