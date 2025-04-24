@@ -32,6 +32,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void AttackTouched()
         {
+            animator.SetTrigger("Reset");
             attackCallback?.Invoke();
             attackCallback = null;
         }
