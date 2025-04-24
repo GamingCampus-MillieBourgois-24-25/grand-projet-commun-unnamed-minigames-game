@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Axoloop.Global;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 namespace AxoLoop.Minigames.FightTheFoes
@@ -15,7 +16,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         /// </summary>
         Foe currentFoe;
         /// <summary>
-        /// Attackes actuellement disponibles
+        /// Attaques actuellement disponibles
         /// </summary>
         List<FoeType> currentAttacks = new List<FoeType>();
         /// <summary>
@@ -23,9 +24,21 @@ namespace AxoLoop.Minigames.FightTheFoes
         /// </summary>
         List<Foe> gameFoes = new List<Foe>();
 
+
+
+        bool lockedAttack;
+
         public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
         public static List<FoeType> CurrentAttacks { get => Instance.currentAttacks; set => Instance.currentAttacks = value; }
         public static List<Foe> GameFoes { get => Instance.gameFoes; set => Instance.gameFoes = value; }
+        
+        public static bool LockedAttack { 
+            get => Instance.lockedAttack; 
+            set {
+                Instance.lockedAttack = value;
+                Instance.LockButtons(!value);
+            }
+        }
 
 
 
@@ -43,8 +56,18 @@ namespace AxoLoop.Minigames.FightTheFoes
         /// </summary>
         [SerializeField] Axo axo;
 
+        [SerializeField] List<Button> gameButtons = new List<Button>();
+
         public static List<AttackObject> AttackObjectList { get => Instance.attackObjectList; set => Instance.attackObjectList = value; }
         public static List<Foe> FoesList { get => Instance.foesList; set => Instance.foesList = value; }
         public static Axo Axo { get => Instance.axo; set => Instance.axo = value; }
+
+
+
+        private void LockButtons(bool state)
+        {
+            gameButtons.ForEach(button => button.interactable = state);
+        }
+
     }
 }

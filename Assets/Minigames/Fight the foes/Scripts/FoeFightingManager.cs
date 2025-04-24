@@ -13,6 +13,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void PlayAttack(FoeType type)
         {
+            FoeFightMinigameData.LockedAttack = true;
+
             var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
 
             blocking = false;
