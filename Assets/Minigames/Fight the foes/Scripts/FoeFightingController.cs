@@ -80,8 +80,6 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void FoeTurn(bool blocking)
         {
-            //foe attack
-
             if (!blocking)
             {
                 //game over
