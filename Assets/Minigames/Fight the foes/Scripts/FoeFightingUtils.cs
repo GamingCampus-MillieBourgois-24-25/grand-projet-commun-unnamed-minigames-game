@@ -66,14 +66,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             if (shuffleMode == DifficultyMeter.Easy)
             {
-
-                for (int i = 0; i < attacks.Count; i++)
+                if (!attacks.Contains(foeType))
                 {
-                    if (!attacks.Contains(foeType))
-                    {
-                        int index = (Random.Range(0, 2) == 0) ? 0 : 1;
-                        attacks[index] = foeType;
-                    }
+                    int index = (Random.Range(0, 2) == 0) ? 0 : 1;
+                    attacks[index] = foeType;
                 }
             }
 
