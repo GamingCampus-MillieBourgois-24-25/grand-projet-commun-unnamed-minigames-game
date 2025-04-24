@@ -7,7 +7,15 @@ public class JenkinsBuild
     public static void BuildAndroid()
     {
         string buildPath = "Builds/Android";
-        string[] scenes = { "Assets/Scenes/SampleScene.unity" };
+        string[] scenes = {
+            "Assets/_Common/MAIN_MainScene.unity",
+            "Assets/Application/MainScreens/Scenes/MAIN_StartScreen.unity",
+            "Assets/Application/MainScreens/Scenes/MAIN_Menu_Principal.unity",
+            "Assets/Application/MainScreens/Scenes/MAIN_Parametres.unity",
+            "Assets/Application/MainScreens/Scenes/MAIN_TransitionMinigames.unity",
+            "Assets/Application/MainScreens/Scenes/MAIN_Boutique.unity",
+            "Assets/Minigames/Hit The Road/MAIN Hit the road.unity" 
+        };
 
         BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
         {
@@ -32,3 +40,5 @@ public class JenkinsBuild
         }
     }
 }
+
+

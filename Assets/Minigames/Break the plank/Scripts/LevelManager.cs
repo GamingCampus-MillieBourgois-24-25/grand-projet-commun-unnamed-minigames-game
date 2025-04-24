@@ -4,51 +4,41 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [Header("Références")]
-    public PointerController pointerController;
-    public RectTransform safeZone;
-    public Text levelText;
-
-    [Header("Paramètres de Niveau")]
-    public int currentLevel = 1;
-
-    [Header("Vitesse du Pointer")]
-    public float baseSpeed = 80f;
-    public float speedIncrement = 10f;
+    public RectTransform safeZone; // Référence à la Safe Zone
 
     [Header("Safe Zone - Position et Taille")]
-    public float minSafeZoneX = -200f;
-    public float maxSafeZoneX = 200f;
-    public float minSafeZoneWidth = 100f;
-    public float maxSafeZoneWidth = 250f;
+    public float minSafeZoneX = -200f; // Position X minimale
+    public float maxSafeZoneX = 200f; // Position X maximale
+    public float minSafeZoneWidth = 100f; // Largeur minimale
+    public float maxSafeZoneWidth = 250f; // Largeur maximale
 
     void Start()
     {
-        ApplyLevelSettings();
+        // Initialisation de la Safe Zone
+        UpdateSafeZone();
     }
 
-    public void NextLevel()
+    /// <summary>
+    /// Met à jour la position et la taille de la Safe Zone.
+    /// </summary>
+    public void UpdateSafeZone()
     {
-        currentLevel++;
-        ApplyLevelSettings();
-    }
+        if (safeZone == null)
+        {
+            Debug.LogError("Safe Zone non assignée dans l'inspecteur !");
+            return;
+        }
 
-    void ApplyLevelSettings()
-    {
-        // Modifier la position X et la largeur de la Safe Zone
+        // Génère une nouvelle position X aléatoire
         float newX = Random.Range(minSafeZoneX, maxSafeZoneX);
+
+        // Génère une nouvelle largeur aléatoire
         float newWidth = Random.Range(minSafeZoneWidth, maxSafeZoneWidth);
 
+        // Applique la nouvelle position et taille
         safeZone.anchoredPosition = new Vector2(newX, safeZone.anchoredPosition.y);
         safeZone.sizeDelta = new Vector2(newWidth, safeZone.sizeDelta.y);
 
-        if (levelText != null)
-            levelText.text = "Niveau " + currentLevel;
-
-        Debug.Log($"Niveau {currentLevel} | SafeZone X: {newX} | Largeur: {newWidth}");
-    }
-
-    public float GetCurrentSpeed()
-    {
-        return baseSpeed + (currentLevel - 1) * speedIncrement;
+        Debug.Log($"SafeZone mise à jour | Position X: {newX}, Largeur: {newWidth}");
     }
 }
