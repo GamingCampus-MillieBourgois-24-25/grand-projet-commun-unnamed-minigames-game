@@ -26,13 +26,12 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void PlayAttack(AnimationClip attack, Action callBack)
         {
             attackCallback = callBack;
-            animator.Play(attack.name);
+            animator.Play(attack.name, -1, 0);
         }
 
 
         public void AttackTouched()
         {
-            animator.SetTrigger("Reset");
             attackCallback?.Invoke();
             attackCallback = null;
         }
