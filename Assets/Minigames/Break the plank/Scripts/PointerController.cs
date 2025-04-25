@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class PointerController : MonoBehaviour
+public class PointerController : MonoBehaviour, IMinigameController
 {
     [Header("Références")]
     public Transform pointA;
@@ -48,7 +48,7 @@ public class PointerController : MonoBehaviour
     private Camera mainCamera;
     private Volume postProcessingVolume;
     private DepthOfField depthOfField;
-
+    bool moveArrow = true;
     void Start()
     {
         // Validation des références
@@ -117,7 +117,7 @@ public class PointerController : MonoBehaviour
         // Affiche l'image de mouvement du pointeur
         ShowAxoState(axoPointerMove);
 
-        pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
+        if(moveArrow) pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(pointerTransform.position, pointA.position) < 0.1f)
             targetPosition = pointB.position;
@@ -125,7 +125,7 @@ public class PointerController : MonoBehaviour
             targetPosition = pointA.position;
 
         if (Input.GetKeyDown(KeyCode.Space) || IsTouching())
-            CheckSuccess();
+            PlayAction();
     }
 
     bool IsTouching()
@@ -133,23 +133,33 @@ public class PointerController : MonoBehaviour
         return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
     }
 
-    IEnumerator HammerEffect()
+    IEnumerator HammerEffect(System.Action callback)
     {
+        moveArrow = false;
         Vector3 originalPosition = pointerTransform.position; // Sauvegarde la position initiale
         Vector3 hammerPosition = originalPosition + new Vector3(0, -40f, 0); // Position légèrement en dessous
 
         // Descend le pointeur
         pointerTransform.position = hammerPosition;
-        yield return new WaitForSeconds(0.1f); // Attente courte pour l'effet de descente
+        yield return new WaitForSeconds(0.5f); // Attente courte pour l'effet de descente
+        //quand le pointeur a fini de descendre
+        callback.Invoke();
+
 
         // Remonte le pointeur à sa position initiale
-        pointerTransform.position = originalPosition;
+        pointerTransform.position = originalPosition; 
+        moveArrow = true;
+
+    }
+
+    void PlayAction()
+    {
+        // Lance l'effet de marteau
+        StartCoroutine(HammerEffect(CheckSuccess));
     }
 
     void CheckSuccess()
     {
-        // Lance l'effet de marteau
-        StartCoroutine(HammerEffect());
 
         if (safeZone == null)
         {
@@ -230,7 +240,6 @@ public class PointerController : MonoBehaviour
         safeZone.gameObject.SetActive(false); // Désactive la Safe Zone après la disparition
     }
 
-
     void UpdatePlankState()
     {
         // Désactive tous les GameObjects
@@ -264,7 +273,6 @@ public class PointerController : MonoBehaviour
             plank_break_right.SetActive(true);
         }
     }
-
 
     void ResetPlankState()
     {
@@ -348,5 +356,64 @@ public class PointerController : MonoBehaviour
 
         // Active uniquement l'image correspondant à l'état actuel
         if (activeAxo != null) activeAxo.SetActive(true);
+    }
+
+    // Implémentation de l'interface IMinigameController
+    public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+    {
+        Debug.Log($"Génération du mini-jeu avec le seed {seed} et la difficulté {difficultyLevel}");
+        Random.InitState(seed);
+
+        // Ajustez les paramètres en fonction de la difficulté
+        switch (difficultyLevel)
+        {
+            case MinigameDifficultyLevel.VeryEasy:
+                moveSpeed = 50f;
+                successNeeded = 1;
+                break;
+            case MinigameDifficultyLevel.Easy:
+                moveSpeed = 75f;
+                successNeeded = 2;
+                break;
+            case MinigameDifficultyLevel.Medium:
+                moveSpeed = 100f;
+                successNeeded = 3;
+                break;
+            case MinigameDifficultyLevel.Hard:
+                moveSpeed = 125f;
+                successNeeded = 4;
+                break;
+            case MinigameDifficultyLevel.VeryHard:
+                moveSpeed = 150f;
+                successNeeded = 5;
+                break;
+            case MinigameDifficultyLevel.Impossible:
+                moveSpeed = 200f;
+                successNeeded = 6;
+                break;
+            default:
+                moveSpeed = 100f;
+                successNeeded = 2;
+                break;
+        }
+
+        // Réinitialisez l'état du jeu
+        ResetPlankState();
+        successCount = 0;
+        failCount = 0;
+        canMove = false;
+    }
+
+    public void InitializeMinigame()
+    {
+        Debug.Log("Initialisation du mini-jeu...");
+        ShowAxoState(axoWaiting);
+        StartCoroutine(StartGame());
+    }
+
+    public void StartMinigame()
+    {
+        Debug.Log("Démarrage du mini-jeu...");
+        canMove = true;
     }
 }
