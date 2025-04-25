@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 824152cb908883444bb83f48eeab24ba, type: 3}
-  m_Name: FightTheFoes
+  m_Name: AxoMatching
   m_EditorClassIdentifier: 
-  minigameName: Fight The Foes
-  sceneName: MAIN Fight The Foes
-  minigameIcon: {fileID: 21300000, guid: bd47ca0b62fd74844bb3ad53514a0e0c, type: 3}
-  miniGameIconLock: {fileID: 21300000, guid: 2e02cd8dee11a5c43b22a1a3862e5d06, type: 3}
+  minigameName: AxoMatching
+  sceneName: AxoMatching
+  minigameIcon: {fileID: 21300000, guid: 6fedfdd765783244ab45249a49ec6dc4, type: 3}
+  miniGameIconLock: {fileID: 21300000, guid: afe882f2688c07741a5ea0d27215b16e, type: 3}
   scoreToUnlock: 0

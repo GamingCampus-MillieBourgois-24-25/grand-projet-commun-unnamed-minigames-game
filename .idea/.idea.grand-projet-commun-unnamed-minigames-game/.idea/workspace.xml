@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/Localization/SetLocalizeText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/CanRevive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/CanRevive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/TryRevive.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/TryRevive.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Common/MAIN_MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightMinigameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightMinigameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/HItTheRoad.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/HItTheRoad.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MinigameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MinigameObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,20 +45,13 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "FixScripts",
+    "git-widget-placeholder": "Juicyness",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\erosalie\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\erosalie\\AppData\\Local\\Symbols\\src"
-    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -75,6 +76,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -85,6 +89,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -109,6 +116,7 @@
       <workItem from="1744788352425" duration="12027000" />
       <workItem from="1744871768664" duration="11699000" />
       <workItem from="1745393197216" duration="7884000" />
+      <workItem from="1745579623035" duration="123000" />
     </task>
     <servers />
   </component>
