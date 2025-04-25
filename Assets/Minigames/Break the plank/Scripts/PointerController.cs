@@ -136,7 +136,7 @@ public class PointerController : MonoBehaviour
     IEnumerator HammerEffect()
     {
         Vector3 originalPosition = pointerTransform.position; // Sauvegarde la position initiale
-        Vector3 hammerPosition = originalPosition + new Vector3(0, -20f, 0); // Position légèrement en dessous
+        Vector3 hammerPosition = originalPosition + new Vector3(0, -40f, 0); // Position légèrement en dessous
 
         // Descend le pointeur
         pointerTransform.position = hammerPosition;
@@ -174,16 +174,17 @@ public class PointerController : MonoBehaviour
             if (successCount == successNeeded)
             {
                 UpdatePlankState();
+                StartCoroutine(FadeOutSafeZone()); // Lance la disparition de la Safe Zone
             }
 
-            // Change la position de la safeZone via le LevelManager
-            if (levelManager != null)
+            // Change la position de la safeZone via le LevelManager uniquement si le nombre de succès est inférieur à successNeeded
+            if (levelManager != null && successCount < successNeeded)
             {
                 levelManager.UpdateSafeZone(); // Met à jour la Safe Zone
             }
-            else
+            else if (successCount >= successNeeded)
             {
-                Debug.LogError("LevelManager non assigné !");
+                Debug.Log("La Safe Zone ne se déplace plus.");
             }
 
             // Vérifie si le joueur a gagné
@@ -204,6 +205,32 @@ public class PointerController : MonoBehaviour
         }
     }
 
+    IEnumerator FadeOutSafeZone()
+    {
+        if (safeZone == null) yield break;
+
+        CanvasGroup canvasGroup = safeZone.GetComponent<CanvasGroup>();
+        if (canvasGroup == null)
+        {
+            // Ajoute un CanvasGroup si non présent
+            canvasGroup = safeZone.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        float duration = 0.7f; // Durée de la disparition
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / duration); // Réduit l'opacité
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f; // Assure que l'opacité est à 0
+        safeZone.gameObject.SetActive(false); // Désactive la Safe Zone après la disparition
+    }
+
+
     void UpdatePlankState()
     {
         // Désactive tous les GameObjects
@@ -215,19 +242,29 @@ public class PointerController : MonoBehaviour
         // Détermine la position de la Safe Zone
         float safeZoneX = safeZone.anchoredPosition.x;
 
-        if (safeZoneX < -200) // Zone gauche
+        // Définir des plages précises pour chaque sprite
+        if (safeZoneX < -300) // Zone très à gauche
         {
             plank_break_left.SetActive(true);
         }
-        else if (safeZoneX > 200) // Zone droite
+        else if (safeZoneX >= -300 && safeZoneX < -100) // Zone légèrement à gauche
         {
-            plank_break_right.SetActive(true);
+            plank_break_left.SetActive(true);
         }
-        else // Zone centrale
+        else if (safeZoneX >= -100 && safeZoneX <= 100) // Zone centrale
         {
             plank_break_middle.SetActive(true);
         }
+        else if (safeZoneX > 100 && safeZoneX <= 300) // Zone légèrement à droite
+        {
+            plank_break_right.SetActive(true);
+        }
+        else if (safeZoneX > 300) // Zone très à droite
+        {
+            plank_break_right.SetActive(true);
+        }
     }
+
 
     void ResetPlankState()
     {
