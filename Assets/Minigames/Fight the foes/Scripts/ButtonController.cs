@@ -10,7 +10,7 @@ public class ButtonController : MonoBehaviour
 {
 
     public FoeType buttonType { get; private set; }
-    [SerializeField] SpriteRenderer attackIcon;
+    [SerializeField] Image attackIcon;
     [SerializeField] Image attackImage;
 
     LocalizeTextTMP localizer;
