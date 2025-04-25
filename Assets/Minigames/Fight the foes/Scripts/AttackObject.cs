@@ -8,5 +8,5 @@ public class AttackObject : ScriptableObject
     public string attackName;
     public Color attackColor;
     public Sprite attackIcon;
-    public IAttack attack;
+    public AnimationClip attackAnimation;
 }

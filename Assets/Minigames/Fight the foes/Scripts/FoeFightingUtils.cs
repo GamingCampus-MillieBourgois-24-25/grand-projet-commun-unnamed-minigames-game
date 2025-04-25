@@ -52,7 +52,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             for (int i = 0; i < 2; i++)
             {
-                int RandomNumberPicked = Random.Range(0, attackList.Count);
+                int RandomNumberPicked = Random.Range(1, attackList.Count)-1;
                 if (i == 1)
                 {
                     while (attacks.Contains(attackList[RandomNumberPicked].attackType))
@@ -66,14 +66,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             if (shuffleMode == DifficultyMeter.Easy)
             {
-
-                for (int i = 0; i < attacks.Count; i++)
+                if (!attacks.Contains(foeType))
                 {
-                    if (!attacks.Contains(foeType))
-                    {
-                        int index = (Random.Range(0, 2) == 0) ? 0 : 1;
-                        attacks[index] = foeType;
-                    }
+                    int index = (Random.Range(0, 2) == 0) ? 0 : 1;
+                    attacks[index] = foeType;
                 }
             }
 

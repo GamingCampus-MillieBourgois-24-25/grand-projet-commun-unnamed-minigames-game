@@ -27,7 +27,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void Start()
         {
-            GenerateMinigame(4, MinigameDifficultyLevel.Easy);
+            GenerateMinigame(58, MinigameDifficultyLevel.Easy);
             InitializeMinigame();
             StartMinigame();
         }
@@ -39,7 +39,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             UnityEngine.Random.InitState(seed);
             difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
-            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 3);
+            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 10);
         }
 
         public void InitializeMinigame()
@@ -48,6 +48,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void StartMinigame()
         {
+            FoeFightMinigameData.LockedAttack = true;
+
             StartCoroutine(AxoAnimation(() => NextRound()));
         }
 
@@ -63,7 +65,6 @@ namespace AxoLoop.Minigames.FightTheFoes
             {
                 // no more ennemies : win
             }
-            BeginTurn();
         }
 
         void BeginTurn()
@@ -74,12 +75,11 @@ namespace AxoLoop.Minigames.FightTheFoes
                 attackButtons[i].SetButtonData(FoeFightMinigameData.CurrentAttacks[i]);
                 attackButtons[i].enabled = true;
             }
+            FoeFightMinigameData.LockedAttack = false;
         }
 
         public void FoeTurn(bool blocking)
         {
-            //foe attack
-
             if (!blocking)
             {
                 //game over

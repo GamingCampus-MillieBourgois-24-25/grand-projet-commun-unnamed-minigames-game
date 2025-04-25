@@ -13,6 +13,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void PlayAttack(FoeType type)
         {
+            FoeFightMinigameData.LockedAttack = true;
+
             var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
 
             blocking = false;
@@ -21,7 +23,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 blocking = true;
             }
 
-            attackObject.attack.PlayAttack(OnAttackHit);
+            FoeFightMinigameData.Axo.PlayAttack(attackObject.attackAnimation, () => OnAttackHit(attackObject.attackType));
         }
 
         void OnAttackHit(FoeType attackType)

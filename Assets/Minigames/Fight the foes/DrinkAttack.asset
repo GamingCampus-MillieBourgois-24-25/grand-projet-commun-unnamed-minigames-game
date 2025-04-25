@@ -16,3 +16,4 @@ MonoBehaviour:
   attackName: FightTheFoes.Drink
   attackColor: {r: 0.6784314, g: 0.8313726, b: 0.909804, a: 1}
   attackIcon: {fileID: -651355409, guid: b9ae04929ae6734428f48f6391d17ef6, type: 3}
+  attackAnimation: {fileID: 7400000, guid: 132c8bd88b8cbe14d9d9304b6129a3ab, type: 2}

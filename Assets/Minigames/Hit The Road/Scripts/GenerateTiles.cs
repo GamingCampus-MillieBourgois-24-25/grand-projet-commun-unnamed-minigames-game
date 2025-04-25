@@ -14,14 +14,12 @@ public class GenerateTiles : MonoBehaviour
     public float tileSpeed = 40f;
   
     public GameObject[] tile;
-    public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
-    public GameObject endPoint; 
+    public GameObject CamPosition1; /*position where the tile will be set to once it reaches the endPoint*/
+    public GameObject CamPosition2; 
     public GameObject emptyObject; //parent des objets généré dynamiquement par Instantiate
+    public GameObject Light;
     private int index;
-    /*Position for the front tile, the tile rendered by the camera, and the last tile*/
-    Vector3 frontPosition;
     Vector3 mainPosition;
-    Vector3 backPosition;
 
     // Start is called before the first frame update
     //void Start()
@@ -48,6 +46,7 @@ public class GenerateTiles : MonoBehaviour
 
     public void SettingUpTheScene()
     {
+        /* Choix aleatoire de la tuile */
         index = Random.Range(0, tile.Length);
 
         mainPosition.z = 50f;
@@ -60,9 +59,31 @@ public class GenerateTiles : MonoBehaviour
         Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
 
         tile[index].GetComponent<MovingTile>().setSpeed(tileSpeed);
-        
+
+        /* Choix aleatoire de la position de la camera*/
+        int camPos = Random.Range(0, 2);
+        if (camPos == 0)
+        {
+            Camera.main.transform.position = CamPosition1.transform.position;
+            Camera.main.transform.rotation = CamPosition1.transform.rotation;
+        }
+        if (camPos == 1)
+        {
+            Camera.main.transform.position = CamPosition2.transform.position;
+            Camera.main.transform.rotation = CamPosition2.transform.rotation;
+        }
+
+        /* Choix aleatoire de la rotation de la light*/
+        Quaternion lightRotation = Light.transform.rotation;
+        lightRotation.x = Random.Range(25.5f, 149.4f);
+        lightRotation.x = Random.Range(-644.9f,-385.4f);
+        Light.transform.rotation = lightRotation;
+
+
         Debug.Log(tile[index].GetComponent<MovingTile>().getName() + " index :"+ index);
         Debug.Log(" length :" + (tile.Length-1));
+        Debug.Log("Camera pos " + Camera.main.transform.position + "campos = "+camPos);
+        Debug.Log("light rotation : " + Light.transform.rotation);
     }
     
     public void setIndex(int index)
