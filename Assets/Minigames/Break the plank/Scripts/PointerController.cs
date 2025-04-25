@@ -24,6 +24,12 @@ public class PointerController : MonoBehaviour
     public GameObject axoPointerMove; // PNG pour le mouvement du pointeur
     public GameObject axoSuccess; // PNG pour une réussite
 
+    [Header("Plank Sprites")]
+    public GameObject plank_full; // Plank intact
+    public GameObject plank_break_middle; // Plank cassé au milieu
+    public GameObject plank_break_right; // Plank cassé à droite
+    public GameObject plank_break_left; // Plank cassé à gauche
+
     [Header("Paramètres")]
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float speedIncrease = 10f;
@@ -42,7 +48,6 @@ public class PointerController : MonoBehaviour
     private Camera mainCamera;
     private Volume postProcessingVolume;
     private DepthOfField depthOfField;
-
 
     void Start()
     {
@@ -87,6 +92,9 @@ public class PointerController : MonoBehaviour
 
         // Affiche l'image d'attente
         ShowAxoState(axoWaiting);
+
+        // Affiche le plank intact au début
+        ResetPlankState();
 
         StartCoroutine(StartGame());
     }
@@ -162,6 +170,12 @@ public class PointerController : MonoBehaviour
             // Affiche l'image de réussite
             ShowAxoState(axoSuccess);
 
+            // Affiche le plank correspondant uniquement après la 2ème frappe réussie
+            if (successCount == successNeeded)
+            {
+                UpdatePlankState();
+            }
+
             // Change la position de la safeZone via le LevelManager
             if (levelManager != null)
             {
@@ -190,10 +204,48 @@ public class PointerController : MonoBehaviour
         }
     }
 
+    void UpdatePlankState()
+    {
+        // Désactive tous les GameObjects
+        plank_full.SetActive(false);
+        plank_break_middle.SetActive(false);
+        plank_break_right.SetActive(false);
+        plank_break_left.SetActive(false);
+
+        // Détermine la position de la Safe Zone
+        float safeZoneX = safeZone.anchoredPosition.x;
+
+        if (safeZoneX < -200) // Zone gauche
+        {
+            plank_break_left.SetActive(true);
+        }
+        else if (safeZoneX > 200) // Zone droite
+        {
+            plank_break_right.SetActive(true);
+        }
+        else // Zone centrale
+        {
+            plank_break_middle.SetActive(true);
+        }
+    }
+
+    void ResetPlankState()
+    {
+        // Réinitialise l'état du plank à intact
+        plank_full.SetActive(true);
+        plank_break_middle.SetActive(false);
+        plank_break_right.SetActive(false);
+        plank_break_left.SetActive(false);
+    }
+
     void ShowLoseText()
     {
         canMove = false; // Arrête le mouvement
         ShowAxoState(axoLose); // Affiche l'image de défaite
+
+        // Réinitialise le plank à son état intact
+        ResetPlankState();
+
         if (loseText != null)
         {
             loseText.gameObject.SetActive(true); // Affiche le texte "Lose"
