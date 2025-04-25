@@ -20,7 +20,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] GameObject AxoIntro;
         [SerializeField] Transform AxoIntroTop;
 
-        [SerializeField] CanvasGroup canvasGroup;
+        [SerializeField] CanvasGroup ButtonsCanvasGroup;
 
         DifficultyMeter difficulty;
 
@@ -47,11 +47,13 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void InitializeMinigame()
         {
+            
         }
 
         public void StartMinigame()
         {
             FoeFightMinigameData.LockedAttack = true;
+            RageBar.Instance.StopFill();
 
             StartCoroutine(AxoAnimation(() => NextRound()));
         }
@@ -60,7 +62,6 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void NextRound()
         {
-            canvasGroup.alpha = 1;
             if (FoeFightMinigameData.GameFoes.Count > 0)
             {
                 StartCoroutine(SpawnFoe(() => BeginTurn()));
@@ -73,6 +74,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void BeginTurn()
         {
+            ButtonsCanvasGroup.alpha = 1;
             FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackObjectList);
             for (int i = 0; i < 2; i++)
             {
@@ -81,6 +83,8 @@ namespace AxoLoop.Minigames.FightTheFoes
             }
             FoeFightMinigameData.LockedAttack = false;
             FoeFightingUtils.ButtonsEnter?.Invoke();
+            RageBar.Instance.ResumeFill();
+
         }
 
         public void FoeTurn(bool blocking)

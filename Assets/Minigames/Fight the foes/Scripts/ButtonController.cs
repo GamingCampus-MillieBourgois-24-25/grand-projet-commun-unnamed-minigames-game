@@ -83,6 +83,9 @@ public class ButtonController : MonoBehaviour
         selected = true;
         PlaySelect();
         FoeFightingUtils.ButtonsExit?.Invoke();
+
+        RageBar.Instance.ReduceRage();
+        RageBar.Instance.StopFill();
     }
 
     public void SetButtonData(FoeType typeData)
