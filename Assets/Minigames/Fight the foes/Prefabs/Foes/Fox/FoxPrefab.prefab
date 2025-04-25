@@ -613,7 +613,12 @@ PrefabInstance:
     - target: {fileID: 199329606237963374, guid: efe021d4c307b5449b8121d46791cf95,
         type: 3}
       propertyPath: m_MaxParticleSize
-      value: 1
+      value: 30.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 199329606237963374, guid: efe021d4c307b5449b8121d46791cf95,
+        type: 3}
+      propertyPath: m_NormalDirection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199329606237963374, guid: efe021d4c307b5449b8121d46791cf95,
         type: 3}

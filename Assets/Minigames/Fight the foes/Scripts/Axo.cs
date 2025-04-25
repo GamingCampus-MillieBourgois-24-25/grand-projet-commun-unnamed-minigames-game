@@ -33,6 +33,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void AttackTouched()
         {
             attackCallback?.Invoke();
+            FoeFightingUtils.ButtonsHit?.Invoke();
             attackCallback = null;
         }
     }

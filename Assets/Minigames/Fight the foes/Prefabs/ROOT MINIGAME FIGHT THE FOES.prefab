@@ -266,6 +266,7 @@ MonoBehaviour:
   - {fileID: -2612338623071733120, guid: 269a43256bd51994f9e4e52ff6ea0a27, type: 3}
   - {fileID: -838771028089603956, guid: 5f402d2c05f4bca41a1911210b4186f3, type: 3}
   axo: {fileID: 479244770680391820}
+  gameButtons: []
 --- !u!114 &5535927592363771500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,7 +284,10 @@ MonoBehaviour:
   - {fileID: 8722621050456479972}
   blockButton: {fileID: 4762050678306675407, guid: 06f8fcebcf6c7ae4492027281480122d,
     type: 3}
-  spawnPoint: {fileID: 2656199616602664911}
+  FoeSpawnPoint: {fileID: 0}
+  AxoSpawnPoint: {fileID: 0}
+  AxoIntro: {fileID: 0}
+  AxoIntroTop: {fileID: 0}
 --- !u!1 &4266116543299501117
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +382,7 @@ GameObject:
   - component: {fileID: 5884722465505449112}
   - component: {fileID: 9004479922006616250}
   - component: {fileID: 479244770680391820}
+  - component: {fileID: 7537995371785773726}
   m_Layer: 6
   m_Name: axoSprite
   m_TagString: Untagged
@@ -465,6 +470,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AliveSprite: {fileID: 21300000, guid: 02ae83085c72ce34bb53d5f066b34fff, type: 3}
+--- !u!95 &7537995371785773726
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701289987086745090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1722268429357862543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -588,12 +614,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0833cebdcb09327468127dd2c321d1b1, type: 3}
---- !u!1 &2656199616602664911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3691277656241709376, guid: 0833cebdcb09327468127dd2c321d1b1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1722268429357862543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4725461353993395420 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6229195245408621139, guid: 0833cebdcb09327468127dd2c321d1b1,

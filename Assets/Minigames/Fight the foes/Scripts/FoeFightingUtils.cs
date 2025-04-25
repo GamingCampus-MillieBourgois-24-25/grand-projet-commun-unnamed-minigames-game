@@ -5,6 +5,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public static class FoeFightingUtils
     {
+        public static System.Action ButtonsEnter;
+        public static System.Action ButtonsExit;
+        public static System.Action ButtonsHit;
 
         public static DifficultyMeter SetDifficulty(MinigameDifficultyLevel difficulty)
         {

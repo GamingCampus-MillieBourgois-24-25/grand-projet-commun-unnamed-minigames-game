@@ -20,6 +20,8 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] GameObject AxoIntro;
         [SerializeField] Transform AxoIntroTop;
 
+        [SerializeField] CanvasGroup canvasGroup;
+
         DifficultyMeter difficulty;
 
         #endregion
@@ -27,6 +29,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void Start()
         {
+
             GenerateMinigame(58, MinigameDifficultyLevel.Easy);
             InitializeMinigame();
             StartMinigame();
@@ -57,6 +60,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void NextRound()
         {
+            canvasGroup.alpha = 1;
             if (FoeFightMinigameData.GameFoes.Count > 0)
             {
                 StartCoroutine(SpawnFoe(() => BeginTurn()));
@@ -76,6 +80,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 attackButtons[i].enabled = true;
             }
             FoeFightMinigameData.LockedAttack = false;
+            FoeFightingUtils.ButtonsEnter?.Invoke();
         }
 
         public void FoeTurn(bool blocking)
