@@ -141,8 +141,7 @@ MonoBehaviour:
   - {fileID: 8689525128957817697}
   - {fileID: 8689525128957817696}
   - {fileID: 8689525128957817695}
-  lockIcons: {fileID: 21300000, guid: 06fc1ce747e2e3d4b8900b6d990056d6, type: 3}
-  workIcons: {fileID: 21300000, guid: f00cd1bb2835eb84c88cc6181fe2031a, type: 3}
+  workIcons: {fileID: 21300000, guid: 5d3b1daddc44caa4da5c8ae1fa6054a5, type: 3}
 --- !u!1001 &8689525128957817693
 PrefabInstance:
   m_ObjectHideFlags: 0

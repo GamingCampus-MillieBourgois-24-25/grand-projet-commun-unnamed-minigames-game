@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class DisplayMiniGameIcons : MonoBehaviour
 {
     public Image[] spritesMiniGames;
-    public Sprite lockIcons, workIcons;
+    public Sprite workIcons;
 
     public static DisplayMiniGameIcons Instance;
     
@@ -20,22 +20,23 @@ public class DisplayMiniGameIcons : MonoBehaviour
     public void UpdateIcons()
     {
         _score = ScoreManager.Instance.GetTotalScore();
-        
-        for (int i = 0; i < MiniGameManager.Instance.minigames.Length; i++)
-        {
-            var minigame = MiniGameManager.Instance.minigames[i];
 
-            if (minigame == null)
+        for (var i = 0; i < MiniGameManager.Instance.minigames.Length; i++)
+        {
+            var miniGame = MiniGameManager.Instance.minigames[i];
+
+            if (miniGame == null)
             {
                 spritesMiniGames[i].sprite = workIcons;
+                continue;
             }
-            else if (minigame.scoreToUnlock <= _score)
+            if (miniGame.scoreToUnlock <= _score)
             {
-                spritesMiniGames[i].sprite = minigame.minigameIcon;
+                spritesMiniGames[i].sprite = miniGame.minigameIcon;
             }
             else
             {
-                spritesMiniGames[i].sprite = lockIcons;
+                spritesMiniGames[i].sprite = miniGame.miniGameIconLock;
             }
         }
     }

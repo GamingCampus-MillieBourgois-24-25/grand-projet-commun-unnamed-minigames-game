@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigameName: HitTheRoad
   sceneName: MAIN Hit the road
-  minigameIcon: {fileID: 21300000, guid: 7fdddf89a938d5c45a572c949859a1fd, type: 3}
+  minigameIcon: {fileID: 21300000, guid: cc0b7e9f70b537545b0db88f0c705559, type: 3}
+  miniGameIconLock: {fileID: 21300000, guid: be719fc7c79d91244a0b1a28c5befb8e, type: 3}
   scoreToUnlock: 0
