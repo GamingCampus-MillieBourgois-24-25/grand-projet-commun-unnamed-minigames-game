@@ -232,6 +232,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
+      propertyPath: minigames.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba,
+        type: 2}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
       propertyPath: minigames.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: c2172dc8edf18b144a7d94df174922d5,
@@ -240,8 +246,7 @@ PrefabInstance:
         type: 3}
       propertyPath: minigames.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: 47c504309ac479440a61e98e336586d9,
-        type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: minigames.Array.data[3]
@@ -256,6 +261,11 @@ PrefabInstance:
         type: 3}
       propertyPath: minigames.Array.data[5]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: unlockedMinigames.Array.size
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8763094407693590346, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}

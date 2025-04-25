@@ -16,4 +16,4 @@ MonoBehaviour:
   sceneName: AxoMatching
   minigameIcon: {fileID: 21300000, guid: 6fedfdd765783244ab45249a49ec6dc4, type: 3}
   miniGameIconLock: {fileID: 21300000, guid: afe882f2688c07741a5ea0d27215b16e, type: 3}
-  scoreToUnlock: 100
+  scoreToUnlock: 0
