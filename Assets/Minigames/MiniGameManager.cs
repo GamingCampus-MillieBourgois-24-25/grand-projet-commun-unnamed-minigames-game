@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -10,6 +9,7 @@ using Random = UnityEngine.Random;
 public class MiniGameManager : SingletonMB<MiniGameManager>
 {
     [SerializeField] public Minigame[] minigames;
+    public List<Minigame> MiniGameUnlocked = new List<Minigame>();
     [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
     
 
@@ -34,33 +34,64 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         GlobalSceneController.OpenScene(GameSettings.TransitionScene);
         callback.Invoke();
     }
-
     private IEnumerator DelayAfterLose()
     {
         yield return new WaitForSeconds(2f);
         DisplayMiniGameIcons.Instance.UpdateIcons();
         GlobalSceneController.OpenScene(GameSettings.ReviveScene);
     }
-
     private IEnumerator DelayToStartMiniGame()
     {
         yield return new WaitForSeconds(2.5f);
         LoadNextMinigame();
     }
+
+
+    private void UnlockMinigames()
+    {
+        var playerScore = ScoreManager.Instance.GetTotalScore();
+        
+        MiniGameUnlocked.Clear();
+        
+        foreach (var minigame in minigames)
+        {
+            if (minigame != null && minigame.scoreToUnlock <= playerScore)
+            {
+                MiniGameUnlocked.Add(minigame);
+                Debug.Log($"Mini-jeu débloqué : {minigame.minigameName}");
+            }
+        }
+        
+        if (MiniGameUnlocked.Count == 0)
+        {
+            Debug.Log("Aucun mini-jeu débloqué !");
+        }
+        else
+        {
+            Debug.Log($"Nombre de mini-jeux débloqués : {MiniGameUnlocked.Count}");
+            
+            Debug.Log("Liste des mini-jeux débloqués :");
+            foreach (var minigame in MiniGameUnlocked)
+            {
+                Debug.Log($"- {minigame.minigameName} (Score pour débloquer : {minigame.scoreToUnlock})");
+            }
+        }
+    }
+    
     public void LoadNextMinigame()
     {
-        List<Minigame> validMinigames = minigames.Where(m => m != null).ToList();
-        if (validMinigames.Count > 0)
+        UnlockMinigames();
+        Debug.Log($"Nombre de mini-jeux débloqués disponibles : {MiniGameUnlocked.Count}");
+
+        if (MiniGameUnlocked.Count > 0)
         {
-            Minigame nextGame = validMinigames[Random.Range(0, validMinigames.Count)];
-            
-            Debug.Log($"Chargement du mini-jeu : {nextGame.minigameName}");
+            Minigame nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
             
             GlobalSceneController.OpenScene(nextGame.sceneName);
         }
         else
         {
-            Debug.Log("Tous les mini-jeux ont �t� jou�s !");
+            Debug.Log("Aucun mini-jeu débloqué n’est disponible !");
         }
     }
 }

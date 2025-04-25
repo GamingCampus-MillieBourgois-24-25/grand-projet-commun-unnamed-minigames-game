@@ -31,12 +31,12 @@ namespace AxoLoop.Minigames.FightTheFoes
             foeType = FoeFightMinigameData.CurrentFoe.FoeType;
             if (attackType == foeType)
             {
-                // réaction à l'attaque efficace
+                // rÃ©action Ã  l'attaque efficace
                 FoeFightMinigameData.CurrentFoe.DieAnimation(() => FoeFightingController.Instance.CurrentFoeKilled());
             }
             else
             {
-                // réaction aux attaques inéfficaces
+                // rÃ©action aux attaques inÃ©fficaces
                 FoeFightMinigameData.CurrentFoe.TankAnimation(() => FoeFightingController.Instance.FoeTurn(blocking));
             }
         }
