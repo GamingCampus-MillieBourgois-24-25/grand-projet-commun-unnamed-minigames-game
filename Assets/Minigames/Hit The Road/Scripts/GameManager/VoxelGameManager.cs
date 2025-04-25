@@ -54,7 +54,8 @@ public class VoxelGameManager : MonoBehaviour
             defeatPanel.SetActive(true);
         }
         
-        MiniGameManager.Instance.MiniGameFinished(hasWon);
+        // attendre input du joueur
+        //MiniGameManager.Instance.MiniGameFinished(hasWon);
     }
 }
 
