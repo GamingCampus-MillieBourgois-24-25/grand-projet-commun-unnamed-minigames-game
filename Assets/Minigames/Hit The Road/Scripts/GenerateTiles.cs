@@ -74,16 +74,16 @@ public class GenerateTiles : MonoBehaviour
         }
 
         /* Choix aleatoire de la rotation de la light*/
-        Quaternion lightRotation = Light.transform.rotation;
-        lightRotation.x = Random.Range(25.5f, 149.4f);
-        lightRotation.x = Random.Range(-644.9f,-385.4f);
-        Light.transform.rotation = lightRotation;
+        float randomX = Random.Range(25.5f, 149.4f);     // Inclinaison verticale
+        float randomY = Random.Range(-644.9f, -385.4f);  // Orientation horizontale
+
+        Light.transform.rotation = Quaternion.Euler(randomX, randomY, 0f);
 
 
         Debug.Log(tile[index].GetComponent<MovingTile>().getName() + " index :"+ index);
         Debug.Log(" length :" + (tile.Length-1));
         Debug.Log("Camera pos " + Camera.main.transform.position + "campos = "+camPos);
-        Debug.Log("light rotation : " + Light.transform.rotation);
+        Debug.Log("light rotation : " + Light.transform.eulerAngles);
     }
     
     public void setIndex(int index)
