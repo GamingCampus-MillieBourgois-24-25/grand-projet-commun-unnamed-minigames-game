@@ -16,6 +16,7 @@ public class PlayerBike : MonoBehaviour
     private bool isTurningLeft = false;
     private bool isTurningRight = false;
     private bool hasCollided = false;
+    private bool hasTurned = false; // Nouvelle variable pour limiter à un seul virage
 
     private float currentLeanAngle = 0f; // Inclinaison actuelle de la moto
     private Rigidbody rb; // Référence au Rigidbody
@@ -68,19 +69,21 @@ public class PlayerBike : MonoBehaviour
 
     public void StartTurnLeft()
     {
-        if (!hasCollided)
+        if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
         {
             isTurningLeft = true;
             isTurningRight = false;
+            hasTurned = true; // Marque que le joueur a tourné
         }
     }
 
     public void StartTurnRight()
     {
-        if (!hasCollided)
+        if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
         {
             isTurningRight = true;
             isTurningLeft = false;
+            hasTurned = true; // Marque que le joueur a tourné
         }
     }
 
@@ -130,7 +133,6 @@ public class PlayerBike : MonoBehaviour
         }
     }
 
-
     private IEnumerator ScreenShake(float duration, float magnitude)
     {
         Transform cameraTransform = Camera.main.transform;
@@ -165,9 +167,5 @@ public class PlayerBike : MonoBehaviour
             );
             yield return null;
         }
-
-
-        
     }
 }
-
