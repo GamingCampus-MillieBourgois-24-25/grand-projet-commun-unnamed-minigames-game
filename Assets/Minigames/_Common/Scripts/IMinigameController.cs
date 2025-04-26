@@ -15,6 +15,7 @@ public interface IMinigameController
     /// </summary>
     public void StartMinigame();
 
+
 }
 
 public enum MinigameDifficultyLevel

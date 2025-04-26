@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 1
   attackName: FightTheFoes.Water
-  attackColor: {r: 0.27450982, g: 0.54901963, b: 0.95294124, a: 1}
+  attackColor: {r: 0.4481132, g: 0.47808662, b: 1, a: 1}
   attackIcon: {fileID: 1793984665, guid: b9ae04929ae6734428f48f6391d17ef6, type: 3}
   attackAnimation: {fileID: 7400000, guid: 397c62e3c1a21cd47be7227b1a94b566, type: 2}

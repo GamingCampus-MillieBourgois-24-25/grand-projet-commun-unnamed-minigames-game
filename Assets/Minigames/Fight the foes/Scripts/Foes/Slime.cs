@@ -8,6 +8,10 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
         public override FoeType FoeType => FoeType.Liquid;
 
-
+        public override void AttackAnimation(Action callBack)
+        {
+            animator.SetBool("AttackReturn", FoeFightMinigameData.IsBlocking);
+            base.AttackAnimation(callBack);
+        }
     }
 }

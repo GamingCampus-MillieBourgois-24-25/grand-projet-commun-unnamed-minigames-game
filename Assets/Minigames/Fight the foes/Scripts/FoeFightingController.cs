@@ -20,6 +20,10 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] GameObject AxoIntro;
         [SerializeField] Transform AxoIntroTop;
 
+        [SerializeField] CanvasGroup ButtonsCanvasGroup;
+
+        [SerializeField] ContinueText ContinueText;
+
         DifficultyMeter difficulty;
 
         #endregion
@@ -27,7 +31,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void Start()
         {
-            GenerateMinigame(58, MinigameDifficultyLevel.Easy);
+
+            GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryHard);
             InitializeMinigame();
             StartMinigame();
         }
@@ -39,16 +44,23 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             UnityEngine.Random.InitState(seed);
             difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
-            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 10);
+
+
+            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 2);
+            RageBar.Instance.SetFillSpeed(difficulty);
+            FoeFightingManager.Instance.SetEnvironmentVariant((UnityEngine.Random.value > 0.5f));
+            FoeFightingManager.Instance.SetLogoVariant((UnityEngine.Random.value > 0.5f));
         }
 
         public void InitializeMinigame()
         {
+            
         }
 
         public void StartMinigame()
         {
             FoeFightMinigameData.LockedAttack = true;
+            RageBar.Instance.StopFill();
 
             StartCoroutine(AxoAnimation(() => NextRound()));
         }
@@ -63,12 +75,13 @@ namespace AxoLoop.Minigames.FightTheFoes
             }
             else
             {
-                // no more ennemies : win
+                ContinueText.Enable(true);
             }
         }
 
         void BeginTurn()
         {
+            ButtonsCanvasGroup.alpha = 1;
             FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackObjectList);
             for (int i = 0; i < 2; i++)
             {
@@ -76,24 +89,26 @@ namespace AxoLoop.Minigames.FightTheFoes
                 attackButtons[i].enabled = true;
             }
             FoeFightMinigameData.LockedAttack = false;
+            FoeFightMinigameData.IsBlocking = false;
+
+            FoeFightingUtils.ButtonsEnter?.Invoke();
+            RageBar.Instance.ResumeFill();
+
         }
 
-        public void FoeTurn(bool blocking)
+        void GameOver()
         {
-            if (!blocking)
-            {
-                //game over
-            }
-            else
-            {
-                // tank
-            }
-
-            BeginTurn();//nextTurn
+            ContinueText.Enable(false);
         }
 
         #endregion
         #region API-----------------------------------------------------------------------------
+        public void FoeTurn()
+        {
+            Action next = FoeFightMinigameData.IsBlocking ? BeginTurn : GameOver;
+
+            FoeFightMinigameData.CurrentFoe.AttackAnimation(next);
+        }
 
         public void CurrentFoeKilled()
         {

@@ -130,18 +130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2448260378043406413, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: lockIcons
-      value: 
-      objectReference: {fileID: 21300000, guid: cda3d80cdbbb3f44a9570293ddd1b28a,
-        type: 3}
-    - target: {fileID: 2448260378043406413, guid: caeb6e08e13c04342b1caed598565a0a,
-        type: 3}
-      propertyPath: workIcons
-      value: 
-      objectReference: {fileID: 21300000, guid: 5d3b1daddc44caa4da5c8ae1fa6054a5,
-        type: 3}
     - target: {fileID: 2846794590837903227, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       propertyPath: m_LocalPosition.x

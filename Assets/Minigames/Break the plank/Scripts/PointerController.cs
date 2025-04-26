@@ -14,8 +14,10 @@ public class PointerController : MonoBehaviour, IMinigameController
     public Text startText;
     public Text victoryText;
     public Text loseText; // Référence au texte "Lose"
+
     [Header("Références supplémentaires")]
     public LevelManager levelManager; // Référence au LevelManager
+    public SpriteAnimator spriteAnimator; // Référence au script SpriteAnimator
 
     [Header("Images d'États")]
     public GameObject axoVictory; // PNG pour la victoire
@@ -24,11 +26,11 @@ public class PointerController : MonoBehaviour, IMinigameController
     public GameObject axoPointerMove; // PNG pour le mouvement du pointeur
     public GameObject axoSuccess; // PNG pour une réussite
 
-    [Header("Plank Sprites")]
-    public GameObject plank_full; // Plank intact
-    public GameObject plank_break_middle; // Plank cassé au milieu
-    public GameObject plank_break_right; // Plank cassé à droite
-    public GameObject plank_break_left; // Plank cassé à gauche
+    [Header("Plank UI Elements")]
+    public RectTransform plankFull; // Plank intact (UI)
+    public RectTransform plankBreakMiddle; // Plank cassé au milieu (UI)
+    public RectTransform plankBreakRight; // Plank cassé à droite (UI)
+    public RectTransform plankBreakLeft; // Plank cassé à gauche (UI)
 
     [Header("Paramètres")]
     [SerializeField] private float moveSpeed = 100f;
@@ -49,6 +51,7 @@ public class PointerController : MonoBehaviour, IMinigameController
     private Volume postProcessingVolume;
     private DepthOfField depthOfField;
     bool moveArrow = true;
+
     void Start()
     {
         // Validation des références
@@ -96,6 +99,12 @@ public class PointerController : MonoBehaviour, IMinigameController
         // Affiche le plank intact au début
         ResetPlankState();
 
+        // Lance l'animation de rotation au début du jeu
+        if (spriteAnimator != null)
+        {
+            spriteAnimator.StartRotation();
+        }
+
         StartCoroutine(StartGame());
     }
 
@@ -107,7 +116,17 @@ public class PointerController : MonoBehaviour, IMinigameController
             yield return new WaitForSeconds(1f);
             startText.gameObject.SetActive(false);
         }
-        canMove = true;
+
+        // Randomise la Safe Zone après le texte "Start"
+        if (levelManager != null)
+        {
+            levelManager.UpdateSafeZone();
+        }
+
+        // Attends un court instant avant de permettre le mouvement et les interactions
+        yield return new WaitForSeconds(0.5f);
+
+        canMove = true; // Active le mouvement du pointeur et les interactions
     }
 
     void Update()
@@ -117,7 +136,8 @@ public class PointerController : MonoBehaviour, IMinigameController
         // Affiche l'image de mouvement du pointeur
         ShowAxoState(axoPointerMove);
 
-        if(moveArrow) pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
+        if (moveArrow)
+            pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(pointerTransform.position, pointA.position) < 0.1f)
             targetPosition = pointB.position;
@@ -137,19 +157,45 @@ public class PointerController : MonoBehaviour, IMinigameController
     {
         moveArrow = false;
         Vector3 originalPosition = pointerTransform.position; // Sauvegarde la position initiale
-        Vector3 hammerPosition = originalPosition + new Vector3(0, -40f, 0); // Position légèrement en dessous
+        Vector3 recoilPosition = originalPosition + new Vector3(0, 50f, 0); // Position légèrement au-dessus
+        Vector3 hammerPosition = originalPosition + new Vector3(0, -50f, 0); // Position légèrement en dessous
 
-        // Descend le pointeur
-        pointerTransform.position = hammerPosition;
-        yield return new WaitForSeconds(0.5f); // Attente courte pour l'effet de descente
-        //quand le pointeur a fini de descendre
+        float duration = 0.2f; // Durée pour chaque étape (recul et descente)
+
+        // Étape 1 : Monte légèrement pour l'effet de recul
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(originalPosition, recoilPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = recoilPosition; // Assure la position finale
+
+        // Étape 2 : Descend pour l'effet de marteau
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(recoilPosition, hammerPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = hammerPosition; // Assure la position finale
+
+        // Quand le pointeur a fini de descendre
         callback.Invoke();
 
+        // Étape 3 : Remonte à la position initiale
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(hammerPosition, originalPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = originalPosition; // Assure la position finale
 
-        // Remonte le pointeur à sa position initiale
-        pointerTransform.position = originalPosition; 
         moveArrow = true;
-
     }
 
     void PlayAction()
@@ -160,7 +206,6 @@ public class PointerController : MonoBehaviour, IMinigameController
 
     void CheckSuccess()
     {
-
         if (safeZone == null)
         {
             Debug.LogError("Safe Zone non assignée !");
@@ -240,47 +285,32 @@ public class PointerController : MonoBehaviour, IMinigameController
         safeZone.gameObject.SetActive(false); // Désactive la Safe Zone après la disparition
     }
 
-    void UpdatePlankState()
+    IEnumerator ShowVictoryAndChangeGame()
     {
-        // Désactive tous les GameObjects
-        plank_full.SetActive(false);
-        plank_break_middle.SetActive(false);
-        plank_break_right.SetActive(false);
-        plank_break_left.SetActive(false);
+        canMove = false;
 
-        // Détermine la position de la Safe Zone
-        float safeZoneX = safeZone.anchoredPosition.x;
+        // Affiche l'image de réussite (axoSuccess)
+        ShowAxoState(axoSuccess);
 
-        // Définir des plages précises pour chaque sprite
-        if (safeZoneX < -300) // Zone très à gauche
+        // Lance l'animation de sautillement en cas de victoire
+        if (spriteAnimator != null)
         {
-            plank_break_left.SetActive(true);
+            spriteAnimator.StartBounce();
         }
-        else if (safeZoneX >= -300 && safeZoneX < -100) // Zone légèrement à gauche
-        {
-            plank_break_left.SetActive(true);
-        }
-        else if (safeZoneX >= -100 && safeZoneX <= 100) // Zone centrale
-        {
-            plank_break_middle.SetActive(true);
-        }
-        else if (safeZoneX > 100 && safeZoneX <= 300) // Zone légèrement à droite
-        {
-            plank_break_right.SetActive(true);
-        }
-        else if (safeZoneX > 300) // Zone très à droite
-        {
-            plank_break_right.SetActive(true);
-        }
-    }
 
-    void ResetPlankState()
-    {
-        // Réinitialise l'état du plank à intact
-        plank_full.SetActive(true);
-        plank_break_middle.SetActive(false);
-        plank_break_right.SetActive(false);
-        plank_break_left.SetActive(false);
+        yield return new WaitForSeconds(2f); // Attente de 2 secondes
+
+        // Affiche l'image de victoire (axoVictory)
+        ShowAxoState(axoVictory);
+
+        // Affiche le texte de victoire en même temps
+        if (victoryText != null)
+        {
+            victoryText.gameObject.SetActive(true);
+        }
+
+        yield return new WaitForSeconds(2f);
+        LoadNextMiniGame();
     }
 
     void ShowLoseText()
@@ -290,6 +320,12 @@ public class PointerController : MonoBehaviour, IMinigameController
 
         // Réinitialise le plank à son état intact
         ResetPlankState();
+
+        // Lance l'animation de déplacement hors du champ de vision en cas de défaite
+        if (spriteAnimator != null)
+        {
+            spriteAnimator.MoveOutOfView();
+        }
 
         if (loseText != null)
         {
@@ -317,27 +353,6 @@ public class PointerController : MonoBehaviour, IMinigameController
         mainCameraTransform.position = originalCameraPosition;
     }
 
-    IEnumerator ShowVictoryAndChangeGame()
-    {
-        canMove = false;
-
-        // Affiche l'image de réussite (axoSuccess)
-        ShowAxoState(axoSuccess);
-        yield return new WaitForSeconds(2f); // Attente de 2 secondes
-
-        // Affiche l'image de victoire (axoVictory)
-        ShowAxoState(axoVictory);
-
-        // Affiche le texte de victoire en même temps
-        if (victoryText != null)
-        {
-            victoryText.gameObject.SetActive(true);
-        }
-
-        yield return new WaitForSeconds(2f);
-        LoadNextMiniGame();
-    }
-
     void LoadNextMiniGame()
     {
         Debug.Log("Chargement du prochain mini-jeu...");
@@ -358,7 +373,53 @@ public class PointerController : MonoBehaviour, IMinigameController
         if (activeAxo != null) activeAxo.SetActive(true);
     }
 
-    // Implémentation de l'interface IMinigameController
+    void UpdatePlankState()
+    {
+        // Réinitialise l'état des planks
+        ResetPlankState();
+
+        // Détermine la position de la Safe Zone
+        float safeZoneX = safeZone.anchoredPosition.x;
+
+        // Définir des plages précises pour chaque état
+        if (safeZoneX < -300) // Zone très à gauche
+        {
+            plankBreakLeft.gameObject.SetActive(true);
+            plankFull.gameObject.SetActive(false); // Désactive plankFull
+        }
+        else if (safeZoneX >= -300 && safeZoneX < -100) // Zone légèrement à gauche
+        {
+            plankBreakLeft.gameObject.SetActive(true);
+            plankFull.gameObject.SetActive(false); // Désactive plankFull
+        }
+        else if (safeZoneX >= -100 && safeZoneX <= 100) // Zone centrale
+        {
+            plankBreakMiddle.gameObject.SetActive(true);
+            plankFull.gameObject.SetActive(false); // Désactive plankFull
+        }
+        else if (safeZoneX > 100 && safeZoneX <= 300) // Zone légèrement à droite
+        {
+            plankBreakRight.gameObject.SetActive(true);
+            plankFull.gameObject.SetActive(false); // Désactive plankFull
+        }
+        else if (safeZoneX > 300) // Zone très à droite
+        {
+            plankBreakRight.gameObject.SetActive(true);
+            plankFull.gameObject.SetActive(false); // Désactive plankFull
+        }
+    }
+
+    void ResetPlankState()
+    {
+        // Désactive toutes les planches cassées
+        plankBreakMiddle.gameObject.SetActive(false);
+        plankBreakRight.gameObject.SetActive(false);
+        plankBreakLeft.gameObject.SetActive(false);
+
+        // Active uniquement la planche intacte par défaut
+        plankFull.gameObject.SetActive(true);
+    }
+
     public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
     {
         Debug.Log($"Génération du mini-jeu avec le seed {seed} et la difficulté {difficultyLevel}");

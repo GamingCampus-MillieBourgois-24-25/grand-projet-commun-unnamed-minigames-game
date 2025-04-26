@@ -5,6 +5,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public static class FoeFightingUtils
     {
+        public static System.Action ButtonsEnter;
+        public static System.Action ButtonsExit;
+        public static System.Action ButtonsHit;
 
         public static DifficultyMeter SetDifficulty(MinigameDifficultyLevel difficulty)
         {
@@ -12,15 +15,15 @@ namespace AxoLoop.Minigames.FightTheFoes
             switch (difficulty)
             {
                 case MinigameDifficultyLevel.FirstTime:
+                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.VeryEasy:
                 case MinigameDifficultyLevel.Easy:
-                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.Medium:
+                    difficulty1 = DifficultyMeter.Normal; break;
                 case MinigameDifficultyLevel.Hard:
                 case MinigameDifficultyLevel.VeryHard:
                 case MinigameDifficultyLevel.Impossible:
-                    difficulty1 = DifficultyMeter.Normal; break;
-                default: difficulty1 = DifficultyMeter.Normal; break;
+                default: difficulty1 = DifficultyMeter.Hard; break;
             }
             return difficulty1;
         }
