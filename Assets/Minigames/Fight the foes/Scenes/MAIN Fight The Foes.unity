@@ -372,7 +372,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 10592912}
   followSlider: {fileID: 1660666727}
-  maxScale: 1.3
   skull: {fileID: 1804365108}
 --- !u!114 &151050110 stripped
 MonoBehaviour:
@@ -627,6 +626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3454640683851591138, guid: b3555f972c22e0c448ba0015e7a0306b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5741395044541556360, guid: b3555f972c22e0c448ba0015e7a0306b,
         type: 3}

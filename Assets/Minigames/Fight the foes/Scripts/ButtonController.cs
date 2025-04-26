@@ -14,6 +14,7 @@ public class ButtonController : MonoBehaviour
     public FoeType buttonType { get; private set; }
     [SerializeField] Image attackIcon;
     [SerializeField] Image attackImage;
+    [SerializeField] bool isBlockButton;
 
     bool selected;
     Animator animator;
@@ -105,6 +106,11 @@ public class ButtonController : MonoBehaviour
     public void ButtonSelected()
     {
         OnButtonReady -= ButtonSelected;
+        if(isBlockButton)
+        {
+            FoeFightingManager.Instance.PlayBlock();
+            return;
+        }
         FoeFightingManager.Instance.PlayAttack(buttonType);
     }
 

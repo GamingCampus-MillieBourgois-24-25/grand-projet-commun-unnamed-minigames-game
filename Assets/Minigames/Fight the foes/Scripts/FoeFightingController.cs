@@ -82,6 +82,8 @@ namespace AxoLoop.Minigames.FightTheFoes
                 attackButtons[i].enabled = true;
             }
             FoeFightMinigameData.LockedAttack = false;
+            FoeFightMinigameData.IsBlocking = false;
+
             FoeFightingUtils.ButtonsEnter?.Invoke();
             RageBar.Instance.ResumeFill();
 
@@ -94,9 +96,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         #endregion
         #region API-----------------------------------------------------------------------------
-        public void FoeTurn(bool blocking)
+        public void FoeTurn()
         {
-            Action next = blocking ? BeginTurn : GameOver;
+            Action next = FoeFightMinigameData.IsBlocking ? BeginTurn : GameOver;
 
             FoeFightMinigameData.CurrentFoe.AttackAnimation(next);
         }

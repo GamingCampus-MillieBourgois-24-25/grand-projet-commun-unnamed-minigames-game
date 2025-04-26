@@ -26,6 +26,12 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightMinigameData.Axo.PlayAttack(attackObject.attackAnimation, () => OnAttackHit(attackObject.attackType));
         }
 
+        public void PlayBlock()
+        {
+            FoeFightMinigameData.IsBlocking = true;
+            FoeFightingController.Instance.FoeTurn();
+        }
+
         void OnAttackHit(FoeType attackType)
         {
             foeType = FoeFightMinigameData.CurrentFoe.FoeType;
@@ -37,7 +43,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             else
             {
                 // réaction aux attaques inéfficaces
-                FoeFightMinigameData.CurrentFoe.TankAnimation(() => FoeFightingController.Instance.FoeTurn(blocking));
+                FoeFightMinigameData.CurrentFoe.TankAnimation(FoeFightingController.Instance.FoeTurn);
             }
         }
 

@@ -24,14 +24,14 @@ namespace AxoLoop.Minigames.FightTheFoes
         /// </summary>
         List<Foe> gameFoes = new List<Foe>();
 
-
-
-        bool lockedAttack;
-
         public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
         public static List<FoeType> CurrentAttacks { get => Instance.currentAttacks; set => Instance.currentAttacks = value; }
         public static List<Foe> GameFoes { get => Instance.gameFoes; set => Instance.gameFoes = value; }
         
+
+
+        bool lockedAttack;
+        bool isBlocking;
         public static bool LockedAttack { 
             get => Instance.lockedAttack; 
             set {
@@ -39,7 +39,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 Instance.LockButtons(!value);
             }
         }
-
+        public static bool IsBlocking { get => Instance.isBlocking; set => Instance.isBlocking = value; }
 
 
 

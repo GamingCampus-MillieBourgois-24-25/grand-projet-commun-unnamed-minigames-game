@@ -52,9 +52,10 @@ public class RageBar : SingletonMB<RageBar>
         actualFill += Time.deltaTime * fillSpeed;
         if (actualFill >= fullSize)
         {
+            StopFill();
             FoeFightMinigameData.LockedAttack = true;
             FoeFightingUtils.ButtonsExit.Invoke();
-            FoeFightingController.Instance.FoeTurn(false);
+            FoeFightingController.Instance.FoeTurn();
         }
     }
     
