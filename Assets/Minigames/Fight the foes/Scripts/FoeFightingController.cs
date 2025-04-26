@@ -83,22 +83,19 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightingUtils.ButtonsEnter?.Invoke();
         }
 
-        public void FoeTurn(bool blocking)
+        void GameOver()
         {
-            if (!blocking)
-            {
-                //game over
-            }
-            else
-            {
-                // tank
-            }
-
-            BeginTurn();//nextTurn
+            Debug.Log("Game Over");
         }
 
         #endregion
         #region API-----------------------------------------------------------------------------
+        public void FoeTurn(bool blocking)
+        {
+            Action next = blocking ? BeginTurn : GameOver;
+
+            FoeFightMinigameData.CurrentFoe.AttackAnimation(next);
+        }
 
         public void CurrentFoeKilled()
         {

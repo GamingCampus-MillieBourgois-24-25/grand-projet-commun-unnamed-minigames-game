@@ -35,11 +35,15 @@ namespace AxoLoop.Minigames.FightTheFoes
             currentCallback = null;
         }
 
+        public void FoeAttackTouched()
+        {
+            Axo.Instance.DieFromFoe(FoeType);
+        }
 
         public virtual void AttackAnimation(Action callBack)
         {
             currentCallback = callBack;
-            callBack?.Invoke();
+            animator.SetTrigger("AttackTrigger");
         }
 
         public virtual void DieAnimation(Action callBack)
