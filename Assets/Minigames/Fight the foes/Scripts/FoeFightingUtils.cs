@@ -15,14 +15,14 @@ namespace AxoLoop.Minigames.FightTheFoes
             switch (difficulty)
             {
                 case MinigameDifficultyLevel.FirstTime:
+                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.VeryEasy:
                 case MinigameDifficultyLevel.Easy:
-                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.Medium:
+                    difficulty1 = DifficultyMeter.Normal; break;
                 case MinigameDifficultyLevel.Hard:
                 case MinigameDifficultyLevel.VeryHard:
                 case MinigameDifficultyLevel.Impossible:
-                    difficulty1 = DifficultyMeter.Normal; break;
                 default: difficulty1 = DifficultyMeter.Normal; break;
             }
             return difficulty1;

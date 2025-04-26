@@ -14,6 +14,10 @@ namespace Axoloop.Global
         // Méthodes à implémenter dans les classes dérivées
         protected abstract void DisableScene();
         protected abstract void PlayUnloadTransition();
+        protected virtual void PlayLoadTransition()
+        {
+
+        }
 
         // Implémentation commune de l'API
         public void LoadScene(Action<string> callBack = null)
@@ -29,5 +33,6 @@ namespace Axoloop.Global
             PlayUnloadTransition();
             StartCoroutine(SceneLoader.UnloadingProcess(SceneName, SceneUnloaded));
         }
+
     }
 }

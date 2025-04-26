@@ -55,6 +55,7 @@ public class ButtonController : MonoBehaviour
 
     void PlayExit()
     {
+        FoeFightMinigameData.LockedAttack = true;
         if (selected)
         {
             return;

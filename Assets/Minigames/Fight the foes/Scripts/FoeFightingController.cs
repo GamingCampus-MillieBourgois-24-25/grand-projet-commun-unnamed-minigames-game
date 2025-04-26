@@ -30,7 +30,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void Start()
         {
 
-            GenerateMinigame(58, MinigameDifficultyLevel.Easy);
+            GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.FirstTime);
             InitializeMinigame();
             StartMinigame();
         }
@@ -42,7 +42,12 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             UnityEngine.Random.InitState(seed);
             difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
-            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 10);
+
+
+            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 2);
+            RageBar.Instance.SetFillSpeed(difficulty);
+            FoeFightingManager.Instance.SetEnvironmentVariant((UnityEngine.Random.value > 0.5f));
+            FoeFightingManager.Instance.SetLogoVariant((UnityEngine.Random.value > 0.5f));
         }
 
         public void InitializeMinigame()

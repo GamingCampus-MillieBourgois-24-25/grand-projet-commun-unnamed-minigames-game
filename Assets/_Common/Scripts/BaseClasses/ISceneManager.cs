@@ -26,6 +26,7 @@ namespace Axoloop.Global
         /// </summary>
         public void UnloadScene(Action<string> callback = null);
 
+
         /// <summary>
         /// Fire this event when the scene is loaded and ready to be used
         /// </summary>

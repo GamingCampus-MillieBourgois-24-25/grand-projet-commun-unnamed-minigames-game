@@ -13,9 +13,9 @@ public class RageBar : SingletonMB<RageBar>
     float actualFill = 0;
     float fillSpeed = 8;
     int fullSize = 100;
-    float rageReduction = 20;
+    float rageReduction = 28;
     bool stopFill = false;
-    float maxScale = 1.3f;
+    float maxScale = 1.2f;
 
 
     [SerializeField] Slider slider;
@@ -70,10 +70,13 @@ public class RageBar : SingletonMB<RageBar>
         switch (difficulty)
         {
             case DifficultyMeter.Easy:
-                fillSpeed = 8;
+                fillSpeed = 6;
                 break;
             case DifficultyMeter.Normal:
-                fillSpeed = 11;
+                fillSpeed = Random.Range(8, 11);
+                break;
+            case DifficultyMeter.Hard:
+                fillSpeed = Random.Range(11, 16);
                 break;
         }
     }
@@ -95,9 +98,9 @@ public class RageBar : SingletonMB<RageBar>
     private IEnumerator SkullWave()
     {
         float influence;
-        float speed = 2.5f;
         while (true)
         {
+            float speed = 5f * slider.value;
             influence = (Mathf.Sin(Time.time * speed) + 1.5f) / 6f;
             float scale = 0.3f + (influence * slider.value * maxScale);
             skull.localScale = new Vector3(scale, scale, scale);

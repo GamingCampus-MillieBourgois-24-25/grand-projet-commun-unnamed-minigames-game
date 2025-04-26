@@ -10,6 +10,26 @@ namespace AxoLoop.Minigames.FightTheFoes
         FoeType foeType;
         private bool blocking = false;
 
+        [SerializeField] GameObject[] GreenVariant;
+        [SerializeField] GameObject[] GreyVariant;
+        [SerializeField] GameObject logo1;
+        [SerializeField] GameObject logo2;
+
+        public void SetEnvironmentVariant(bool grey)
+        {
+            var variant = grey ? GreyVariant : GreenVariant;
+            foreach (var item in variant)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        public void SetLogoVariant(bool first)
+        {
+            var variant = first ? logo1 : logo2;
+            variant.SetActive(true);
+        }
+
 
         public void PlayAttack(FoeType type)
         {
@@ -51,6 +71,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     public enum DifficultyMeter
     {
         Easy,
-        Normal
+        Normal, 
+        Hard
     }
 }
