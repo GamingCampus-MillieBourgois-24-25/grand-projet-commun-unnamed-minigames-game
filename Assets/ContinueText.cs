@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ContinueText : MonoBehaviour
@@ -7,6 +8,7 @@ public class ContinueText : MonoBehaviour
     [SerializeField] RectTransform rect;
 
     bool victory = false;
+    Vector2 targetPosition;
 
     // Start is called before the first frame update
     void OnEnable()
@@ -24,15 +26,15 @@ public class ContinueText : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        var position = rect.anchoredPosition;
-        position.y = -1500;
+        var targetPosition = rect.anchoredPosition;
+        var startposition = new Vector2(0, -1500);
 
         var time = 0.7f;
         var elapsed = 0f;
         while (elapsed < time)
         {
             elapsed += Time.deltaTime;
-            rect.anchoredPosition = Vector2.Lerp(position, new Vector2(0, 0), elapsed / time);
+            rect.anchoredPosition = Vector2.Lerp(startposition, targetPosition, elapsed / time);
             yield return null;
         }
     }

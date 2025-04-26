@@ -10,6 +10,8 @@ FightTheFoes.Drink,Drink,Grosse paille
 FightTheFoes.Breath,Wind gust,Coup de vent
 FightTheFoes.Water,Water jet,Jet d'eau
 FightTheFoes.Block,Block,Bloquer
-Revive.Title,Revive,Resusciter
+Revive.Title,Retry?,Encore ?
+Revive.Subtitle,Save your combo!,Ne perds pas ton combo !
 Revive.Ticket,Tickets : ,Tickets : 
+Revive.Revive,Revive,Recommencer
 Application.TapToContinue,Tap to continue,Appuyez pour continuer

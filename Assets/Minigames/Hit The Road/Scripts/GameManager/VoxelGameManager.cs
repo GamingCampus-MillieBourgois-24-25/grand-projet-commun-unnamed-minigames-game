@@ -6,8 +6,7 @@ using UnityEngine;
 public class VoxelGameManager : MonoBehaviour
 {
     public static VoxelGameManager Instance;
-    public GameObject victoryPanel; // Panneau de victoire
-    public GameObject defeatPanel;  // Panneau de défaite
+    public ContinueText continueText;
 
     private bool hasWon; // Vérifie si le joueur a gagné
 
@@ -15,8 +14,6 @@ public class VoxelGameManager : MonoBehaviour
     {
         Instance = this;
         // Assurez-vous que les deux panneaux sont désactivés au début
-        victoryPanel.SetActive(false);
-        defeatPanel.SetActive(false);
     }
 
     // Appelé lorsque le joueur gagne
@@ -38,8 +35,6 @@ public class VoxelGameManager : MonoBehaviour
         if (won)
         {
             Debug.Log("Victoire !");
-            defeatPanel.SetActive(false);
-            victoryPanel.SetActive(true);
 
             RivalBike rival = FindObjectOfType<RivalBike>();
             if (rival != null)
@@ -50,10 +45,8 @@ public class VoxelGameManager : MonoBehaviour
         else
         {
             Debug.Log("Défaite !");
-            victoryPanel.SetActive(false);
-            defeatPanel.SetActive(true);
         }
-        
+        continueText.Enable(won);
         // attendre input du joueur
         //MiniGameManager.Instance.MiniGameFinished(hasWon);
     }

@@ -10,7 +10,7 @@ public class CanRevive : MonoBehaviour
     private void Start()
     {
         CanPlayerRevive();
-        ticketText.text += TryRevive.Instance.GetTicket().ToString();
+        ticketText.text = TryRevive.Instance.GetTicket().ToString();
     }
 
     private void CanPlayerRevive()

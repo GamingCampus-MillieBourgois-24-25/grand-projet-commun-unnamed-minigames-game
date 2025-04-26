@@ -2,15 +2,18 @@ using Assets.Code.GLOBAL;
 using UnityEngine;
 using Axoloop.Global;
 
-public class TryRevive : MonoBehaviour
+public class TryRevive : SingletonMB<TryRevive>
 {
     [SerializeField] private int ticket;
-    public static TryRevive Instance;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        if (ticket > -1)
+        {
+            PlayerPrefs.SetInt("Ticket", ticket);
+        }
         ticket = PlayerPrefs.GetInt("Ticket");
-        Instance = this;
     }
 
     public void ReviveWithTicket()
