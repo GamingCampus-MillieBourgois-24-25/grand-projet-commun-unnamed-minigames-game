@@ -9,6 +9,7 @@ TagManager:
   - EndPoint
   - Tuile
   - Persistent
+  - Boundary
   layers:
   - Default
   - TransparentFX

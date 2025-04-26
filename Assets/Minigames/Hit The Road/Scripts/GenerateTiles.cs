@@ -80,7 +80,7 @@ public class GenerateTiles : MonoBehaviour
         Light.transform.rotation = Quaternion.Euler(randomX, randomY, 0f);
 
 
-        Debug.Log(tile[index].GetComponent<MovingTile>().getName() + " index :"+ index);
+       
         Debug.Log(" length :" + (tile.Length-1));
         Debug.Log("Camera pos " + Camera.main.transform.position + "campos = "+camPos);
         Debug.Log("light rotation : " + Light.transform.eulerAngles);

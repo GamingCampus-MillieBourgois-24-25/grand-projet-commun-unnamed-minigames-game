@@ -126,12 +126,12 @@ public class RivalBike : MonoBehaviour
         }
     }
 
-    private IEnumerator FinalAcceleration()
+    public IEnumerator FinalAcceleration()
     {
-        float duration = 0.1f; // Durée de l'accélération
+        float duration = 0.5f; // Durée de l'accélération
         float elapsedTime = 0f;
         float initialSpeed = speed;
-        float finalSpeed = speed * 1.1f; // Double la vitesse pour l'accélération finale
+        float finalSpeed = speed * 1.3f; // Double la vitesse pour l'accélération finale
 
         // Déclenche les particules de fumée au début de l'accélération
         TriggerSmokeParticles();
