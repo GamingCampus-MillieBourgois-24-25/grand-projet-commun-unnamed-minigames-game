@@ -1,26 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-
-/*
- * Script for moving the tile
- */
 
 public class MovingTile : MonoBehaviour
 {
-
-    public float speed = 15f;
-    //public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
-    private int nbRivals = 0;
-    
+    public float speed = 15f; // Vitesse initiale de la route
+    private Coroutine slowDownCoroutine;
 
     void Update()
     {
-        
-        transform.position += new Vector3(0, 0, -speed*Time.deltaTime);
+        transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
     }
-    
 
     void TeleportToPointZero()
     {
@@ -31,10 +20,11 @@ public class MovingTile : MonoBehaviour
     {
         if (other.CompareTag("EndPoint"))
         {
-            TeleportToPointZero();  
-            Debug.Log("Collision entre "+gameObject.name+" et "+other.gameObject.name);
+            TeleportToPointZero();
+            Debug.Log("Collision entre " + gameObject.name + " et " + other.gameObject.name);
         }
     }
+
     public float getSpeed()
     {
         return speed;
@@ -45,8 +35,27 @@ public class MovingTile : MonoBehaviour
         this.speed = speed;
     }
 
-    public string getName()
+    public void SlowDownAndStop(float duration)
     {
-        return name;
+        if (slowDownCoroutine != null)
+        {
+            StopCoroutine(slowDownCoroutine);
+        }
+        slowDownCoroutine = StartCoroutine(SlowDownCoroutine(duration));
+    }
+
+    private IEnumerator SlowDownCoroutine(float duration)
+    {
+        float initialSpeed = speed;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            speed = Mathf.Lerp(initialSpeed, 0, elapsedTime / duration);
+            yield return null;
+        }
+
+        speed = 0; // Assurez-vous que la vitesse est bien à 0 à la fin
     }
 }
