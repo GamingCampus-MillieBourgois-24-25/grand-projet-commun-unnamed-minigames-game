@@ -1500,12 +1500,41 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 9077328109070111810}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1667688124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 931274123354090951, guid: 148a96fc7d24d154f855d53803ee9e4f,
+--- !u!114 &1667688125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4594170071932656739, guid: 148a96fc7d24d154f855d53803ee9e4f,
     type: 3}
   m_PrefabInstance: {fileID: 9077328109070111810}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e18fad6035e2947a17598d94187109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1907371258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2309928495247682438, guid: 148a96fc7d24d154f855d53803ee9e4f,
+    type: 3}
+  m_PrefabInstance: {fileID: 9077328109070111810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1907371262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907371258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb1891bd26fcad4486b01ba119fd973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: {fileID: 386029005}
+  turnTrigger: {fileID: 887274884}
+  playerBike: {fileID: 976772954}
+  rivalBike: {fileID: 1667688125}
+  hitTheRoad: {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba, type: 2}
 --- !u!4 &284906639809791538
 Transform:
   m_ObjectHideFlags: 0
@@ -1637,94 +1666,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9182325358103460344}
   m_Mesh: {fileID: 1935637853204595541, guid: 5f24050268bad15489234301020be5a3, type: 3}
---- !u!1001 &3635886394557921446
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 914123931288864379, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_Name
-      value: HitTheRoadController
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424249495356753264, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: road
-      value: 
-      objectReference: {fileID: 386029005}
-    - target: {fileID: 4424249495356753264, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: rivalBike
-      value: 
-      objectReference: {fileID: 1667688124}
-    - target: {fileID: 4424249495356753264, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: playerBike
-      value: 
-      objectReference: {fileID: 976772954}
-    - target: {fileID: 4424249495356753264, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: turnTrigger
-      value: 
-      objectReference: {fileID: 887274884}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.1729507
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.1474551
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.8182626
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6187500297184555369, guid: b3bd4dc9ed84aa34a8409fda9d070a1f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b3bd4dc9ed84aa34a8409fda9d070a1f, type: 3}
 --- !u!1 &3780748629588960573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2190,6 +2131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 931274123354090951, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1575246795675627135, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
@@ -2791,6 +2737,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1491239164}
+    - targetCorrespondingSourceObject: {fileID: 2309928495247682438, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1907371262}
   m_SourcePrefab: {fileID: 100100000, guid: 148a96fc7d24d154f855d53803ee9e4f, type: 3}
 --- !u!1 &9182325358103460344
 GameObject:
@@ -2818,7 +2768,6 @@ SceneRoots:
   - {fileID: 7456483866000918793}
   - {fileID: 130795882}
   - {fileID: 948687001}
-  - {fileID: 3635886394557921446}
   - {fileID: 622793895}
   - {fileID: 1402691319}
   - {fileID: 1018945994}

@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using Axoloop.Global;
-using JetBrains.Annotations;
+using System.Collections;
 using UnityEngine;
 
 namespace AxoLoop.Minigames.HitTheRoad
@@ -10,7 +9,9 @@ namespace AxoLoop.Minigames.HitTheRoad
         public GameObject road;
         public GameObject turnTrigger;
         public GameObject playerBike;
-        public GameObject rivalBike;
+        public RivalBike rivalBike;
+        public MinigameObject hitTheRoad;
+
 
         bool easy(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.FirstTime || dif == MinigameDifficultyLevel.VeryEasy
                     || dif == MinigameDifficultyLevel.Easy;
@@ -19,8 +20,12 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         private void Start()
         {
-            GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
-            InitializeMinigame();
+
+            if (ScoreManager.Instance != null)
+                GenerateMinigame(ScoreManager.Instance.GetCurrentScore(), MinigameHelper.GetDifficulty(hitTheRoad));
+            else
+                GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
+            HitTheRoadSceneManager.Instance.SceneLoaded += (_) => InitializeMinigame(); ;
 
 
         }
@@ -39,16 +44,16 @@ namespace AxoLoop.Minigames.HitTheRoad
             {
                 if(easy(difficultyLevel))
                 {
-                    rivalBike.GetComponent<RivalBike>().setSpeed(20);
+                    rivalBike.setSpeed(20);
                 }
                 if (medium(difficultyLevel))
                 {
-                    rivalBike.GetComponent<RivalBike>().setSpeed(60);
+                    rivalBike.setSpeed(60);
                 }
 
                 if (hard(difficultyLevel))
                 {
-                    rivalBike.GetComponent<RivalBike>().setSpeed(100);
+                    rivalBike.setSpeed(100);
                 }
             }
 
@@ -59,12 +64,21 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         public void InitializeMinigame()
         {
-            // Si nécessaire, initialiser des éléments du minijeu
+            StartCoroutine(SpawnRivalBike());
         }
 
         public void StartMinigame()
         {
             // Début officiel du mini-jeu où le joueur peut commencer à jouer
+        }
+
+        IEnumerator SpawnRivalBike()
+        {
+            yield return new WaitForSeconds(Random.Range(0f, 4f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
+            if (rivalBike)
+            {
+                rivalBike.gameObject.SetActive(true);
+            }
         }
 
     }

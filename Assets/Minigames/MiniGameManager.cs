@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 
 public class MiniGameManager : SingletonMB<MiniGameManager>
 {
-    [SerializeField] public Minigame[] minigames;
-    public List<Minigame> MiniGameUnlocked = new List<Minigame>();
+    [SerializeField] public MinigameObject[] minigames;
+    public List<MinigameObject> MiniGameUnlocked = new List<MinigameObject>();
     [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
     
 
@@ -85,7 +85,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 
         if (MiniGameUnlocked.Count > 0)
         {
-            Minigame nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
+            MinigameObject nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
             
             GlobalSceneController.OpenScene(nextGame.sceneName);
         }

@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    // Ctrl + M + O pour déplier toutes les régions
+    #region PROPERTIES----------------------------------------------------------------------
+
+
     [Header("Références")]
     public RectTransform safeZone; // Référence à la Safe Zone
     public RectTransform pointer; // Référence au pointeur
@@ -19,6 +23,11 @@ public class LevelManager : MonoBehaviour
     private Vector2 pointerInitialPosition;
 
     private bool isPointerAnimationStarted = false; // Protection contre les appels multiples
+
+
+    #endregion
+    #region LIFECYCLE-----------------------------------------------------------------------
+
 
     void Start()
     {
@@ -48,6 +57,15 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(AnimateElements());
     }
 
+
+    #endregion
+    #region METHODS-------------------------------------------------------------------------
+
+
+
+    #endregion
+    #region API-----------------------------------------------------------------------------
+
     /// <summary>
     /// Met à jour la position et la taille de la Safe Zone.
     /// </summary>
@@ -71,6 +89,10 @@ public class LevelManager : MonoBehaviour
 
         Debug.Log($"SafeZone mise à jour | Position X: {newX}, Largeur: {newWidth}");
     }
+
+    #endregion
+    #region COROUTINES----------------------------------------------------------------------
+
 
     /// <summary>
     /// Anime l'apparition de la Safe Zone et du pointeur, puis fait disparaître le texte "Start".
@@ -186,4 +208,11 @@ public class LevelManager : MonoBehaviour
 
         uiElement.anchoredPosition = originalPosition; // Assure que la position finale est correcte
     }
+
+
+    #endregion
+
+
+
+    
 }

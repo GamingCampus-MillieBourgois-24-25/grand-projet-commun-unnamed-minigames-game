@@ -1,6 +1,7 @@
 using System.Collections;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
+using AxoLoop.Minigames.HitTheRoad;
 using UnityEngine;
 
 public class VoxelGameManager : MonoBehaviour
@@ -41,6 +42,8 @@ public class VoxelGameManager : MonoBehaviour
             {
                 rival.ExplodeAndEject();
             }
+
+            MinigameHelper.IncrementMinigamePlayed(HitTheRoadController.Instance.hitTheRoad);
         }
         else
         {

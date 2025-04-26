@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMinigame", menuName = "Minigame System/Minigame")]
-public class Minigame : ScriptableObject
+public class MinigameObject : ScriptableObject
 {
     public string minigameName;  // Nom du mini-jeu
     public string sceneName;     // Nom de la sc�ne � charger
