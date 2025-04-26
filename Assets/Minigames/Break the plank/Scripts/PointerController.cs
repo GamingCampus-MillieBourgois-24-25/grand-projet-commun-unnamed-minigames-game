@@ -24,11 +24,11 @@ public class PointerController : MonoBehaviour, IMinigameController
     public GameObject axoPointerMove; // PNG pour le mouvement du pointeur
     public GameObject axoSuccess; // PNG pour une réussite
 
-    [Header("Plank Sprites")]
-    public GameObject plank_full; // Plank intact
-    public GameObject plank_break_middle; // Plank cassé au milieu
-    public GameObject plank_break_right; // Plank cassé à droite
-    public GameObject plank_break_left; // Plank cassé à gauche
+    [Header("Plank UI Elements")]
+    public RectTransform plankFull; // Plank intact (UI)
+    public RectTransform plankBreakMiddle; // Plank cassé au milieu (UI)
+    public RectTransform plankBreakRight; // Plank cassé à droite (UI)
+    public RectTransform plankBreakLeft; // Plank cassé à gauche (UI)
 
     [Header("Paramètres")]
     [SerializeField] private float moveSpeed = 100f;
@@ -49,6 +49,7 @@ public class PointerController : MonoBehaviour, IMinigameController
     private Volume postProcessingVolume;
     private DepthOfField depthOfField;
     bool moveArrow = true;
+
     void Start()
     {
         // Validation des références
@@ -107,7 +108,17 @@ public class PointerController : MonoBehaviour, IMinigameController
             yield return new WaitForSeconds(1f);
             startText.gameObject.SetActive(false);
         }
-        canMove = true;
+
+        // Randomise la Safe Zone après le texte "Start"
+        if (levelManager != null)
+        {
+            levelManager.UpdateSafeZone();
+        }
+
+        // Attends un court instant avant de permettre le mouvement et les interactions
+        yield return new WaitForSeconds(0.5f);
+
+        canMove = true; // Active le mouvement du pointeur et les interactions
     }
 
     void Update()
@@ -117,7 +128,8 @@ public class PointerController : MonoBehaviour, IMinigameController
         // Affiche l'image de mouvement du pointeur
         ShowAxoState(axoPointerMove);
 
-        if(moveArrow) pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
+        if (moveArrow)
+            pointerTransform.position = Vector3.MoveTowards(pointerTransform.position, targetPosition, moveSpeed * Time.deltaTime);
 
         if (Vector3.Distance(pointerTransform.position, pointA.position) < 0.1f)
             targetPosition = pointB.position;
@@ -178,8 +190,6 @@ public class PointerController : MonoBehaviour, IMinigameController
         moveArrow = true;
     }
 
-
-
     void PlayAction()
     {
         // Lance l'effet de marteau
@@ -188,7 +198,6 @@ public class PointerController : MonoBehaviour, IMinigameController
 
     void CheckSuccess()
     {
-
         if (safeZone == null)
         {
             Debug.LogError("Safe Zone non assignée !");
@@ -268,48 +277,53 @@ public class PointerController : MonoBehaviour, IMinigameController
         safeZone.gameObject.SetActive(false); // Désactive la Safe Zone après la disparition
     }
 
-    void UpdatePlankState()
+void UpdatePlankState()
+{
+    // Réinitialise l'état des planks
+    ResetPlankState();
+
+    // Détermine la position de la Safe Zone
+    float safeZoneX = safeZone.anchoredPosition.x;
+
+    // Définir des plages précises pour chaque état
+    if (safeZoneX < -300) // Zone très à gauche
     {
-        // Désactive tous les GameObjects
-        plank_full.SetActive(false);
-        plank_break_middle.SetActive(false);
-        plank_break_right.SetActive(false);
-        plank_break_left.SetActive(false);
-
-        // Détermine la position de la Safe Zone
-        float safeZoneX = safeZone.anchoredPosition.x;
-
-        // Définir des plages précises pour chaque sprite
-        if (safeZoneX < -300) // Zone très à gauche
-        {
-            plank_break_left.SetActive(true);
-        }
-        else if (safeZoneX >= -300 && safeZoneX < -100) // Zone légèrement à gauche
-        {
-            plank_break_left.SetActive(true);
-        }
-        else if (safeZoneX >= -100 && safeZoneX <= 100) // Zone centrale
-        {
-            plank_break_middle.SetActive(true);
-        }
-        else if (safeZoneX > 100 && safeZoneX <= 300) // Zone légèrement à droite
-        {
-            plank_break_right.SetActive(true);
-        }
-        else if (safeZoneX > 300) // Zone très à droite
-        {
-            plank_break_right.SetActive(true);
-        }
+        plankBreakLeft.gameObject.SetActive(true);
+        plankFull.gameObject.SetActive(false); // Désactive plankFull
     }
-
-    void ResetPlankState()
+    else if (safeZoneX >= -300 && safeZoneX < -100) // Zone légèrement à gauche
     {
-        // Réinitialise l'état du plank à intact
-        plank_full.SetActive(true);
-        plank_break_middle.SetActive(false);
-        plank_break_right.SetActive(false);
-        plank_break_left.SetActive(false);
+        plankBreakLeft.gameObject.SetActive(true);
+        plankFull.gameObject.SetActive(false); // Désactive plankFull
     }
+    else if (safeZoneX >= -100 && safeZoneX <= 100) // Zone centrale
+    {
+        plankBreakMiddle.gameObject.SetActive(true);
+        plankFull.gameObject.SetActive(false); // Désactive plankFull
+    }
+    else if (safeZoneX > 100 && safeZoneX <= 300) // Zone légèrement à droite
+    {
+        plankBreakRight.gameObject.SetActive(true);
+        plankFull.gameObject.SetActive(false); // Désactive plankFull
+    }
+    else if (safeZoneX > 300) // Zone très à droite
+    {
+        plankBreakRight.gameObject.SetActive(true);
+        plankFull.gameObject.SetActive(false); // Désactive plankFull
+    }
+}
+
+void ResetPlankState()
+{
+    // Désactive toutes les planches cassées
+    plankBreakMiddle.gameObject.SetActive(false);
+    plankBreakRight.gameObject.SetActive(false);
+    plankBreakLeft.gameObject.SetActive(false);
+
+    // Active uniquement la planche intacte par défaut
+    plankFull.gameObject.SetActive(true);
+}
+
 
     void ShowLoseText()
     {
