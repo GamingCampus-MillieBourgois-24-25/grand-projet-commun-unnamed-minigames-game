@@ -17,12 +17,6 @@ namespace AxoLoop.Minigames.FightTheFoes
             animator = GetComponent<Animator>();
         }
 
-        public void Die(Action callBack)
-        {
-            Destroy(Instance.gameObject);
-            callBack?.Invoke();
-        }
-
         public void PlayAttack(AnimationClip attack, Action callBack)
         {
             attackCallback = callBack;
@@ -35,6 +29,25 @@ namespace AxoLoop.Minigames.FightTheFoes
             attackCallback?.Invoke();
             FoeFightingUtils.ButtonsHit?.Invoke();
             attackCallback = null;
+        }
+
+        public void DieFromFoe(FoeType type)
+        {
+            switch (type)
+            {
+                case FoeType.Liquid:
+                    animator.SetTrigger("DieStomp");
+                    break;
+                case FoeType.Fire:
+                    animator.SetTrigger("DieBurn");
+                    break;
+                case FoeType.Food:
+                    animator.SetTrigger("DieShatter");
+                    break;
+                case FoeType.Wind:
+                    animator.SetTrigger("DieEject");
+                    break;
+            }
         }
     }
 }
