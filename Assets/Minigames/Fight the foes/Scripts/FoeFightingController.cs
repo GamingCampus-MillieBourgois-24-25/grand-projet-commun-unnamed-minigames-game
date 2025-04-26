@@ -22,6 +22,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         [SerializeField] CanvasGroup ButtonsCanvasGroup;
 
+        [SerializeField] ContinueText ContinueText;
+
         DifficultyMeter difficulty;
 
         #endregion
@@ -30,7 +32,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void Start()
         {
 
-            GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.FirstTime);
+            GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryHard);
             InitializeMinigame();
             StartMinigame();
         }
@@ -73,7 +75,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             }
             else
             {
-                // no more ennemies : win
+                ContinueText.Enable(true);
             }
         }
 
@@ -96,7 +98,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         void GameOver()
         {
-            Debug.Log("Game Over");
+            ContinueText.Enable(false);
         }
 
         #endregion

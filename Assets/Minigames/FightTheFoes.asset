@@ -16,4 +16,4 @@ MonoBehaviour:
   sceneName: MAIN Fight The Foes
   minigameIcon: {fileID: 21300000, guid: bd47ca0b62fd74844bb3ad53514a0e0c, type: 3}
   miniGameIconLock: {fileID: 21300000, guid: 2e02cd8dee11a5c43b22a1a3862e5d06, type: 3}
-  scoreToUnlock: 0
+  scoreToUnlock: 5

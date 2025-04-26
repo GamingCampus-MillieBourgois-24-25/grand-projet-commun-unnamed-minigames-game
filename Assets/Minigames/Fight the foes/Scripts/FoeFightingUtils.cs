@@ -23,7 +23,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 case MinigameDifficultyLevel.Hard:
                 case MinigameDifficultyLevel.VeryHard:
                 case MinigameDifficultyLevel.Impossible:
-                default: difficulty1 = DifficultyMeter.Normal; break;
+                default: difficulty1 = DifficultyMeter.Hard; break;
             }
             return difficulty1;
         }

@@ -70,13 +70,15 @@ public class RageBar : SingletonMB<RageBar>
         switch (difficulty)
         {
             case DifficultyMeter.Easy:
-                fillSpeed = 6;
+                fillSpeed = 6; rageReduction = 28;
                 break;
             case DifficultyMeter.Normal:
                 fillSpeed = Random.Range(8, 11);
+                rageReduction = 20;
                 break;
             case DifficultyMeter.Hard:
                 fillSpeed = Random.Range(11, 16);
+                rageReduction = 14;
                 break;
         }
     }
