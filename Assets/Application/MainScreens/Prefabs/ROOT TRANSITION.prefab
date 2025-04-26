@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8223721267973453103}
   - component: {fileID: 7733089342744508692}
   - component: {fileID: 696398115238512889}
+  - component: {fileID: 8716911668739723214}
   m_Layer: 0
   m_Name: TransitionMenuManager
   m_TagString: Untagged
@@ -233,6 +234,26 @@ MonoBehaviour:
   _parent: {fileID: 7658061062111674183}
   _spawnPosition: {x: -196, y: 1250}
   _endY: -1000
+--- !u!114 &8716911668739723214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606126543993512603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7138448ad7ed53d4b9f55bd7e443cbd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesMiniGames:
+  - {fileID: 149050296794963180}
+  - {fileID: 5706263777942841028}
+  - {fileID: 795247454977634798}
+  - {fileID: 8931793391566815620}
+  - {fileID: 989784499077676143}
+  - {fileID: 6507630296194470796}
+  workIcons: {fileID: 21300000, guid: 5d3b1daddc44caa4da5c8ae1fa6054a5, type: 3}
 --- !u!1 &610848698929913293
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ae1024256ffc4f042a2f3dccb5770cbb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd12278b8c165ee49ad82a510ec2d4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

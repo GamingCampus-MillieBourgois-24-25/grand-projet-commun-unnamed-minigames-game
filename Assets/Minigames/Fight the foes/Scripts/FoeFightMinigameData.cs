@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace AxoLoop.Minigames.FightTheFoes
 {
     /// <summary>
-    /// Singleton qui contient les données de la minijeu
+    /// Singleton qui contient les donnÃ©es de la minijeu
     /// </summary>
     public class FoeFightMinigameData : SingletonMB<FoeFightMinigameData>
     {

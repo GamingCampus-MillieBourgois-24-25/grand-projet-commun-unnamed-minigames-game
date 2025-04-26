@@ -8,7 +8,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
     {
 
-        // Ctrl + M + O pour déplier toutes les régions
+        // Ctrl + M + O pour dÃ©plier toutes les rÃ©gions
         #region PROPERTIES----------------------------------------------------------------------
 
         [SerializeField] ButtonController[] attackButtons;
