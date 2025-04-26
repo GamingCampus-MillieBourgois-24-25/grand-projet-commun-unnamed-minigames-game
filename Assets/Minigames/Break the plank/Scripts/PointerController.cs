@@ -137,20 +137,48 @@ public class PointerController : MonoBehaviour, IMinigameController
     {
         moveArrow = false;
         Vector3 originalPosition = pointerTransform.position; // Sauvegarde la position initiale
-        Vector3 hammerPosition = originalPosition + new Vector3(0, -40f, 0); // Position légèrement en dessous
+        Vector3 recoilPosition = originalPosition + new Vector3(0, 50f, 0); // Position légèrement au-dessus
+        Vector3 hammerPosition = originalPosition + new Vector3(0, -50f, 0); // Position légèrement en dessous
 
-        // Descend le pointeur
-        pointerTransform.position = hammerPosition;
-        yield return new WaitForSeconds(0.5f); // Attente courte pour l'effet de descente
-        //quand le pointeur a fini de descendre
+        float duration = 0.2f; // Durée pour chaque étape (recul et descente)
+
+        // Étape 1 : Monte légèrement pour l'effet de recul
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(originalPosition, recoilPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = recoilPosition; // Assure la position finale
+
+        // Étape 2 : Descend pour l'effet de marteau
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(recoilPosition, hammerPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = hammerPosition; // Assure la position finale
+
+        // Quand le pointeur a fini de descendre
         callback.Invoke();
 
+        // Étape 3 : Remonte à la position initiale
+        elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            pointerTransform.position = Vector3.Lerp(hammerPosition, originalPosition, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        pointerTransform.position = originalPosition; // Assure la position finale
 
-        // Remonte le pointeur à sa position initiale
-        pointerTransform.position = originalPosition; 
         moveArrow = true;
-
     }
+
+
 
     void PlayAction()
     {
