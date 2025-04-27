@@ -5,6 +5,7 @@ MainMenu.Play,Play,Jouer
 Setting.Title,Settings,Parametre
 Settings.Account,Account,Compte
 Settings.ColorblindMode,Colorblind mode : ,Mode daltonien : 
+Settings.ResetSave,Reset save,Effacer la sauvegarde
 StartScreen.Play,Play,Jouer
 FightTheFoes.Fang,Bite,Morsure
 FightTheFoes.Drink,Drink,Grosse paille

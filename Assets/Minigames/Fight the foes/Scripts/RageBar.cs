@@ -103,7 +103,7 @@ public class RageBar : SingletonMB<RageBar>
         while (true)
         {
             float speed = 5f * slider.value;
-            influence = (Mathf.Sin(Time.time * speed) + 1.5f) / 6f;
+            influence = (Mathf.Sin(Time.time * speed) + 1.5f) / 4f;
             float scale = 0.3f + (influence * slider.value * maxScale);
             skull.localScale = new Vector3(scale, scale, scale);
             yield return null;

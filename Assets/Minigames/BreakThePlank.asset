@@ -16,4 +16,4 @@ MonoBehaviour:
   sceneName: AxoTiming
   minigameIcon: {fileID: 21300000, guid: 78c364d1f63ec4444a6ff068f6bfaaee, type: 3}
   miniGameIconLock: {fileID: 21300000, guid: 753cf10b9b32e1b4fb5817741eb71fcf, type: 3}
-  scoreToUnlock: 15
+  scoreToUnlock: 20

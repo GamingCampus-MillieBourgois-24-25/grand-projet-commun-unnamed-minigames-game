@@ -31,7 +31,7 @@ public class CalculScoreAndCombo : MonoBehaviour
     private void CalculTotalScore()
     {
         _currentScore = ScoreManager.Instance.GetCurrentScore();
-        ScoreManager.Instance.AddTotalScore(_currentScore);
+        ScoreManager.Instance.AddTotalScore(_combo);
         
     }
 

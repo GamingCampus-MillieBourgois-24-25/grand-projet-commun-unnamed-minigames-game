@@ -5,7 +5,7 @@ using Image = UnityEngine.UI.Image;
 
 public class LevelWheel : MonoBehaviour
 {
-    [SerializeField] private Image wheel;
+    [SerializeField] private GameObject wheel;
     [SerializeField] private float rotationDuration = 5f;
     [SerializeField] private Ease easeType = Ease.OutBack;
     [SerializeField] private TextMeshProUGUI _textScore;
@@ -38,7 +38,7 @@ public class LevelWheel : MonoBehaviour
 
     private float GetTargetRotationFromScore(float score)
     {
-        float[] thresholds = { 0, 100, 200, 300, 400, 500, 600 };
+        float[] thresholds = { 0, 5, 10, 20, 30, 500, 600 };
         float[] angles = { 0, 60, 120, 180, 240, 300, 360 };
 
         for (int i = 0; i < thresholds.Length - 1; i++)

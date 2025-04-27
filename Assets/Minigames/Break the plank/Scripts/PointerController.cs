@@ -10,6 +10,9 @@ public class PointerController : MonoBehaviour, IMinigameController
 {
     #region Inspector Properties
 
+    [SerializeField] ContinueText continueText;
+
+
     [Header("Game Configuration")]
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float speedIncrease = 10f;
@@ -25,6 +28,9 @@ public class PointerController : MonoBehaviour, IMinigameController
     [SerializeField] private Ease hammerRecoilEase = Ease.OutQuad;
     [SerializeField] private Ease hammerStrikeEase = Ease.InQuad;
     [SerializeField] private Ease hammerReturnEase = Ease.InOutQuad;
+
+    
+
 
     [Header("References")]
     public MinigameObject breakThePlank;
@@ -390,14 +396,9 @@ public class PointerController : MonoBehaviour, IMinigameController
         }
 
         Debug.Log("You lost!");
+        continueText.Enable(false);
     }
 
-    private void LoadNextMiniGame()
-    {
-        Debug.Log("Loading next minigame...");
-        // Example if you want to load a new scene:
-        // SceneManager.LoadScene("MAIN Hit the road");
-    }
 
     #endregion
 
@@ -626,9 +627,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         victorySequence.AppendInterval(2f);
 
         // Step 3: Load next minigame
-        victorySequence.AppendCallback(() => {
-            LoadNextMiniGame();
-        });
+        continueText.Enable(true);
     }
 
     #endregion
