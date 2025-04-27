@@ -36,7 +36,8 @@ namespace AxoLoop.Minigames.FightTheFoes
                 GenerateMinigame(ScoreManager.Instance.GetCurrentScore(), MinigameHelper.GetDifficulty(fightTheFoes));
             else
                 GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
-            FoeFightingSceneManager.Instance.SceneLoaded += (_) => StartMinigame(); ;
+
+            StartMinigame();
 
         }
 

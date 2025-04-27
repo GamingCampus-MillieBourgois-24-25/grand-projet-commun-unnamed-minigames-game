@@ -1,20 +1,22 @@
+using Axoloop.Global;
+using AxoLoop.Minigames.MatchTheStars;
+using AxoLoop.Minigames.MatchTheStars;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StarsInBag : MonoBehaviour
+public class StarsInBag : SingletonMB<StarsInBag>
 {
-    [SerializeField] private RandomCrownColor randomCrownSource; // script qui contient coloredStarsSpritesList
-    [SerializeField] private Button[] starButtons; // les 9 boutons à assigner
+    [SerializeField] private StarSlot[] stars; // les 9 boutons à assigner
 
     public void SetNineStarsInOrder()
     {
-        if (randomCrownSource == null || starButtons.Length < 9)
+        if (stars.Length < 9)
         {
-            Debug.LogWarning("Références manquantes ou pas assez de boutons !");
+            Debug.LogWarning("Pas assez de boutons !");
             return;
         }
 
-        Sprite[] allColoredStars = randomCrownSource.GetColoredStarsSpritesList();
+        Sprite[] allColoredStars = MatchTheStarsMinigameData.ColoredStarsSpritesList;
 
         if (allColoredStars.Length < 9)
         {
@@ -24,10 +26,18 @@ public class StarsInBag : MonoBehaviour
 
         for (int i = 0; i < 9; i++)
         {
-            Image buttonImage = starButtons[i].GetComponent<Image>();
-            if (buttonImage != null)
+            stars[i].SetStar(allColoredStars[i]);
+        }
+    }
+
+    public void RaplaceTakenStar(Sprite starSprite)
+    {
+        for (int i = 0; i < stars.Length; i++)
+        {
+            if (stars[i].IsEmpty)
             {
-                buttonImage.sprite = allColoredStars[i];
+                stars[i].SetStar(starSprite);
+                break;
             }
         }
     }

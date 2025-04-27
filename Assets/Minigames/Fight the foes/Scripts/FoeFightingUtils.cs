@@ -55,7 +55,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             for (int i = 0; i < 2; i++)
             {
-                int RandomNumberPicked = Random.Range(1, attackList.Count)-1;
+                int RandomNumberPicked = Mathf.RoundToInt(Random.Range(0, attackList.Count*10)/10);
                 if (i == 1)
                 {
                     while (attacks.Contains(attackList[RandomNumberPicked].attackType))

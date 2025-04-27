@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: testScene
-      value: MAIN_Revive
+      value: MAIN Fight The Foes
       objectReference: {fileID: 0}
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: _isTesting
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
