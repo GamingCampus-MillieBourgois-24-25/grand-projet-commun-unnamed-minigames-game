@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
+using Axoloop.Global;
+using AxoLoop.Minigames.HitTheRoad;
 
-public class PlayerBike : MonoBehaviour
+public class PlayerBike : SingletonMB<PlayerBike>
 {
     public float moveSpeed = 10f; // Vitesse de déplacement vers l'avant
     public float turnSpeed = 5f; // Vitesse de déplacement latéral
@@ -20,6 +22,9 @@ public class PlayerBike : MonoBehaviour
 
     private float currentLeanAngle = 0f; // Inclinaison actuelle de la moto
     private Rigidbody rb; // Référence au Rigidbody
+
+    bool accident = false;
+    float targetLeanAngle;
 
     void Start()
     {
@@ -47,7 +52,7 @@ public class PlayerBike : MonoBehaviour
 
     private void HandleTurning()
     {
-        float targetLeanAngle = 0f;
+        targetLeanAngle = 0f;
         Vector3 lateralMovement = Vector3.zero;
 
         if (isTurningLeft)
@@ -89,6 +94,7 @@ public class PlayerBike : MonoBehaviour
 
     public void StopTurning()
     {
+        if(!accident)rb.MoveRotation(new Quaternion(0, 0, 0, 1));
         isTurningLeft = false;
         isTurningRight = false;
     }
@@ -97,6 +103,7 @@ public class PlayerBike : MonoBehaviour
     {
         if (hasCollided) return;
 
+        StartCoroutine(ScreenShake(0.5f, 0.2f)); // Durée : 0.5s, Intensité : 0.2
         if (other.CompareTag("RivalBike"))
         {
             hasCollided = true;
@@ -105,6 +112,7 @@ public class PlayerBike : MonoBehaviour
         }
         else if (other.CompareTag("Boundary"))
         {
+            accident = true;
             hasCollided = true;
             StopTurning();
             VoxelGameManager.Instance.PlayerFails();
@@ -115,21 +123,26 @@ public class PlayerBike : MonoBehaviour
                 RivalBike.Instance.StartCoroutine(RivalBike.Instance.FinalAcceleration());
             }
 
-            // Ralentir et arrêter les routes
-            MovingTile[] movingTiles = FindObjectsOfType<MovingTile>();
-            foreach (MovingTile tile in movingTiles)
-            {
-                tile.SlowDownAndStop(2f); // Ralentir sur 2 secondes
-            }
+            
 
             // Déclencher le tremblement de l'écran
-            StartCoroutine(ScreenShake(0.5f, 0.2f)); // Durée : 0.5s, Intensité : 0.2
 
             // Déplacer l'objet vers le TargetPoint puis devant le PlayerBike
             if (movingObject != null && targetPoint != null)
             {
                 StartCoroutine(MoveObjectToTargetAndPlayer());
             }
+        }
+    }
+
+    public void StopPlayer()
+    {
+        HitTheRoadController.Instance.DisableButtons();
+        // Ralentir et arrêter les routes
+        MovingTile[] movingTiles = FindObjectsOfType<MovingTile>();
+        foreach (MovingTile tile in movingTiles)
+        {
+            tile.SlowDownAndStop(accident ? 0.5f : 2f); // Ralentir sur 2 secondes
         }
     }
 

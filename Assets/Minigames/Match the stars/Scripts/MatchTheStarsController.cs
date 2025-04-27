@@ -107,7 +107,7 @@ namespace AxoLoop.Minigames.MatchTheStars
                 axo.SetAngry();
             }
 
-            continueText.gameObject.SetActive(true);
+            continueText.Enable(win);
         }
 
         #endregion

@@ -1,6 +1,7 @@
 using Axoloop.Global;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AxoLoop.Minigames.HitTheRoad
 {
@@ -11,7 +12,7 @@ namespace AxoLoop.Minigames.HitTheRoad
         public GameObject playerBike;
         public RivalBike rivalBike;
         public MinigameObject hitTheRoad;
-
+        public Button[] buttons;
 
         bool easy(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.FirstTime || dif == MinigameDifficultyLevel.VeryEasy
                     || dif == MinigameDifficultyLevel.Easy;
@@ -25,7 +26,7 @@ namespace AxoLoop.Minigames.HitTheRoad
                 GenerateMinigame(ScoreManager.Instance.GetCurrentScore(), MinigameHelper.GetDifficulty(hitTheRoad));
             else
                 GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
-            HitTheRoadSceneManager.Instance.SceneLoaded += (_) => InitializeMinigame(); ;
+            InitializeMinigame();
 
 
         }
@@ -74,12 +75,19 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         IEnumerator SpawnRivalBike()
         {
-            yield return new WaitForSeconds(Random.Range(0f, 4f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
+            yield return new WaitForSeconds(Random.Range(1f, 4f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
             if (rivalBike)
             {
                 rivalBike.gameObject.SetActive(true);
             }
         }
 
+        public void DisableButtons()
+        {
+            foreach (var item in buttons)
+            {
+                item.gameObject.SetActive(false);
+            }
+        }
     }
 }

@@ -580,6 +580,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 313
       objectReference: {fileID: 0}
+    - target: {fileID: 7133963019387204885, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
+        type: 3}
+      propertyPath: matchTheStars
+      value: 
+      objectReference: {fileID: 11400000, guid: c2172dc8edf18b144a7d94df174922d5,
+        type: 2}
     - target: {fileID: 7391754220317386814, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
         type: 3}
       propertyPath: m_Enabled

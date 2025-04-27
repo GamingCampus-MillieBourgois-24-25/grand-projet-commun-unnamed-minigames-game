@@ -7,7 +7,7 @@ public static class MinigameHelper
 
     public static MinigameDifficultyLevel GetDifficulty(MinigameObject minigame)
     {
-        int numberOfTimesPlayed = PlayerPrefs.GetInt("" + minigame.name + timesPlayedKey, 0);
+        int numberOfTimesPlayed = PlayerPrefs.GetInt("" + minigame.name + timesPlayedKey, 0); 
 
         if(numberOfTimesPlayed == 0)
         {

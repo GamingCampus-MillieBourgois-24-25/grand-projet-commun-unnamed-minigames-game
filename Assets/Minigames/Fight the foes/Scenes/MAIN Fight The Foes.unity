@@ -4715,7 +4715,7 @@ MonoBehaviour:
   AxoIntro: {fileID: 799944853}
   AxoIntroTop: {fileID: 1140544118}
   ButtonsCanvasGroup: {fileID: 1871598812}
-  ContinueText: {fileID: 0}
+  ContinueText: {fileID: 8684253690645228418}
   fightTheFoes: {fileID: 11400000, guid: 47c504309ac479440a61e98e336586d9, type: 2}
 --- !u!212 &7811393786629571301
 SpriteRenderer:
@@ -5148,6 +5148,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 007e7a6845d00af41963bbee2274551e, type: 3}
+--- !u!114 &8684253690645228418 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6302460668319152645, guid: 007e7a6845d00af41963bbee2274551e,
+    type: 3}
+  m_PrefabInstance: {fileID: 8684253690645228417}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979294e3a597461498d4e4cc0736768a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8935335516852818990
 PrefabInstance:
   m_ObjectHideFlags: 0

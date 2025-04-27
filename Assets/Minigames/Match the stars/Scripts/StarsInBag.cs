@@ -1,8 +1,6 @@
 using Axoloop.Global;
 using AxoLoop.Minigames.MatchTheStars;
-using AxoLoop.Minigames.MatchTheStars;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class StarsInBag : SingletonMB<StarsInBag>
 {

@@ -17,29 +17,24 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     {
         if (victory)
         {
-            Action  Step2 = () => StartCoroutine(DelayToStartMiniGame());
-            StartCoroutine(DelayAfterWin(Step2));
-            
             _calculScoreAndCombo.OnMiniGameWon();
+            GlobalSceneController.OpenScene(GameSettings.TransitionScene);
+            StartCoroutine(DelayToStartMiniGame());
+            
         }
 
         if (!victory)
         {
-            StartCoroutine(DelayAfterLose());
+            DisplayMiniGameIcons.Instance.UpdateIcons();
+            GlobalSceneController.OpenScene(GameSettings.ReviveScene);
         }
     }
-    private IEnumerator DelayAfterWin(Action callback)
-    {
-        yield return new WaitForSeconds(2.5f);
-        GlobalSceneController.OpenScene(GameSettings.TransitionScene);
-        callback.Invoke();
-    }
-    private IEnumerator DelayAfterLose()
-    {
-        yield return new WaitForSeconds(2f);
-        DisplayMiniGameIcons.Instance.UpdateIcons();
-        GlobalSceneController.OpenScene(GameSettings.ReviveScene);
-    }
+    //private IEnumerator DelayAfterLose()
+    //{
+    //    DisplayMiniGameIcons.Instance.UpdateIcons();
+    //    GlobalSceneController.OpenScene(GameSettings.ReviveScene);
+    //    yield return new WaitForSeconds(2f);
+    //}
     private IEnumerator DelayToStartMiniGame()
     {
         yield return new WaitForSeconds(2.5f);

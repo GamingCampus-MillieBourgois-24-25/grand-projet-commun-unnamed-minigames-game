@@ -10,7 +10,6 @@ using AxoLoop.Minigames.HitTheRoad;
 
 public class GenerateTiles : MonoBehaviour
 {
-    int tileScale = 5;
     public float tileSpeed = 40f;
   
     public GameObject[] tile;
@@ -49,14 +48,14 @@ public class GenerateTiles : MonoBehaviour
         /* Choix aleatoire de la tuile */
         index = Random.Range(0, tile.Length);
 
-        mainPosition.z = 50f;
+        mainPosition.z = 25f;
         Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
 
-        mainPosition = new Vector3(0, 0, 0);
+        mainPosition = new Vector3(0, 0, -25);
         Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
 
-        mainPosition.z = -50f;
-        Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
+        //mainPosition.z = -50f;
+        //Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
 
         tile[index].GetComponent<MovingTile>().setSpeed(tileSpeed);
 

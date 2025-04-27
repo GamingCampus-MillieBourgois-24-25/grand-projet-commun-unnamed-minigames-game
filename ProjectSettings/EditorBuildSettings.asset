@@ -35,8 +35,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Minigames/Match the stars/AxoMatching.unity
     guid: 88f7e1c6f7eb4ed4890adfd20ec37c43
+  - enabled: 1
+    path: Assets/Minigames/Break the plank/AxoTiming.unity
+    guid: e74e32d1eae06e0428b052dbe108e808
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: b927363bcaf7b5a44853db39e61f83d1, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4515f03a2992a864ea49a057a8c4daa5,
       type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: c762926b756944f43814bf6de8ef9082, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: f285d866f47e3b24182c02e8fe3fb428, type: 2}

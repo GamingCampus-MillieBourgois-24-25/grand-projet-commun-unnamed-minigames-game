@@ -13,7 +13,7 @@ public class MovingTile : MonoBehaviour
 
     void TeleportToPointZero()
     {
-        transform.position += new Vector3(0, 0, 150);
+        transform.position += new Vector3(0, 0, 100);
     }
 
     void OnTriggerEnter(Collider other)
