@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class StarSlot : MonoBehaviour
 {
     [SerializeField] bool isCrown = false;
-    public bool IsEmpty { get; private set; }
+    public bool IsEmpty { get; private set; } = true;
     Image image;
 
     private void Awake()

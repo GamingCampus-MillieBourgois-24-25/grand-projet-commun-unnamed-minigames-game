@@ -33,6 +33,7 @@ public class MTSDragAndDropBehavior : MonoBehaviour, IBeginDragHandler, IDragHan
 
     private void Awake()
     {
+
         rectTransform = GetComponent<RectTransform>();
         canvas = GetComponentInParent<Canvas>();
         canvasGroup = GetComponent<CanvasGroup>();
@@ -55,7 +56,8 @@ public class MTSDragAndDropBehavior : MonoBehaviour, IBeginDragHandler, IDragHan
 
     private void OnDisable()
     {
-        if(!anchored)
+        StopHintAnimation();
+        if (!anchored)
             ReturnToInitialPosition();
     }
 
@@ -104,6 +106,7 @@ public class MTSDragAndDropBehavior : MonoBehaviour, IBeginDragHandler, IDragHan
     private void SnapToDestination()
     {
         anchored = true;
+        transform.parent = destinationPoint;
         if (destinationPoint.parent != rectTransform.parent)
         {
             Vector3 worldDestPos = destinationPoint.TransformPoint(Vector3.zero);
@@ -131,18 +134,21 @@ public class MTSDragAndDropBehavior : MonoBehaviour, IBeginDragHandler, IDragHan
 
         rectTransform.anchoredPosition = initialAnchoredPosition;
 
-        hintSequence = DOTween.Sequence()
+        hintSequence = DOTween.Sequence();
+        hintSequence
             .Append(rectTransform.DOAnchorPosY(initialAnchoredPosition.y - hintAnimDistance, hintAnimDuration).SetEase(hintEaseDown))
             .Append(rectTransform.DOAnchorPosY(initialAnchoredPosition.y, hintAnimDuration).SetEase(hintEaseUp))
             .AppendInterval(hintAnimInterval)
-            .SetLoops(-1);
+            .SetLoops(-1)
+            .SetAutoKill(false); // <-- Important : ne pas autokill
     }
 
     private void StopHintAnimation()
     {
-        if (hintSequence != null)
+        if (hintSequence != null && hintSequence.IsActive())
         {
-            hintSequence.Kill();
+            hintSequence.Pause(); // <-- Ajoute cette ligne pour forcer l'arrêt
+            hintSequence.Kill(rectTransform);
             hintSequence = null;
         }
     }

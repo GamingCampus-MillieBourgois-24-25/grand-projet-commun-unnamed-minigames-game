@@ -27,14 +27,14 @@ namespace Assets.Minigames.Match_the_stars.Scripts
             axoImage.enabled = false;
             //enable one random win image
             int randomIndex = Random.Range(0, axoHeadWin.Length);
-            axoHeadWin[randomIndex].enabled = true;
+            axoHeadWin[randomIndex].gameObject.SetActive(true);
         }
 
         public void SetAngry()
         {
             axoImage.enabled = false;
             int randomIndex = Random.Range(0, axoHeadLoss.Length);
-            axoHeadLoss[randomIndex].enabled = true;
+            axoHeadLoss[randomIndex].gameObject.SetActive(true);
         }
     }
 }

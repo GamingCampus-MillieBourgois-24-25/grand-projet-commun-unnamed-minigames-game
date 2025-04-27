@@ -4,6 +4,7 @@ MainMenu.Shop,Shop,Boutique
 MainMenu.Play,Play,Jouer
 Setting.Title,Settings,Parametre
 Settings.Account,Account,Compte
+Settings.ColorblindMode,Colorblind mode : ,Mode daltonien : 
 StartScreen.Play,Play,Jouer
 FightTheFoes.Fang,Bite,Morsure
 FightTheFoes.Drink,Drink,Grosse paille

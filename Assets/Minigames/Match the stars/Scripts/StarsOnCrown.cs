@@ -11,8 +11,9 @@ public class StarsOnCrown : SingletonMB<StarsOnCrown>
     public bool IsEmpty {get; private set;}
     public bool IsFull { get; private set; }
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
         OnStarsChanged();
     }
 

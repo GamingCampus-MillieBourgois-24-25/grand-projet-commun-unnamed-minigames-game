@@ -76,7 +76,7 @@ namespace AxoLoop.Minigames.MatchTheStars
             var allMatch = true;
             for (int i = 0; i < testA.Length; i++)
             {
-                if (testA[i].name != testB[i].name) // Comparaison des noms des sprites
+                if (testA[i].sprite.name != testB[i].name) // Comparaison des noms des sprites
                 {
                     allMatch = false;
                     break;

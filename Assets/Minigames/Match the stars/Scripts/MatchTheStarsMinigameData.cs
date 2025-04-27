@@ -21,12 +21,14 @@ namespace AxoLoop.Minigames.MatchTheStars
 
         [SerializeField] private Sprite[] availableSpritesList;
         [SerializeField] private Color[] availableColors;
+        [SerializeField] private Color[] availableDaltonienColors;
         [SerializeField] private Sprite[] coloredStarsSpritesList;
         [SerializeField] private Image[] crownStarsImages; // les 3 images à assigner
 
 
         public static Sprite[] AvailableSpritesList { get => Instance.availableSpritesList; set => Instance.availableSpritesList = value; }
         public static Color[] AvailableColors { get => Instance.availableColors; set => Instance.availableColors = value; }
+        public static Color[] AvailableDaltonienColors { get => Instance.availableDaltonienColors; set => Instance.availableDaltonienColors = value; }
         public static Sprite[] ColoredStarsSpritesList { get => Instance.coloredStarsSpritesList; set => Instance.coloredStarsSpritesList = value; }
         public static Image[] CrownStarsImages { get => Instance.crownStarsImages; set => Instance.crownStarsImages = value; }
 

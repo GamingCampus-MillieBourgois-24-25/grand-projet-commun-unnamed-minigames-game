@@ -10,7 +10,7 @@ public static class StarsColorsGenerator
     {
         // récupère les sprites et les couleurs disponibles
         var starsSpritesList = MatchTheStarsMinigameData.AvailableSpritesList;
-        var availableColors = MatchTheStarsMinigameData.AvailableColors;
+        var availableColors = (PlayerPrefs.GetString("ColorblindMode", "False") == "True") ? MatchTheStarsMinigameData.AvailableDaltonienColors : MatchTheStarsMinigameData.AvailableColors;
         var coloredStarsSpritesList = new Sprite[MatchTheStarsMinigameData.StarsCount];
 
         // Configure la difficulté en évitant d'inclure les derniers sprites en cas de facilité
