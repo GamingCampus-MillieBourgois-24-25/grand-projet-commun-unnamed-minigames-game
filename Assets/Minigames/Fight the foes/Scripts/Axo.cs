@@ -5,31 +5,57 @@ using UnityEngine;
 
 namespace AxoLoop.Minigames.FightTheFoes
 {
+    [RequireComponent(typeof(Animator))]
     public class Axo : SingletonMB<Axo>
     {
         [SerializeField] protected Sprite AliveSprite;
-        private SpriteRenderer spriteRenderer;
+        private Animator animator;
+        private Action attackCallback;
 
-        void Start()
+        private void Start()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = AliveSprite;
+            animator = GetComponent<Animator>();
         }
 
-        // Update is called once per frame
-        void Update()
+        public void PlayAttack(AnimationClip attack, Action callBack)
         {
-
+            attackCallback = callBack;
+            animator.Play(attack.name, -1, 0);
         }
 
-        public void Spawn(Action callBack)
+
+
+        public void AttackTouched()
         {
-            callBack?.Invoke();
+            attackCallback?.Invoke();
+            FoeFightingUtils.ButtonsHit?.Invoke();
+            attackCallback = null;
         }
 
-        public void Die(Action callBack)
+        public void DieFromFoe(FoeType type)
         {
-            callBack?.Invoke();
+            if(FoeFightMinigameData.IsBlocking)
+            {
+                animator.Play("Tank", -1, 0);
+                FoeFightingUtils.ButtonsHit?.Invoke();
+                return;
+            }
+
+            switch (type)
+            {
+                case FoeType.Liquid:
+                    animator.Play("DieStomp", -1, 0);
+                    break;
+                case FoeType.Fire:
+                    animator.Play("DieBurn", -1, 0);
+                    break;
+                case FoeType.Food:
+                    animator.Play("DieShatter", -1, 0);
+                    break;
+                case FoeType.Wind:
+                    animator.Play("DieEject", -1, 0);
+                    break;
+            }
         }
     }
 }

@@ -10,18 +10,46 @@ namespace AxoLoop.Minigames.FightTheFoes
         FoeType foeType;
         private bool blocking = false;
 
+        [SerializeField] GameObject[] GreenVariant;
+        [SerializeField] GameObject[] GreyVariant;
+        [SerializeField] GameObject logo1;
+        [SerializeField] GameObject logo2;
+
+        public void SetEnvironmentVariant(bool grey)
+        {
+            var variant = grey ? GreyVariant : GreenVariant;
+            foreach (var item in variant)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        public void SetLogoVariant(bool first)
+        {
+            var variant = first ? logo1 : logo2;
+            variant.SetActive(true);
+        }
+
 
         public void PlayAttack(FoeType type)
         {
-            var attack = FoeFightMinigameData.AttackList.FirstOrDefault(item => item.attackType == type);
+            FoeFightMinigameData.LockedAttack = true;
+
+            var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
 
             blocking = false;
-            if (attack == null)
+            if (attackObject == null)
             {
                 blocking = true;
             }
 
-            attack.PlayAttack(OnAttackHit);
+            FoeFightMinigameData.Axo.PlayAttack(attackObject.attackAnimation, () => OnAttackHit(attackObject.attackType));
+        }
+
+        public void PlayBlock()
+        {
+            FoeFightMinigameData.IsBlocking = true;
+            FoeFightingController.Instance.FoeTurn();
         }
 
         void OnAttackHit(FoeType attackType)
@@ -29,14 +57,13 @@ namespace AxoLoop.Minigames.FightTheFoes
             foeType = FoeFightMinigameData.CurrentFoe.FoeType;
             if (attackType == foeType)
             {
-                // réaction à l'attaque efficace
-                FoeFightMinigameData.GameFoes.RemoveAt(0);
-                FoeFightingController.Instance.NextRound();
+                // rÃ©action Ã  l'attaque efficace
+                FoeFightMinigameData.CurrentFoe.DieAnimation(() => FoeFightingController.Instance.CurrentFoeKilled());
             }
             else
             {
-                // réaction aux attaques inéfficaces
-                FoeFightingController.Instance.FoeTurn(blocking);
+                // rÃ©action aux attaques inÃ©fficaces
+                FoeFightMinigameData.CurrentFoe.TankAnimation(FoeFightingController.Instance.FoeTurn);
             }
         }
 
@@ -44,6 +71,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     public enum DifficultyMeter
     {
         Easy,
-        Normal
+        Normal, 
+        Hard
     }
 }

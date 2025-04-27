@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OptionsManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    public Button bgmButton, sfxButton, vibrationButton;
+    public Button bgmButton, sfxButton, vibrationButton, resetSave;
     public Sprite bgmOnSprite, bgmOffSprite;
     public Sprite sfxOnSprite, sfxOffSprite;
     public Sprite vibrationOnSprite, vibrationOffSprite;
+    public Toggle colorblindToggle;
+
 
     private bool _bgmOn = false;
     private bool _sfxOn = false;
@@ -48,11 +51,32 @@ public class OptionsManager : MonoBehaviour
         UpdateButtons();
     }
 
+    public void ToggleColorblind()
+    {
+        string value = colorblindToggle.isOn ? "True" : "False";
+        PlayerPrefs.SetString("ColorblindMode", value);
+    }
+
+    public void ResetSave()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("BgmOn", 1);
+        PlayerPrefs.SetInt("SfxOn", 1);
+        PlayerPrefs.SetInt("VibrationOn", 1);
+        PlayerPrefs.SetString("ColorblindMode", "False");
+        PlayerPrefs.Save();
+        LoadSettings();
+        UpdateButtons();
+
+        SceneManager.LoadScene("MAIN_MainScene");
+    }
+
     private void LoadSettings()
     {
         _bgmOn = PlayerPrefs.GetInt("BgmOn", 1) == 1;
         _sfxOn = PlayerPrefs.GetInt("SfxOn", 1) == 1;
         _vibrationOn = PlayerPrefs.GetInt("VibrationOn", 1) == 1;
+        colorblindToggle.isOn = PlayerPrefs.GetString("ColorblindMode", "False") == "True";
 
         audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
         audioMixer.SetFloat("SFXVolume", _sfxOn ? 0f : -80f);

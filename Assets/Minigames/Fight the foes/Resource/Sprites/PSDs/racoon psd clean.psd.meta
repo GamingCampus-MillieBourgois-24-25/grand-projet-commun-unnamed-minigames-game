@@ -1,0 +1,1476 @@
+fileFormatVersion: 2
+guid: 4615135a1345fcb41baee866932fd9fb
+importerOverride:
+  nativeImporterType: 2089858483
+  scriptedImporterType:
+    serializedVersion: 2
+    Hash: b10b55a1aa6a1aa32521bc0cab59632e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: iris_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 767
+      y: 1717
+      width: 227
+      height: 72
+    spriteID: d159066c572e62c459186be7b0b6de64
+    spriteBone:
+    - name: TETE
+      guid: a650cb1783a489c4180c8fa6d0907345
+      position: {x: 123.18646, y: -102.00964, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7334183, w: 0.6797777}
+      length: 178.41899
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 227, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 72}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 227, y: 72}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 767, y: 1717}
+    spritePosition: {x: 403, y: 532}
+  - name: nez_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 884
+      y: 1937
+      width: 77
+      height: 53
+    spriteID: 069043a3804b426499f7714bc48681d7
+    spriteBone:
+    - name: TETE
+      guid: a650cb1783a489c4180c8fa6d0907345
+      position: {x: 48.186462, y: -24.009644, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7334183, w: 0.6797777}
+      length: 178.41899
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 77, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 53}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 77, y: 53}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 884, y: 1937}
+    spritePosition: {x: 478, y: 454}
+  - name: yeux_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 646
+      width: 344
+      height: 116
+    spriteID: e8377876af187124791a87ff0ee0f774
+    spriteBone:
+    - name: TETE
+      guid: a650cb1783a489c4180c8fa6d0907345
+      position: {x: 176.18646, y: -81.00964, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7334183, w: 0.6797777}
+      length: 178.41899
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 344, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 116}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 344, y: 116}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 646}
+    spritePosition: {x: 350, y: 511}
+  - name: jambe_droite_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1044
+      width: 367
+      height: 278
+    spriteID: 9e88a48e16cefd54196728fb310075eb
+    spriteBone:
+    - name: JAMBE DROITE
+      guid: dfabd739de5f25445adc08b1174217f9
+      position: {x: 351.23236, y: 154.77344, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9850264, w: -0.17240386}
+      length: 199.10489
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 367, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 278}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 367, y: 278}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 1044}
+    spritePosition: {x: 408, y: 12}
+  - name: jambe_gauche_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1330
+      width: 396
+      height: 233
+    spriteID: 43c19e24922601f48b0eb1f2f79cc392
+    spriteBone:
+    - name: JAMBE GAUCHE
+      guid: 917c2aa0b1c7c084191789ea29b3149d
+      position: {x: 336.48083, y: 154.25793, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9844025, w: -0.17593129}
+      length: 216.2621
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 396, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 233}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 396, y: 233}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 1330}
+    spritePosition: {x: 120, y: 25}
+  - name: bras_gauche_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 884
+      y: 1802
+      width: 125
+      height: 127
+    spriteID: 0b7c1c70e121dc54cb1934bd792ea193
+    spriteBone:
+    - name: AVANT BRAS GAUCHE
+      guid: f5e0c0f0275feea4caff74d7ea3cdf49
+      position: {x: 22.777222, y: 33.092407, z: 0}
+      rotation: {x: 0, y: 0, z: 0.22189707, w: 0.9750702}
+      length: 57.701412
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255488
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 125, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 127}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 125, y: 127}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 884, y: 1802}
+    spritePosition: {x: 261, y: 348}
+  - name: bras_droit_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 754
+      width: 370
+      height: 282
+    spriteID: 242d2ed2f32595245addce182f32eb45
+    spriteBone:
+    - name: BRAS DROIT
+      guid: d4377e7e08a06a24b9b7d474a5fac420
+      position: {x: 326.9709, y: 182.8097, z: 0}
+      rotation: {x: 0, y: 0, z: 0.96115965, w: -0.27599314}
+      length: 170.60382
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278255488
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 370, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 282}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 370, y: 282}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 754}
+    spritePosition: {x: 374, y: 191}
+  - name: chapeau_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1571
+      width: 332
+      height: 223
+    spriteID: 0451771be04f8d746a465363ff518d45
+    spriteBone:
+    - name: CHAPEAU
+      guid: b8f9c5f93bb34164a9955f6b5577a4fb
+      position: {x: 193.6615, y: -59.104004, z: 0}
+      rotation: {x: 0, y: 0, z: 0.739128, w: 0.67356503}
+      length: 44.92954
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 332, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 223}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 332, y: 223}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 1571}
+    spritePosition: {x: 319, y: 667}
+  - name: rouleau_patissier
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 415
+      height: 634
+    spriteID: bf6e83411c22d7b4794a17e6f086de3f
+    spriteBone: []
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 0
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 415, y: 0}
+      boneWeight:
+        weight0: 0
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 634}
+      boneWeight:
+        weight0: 0
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 415, y: 634}
+      boneWeight:
+        weight0: 0
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 191, y: 71}
+  - name: tete_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 440
+      width: 565
+      height: 306
+    spriteID: bcd6ffad3c4b18f459bc22b27494ac7a
+    spriteBone:
+    - name: TETE
+      guid: a650cb1783a489c4180c8fa6d0907345
+      position: {x: 290.18646, y: 27.990356, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7334183, w: 0.6797777}
+      length: 178.41899
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 565, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 306}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 565, y: 306}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 440}
+    spritePosition: {x: 236, y: 402}
+  - name: oreille_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 1802
+      width: 449
+      height: 153
+    spriteID: ecd9130cf0ec0484c884cd6e96be0a80
+    spriteBone:
+    - name: CHAPEAU
+      guid: b8f9c5f93bb34164a9955f6b5577a4fb
+      position: {x: 230.6615, y: 11.895996, z: 0}
+      rotation: {x: 0, y: 0, z: 0.739128, w: 0.67356503}
+      length: 44.92954
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 449, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 153}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 449, y: 153}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 1802}
+    spritePosition: {x: 282, y: 596}
+  - name: corps_racoon
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 427
+      y: 4
+      width: 465
+      height: 428
+    spriteID: 3dfff1f7fb181a54287791420f2ec277
+    spriteBone:
+    - name: CORPS
+      guid: b78280e0c9e210d42ae7045840eb2ea1
+      position: {x: 193.90381, y: 31.713821, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6989206, w: 0.7151993}
+      length: 316.36032
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 465, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 428}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 465, y: 428}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 427, y: 4}
+    spritePosition: {x: 325, y: 82}
+  - name: bras_droit_arriere
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 767
+      y: 1571
+      width: 240
+      height: 138
+    spriteID: e22ecd067b38dd649a2cc9de72a1b13c
+    spriteBone:
+    - name: ARRIERE BRAS GAUCHE
+      guid: c295c9d16f2131f428ba09cbae51567c
+      position: {x: 110.97705, y: 53.253906, z: 0}
+      rotation: {x: 0, y: 0, z: 0.9998153, w: -0.019220002}
+      length: 108.2799
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    spriteOutline: []
+    vertices:
+    - position: {x: 0, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 240, y: 0}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 0, y: 138}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    - position: {x: 240, y: 138}
+      boneWeight:
+        weight0: 1
+        weight1: 0
+        weight2: 0
+        weight3: 0
+        boneIndex0: 0
+        boneIndex1: 0
+        boneIndex2: 0
+        boneIndex3: 0
+    spritePhysicsOutline: []
+    indices: 000000000200000001000000010000000200000003000000
+    edges:
+    - {x: 0, y: 1}
+    - {x: 0, y: 2}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+    tessellationDetail: 0
+    uvTransform: {x: 767, y: 1571}
+    spritePosition: {x: 281, y: 332}
+  characterData:
+    bones:
+    - name: CORPS
+      guid: b78280e0c9e210d42ae7045840eb2ea1
+      position: {x: 518.9038, y: 113.71382, z: 0}
+      rotation: {x: 0, y: 0, z: 0.6989206, w: 0.7151993}
+      length: 316.36035
+      parentId: -1
+      color:
+        serializedVersion: 2
+        rgba: 4278190335
+    - name: JAMBE DROITE
+      guid: dfabd739de5f25445adc08b1174217f9
+      position: {x: 58.577896, y: -239.04341, z: 0}
+      rotation: {x: 0, y: -0, z: 0.82498676, w: 0.5651521}
+      length: 199.10497
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255615
+    - name: JAMBE GAUCHE
+      guid: 917c2aa0b1c7c084191789ea29b3149d
+      position: {x: 64.08979, y: 63.915264, z: 0}
+      rotation: {x: 0, y: -0, z: 0.8270059, w: 0.5621932}
+      length: 216.2621
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255360
+    - name: TETE
+      guid: a650cb1783a489c4180c8fa6d0907345
+      position: {x: 316.36035, y: -0.000067599, z: 0}
+      rotation: {x: 0, y: 0, z: 0.049429584, w: 0.9987776}
+      length: 178.41899
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4294967040
+    - name: CHAPEAU
+      guid: b8f9c5f93bb34164a9955f6b5577a4fb
+      position: {x: 178.419, y: -0.000016621572, z: 0}
+      rotation: {x: 0, y: 0, z: 0.008437821, w: 0.9999644}
+      length: 44.92953
+      parentId: 3
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    - name: BRAS DROIT
+      guid: d4377e7e08a06a24b9b7d474a5fac420
+      position: {x: 264.21808, y: -176.03143, z: 0}
+      rotation: {x: 0, y: -0, z: 0.8803179, w: 0.47438416}
+      length: 170.60385
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278255488
+    - name: ARRIERE BRAS GAUCHE
+      guid: c295c9d16f2131f428ba09cbae51567c
+      position: {x: 268.54623, y: 133.14394, z: 0}
+      rotation: {x: 0, y: -0, z: 0.7285004, w: 0.68504536}
+      length: 108.27989
+      parentId: 0
+      color:
+        serializedVersion: 2
+        rgba: 4278223103
+    - name: AVANT BRAS GAUCHE
+      guid: f5e0c0f0275feea4caff74d7ea3cdf49
+      position: {x: 108.27987, y: -0.0000105383415, z: 0}
+      rotation: {x: 0, y: 0, z: -0.9791549, w: 0.20311521}
+      length: 57.7014
+      parentId: 6
+      color:
+        serializedVersion: 2
+        rgba: 4278255488
+    parts:
+    - spritePosition:
+        x: 403
+        y: 532
+        width: 227
+        height: 72
+      spriteId: d159066c572e62c459186be7b0b6de64
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 478
+        y: 454
+        width: 77
+        height: 53
+      spriteId: 069043a3804b426499f7714bc48681d7
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 350
+        y: 511
+        width: 344
+        height: 116
+      spriteId: e8377876af187124791a87ff0ee0f774
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 408
+        y: 12
+        width: 367
+        height: 278
+      spriteId: 9e88a48e16cefd54196728fb310075eb
+      bones: 01000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 120
+        y: 25
+        width: 396
+        height: 233
+      spriteId: 43c19e24922601f48b0eb1f2f79cc392
+      bones: 02000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 261
+        y: 348
+        width: 125
+        height: 127
+      spriteId: 0b7c1c70e121dc54cb1934bd792ea193
+      bones: 07000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 374
+        y: 191
+        width: 370
+        height: 282
+      spriteId: 242d2ed2f32595245addce182f32eb45
+      bones: 05000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 319
+        y: 667
+        width: 332
+        height: 223
+      spriteId: 0451771be04f8d746a465363ff518d45
+      bones: 04000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 191
+        y: 71
+        width: 415
+        height: 634
+      spriteId: bf6e83411c22d7b4794a17e6f086de3f
+      bones: 
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 236
+        y: 402
+        width: 565
+        height: 306
+      spriteId: bcd6ffad3c4b18f459bc22b27494ac7a
+      bones: 03000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 282
+        y: 596
+        width: 449
+        height: 153
+      spriteId: ecd9130cf0ec0484c884cd6e96be0a80
+      bones: 04000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 325
+        y: 82
+        width: 465
+        height: 428
+      spriteId: 3dfff1f7fb181a54287791420f2ec277
+      bones: 00000000
+      parentGroup: 0
+      order: 0
+    - spritePosition:
+        x: 281
+        y: 332
+        width: 240
+        height: 138
+      spriteId: e22ecd067b38dd649a2cc9de72a1b13c
+      bones: 06000000
+      parentGroup: 0
+      order: 0
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0.5, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Android
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0.5, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 1
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Artboard 1
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: d42f5318fe2af2d4bb3be7732bedabb9
+    layerID: 131
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: racoon
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 981ce7c6f3f3774449625b4e46705d7b
+    layerID: 108
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: iris_racoon
+    spriteName: iris_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: d159066c572e62c459186be7b0b6de64
+    layerID: 107
+    mosaicPosition: {x: 767, y: 1717}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: nez_racoon
+    spriteName: nez_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 069043a3804b426499f7714bc48681d7
+    layerID: 106
+    mosaicPosition: {x: 884, y: 1937}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: yeux_racoon
+    spriteName: yeux_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: e8377876af187124791a87ff0ee0f774
+    layerID: 105
+    mosaicPosition: {x: 4, y: 646}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_droite_racoon
+    spriteName: jambe_droite_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 9e88a48e16cefd54196728fb310075eb
+    layerID: 104
+    mosaicPosition: {x: 427, y: 1044}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: jambe_gauche_racoon
+    spriteName: jambe_gauche_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 43c19e24922601f48b0eb1f2f79cc392
+    layerID: 103
+    mosaicPosition: {x: 427, y: 1330}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: bras_gauche_racoon
+    spriteName: bras_gauche_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 0b7c1c70e121dc54cb1934bd792ea193
+    layerID: 102
+    mosaicPosition: {x: 884, y: 1802}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: bras_droit_racoon
+    spriteName: bras_droit_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 242d2ed2f32595245addce182f32eb45
+    layerID: 101
+    mosaicPosition: {x: 427, y: 754}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: chapeau_racoon
+    spriteName: chapeau_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 0451771be04f8d746a465363ff518d45
+    layerID: 100
+    mosaicPosition: {x: 427, y: 1571}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: rouleau_patissier
+    spriteName: rouleau_patissier
+    isGroup: 0
+    parentIndex: 1
+    spriteID: bf6e83411c22d7b4794a17e6f086de3f
+    layerID: 99
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: tete_racoon
+    spriteName: tete_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: bcd6ffad3c4b18f459bc22b27494ac7a
+    layerID: 98
+    mosaicPosition: {x: 427, y: 440}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: oreille_racoon
+    spriteName: oreille_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: ecd9130cf0ec0484c884cd6e96be0a80
+    layerID: 97
+    mosaicPosition: {x: 427, y: 1802}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: corps_racoon
+    spriteName: corps_racoon
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 3dfff1f7fb181a54287791420f2ec277
+    layerID: 96
+    mosaicPosition: {x: 427, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: bras_droit_arriere
+    spriteName: bras_droit_arriere
+    isGroup: 0
+    parentIndex: 1
+    spriteID: e22ecd067b38dd649a2cc9de72a1b13c
+    layerID: 95
+    mosaicPosition: {x: 767, y: 1571}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

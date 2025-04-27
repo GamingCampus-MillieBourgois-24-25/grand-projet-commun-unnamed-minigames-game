@@ -4,4 +4,16 @@ MainMenu.Shop,Shop,Boutique
 MainMenu.Play,Play,Jouer
 Setting.Title,Settings,Parametre
 Settings.Account,Account,Compte
+Settings.ColorblindMode,Colorblind mode : ,Mode daltonien : 
+Settings.ResetSave,Reset save,Effacer la sauvegarde
 StartScreen.Play,Play,Jouer
+FightTheFoes.Fang,Bite,Morsure
+FightTheFoes.Drink,Drink,Grosse paille
+FightTheFoes.Breath,Wind gust,Coup de vent
+FightTheFoes.Water,Water jet,Jet d'eau
+FightTheFoes.Block,Block,Bloquer
+Revive.Title,Retry?,Encore ?
+Revive.Subtitle,Save your combo!,Ne perds pas ton combo !
+Revive.Ticket,Tickets : ,Tickets : 
+Revive.Revive,Revive,Recommencer
+Application.TapToContinue,Tap to continue,Appuyez pour continuer

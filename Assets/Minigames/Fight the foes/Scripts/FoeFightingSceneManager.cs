@@ -32,6 +32,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         }
 
+        protected override void PlayLoadTransition()
+        {
+
+        }
 
 
         #endregion

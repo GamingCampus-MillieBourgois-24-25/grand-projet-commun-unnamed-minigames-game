@@ -5,16 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="016a4db9-d55e-400c-a935-db5d1201bac4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/projectSettingsUpdater.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.grand-projet-commun-unnamed-minigames-game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scenes/MAIN_Paramètres.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/SettingsSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/ShopSceneManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Menu_OptionsButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Menu_OptionsButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Options_BackButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/SettingsMenu/Options_BackButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopLoadScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ShopMenu/ShopUnloadScene.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingSceneManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingSceneManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightMinigameData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightMinigameData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/Fight the foes/Scripts/FoeFightingManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/HItTheRoad.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/HItTheRoad.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming 1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming 1.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MiniGame_AxoTiming.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minigames/MinigameObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minigames/MinigameObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +27,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ScenesManagers/HitTheRoadSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/DisplayMiniGameIcons.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/CanRevive.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Application/MainScreens/Scripts/ReviveMenu/ReviveSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.7/Scripts/Runtime/TMPro_UGUI_Private.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -37,26 +41,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;StartMiniGame&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\nbellonaitoussekri\\AppData\\Local\\Symbols\\src&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Juicyness",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\2022.3.32f1\Editor\Unity.exe" />
@@ -79,6 +76,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -89,6 +89,9 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
       <option name="selectedOptions">
         <list />
       </option>
@@ -111,7 +114,9 @@
       <workItem from="1744378802927" duration="1367000" />
       <workItem from="1744633648965" duration="8815000" />
       <workItem from="1744788352425" duration="12027000" />
-      <workItem from="1744871768664" duration="2365000" />
+      <workItem from="1744871768664" duration="11699000" />
+      <workItem from="1745393197216" duration="7884000" />
+      <workItem from="1745579623035" duration="123000" />
     </task>
     <servers />
   </component>

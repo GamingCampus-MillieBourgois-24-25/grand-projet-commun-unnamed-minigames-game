@@ -2,6 +2,7 @@
 using Axoloop.Global.UI;
 using Axoloop.Scripts.Global;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -32,7 +33,14 @@ namespace Assets.Code.GLOBAL
         // charger la scène de départ au démarrage du jeu
         void InitialLoading()
         {
-            OpenScene(GameSettings.StartScene.name);
+            if (GameSettings.IsTesting)
+            {
+                OpenScene(GameSettings.TestScene);
+            }
+            else
+            {
+                OpenScene(GameSettings.StartScene);
+            }
         }
 
         // logique post chargement de la scène
@@ -104,18 +112,7 @@ namespace Assets.Code.GLOBAL
 
         public static void ReloadScene()
         {
-            string targetScene = Instance._loadedScene.SceneName;
-            ShowBlackScreen();
-            ShowLoader();
-
-            Action<string> sceneUnloaded = null; 
-            sceneUnloaded = (string sceneName) =>
-                {
-                    Instance._loadedScene.SceneUnloaded -= sceneUnloaded; 
-                    Instance._loadedScene = null;
-                    OpenScene(sceneName);
-                };
-            Instance._loadedScene?.UnloadScene(sceneUnloaded);
+            Instance.StartCoroutine(Instance.ReloadSceneCoroutine());
         }
         
         
@@ -150,7 +147,23 @@ namespace Assets.Code.GLOBAL
         #region COROUTINES----------------------------------------------------------------------
 
 
+        IEnumerator ReloadSceneCoroutine()
+        {
+            string targetScene = Instance._loadedScene.SceneName;
+            ShowBlackScreen();
+            ShowLoader();
 
+            yield return new WaitForSeconds(0.5f);
+
+            Action<string> sceneUnloaded = null;
+            sceneUnloaded = (string sceneName) =>
+            {
+                Instance._loadedScene.SceneUnloaded -= sceneUnloaded;
+                Instance._loadedScene = null;
+                OpenScene(sceneName);
+            };
+            Instance._loadedScene?.UnloadScene(sceneUnloaded);
+        }
 
         #endregion
     }

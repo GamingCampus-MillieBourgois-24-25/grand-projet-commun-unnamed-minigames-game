@@ -33,7 +33,9 @@ namespace Assets.SimpleLocalization.Scripts
 		/// </summary>
         public static void AutoLanguage()
         {
-            Language = PlayerPrefs.GetString("Localization");
+            string newLang = PlayerPrefs.GetString("Localization");
+            if(!String.IsNullOrEmpty(newLang))
+                Language = newLang;
         }
 
         /// <summary>

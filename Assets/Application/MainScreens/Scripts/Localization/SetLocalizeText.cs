@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Assets.SimpleLocalization.Scripts;
 
@@ -7,8 +6,8 @@ namespace Assets.SimpleLocalization
 {
 	public class SetLocalizeText : MonoBehaviour
     {
-        public Button frenchButton, englishButton;
-        public Sprite frenchButtonOn, frenchButtonOff, englishButtonOn, englishButtonOff;
+        [SerializeField] private Button frenchButton, englishButton;
+        [SerializeField] private Sprite frenchButtonOn, frenchButtonOff, englishButtonOn, englishButtonOff;
 
         private void Start()
         {

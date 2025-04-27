@@ -1,40 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-/*
- * Script for moving the tile
- */
 
 public class MovingTile : MonoBehaviour
 {
-
-    public float speed = 15f;
-    public GameObject startPoint; /*position where the tile will be set to once it reaches the endPoint*/
-    
+    public float speed = 15f; // Vitesse initiale de la route
+    private Coroutine slowDownCoroutine;
 
     void Update()
     {
-        
-        transform.position += new Vector3(0, 0, -speed*Time.deltaTime);
+        transform.position += new Vector3(0, 0, -speed * Time.deltaTime);
     }
-    
 
     void TeleportToPointZero()
     {
-        transform.position += new Vector3(0, 0, 150);
+        transform.position += new Vector3(0, 0, 100);
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EndPoint"))
         {
-            //TeleportToStartPoint();
-            TeleportToPointZero();  
-            Debug.Log("Collision entre "+gameObject.name+" et "+other.gameObject.name);
-            //Debug.Log("Position : "+transform.position+" - "+startPoint.transform.position);
+            TeleportToPointZero();
+            Debug.Log("Collision entre " + gameObject.name + " et " + other.gameObject.name);
         }
     }
+
     public float getSpeed()
     {
         return speed;
@@ -43,5 +33,29 @@ public class MovingTile : MonoBehaviour
     public void setSpeed(float speed)
     {
         this.speed = speed;
+    }
+
+    public void SlowDownAndStop(float duration)
+    {
+        if (slowDownCoroutine != null)
+        {
+            StopCoroutine(slowDownCoroutine);
+        }
+        slowDownCoroutine = StartCoroutine(SlowDownCoroutine(duration));
+    }
+
+    private IEnumerator SlowDownCoroutine(float duration)
+    {
+        float initialSpeed = speed;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            speed = Mathf.Lerp(initialSpeed, 0, elapsedTime / duration);
+            yield return null;
+        }
+
+        speed = 0; // Assurez-vous que la vitesse est bien à 0 à la fin
     }
 }

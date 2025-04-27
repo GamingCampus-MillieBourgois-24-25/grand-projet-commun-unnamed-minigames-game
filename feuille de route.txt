@@ -12,6 +12,10 @@ Vitesse de défilement
 
 Une tuile verte en mode forêt, une en jaune pour du sable et une autre en blanche pour de la neige et y mettre des particules pour simuler de la neige -> done
 
-Ajouter plus d'une moto et mettre les assets dans la tuile ->
+Ajouter plus d'une moto et mettre les assets dans la tuile -> abandon
 
-Faire en sorte que le jeu lance au hasard une des variante -> 
+Faire en sorte que le jeu lance au hasard une des variante -> done
+
+randomisation de la position de la camera entre 2 position -->
+
+randomiser la light aussi -->

@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 namespace AxoLoop.Minigames.FightTheFoes
 {
     public enum FoeType
@@ -11,27 +12,50 @@ namespace AxoLoop.Minigames.FightTheFoes
         Wind, 
     }
 
-    [RequireComponent(typeof(SpriteRenderer))]
+    [RequireComponent(typeof(Animator))]
     public class Foe : MonoBehaviour
     {
         public string Name { get; private set; }
-        [SerializeField] protected SpriteRenderer AliveSprite;
 
         public virtual FoeType FoeType { get; }
 
+        protected Animator animator;
+
+        protected Action currentCallback;
         protected virtual void Start()
         {
-
+            animator = GetComponent<Animator>();
         }
 
-        protected virtual void AttackAnimation(Action callBack)
+
+
+        public void AnimationFinished()
         {
-            callBack?.Invoke();
+            currentCallback?.Invoke();
+            currentCallback = null;
         }
 
-        protected virtual void DieAnimation(Action callBack)
+        public void FoeAttackTouched()
         {
-            callBack?.Invoke();
+            Axo.Instance.DieFromFoe(FoeType);
+        }
+
+        public virtual void AttackAnimation(Action callBack)
+        {
+            currentCallback = callBack;
+            animator.SetTrigger("AttackTrigger");
+        }
+
+        public virtual void DieAnimation(Action callBack)
+        {
+            currentCallback = callBack;
+            animator.SetTrigger("DieTrigger");
+        }
+
+        public virtual void TankAnimation(Action callBack)
+        {
+            currentCallback = callBack;
+            animator.SetTrigger("TankTrigger");
         }
 
     }

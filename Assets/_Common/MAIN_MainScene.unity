@@ -185,6 +185,95 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: testScene
+      value: MAIN Fight The Foes
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Shop_Scene
+      value: MAIN_Boutique
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: _isTesting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Revive_Scene
+      value: MAIN_Revive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Start_Screen
+      value: MAIN_StartScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Settings_Scene
+      value: MAIN_Parametres
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Main_Menu_Scene
+      value: MAIN_Menu_Principal
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: Transition_Scene
+      value: MAIN_TransitionMinigames
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 378658e67475cfd40abbff88aec233ba,
+        type: 2}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 47c504309ac479440a61e98e336586d9,
+        type: 2}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: c2172dc8edf18b144a7d94df174922d5,
+        type: 2}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9a7dbb5df2a4c99478a6d9f1b831c1f1,
+        type: 2}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: minigames.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: unlockedMinigames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8763094407693590346, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: totalScore
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

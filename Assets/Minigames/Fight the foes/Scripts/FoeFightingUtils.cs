@@ -5,6 +5,9 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public static class FoeFightingUtils
     {
+        public static System.Action ButtonsEnter;
+        public static System.Action ButtonsExit;
+        public static System.Action ButtonsHit;
 
         public static DifficultyMeter SetDifficulty(MinigameDifficultyLevel difficulty)
         {
@@ -12,15 +15,15 @@ namespace AxoLoop.Minigames.FightTheFoes
             switch (difficulty)
             {
                 case MinigameDifficultyLevel.FirstTime:
+                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.VeryEasy:
                 case MinigameDifficultyLevel.Easy:
-                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.Medium:
+                    difficulty1 = DifficultyMeter.Normal; break;
                 case MinigameDifficultyLevel.Hard:
                 case MinigameDifficultyLevel.VeryHard:
                 case MinigameDifficultyLevel.Impossible:
-                    difficulty1 = DifficultyMeter.Normal; break;
-                default: difficulty1 = DifficultyMeter.Normal; break;
+                default: difficulty1 = DifficultyMeter.Hard; break;
             }
             return difficulty1;
         }
@@ -44,7 +47,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             return gameFoes;
         }
 
-        public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<IAttack> attackList)
+        public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<AttackObject> attackList)
         {
             List<FoeType> attacks = new();
             FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
@@ -52,7 +55,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             for (int i = 0; i < 2; i++)
             {
-                int RandomNumberPicked = Random.Range(0, attackList.Count);
+                int RandomNumberPicked = Mathf.RoundToInt(Random.Range(0, attackList.Count*10)/10);
                 if (i == 1)
                 {
                     while (attacks.Contains(attackList[RandomNumberPicked].attackType))
@@ -66,14 +69,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
             if (shuffleMode == DifficultyMeter.Easy)
             {
-
-                for (int i = 0; i < attacks.Count; i++)
+                if (!attacks.Contains(foeType))
                 {
-                    if (!attacks.Contains(foeType))
-                    {
-                        int index = (Random.Range(0, 2) == 0) ? 0 : 1;
-                        attacks[index] = foeType;
-                    }
+                    int index = (Random.Range(0, 2) == 0) ? 0 : 1;
+                    attacks[index] = foeType;
                 }
             }
 

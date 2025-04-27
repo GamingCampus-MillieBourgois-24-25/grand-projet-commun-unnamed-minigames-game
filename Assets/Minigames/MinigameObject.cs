@@ -1,10 +1,11 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewMinigame", menuName = "Minigame System/Minigame")]
-public class Minigame : ScriptableObject
+public class MinigameObject : ScriptableObject
 {
     public string minigameName;  // Nom du mini-jeu
-    public string sceneName;     // Nom de la scène à charger
-    public Sprite minigameIcon;  // Icône du mini-jeu
-    public int scoreToUnlock;    // Score nécessaire pour débloquer ce mini-jeu
+    public string sceneName;     // Nom de la scï¿½ne ï¿½ charger
+    public Sprite minigameIcon;  // Icï¿½ne du mini-jeu
+    public Sprite miniGameIconLock; // Icone du mini-jeu non debloque
+    public int scoreToUnlock;    // Score nï¿½cessaire pour dï¿½bloquer ce mini-jeu
 }

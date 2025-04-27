@@ -13,7 +13,7 @@ public class RivalBike : MonoBehaviour
     private bool hasDecided = false;
     public bool rivalPassed;
     
-    public ParticleSystem smokeParticles; // Référence au système de particules
+    public GameObject smokeParticles; // Référence au système de particules
     public ParticleSystem explosionParticles; // Référence au système de particules d'explosion
     public Rigidbody rb; // Référence au Rigidbody du RivalBike
 
@@ -31,9 +31,10 @@ public class RivalBike : MonoBehaviour
         {
             transform.position = new Vector3(laneOffset, transform.position.y, transform.position.z);
             finalLane = laneOffset;
-        }
+        } 
         else // centre = décider plus tard
         {
+
             transform.position = new Vector3(0, transform.position.y, transform.position.z);
             willTurn = true;
         }
@@ -98,10 +99,7 @@ public class RivalBike : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    public float GetFinalLane()
-    {
-        return finalLane;
-    }
+
 
     // Détecter si le RivalBike a dépassé un point de défaite
     private void OnTriggerEnter(Collider other)
@@ -120,11 +118,7 @@ public class RivalBike : MonoBehaviour
         if (smokeParticles != null)
         {
             Debug.Log("Déclenchement des particules de fumée");
-            smokeParticles.Play(); // Joue les particules de fumée
-
-            // Ajout de logs pour vérifier les paramètres des particules
-            Debug.Log("Nombre de particules : " + smokeParticles.particleCount);
-            Debug.Log("Position des particules : " + smokeParticles.transform.position);
+            smokeParticles.SetActive(true);
         }
         else
         {
@@ -132,26 +126,36 @@ public class RivalBike : MonoBehaviour
         }
     }
 
-    private IEnumerator FinalAcceleration()
+    public IEnumerator FinalAcceleration()
     {
-        float duration = 1.5f; // Durée de l'accélération
+        PlayerBike.Instance.StopPlayer(); // Arrête le joueur
+        GetComponent<Collider>().enabled = false; // Désactive le collider pour éviter les collisions pendant l'accélération
+        float duration = 0.3f; // Durée de l'accélération
         float elapsedTime = 0f;
         float initialSpeed = speed;
-        float finalSpeed = speed * 6; // Double la vitesse pour l'accélération finale
+        float finalSpeed = speed * 3.3f; // Double la vitesse pour l'accélération finale
 
-         // Déclenche les particules de fumée au début de l'accélération
-
+        while(elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            speed = Mathf.Lerp(initialSpeed, -initialSpeed, t);
+            yield return null;
+        }
+        elapsedTime = 0;
+        // Déclenche les particules de fumée au début de l'accélération
+        TriggerSmokeParticles();
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
             float curvedT = EaseInOutBack(t); // Utilise la fonction d'animation EaseInOutBack
-            speed = Mathf.Lerp(initialSpeed, finalSpeed, curvedT);
+            speed = Mathf.Lerp(0, finalSpeed, curvedT);
             yield return null;
         }
 
         speed = finalSpeed; // Assure que la vitesse finale est bien appliquée
-        TriggerSmokeParticles();
+        
     }
 
     private float EaseInOutBack(float t)
@@ -191,5 +195,10 @@ public class RivalBike : MonoBehaviour
         // Désactive le RivalBike après un court délai
         yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
+    }
+
+    public void setSpeed(float speed)
+    {
+        this.speed = speed;
     }
 }
