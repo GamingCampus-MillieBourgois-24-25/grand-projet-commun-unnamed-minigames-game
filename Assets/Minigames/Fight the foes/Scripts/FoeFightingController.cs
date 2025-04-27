@@ -33,7 +33,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void Start()
         {
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetCurrentScore(), MinigameHelper.GetDifficulty(fightTheFoes));
+                GenerateMinigame(ScoreManager.Instance.GetTotalScore(), MinigameHelper.GetDifficulty(fightTheFoes));
             else
                 GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
 

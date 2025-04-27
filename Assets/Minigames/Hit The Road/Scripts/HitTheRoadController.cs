@@ -23,7 +23,7 @@ namespace AxoLoop.Minigames.HitTheRoad
         {
 
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetCurrentScore(), MinigameHelper.GetDifficulty(hitTheRoad));
+                GenerateMinigame(ScoreManager.Instance.GetTotalScore(), MinigameHelper.GetDifficulty(hitTheRoad));
             else
                 GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
             InitializeMinigame();
