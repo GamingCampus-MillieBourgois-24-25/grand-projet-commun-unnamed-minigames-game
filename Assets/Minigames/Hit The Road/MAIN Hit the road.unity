@@ -1651,6 +1651,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 599120553}
   - {fileID: 663575948}
+  loose: 0
 --- !u!4 &284906639809791538
 Transform:
   m_ObjectHideFlags: 0
@@ -2017,6 +2018,11 @@ PrefabInstance:
       objectReference: {fileID: 1491239162}
     - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
+      propertyPath: tileSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
+        type: 3}
       propertyPath: emptyObject
       value: 
       objectReference: {fileID: 1545767061}
@@ -2045,13 +2051,13 @@ PrefabInstance:
         type: 3}
       propertyPath: tile.Array.data[1]
       value: 
-      objectReference: {fileID: 1193003259171492940, guid: 1b4c2dca03ae4f34abefd6d1e777fffe,
+      objectReference: {fileID: 1193003259171492940, guid: d0e5e552d5e41574a9d136a9946957f5,
         type: 3}
     - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}
       propertyPath: tile.Array.data[2]
       value: 
-      objectReference: {fileID: 1193003259171492940, guid: d0e5e552d5e41574a9d136a9946957f5,
+      objectReference: {fileID: 1193003259171492940, guid: 1b4c2dca03ae4f34abefd6d1e777fffe,
         type: 3}
     - target: {fileID: 616495691922341358, guid: 148a96fc7d24d154f855d53803ee9e4f,
         type: 3}

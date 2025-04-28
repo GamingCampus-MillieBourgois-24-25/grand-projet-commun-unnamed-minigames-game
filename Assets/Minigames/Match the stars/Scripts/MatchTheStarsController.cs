@@ -26,7 +26,7 @@ namespace AxoLoop.Minigames.MatchTheStars
         public void Start()
         {
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore(), MinigameHelper.GetDifficulty(matchTheStars));
+                GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(matchTheStars));
             else
                 GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
 

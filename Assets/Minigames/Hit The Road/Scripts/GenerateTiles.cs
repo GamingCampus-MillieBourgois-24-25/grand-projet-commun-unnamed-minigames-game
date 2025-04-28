@@ -49,10 +49,12 @@ public class GenerateTiles : MonoBehaviour
         index = Random.Range(0, tile.Length);
 
         mainPosition.z = 25f;
-        Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
+        var tileI = Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
+        tileI.GetComponent<MovingTile>().setSpeed(tileSpeed);
 
         mainPosition = new Vector3(0, 0, -25);
-        Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
+        tileI = Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);
+        tileI.GetComponent<MovingTile>().setSpeed(tileSpeed);
 
         //mainPosition.z = -50f;
         //Instantiate(tile[index], mainPosition, Quaternion.identity, emptyObject.transform);

@@ -155,14 +155,36 @@ namespace Assets.Code.GLOBAL
 
             yield return new WaitForSeconds(0.5f);
 
+            bool sceneUnloadedCalled = false;
+
             Action<string> sceneUnloaded = null;
             sceneUnloaded = (string sceneName) =>
             {
+                if (sceneUnloadedCalled) return; // Éviter double appel
+                sceneUnloadedCalled = true;
+
                 Instance._loadedScene.SceneUnloaded -= sceneUnloaded;
                 Instance._loadedScene = null;
                 OpenScene(sceneName);
             };
+
+            Instance._loadedScene.SceneUnloaded += sceneUnloaded;
             Instance._loadedScene?.UnloadScene(sceneUnloaded);
+
+            // Timeout de sécurité : attendre jusqu’à 5 secondes
+            float timeout = 5f;
+            float elapsed = 0f;
+            while (!sceneUnloadedCalled && elapsed < timeout)
+            {
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!sceneUnloadedCalled)
+            {
+                Debug.LogWarning("Timeout atteint : événement SceneUnloaded non reçu. Forçage de l'action.");
+                sceneUnloaded(targetScene); // Forçage manuel
+            }
         }
 
         #endregion

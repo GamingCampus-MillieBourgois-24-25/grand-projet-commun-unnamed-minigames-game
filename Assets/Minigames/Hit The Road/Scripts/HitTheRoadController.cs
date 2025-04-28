@@ -25,7 +25,7 @@ namespace AxoLoop.Minigames.HitTheRoad
         {
 
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore(), MinigameHelper.GetDifficulty(hitTheRoad));
+                GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(hitTheRoad));
             else
                 GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
             InitializeMinigame();
@@ -47,16 +47,16 @@ namespace AxoLoop.Minigames.HitTheRoad
             {
                 if(easy(difficultyLevel))
                 {
-                    rivalBike.setSpeed(20);
+                    rivalBike.setSpeed(15);
                 }
                 if (medium(difficultyLevel))
                 {
-                    rivalBike.setSpeed(60);
+                    rivalBike.setSpeed(25);
                 }
 
                 if (hard(difficultyLevel))
                 {
-                    rivalBike.setSpeed(100);
+                    rivalBike.setSpeed(40);
                 }
             }
 
@@ -77,7 +77,7 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         IEnumerator SpawnRivalBike()
         {
-            yield return new WaitForSeconds(Random.Range(1f, 4f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
+            yield return new WaitForSeconds(Random.Range(1f, 3f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
             if (rivalBike)
             {
                 rivalBike.gameObject.SetActive(true);

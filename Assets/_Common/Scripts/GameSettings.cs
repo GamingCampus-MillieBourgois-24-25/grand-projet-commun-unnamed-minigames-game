@@ -58,6 +58,17 @@ namespace Axoloop.Global
         public static EventSystem GlobalEventSystem { get => Instance._eventSystem; }
 
         // --------------------------------------------------------------------------------------------------------------------------
+
+
+        [SerializeField] int randomInt;
+        public static int RandomInt { get => Instance.randomInt; }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            randomInt = Random.Range(0, 1000);
+        }
+
     }
 
 }

@@ -21,7 +21,11 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         protected Animator animator;
 
-        protected Action currentCallback;
+        protected Action currentCallback
+        {
+            get;
+            set;
+        }
         protected virtual void Start()
         {
             animator = GetComponent<Animator>();
@@ -31,8 +35,10 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void AnimationFinished()
         {
+            FoeFightingController.Instance.canBegin = true;
             currentCallback?.Invoke();
-            currentCallback = null;
+            if (currentCallback == FoeFightingController.Instance.BeginTurn)
+                currentCallback = null;
         }
 
         public void FoeAttackTouched()

@@ -27,13 +27,15 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         DifficultyMeter difficulty;
 
+        public bool canBegin = true;
+
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
         public void Start()
         {
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore(), MinigameHelper.GetDifficulty(fightTheFoes));
+                GenerateMinigame(ScoreManager.Instance.GetTotalScore()+1*GameSettings.RandomInt, MinigameHelper.GetDifficulty(fightTheFoes));
             else
                 GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
 
@@ -84,8 +86,11 @@ namespace AxoLoop.Minigames.FightTheFoes
             }
         }
 
-        void BeginTurn()
+        public void BeginTurn()
         {
+            if (!canBegin) return;
+            canBegin = false;
+
             ButtonsCanvasGroup.alpha = 1;
             FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackObjectList);
             for (int i = 0; i < 2; i++)
@@ -130,7 +135,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             // make axointro move upward then downward in 2.5 seconds : 
             AxoIntro.SetActive(true);
             Vector2 axoIntroBasePosition = AxoIntro.transform.position;
-            float time = 2.5f;
+            float time = 2f;
             float elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -147,7 +152,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             Vector2 spawnPosition = new Vector2(AxoSpawnPoint.transform.position.x, AxoSpawnPoint.transform.position.y - 15);
             FoeFightMinigameData.Axo.transform.position = spawnPosition;
             FoeFightMinigameData.Axo.gameObject.SetActive(true);
-            time = 1f;
+            time = 0.8f;
             elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -166,7 +171,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             Vector2 spawnPosition = new Vector2(FoeSpawnPoint.transform.position.x + 10, FoeSpawnPoint.transform.position.y);
 
-            FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPosition, Quaternion.identity);
+            FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPosition, Quaternion.identity, FoeSpawnPoint.transform);
 
             float time = 1f;
             float elapsedTime = 0f;
@@ -177,6 +182,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 yield return null;
             }
             FoeFightMinigameData.CurrentFoe.transform.position = FoeSpawnPoint.transform.position;
+            canBegin = true;
             callback?.Invoke();
         }
 

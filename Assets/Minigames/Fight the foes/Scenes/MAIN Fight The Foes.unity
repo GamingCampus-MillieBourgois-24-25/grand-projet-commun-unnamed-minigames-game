@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatBehaviour: 3
-  beatStrengthAmount: 1.01
+  beatStrengthAmount: 1.005
   posMult: 20
 --- !u!1 &21413959
 GameObject:
@@ -647,7 +647,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828544}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d947b9ab1bf7d479627904dac5b7c9, type: 3}
@@ -659,7 +659,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828544}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -1809,7 +1809,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64d947b9ab1bf7d479627904dac5b7c9, type: 3}
@@ -1821,7 +1821,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -4354,7 +4354,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828543}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -4506,7 +4506,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -564983617, guid: 0fffb2f98e0ac9d4d8471fad19a8a0ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4776,7 +4776,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2014695472, guid: 9ec7c57f13d22534a85cd701ae6f288f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5016,22 +5016,42 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2161003681324631454, guid: e40cb0939f78335448290765c1e31a8c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8036735909275828544}
     - targetCorrespondingSourceObject: {fileID: 4033480584632595310, guid: e40cb0939f78335448290765c1e31a8c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871598812}
+    - targetCorrespondingSourceObject: {fileID: 6355034571876401433, guid: e40cb0939f78335448290765c1e31a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8036735909275828548}
+    - targetCorrespondingSourceObject: {fileID: 2907078309894540986, guid: e40cb0939f78335448290765c1e31a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8036735909275828547}
+    - targetCorrespondingSourceObject: {fileID: 8467488042761700829, guid: e40cb0939f78335448290765c1e31a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8036735909275828546}
   m_SourcePrefab: {fileID: 100100000, guid: e40cb0939f78335448290765c1e31a8c, type: 3}
 --- !u!1 &8036735909275828543 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2161003681324631454, guid: e40cb0939f78335448290765c1e31a8c,
+  m_CorrespondingSourceObject: {fileID: 8467488042761700829, guid: e40cb0939f78335448290765c1e31a8c,
     type: 3}
   m_PrefabInstance: {fileID: 8036735909275828542}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8036735909275828544
+--- !u!1 &8036735909275828544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2907078309894540986, guid: e40cb0939f78335448290765c1e31a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8036735909275828542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8036735909275828545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6355034571876401433, guid: e40cb0939f78335448290765c1e31a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8036735909275828542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8036735909275828546
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5044,7 +5064,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatBehaviour: 1
-  beatStrengthAmount: 1.01
+  beatStrengthAmount: 1.02
+  posMult: 20
+--- !u!114 &8036735909275828547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 1
+  beatStrengthAmount: 1.02
+  posMult: 20
+--- !u!114 &8036735909275828548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 1
+  beatStrengthAmount: 1.02
   posMult: 20
 --- !u!223 &8506539467150264297
 Canvas:

@@ -17,6 +17,7 @@ public class RageBar : SingletonMB<RageBar>
     bool stopFill = false;
     float maxScale = 1.2f;
 
+    
 
     [SerializeField] Slider slider;
     [SerializeField] Slider followSlider;
@@ -63,6 +64,7 @@ public class RageBar : SingletonMB<RageBar>
     {
         StartCoroutine(SecondSliderFollowUp());
         actualFill -= rageReduction;
+        Mathf.Clamp(actualFill, 0, fullSize);
     }
 
     public void SetFillSpeed(DifficultyMeter difficulty)
