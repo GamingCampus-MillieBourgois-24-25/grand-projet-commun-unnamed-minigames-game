@@ -1,6 +1,7 @@
+using Axoloop.Global;
 using UnityEngine;
 
-public class CalculScoreAndCombo : MonoBehaviour
+public class CalculScoreAndCombo : SingletonMB<CalculScoreAndCombo> // SingletonMB is a custom class that inherits from MonoBehaviour
 { 
     private int nbMiniGamesWin;
     private int _score;
@@ -33,6 +34,11 @@ public class CalculScoreAndCombo : MonoBehaviour
         _currentScore = ScoreManager.Instance.GetCurrentScore();
         ScoreManager.Instance.AddTotalScore(_combo);
         
+    }
+
+    public int GetCombo()
+    {
+        return _combo;
     }
 
 }

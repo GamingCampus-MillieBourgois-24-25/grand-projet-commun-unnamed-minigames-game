@@ -776,11 +776,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SnowChunk 1 (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1193003259171492940, guid: 1b4c2dca03ae4f34abefd6d1e777fffe,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -813,6 +808,21 @@ MonoBehaviour:
   redLight: {fileID: 1201968820}
   blueLight: {fileID: 397450222}
   flashSpeed: 0.1
+--- !u!114 &957977066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957977063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 0
+  beatStrengthAmount: 1.03
+  posMult: 20
 --- !u!1 &976772954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7752183340681632003, guid: 148a96fc7d24d154f855d53803ee9e4f,
@@ -898,6 +908,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 957977065}
+    - targetCorrespondingSourceObject: {fileID: 5922222787037378211, guid: 4ca6ffdf86fcb30478952b5b6760d019,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 957977066}
   m_SourcePrefab: {fileID: 100100000, guid: 4ca6ffdf86fcb30478952b5b6760d019, type: 3}
 --- !u!1 &1061878581 stripped
 GameObject:
@@ -1402,8 +1416,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 963717154404093491, guid: 1cc7fde383f4e564b9db8abdd97a992d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1234671494}
   m_SourcePrefab: {fileID: 100100000, guid: 1cc7fde383f4e564b9db8abdd97a992d, type: 3}
+--- !u!1 &1234671492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 963717154404093491, guid: 1cc7fde383f4e564b9db8abdd97a992d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1234671491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1234671494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234671492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 2
+  beatStrengthAmount: 1.03
+  posMult: 0.1
 --- !u!1001 &1351448349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1471,66 +1510,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463951230083247589, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1463951230083247589, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5427795187101494213, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5427795187101494213, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 5565935187298698433, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 5565935187298698433, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6111948103361272812, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6111948103361272812, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954695804318504179, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 7954695804318504179, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447283606757702407, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447283606757702407, guid: d0e5e552d5e41574a9d136a9946957f5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1985,45 +1964,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1114372515227669120, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
-      objectReference: {fileID: 0}
     - target: {fileID: 1193003259171492940, guid: df7105fc6bd31664692a1ec54feff8c7,
         type: 3}
       propertyPath: m_Name
       value: DesertChunk1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1193003259171492940, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1816448234636454412, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 2253083552728483836, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 5140299047298310299, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 5358885053611496420, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 5389230634417748043, guid: df7105fc6bd31664692a1ec54feff8c7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

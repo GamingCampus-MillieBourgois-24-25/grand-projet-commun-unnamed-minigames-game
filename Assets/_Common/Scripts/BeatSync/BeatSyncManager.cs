@@ -16,7 +16,7 @@ namespace Assets._Common.Scripts
         [SerializeField] BeatProfile _mainBeatProfile;
         [SerializeField] float _speedMultiplier = 1f;
 
-        public event Action<BeatType> OnBeat;
+        public event Action OnBeat;
         
 
 
@@ -47,7 +47,7 @@ namespace Assets._Common.Scripts
                 for (int i = 0; i < profile.beats.Count; i++)
                 {
                     Beat beat = profile.beats[i];
-                    OnBeat?.Invoke(beat.type);
+                    //OnBeat?.Invoke(beat.type);
 
                     // Calcule le temps absolu où ce beat doit se jouer
                     float beatTime = beat.duration / _speedMultiplier;
@@ -58,7 +58,9 @@ namespace Assets._Common.Scripts
                         time += Time.deltaTime;
                         yield return null;
                     }
+                    OnBeat?.Invoke();
                 }
+                yield return null;
 
             } while (looping);
         }

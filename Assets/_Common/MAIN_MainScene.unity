@@ -188,7 +188,7 @@ PrefabInstance:
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: testScene
-      value: MAIN Fight The Foes
+      value: AxoMatching
       objectReference: {fileID: 0}
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
@@ -277,8 +277,50 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509492224}
+    - targetCorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 509492235}
   m_SourcePrefab: {fileID: 100100000, guid: f3dc4e862096bbd40aa57ce294aeedea, type: 3}
+--- !u!1 &509492223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
+    type: 3}
+  m_PrefabInstance: {fileID: 509492222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &509492224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509492223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0b1920c2a4fd3042ae92a1dabef6c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainBeatProfile: {fileID: 11400000, guid: 79e461c5b86f34144a30a2a9b8c2c254, type: 2}
+  _speedMultiplier: 1
+--- !u!114 &509492235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509492223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ada94612e5f634469f8434986aae316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicClip: {fileID: 8300000, guid: 26e620cec411d374e8702c3e25dd147a, type: 3}
+  volume: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

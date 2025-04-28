@@ -1,5 +1,7 @@
+using Assets._Common.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
+using static Assets._Common.Scripts.BeatSyncListener;
 
 public class Random_Axolot : MonoBehaviour
 {
@@ -25,5 +27,8 @@ public class Random_Axolot : MonoBehaviour
 
         _lastIndex = newIndex;
         _axolotSprite.GetComponent<Image>().sprite = _axolotSpritesList[newIndex];
+
+
+        _axolotSprite.GetComponent<BeatSyncListener>()?.SetBeatBehaviour((BeatSyncListener.BeatBehaviour)Random.Range(0, System.Enum.GetValues(typeof(BeatSyncListener.BeatBehaviour)).Length));
     }
 }

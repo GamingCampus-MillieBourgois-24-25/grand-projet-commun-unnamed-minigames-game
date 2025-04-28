@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using AxoLoop.Minigames.HitTheRoad;
+using System.Collections;
 using UnityEngine;
 
 public class RivalBike : MonoBehaviour
@@ -128,6 +129,10 @@ public class RivalBike : MonoBehaviour
 
     public IEnumerator FinalAcceleration()
     {
+        if (HitTheRoadController.Instance.loose) yield break;
+
+        HitTheRoadController.Instance.loose = true; // Indique que le joueur a perdu
+
         PlayerBike.Instance.StopPlayer(); // Arrête le joueur
         GetComponent<Collider>().enabled = false; // Désactive le collider pour éviter les collisions pendant l'accélération
         float duration = 0.3f; // Durée de l'accélération

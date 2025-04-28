@@ -122,14 +122,14 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &256261340
+--- !u!21 &35018079
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Default UI Material(Clone)(Clone)(Clone)(Clone)
+  m_Name: Default UI Material(Clone)(Clone)(Clone)(Clone)(Clone)
   m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -148,7 +148,7 @@ Material:
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 90.068306, y: -26.044212}
+        m_Offset: {x: 93.3157, y: -27.018658}
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
@@ -287,6 +287,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520040621}
   m_CullTransparentMesh: 1
+--- !u!21 &1552009061
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Default UI Material(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_Shader: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 95.42771, y: -27.652613}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &2228872912395505660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -354,7 +393,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 256261340}
+      objectReference: {fileID: 35018079}
     - target: {fileID: 2846794590837903227, guid: caeb6e08e13c04342b1caed598565a0a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -569,7 +608,19 @@ PrefabInstance:
         type: 3}
       insertIndex: 5
       addedObject: {fileID: 520040622}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7000568252051777960, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2228872912395505667}
+    - targetCorrespondingSourceObject: {fileID: 6054113147069285007, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2228872912395505666}
+    - targetCorrespondingSourceObject: {fileID: 7918424075842838253, guid: caeb6e08e13c04342b1caed598565a0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2228872912395505665}
   m_SourcePrefab: {fileID: 100100000, guid: caeb6e08e13c04342b1caed598565a0a, type: 3}
 --- !u!1 &2228872912395505661 stripped
 GameObject:
@@ -577,6 +628,69 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2228872912395505660}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2228872912395505662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7918424075842838253, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2228872912395505663 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6054113147069285007, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2228872912395505664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7000568252051777960, guid: caeb6e08e13c04342b1caed598565a0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2228872912395505660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2228872912395505665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228872912395505662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 2
+  beatStrengthAmount: 1.03
+  posMult: 20
+--- !u!114 &2228872912395505666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228872912395505663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 0
+  beatStrengthAmount: 1.03
+  posMult: 20
+--- !u!114 &2228872912395505667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2228872912395505664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 0
+  beatStrengthAmount: 1.03
+  posMult: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

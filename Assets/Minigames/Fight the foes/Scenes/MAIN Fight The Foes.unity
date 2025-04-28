@@ -333,6 +333,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 10592914}
+    - targetCorrespondingSourceObject: {fileID: 4847056512148934361, guid: 25e4cc38a8d85ea4890f0db125cb00f8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 10592915}
   m_SourcePrefab: {fileID: 100100000, guid: 25e4cc38a8d85ea4890f0db125cb00f8, type: 3}
 --- !u!224 &10592911 stripped
 RectTransform:
@@ -373,6 +377,21 @@ MonoBehaviour:
   slider: {fileID: 10592912}
   followSlider: {fileID: 1660666727}
   skull: {fileID: 1804365108}
+--- !u!114 &10592915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10592913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 3
+  beatStrengthAmount: 1.01
+  posMult: 20
 --- !u!1 &21413959
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,11 +5016,36 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2161003681324631454, guid: e40cb0939f78335448290765c1e31a8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8036735909275828544}
     - targetCorrespondingSourceObject: {fileID: 4033480584632595310, guid: e40cb0939f78335448290765c1e31a8c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1871598812}
   m_SourcePrefab: {fileID: 100100000, guid: e40cb0939f78335448290765c1e31a8c, type: 3}
+--- !u!1 &8036735909275828543 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161003681324631454, guid: e40cb0939f78335448290765c1e31a8c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8036735909275828542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8036735909275828544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036735909275828543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatBehaviour: 1
+  beatStrengthAmount: 1.01
+  posMult: 20
 --- !u!223 &8506539467150264297
 Canvas:
   m_ObjectHideFlags: 0

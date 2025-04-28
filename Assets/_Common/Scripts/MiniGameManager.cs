@@ -25,7 +25,7 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 
         if (!victory)
         {
-            DisplayMiniGameIcons.Instance.UpdateIcons();
+            //DisplayMiniGameIcons.Instance.UpdateIcons();
             GlobalSceneController.OpenScene(GameSettings.ReviveScene);
         }
     }

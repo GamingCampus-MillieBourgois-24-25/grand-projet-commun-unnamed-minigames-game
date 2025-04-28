@@ -14,6 +14,8 @@ namespace AxoLoop.Minigames.HitTheRoad
         public MinigameObject hitTheRoad;
         public Button[] buttons;
 
+        public bool loose = false;
+
         bool easy(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.FirstTime || dif == MinigameDifficultyLevel.VeryEasy
                     || dif == MinigameDifficultyLevel.Easy;
         bool medium(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.Medium || dif == MinigameDifficultyLevel.Hard;

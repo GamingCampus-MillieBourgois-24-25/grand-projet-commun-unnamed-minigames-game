@@ -1,21 +1,16 @@
+using Axoloop.Global;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : SingletonMB<ScoreManager> // SingletonMB is a custom class that inherits from MonoBehaviour
 {
-    public static ScoreManager Instance {get; private set;}
 
     [SerializeField] private int totalScore = 0;
     [SerializeField] private int currentScore = 0;
     private int _amount;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
+        base.Awake();
         totalScore = PlayerPrefs.GetInt("totalscore");
     }
     
