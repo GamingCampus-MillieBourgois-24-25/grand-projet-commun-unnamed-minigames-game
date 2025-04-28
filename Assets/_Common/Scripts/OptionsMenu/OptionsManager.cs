@@ -1,3 +1,4 @@
+using Assets._Common.Scripts;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -27,6 +28,15 @@ public class OptionsManager : MonoBehaviour
     public void ToggleBgm()
     {
         _bgmOn = !_bgmOn;
+        if(_bgmOn)
+        {
+            MusicManager.Instance.UnmuteMusic();
+        }
+        else
+        {
+            MusicManager.Instance.MuteMusic();
+        }
+
         PlayerPrefs.SetInt("BgmOn", _bgmOn ? 1 : 0);
         PlayerPrefs.Save();
         audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
