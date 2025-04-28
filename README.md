@@ -1,3 +1,9 @@
-Lien document avec les liens de téléchargement de la build :
+téléchargements
+version actuelle :
+https://drive.google.com/file/d/1bWTGbGDj9ekGQhP4pOjDrZ-9I-hQpbjm/view?usp=sharing
 
-https://docs.google.com/document/d/1fITHEf7XRfOpnfP6GYgNxK3fZ8qAM1C9vLkWqdP9TaQ/edit?usp=sharing
+
+
+ancienne version sans son et beatsync
+https://drive.google.com/file/d/1-VPTVCmr_n-JUMyvrgl7DP0yiJcfm0L2/view?usp=sharing
+
