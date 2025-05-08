@@ -67,18 +67,18 @@ public class RageBar : SingletonMB<RageBar>
         Mathf.Clamp(actualFill, 0, fullSize);
     }
 
-    public void SetFillSpeed(DifficultyMeter difficulty)
+    public void SetFillSpeed(FTFDifficultyMeter difficulty)
     {
         switch (difficulty)
         {
-            case DifficultyMeter.Easy:
+            case FTFDifficultyMeter.Easy:
                 fillSpeed = 6; rageReduction = 28;
                 break;
-            case DifficultyMeter.Normal:
+            case FTFDifficultyMeter.Normal:
                 fillSpeed = Random.Range(8, 11);
                 rageReduction = 20;
                 break;
-            case DifficultyMeter.Hard:
+            case FTFDifficultyMeter.Hard:
                 fillSpeed = Random.Range(11, 16);
                 rageReduction = 14;
                 break;

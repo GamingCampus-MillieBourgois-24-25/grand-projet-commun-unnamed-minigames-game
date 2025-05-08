@@ -11,23 +11,34 @@ namespace AxoLoop.Minigames.FightTheFoes
     /// </summary>
     public class FoeFightMinigameData : SingletonMB<FoeFightMinigameData>
     {
+
+        Foe currentFoe;
+        List<FoeType> currentAttacks = new List<FoeType>();
+        List<Foe> gameFoes = new List<Foe>();
+        FTFDifficultyMeter difficulty = FTFDifficultyMeter.Easy;
+        int currentTurn;
+
         /// <summary>
         /// Ennemi actuellement contre Axo
         /// </summary>
-        Foe currentFoe;
+        public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
         /// <summary>
         /// Attaques actuellement disponibles
         /// </summary>
-        List<FoeType> currentAttacks = new List<FoeType>();
+        public static List<FoeType> CurrentAttacks { get => Instance.currentAttacks; set => Instance.currentAttacks = value; }
         /// <summary>
         /// Ennemis que va affronter Axo dans cette partie
         /// </summary>
-        List<Foe> gameFoes = new List<Foe>();
-
-        public static Foe CurrentFoe { get => Instance.currentFoe; set => Instance.currentFoe = value; }
-        public static List<FoeType> CurrentAttacks { get => Instance.currentAttacks; set => Instance.currentAttacks = value; }
         public static List<Foe> GameFoes { get => Instance.gameFoes; set => Instance.gameFoes = value; }
-        
+        /// <summary>
+        /// Difficulté de la partie
+        /// </summary>
+        public static FTFDifficultyMeter Difficulty { get => Instance.difficulty; set => Instance.difficulty = value; }
+        /// <summary>
+        /// Tour actuel
+        /// </summary>
+        public static int CurrentTurn { get => Instance.currentTurn; set => Instance.currentTurn = value; }
+
 
 
         bool lockedAttack;

@@ -25,8 +25,6 @@ namespace AxoLoop.Minigames.FightTheFoes
         [SerializeField] ContinueText ContinueText;
         public MinigameObject fightTheFoes;
 
-        DifficultyMeter difficulty;
-
         public bool canBegin = true;
 
         #endregion
@@ -49,13 +47,14 @@ namespace AxoLoop.Minigames.FightTheFoes
         public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             UnityEngine.Random.InitState(seed);
-            difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
 
+            FoeFightMinigameData.Difficulty = FoeFightingUtils.SetDifficulty(difficultyLevel);
+            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 2, FoeFightMinigameData.Difficulty);
 
-            FoeFightMinigameData.GameFoes = FoeFightingUtils.GenerateEnnemies(FoeFightMinigameData.FoesList, 2);
-            RageBar.Instance.SetFillSpeed(difficulty);
             FoeFightingManager.Instance.SetEnvironmentVariant((UnityEngine.Random.value > 0.5f));
             FoeFightingManager.Instance.SetLogoVariant((UnityEngine.Random.value > 0.5f));
+            
+            RageBar.Instance.SetFillSpeed(FoeFightMinigameData.Difficulty);
         }
 
         public void InitializeMinigame()
@@ -65,6 +64,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void StartMinigame()
         {
+            FoeFightMinigameData.CurrentTurn = 0;
             FoeFightMinigameData.LockedAttack = true;
             RageBar.Instance.StopFill();
 
@@ -88,11 +88,12 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void BeginTurn()
         {
+            FoeFightMinigameData.CurrentTurn++;
             if (!canBegin) return;
             canBegin = false;
 
             ButtonsCanvasGroup.alpha = 1;
-            FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(difficulty, FoeFightMinigameData.AttackObjectList);
+            FoeFightMinigameData.CurrentAttacks = FoeFightingUtils.ShuffleAttacks(FoeFightMinigameData.Difficulty, FoeFightMinigameData.AttackObjectList, FoeFightMinigameData.CurrentTurn);
             for (int i = 0; i < 2; i++)
             {
                 attackButtons[i].SetButtonData(FoeFightMinigameData.CurrentAttacks[i]);

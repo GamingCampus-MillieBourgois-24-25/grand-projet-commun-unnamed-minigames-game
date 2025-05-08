@@ -9,74 +9,100 @@ namespace AxoLoop.Minigames.FightTheFoes
         public static System.Action ButtonsExit;
         public static System.Action ButtonsHit;
 
-        public static DifficultyMeter SetDifficulty(MinigameDifficultyLevel difficulty)
+        public static FTFDifficultyMeter SetDifficulty(MinigameDifficultyLevel difficulty)
         {
-            DifficultyMeter difficulty1;
+            FTFDifficultyMeter difficulty1;
             switch (difficulty)
             {
                 case MinigameDifficultyLevel.FirstTime:
-                    difficulty1 = DifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.VeryEasy:
+                    difficulty1 = FTFDifficultyMeter.Easy; break;
                 case MinigameDifficultyLevel.Easy:
                 case MinigameDifficultyLevel.Medium:
-                    difficulty1 = DifficultyMeter.Normal; break;
+                    difficulty1 = FTFDifficultyMeter.Normal; break;
                 case MinigameDifficultyLevel.Hard:
                 case MinigameDifficultyLevel.VeryHard:
                 case MinigameDifficultyLevel.Impossible:
-                default: difficulty1 = DifficultyMeter.Hard; break;
+                default: difficulty1 = FTFDifficultyMeter.Hard; break;
             }
             return difficulty1;
         }
 
-        public static List<Foe> GenerateEnnemies(List<Foe> foes, int nbEnemies)
+        /// <summary>
+        /// Créer une liste d'ennemis à affronter
+        /// </summary>
+        public static List<Foe> GenerateEnnemies(List<Foe> foes, int nbEnemies, FTFDifficultyMeter difficulty)
         {
-            List<Foe> gameFoes = new List<Foe>();
-            if (foes.Count != 0)
-            {
-                for (int i = 0; i < nbEnemies; i++)
-                {
-                    int foePicked = Random.Range(0, foes.Count);
-                    gameFoes.Add(foes[foePicked]);
-                }
-            }
-            else
+            if (foes.Count == 0)
             {
                 Debug.LogError("Liste d'ennemis vide ou introuvable");
                 return null;
             }
+
+            //Créer un dictionnaire de poids pour une sélection pondérée
+            Dictionary<Foe, int> foesWeights = RandomUtils.CreateWeightsDictionary(foes, 1);
+            List<Foe> gameFoes = new List<Foe>();
+            
+            // Forcer le premier ennemi à être de type feu en difficulté facile (feu est le plus intuitif à combattre)
+            if (difficulty == FTFDifficultyMeter.Easy)
+            {
+                var fireFoe = foes.Find(x => x.FoeType == FoeType.Fire);
+                gameFoes.Add(fireFoe);
+                foesWeights[fireFoe] = 0; // Set weight to 0 to prevent reselection
+                nbEnemies--;
+            }
+
+            for (int i = 0; i < nbEnemies; i++)
+            {
+                Foe selectedFoe = RandomUtils.SelectWeightedRandom(foesWeights);
+                gameFoes.Add(selectedFoe);
+                foesWeights[selectedFoe] = 0; // Set weight to 0 to prevent reselection
+            }
             return gameFoes;
         }
 
-        public static List<FoeType> ShuffleAttacks(DifficultyMeter shuffleMode, List<AttackObject> attackList)
+
+        public static List<FoeType> ShuffleAttacks(FTFDifficultyMeter shuffleMode, List<AttackObject> attackList, int turn)
         {
-            List<FoeType> attacks = new();
-            FoeType foeType = FoeFightMinigameData.CurrentFoe.FoeType;
+            if (attackList.Count == 0)
+            {
+                Debug.LogError("Liste d'attaques vide ou introuvable");
+                return null;
+            }
+            
+            FoeType currentFoeType = FoeFightMinigameData.CurrentFoe.FoeType;
 
+            // Créer un dictionnaire de poids pour une sélection pondérée
+            float weightModifier = (shuffleMode == FTFDifficultyMeter.Hard) ? 0.5f : 1f;
+            Dictionary<FoeType, int> attackWeights = new Dictionary<FoeType, int>();
+            foreach (var attack in attackList)
+            {
+                attackWeights[attack.attackType] = (attack.attackType == currentFoeType)    // rendre l'attaque efficace plus probable selon le tour actuel
+                                                    ? Mathf.RoundToInt(turn*10*weightModifier) 
+                                                    : 10;
+            }
 
+            // sélectionner deux attaques aléatoires
+            List<FoeType> selectedAttacks = new();
             for (int i = 0; i < 2; i++)
             {
-                int RandomNumberPicked = Mathf.RoundToInt(Random.Range(0, attackList.Count*10)/10);
-                if (i == 1)
-                {
-                    while (attacks.Contains(attackList[RandomNumberPicked].attackType))
-                    {
-                        RandomNumberPicked = Random.Range(0, attackList.Count);
-                    }
-                }
-                attacks.Add(attackList[RandomNumberPicked].attackType);
+                FoeType pickedAttack = RandomUtils.SelectWeightedRandom(attackWeights);  
+                selectedAttacks.Add(pickedAttack);
+                attackWeights[pickedAttack] = 0; // Set weight to 0 to prevent reselection
             }
 
-
-            if (shuffleMode == DifficultyMeter.Easy)
+            // Garentir la présence de la bonne attaque en difficulté facile
+            if (shuffleMode == FTFDifficultyMeter.Easy)
             {
-                if (!attacks.Contains(foeType))
+                if (!selectedAttacks.Contains(currentFoeType))
                 {
                     int index = (Random.Range(0, 2) == 0) ? 0 : 1;
-                    attacks[index] = foeType;
+                    selectedAttacks[index] = currentFoeType;
                 }
             }
 
-            return attacks;
+            return selectedAttacks;
         }
-    }
+    }       
 }
+

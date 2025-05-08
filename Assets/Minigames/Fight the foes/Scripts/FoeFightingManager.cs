@@ -68,7 +68,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         }
 
     }
-    public enum DifficultyMeter
+    public enum FTFDifficultyMeter
     {
         Easy,
         Normal, 
