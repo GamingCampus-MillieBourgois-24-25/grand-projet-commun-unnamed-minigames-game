@@ -6,7 +6,6 @@ namespace AxoLoop.Minigames.FightTheFoes
 {
     public class Cookie : Foe
     {
-
         public override FoeType FoeType => FoeType.Food;
 
 

@@ -34,6 +34,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 2346302672410440978}
   - {fileID: 8708515590320567919}
   - {fileID: 2192776091855179245}
   - {fileID: 1763342997902433492}
@@ -47,7 +48,6 @@ Transform:
   - {fileID: 6036532210221338266}
   - {fileID: 3500508017848861021}
   - {fileID: 8799100885791859068}
-  - {fileID: 2346302672410440978}
   - {fileID: 5484235833780881262}
   - {fileID: 3250883700582265857}
   - {fileID: 3775939029760841563}
@@ -569,7 +569,7 @@ Transform:
   m_GameObject: {fileID: 2190529608521233102}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.55, z: -0}
+  m_LocalPosition: {x: 0, y: 1.55, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -587,13 +587,13 @@ ParticleSystem:
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
-  ringBufferMode: 0
+  ringBufferMode: 1
   ringBufferLoopRange: {x: 0, y: 1}
-  emitterVelocityMode: 1
+  emitterVelocityMode: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
-  useUnscaledTime: 0
+  useUnscaledTime: 1
   autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
@@ -658,7 +658,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 23.06
+      scalar: 17.62
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -710,8 +710,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 5.05
+      minMaxState: 3
+      scalar: 6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1146,9 +1146,9 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 0
-    maxNumParticles: 2000
+    maxNumParticles: 128
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 1
+    size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
@@ -1207,14 +1207,14 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 76.6
+    angle: 0.12
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
-    m_Position: {x: 0, y: 0, z: 0}
+    m_Position: {x: 0, y: 0, z: -47.06}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 250, y: 250, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -1293,7 +1293,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 84.4
+      value: 0.44
       mode: 0
       spread: 0
       speed:
@@ -1412,7 +1412,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 6.5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3337,7 +3337,7 @@ ParticleSystem:
     strengthZ:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: -1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3387,8 +3387,8 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
-    frequency: 0.5
+    separateAxes: 1
+    frequency: 0.22
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5

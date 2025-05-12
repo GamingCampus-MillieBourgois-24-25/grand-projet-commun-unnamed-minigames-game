@@ -37,8 +37,9 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             FoeFightingController.Instance.canBegin = true;
             currentCallback?.Invoke();
-            if (currentCallback == FoeFightingController.Instance.BeginTurn)
-                currentCallback = null;
+            // ???
+            //if (currentCallback == FoeFightingController.Instance.BeginTurn)
+            //    currentCallback = null;
         }
 
         public void FoeAttackTouched()

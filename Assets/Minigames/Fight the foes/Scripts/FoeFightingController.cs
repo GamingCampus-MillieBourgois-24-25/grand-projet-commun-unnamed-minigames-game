@@ -11,6 +11,8 @@ namespace AxoLoop.Minigames.FightTheFoes
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
 
+        [SerializeField] MinigameDifficultyLevel testDifficulty;
+
         [SerializeField] ButtonController[] attackButtons;
         [SerializeField] ButtonController blockButton;
 
@@ -35,7 +37,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             if (ScoreManager.Instance != null)
                 GenerateMinigame(ScoreManager.Instance.GetTotalScore()+1*GameSettings.RandomInt, MinigameHelper.GetDifficulty(fightTheFoes));
             else
-                GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
+                GenerateMinigame(UnityEngine.Random.Range(0, 1000), testDifficulty);
 
             StartMinigame();
 
