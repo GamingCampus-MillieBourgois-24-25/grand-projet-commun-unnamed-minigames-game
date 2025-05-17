@@ -8,6 +8,9 @@ public class VoxelGameManager : MonoBehaviour
 {
     public static VoxelGameManager Instance;
     public ContinueText continueText;
+    public GameObject defeatTrigger;
+
+    public RivalBike rivalBike;
 
     private bool hasWon; // Vérifie si le joueur a gagné
 
@@ -20,6 +23,7 @@ public class VoxelGameManager : MonoBehaviour
     // Appelé lorsque le joueur gagne
     public void PlayerWins()
     {
+        defeatTrigger.SetActive(false);
         EndGame(true);
     }
 
@@ -36,12 +40,8 @@ public class VoxelGameManager : MonoBehaviour
         if (won)
         {
             Debug.Log("Victoire !");
-
-            RivalBike rival = FindObjectOfType<RivalBike>();
-            if (rival != null)
-            {
-                rival.ExplodeAndEject();
-            }
+  
+            rivalBike.ExplodeAndEject();
 
             MinigameHelper.IncrementMinigamePlayed(HitTheRoadController.Instance.hitTheRoad);
         }

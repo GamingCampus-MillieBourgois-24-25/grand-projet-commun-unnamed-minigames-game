@@ -1,61 +1,84 @@
-﻿using AxoLoop.Minigames.HitTheRoad;
+﻿using Axoloop.Global;
+using AxoLoop.Minigames.HitTheRoad;
 using System.Collections;
 using UnityEngine;
 
-public class RivalBike : MonoBehaviour
+public class RivalBike : SingletonMB<RivalBike>
 {
-    public static RivalBike Instance;
-    
+    public Rigidbody rb; // Référence au Rigidbody du RivalBike
+    public GameObject physicBike, wholeBike;
+
+    public GameTrigger turnTrigger, defeatTrigger;
+
     public float speed = 12f;
-    private float laneOffset = 2.5f;
+    private float laneOffset = 4f;
     private bool willTurn = false;
     public float finalLane;
     private bool isTurning = false;
     private bool hasDecided = false;
-    public bool rivalPassed;
+
+    bool accident = false;
     
     public GameObject smokeParticles; // Référence au système de particules
     public ParticleSystem explosionParticles; // Référence au système de particules d'explosion
-    public Rigidbody rb; // Référence au Rigidbody du RivalBike
 
     void Start()
+    {        
+        turnTrigger.EnterSubscribe(TryDecideTurn);
+        defeatTrigger.EnterSubscribe(EndTriggerReached);
+
+        Spawn();
+
+        rb = GetComponent<Rigidbody>();
+        physicBike.SetActive(false); // Désactiver le modèle physique au départ
+    }
+
+    void FixedUpdate()
     {
-        Instance = this;
-        
+        if (!accident)
+        {
+            rb.MovePosition(rb.position + Vector3.forward * speed * Time.fixedDeltaTime); 
+        }
+    }
+
+
+    void Spawn()
+    {
         int spawnType = Random.Range(0, 3);
         if (spawnType == 0) // gauche
         {
-            transform.position = new Vector3(-laneOffset, transform.position.y, transform.position.z);
+            rb.position = new Vector3(-laneOffset, transform.position.y, transform.position.z);
             finalLane = -laneOffset;
         }
         else if (spawnType == 1) // droite
         {
-            transform.position = new Vector3(laneOffset, transform.position.y, transform.position.z);
+            rb.position = new Vector3(laneOffset, transform.position.y, transform.position.z);
             finalLane = laneOffset;
-        } 
+        }
         else // centre = décider plus tard
         {
-
-            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+            rb.position = new Vector3(0, transform.position.y, transform.position.z);
             willTurn = true;
         }
-
-        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void EndTriggerReached()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        VoxelGameManager.Instance.PlayerFails();  // Appelle la méthode de défaite
+        StartCoroutine(FinalAcceleration()); // Lance l'accélération finale
+    }
 
-        // Démarrer immédiatement le virage si nécessaire
-        if (willTurn && hasDecided && !isTurning)
+    void TryDecideTurn()
+    {
+        if (ShouldDecideTurn())
         {
-            isTurning = true;
+            turnTrigger.EnterUnsubscribe(TryDecideTurn);
+            DecideTurnDirection();
+            willTurn = false; // Réinitialiser la variable willTurn après la décision
             StartCoroutine(SmoothTurn(finalLane));
         }
     }
-
-    public void DecideTurnDirection()
+    void DecideTurnDirection()
     {
         if (!hasDecided)
         {
@@ -64,7 +87,7 @@ public class RivalBike : MonoBehaviour
         }
     }
 
-    public bool ShouldDecideTurn()
+    bool ShouldDecideTurn()
     {
         return willTurn && !hasDecided;
     }
@@ -100,19 +123,6 @@ public class RivalBike : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-
-
-    // Détecter si le RivalBike a dépassé un point de défaite
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("DefeatTrigger"))  // Vérifie si c'est le trigger de défaite
-        {
-            rivalPassed = true;
-            VoxelGameManager.Instance.PlayerFails();  // Appelle la méthode de défaite
-            StartCoroutine(FinalAcceleration()); // Lance l'accélération finale
-        }
-        rivalPassed = false;
-    }
 
     private void TriggerSmokeParticles()
     {
@@ -175,6 +185,7 @@ public class RivalBike : MonoBehaviour
 
     public void ExplodeAndEject()
     {
+        accident = true;
         StartCoroutine(ExplodeAndEjectCoroutine());
     }
 
@@ -186,19 +197,21 @@ public class RivalBike : MonoBehaviour
             explosionParticles.Play();
         }
 
-        // Attends un court instant pour l'effet d'explosion
-        yield return new WaitForSeconds(0.1f);
-
         // Applique une force d'éjection au RivalBike
         if (rb != null)
         {
             rb.isKinematic = false; // Assurez-vous que le Rigidbody n'est pas kinematic
-            rb.AddForce(new Vector3(0, 1000, -1000), ForceMode.Impulse); // Applique une force vers le haut et vers l'arrière
-            rb.AddTorque(new Vector3(500, 500, 500)); // Ajoute une rotation pour un effet plus dramatique
+            rb.AddForce(new Vector3(0, 10, -10), ForceMode.Impulse); // Applique une force vers le haut et vers l'arrière
+            rb.AddTorque(new Vector3(25, 25, 25)); // Ajoute une rotation pour un effet plus dramatique
         }
+        yield return null;
 
-        // Désactive le RivalBike après un court délai
-        yield return new WaitForSeconds(2f);
+        wholeBike.gameObject.SetActive(false);
+        physicBike.gameObject.SetActive(true);
+        physicBike.transform.SetParent(null); 
+
+        //// Désactive le RivalBike après un court délai
+        yield return new WaitForSeconds(10f);
         gameObject.SetActive(false);
     }
 

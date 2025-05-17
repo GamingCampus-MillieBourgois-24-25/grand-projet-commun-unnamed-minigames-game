@@ -6,7 +6,7 @@ using AxoLoop.Minigames.HitTheRoad;
 public class PlayerBike : SingletonMB<PlayerBike>
 {
     public float moveSpeed = 10f; // Vitesse de déplacement vers l'avant
-    public float turnSpeed = 5f; // Vitesse de déplacement latéral
+    public float turnSpeed = 4f; // Vitesse de déplacement latéral
     public float leanAngle = 30f; // Angle d'inclinaison maximal
     public float leanSmoothness = 5f; // Vitesse de transition de l'inclinaison
 
@@ -39,15 +39,8 @@ public class PlayerBike : SingletonMB<PlayerBike>
     {
         if (!hasCollided) // Empêche les mouvements après une collision
         {
-            MoveForward();
             HandleTurning();
         }
-    }
-
-    private void MoveForward()
-    {
-        Vector3 forwardMovement = Vector3.forward * moveSpeed * Time.fixedDeltaTime;
-        rb.MovePosition(rb.position + forwardMovement);
     }
 
     private void HandleTurning()
@@ -94,7 +87,8 @@ public class PlayerBike : SingletonMB<PlayerBike>
 
     public void StopTurning()
     {
-        if(!accident)rb.MoveRotation(new Quaternion(0, 0, 0, 1));
+        if(!accident)
+            rb.MoveRotation(new Quaternion(0, 0, 0, 1));
         isTurningLeft = false;
         isTurningRight = false;
     }
@@ -103,18 +97,24 @@ public class PlayerBike : SingletonMB<PlayerBike>
     {
         if (hasCollided) return;
 
+        var time = System.DateTime.Now;
+        //
+
         StartCoroutine(ScreenShake(0.5f, 0.2f)); // Durée : 0.5s, Intensité : 0.2
+        StopTurning();
+
+        // joueur est rentré dans la moto adverse, victoire
         if (other.CompareTag("RivalBike"))
         {
             hasCollided = true;
-            StopTurning();
             VoxelGameManager.Instance.PlayerWins();
         }
+
+        // joueur a fait une sortie de route, défaite !
         else if (other.CompareTag("Boundary"))
         {
             accident = true;
             hasCollided = true;
-            StopTurning();
             VoxelGameManager.Instance.PlayerFails();
 
             // Appeler FinalAcceleration sur RivalBike
@@ -124,14 +124,15 @@ public class PlayerBike : SingletonMB<PlayerBike>
             }
 
             
-
-            // Déclencher le tremblement de l'écran
-
             // Déplacer l'objet vers le TargetPoint puis devant le PlayerBike
             if (movingObject != null && targetPoint != null)
             {
                 StartCoroutine(MoveObjectToTargetAndPlayer());
             }
+            
+            var timeAfter = System.DateTime.Now;
+            var timeSpan = timeAfter - time;
+            Debug.Log("LagDuration : " + timeSpan.TotalMilliseconds + "ms");
         }
     }
 

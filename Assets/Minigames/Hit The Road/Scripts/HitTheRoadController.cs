@@ -7,6 +7,8 @@ namespace AxoLoop.Minigames.HitTheRoad
 {
     public class HitTheRoadController : SingletonMB<HitTheRoadController>, IMinigameController
     {
+        [SerializeField] MinigameDifficultyLevel testDifficulty;
+
         public GameObject road;
         public GameObject turnTrigger;
         public GameObject playerBike;
@@ -27,7 +29,7 @@ namespace AxoLoop.Minigames.HitTheRoad
             if (ScoreManager.Instance != null)
                 GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(hitTheRoad));
             else
-                GenerateMinigame(Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
+                GenerateMinigame(Random.Range(0, 1000), testDifficulty);
             InitializeMinigame();
 
 
@@ -47,16 +49,16 @@ namespace AxoLoop.Minigames.HitTheRoad
             {
                 if(easy(difficultyLevel))
                 {
-                    rivalBike.setSpeed(15);
+                    rivalBike.setSpeed(12);
                 }
                 if (medium(difficultyLevel))
                 {
-                    rivalBike.setSpeed(25);
+                    rivalBike.setSpeed(Random.Range(13f, 16f));
                 }
 
                 if (hard(difficultyLevel))
                 {
-                    rivalBike.setSpeed(40);
+                    rivalBike.setSpeed(Random.Range(17f, 21f));
                 }
             }
 
