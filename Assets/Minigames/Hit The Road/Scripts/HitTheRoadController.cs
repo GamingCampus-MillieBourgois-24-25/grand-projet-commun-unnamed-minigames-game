@@ -15,6 +15,7 @@ namespace AxoLoop.Minigames.HitTheRoad
         public RivalBike rivalBike;
         public MinigameObject hitTheRoad;
         public Button[] buttons;
+        public bool invertButtons;
 
         public bool loose = false;
 
@@ -53,12 +54,12 @@ namespace AxoLoop.Minigames.HitTheRoad
                 }
                 if (medium(difficultyLevel))
                 {
-                    rivalBike.setSpeed(Random.Range(13f, 16f));
+                    rivalBike.setSpeed(Random.Range(13f, 15f));
                 }
 
                 if (hard(difficultyLevel))
                 {
-                    rivalBike.setSpeed(Random.Range(17f, 21f));
+                    rivalBike.setSpeed(Random.Range(16f, 18f));
                 }
             }
 

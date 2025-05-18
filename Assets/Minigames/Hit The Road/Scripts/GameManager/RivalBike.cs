@@ -201,7 +201,7 @@ public class RivalBike : SingletonMB<RivalBike>
         if (rb != null)
         {
             rb.isKinematic = false; // Assurez-vous que le Rigidbody n'est pas kinematic
-            rb.AddForce(new Vector3(0, 10, -10), ForceMode.Impulse); // Applique une force vers le haut et vers l'arrière
+            rb.AddForce(new Vector3(0, 20, 0), ForceMode.Impulse); // Applique une force vers le haut et vers l'arrière
             rb.AddTorque(new Vector3(25, 25, 25)); // Ajoute une rotation pour un effet plus dramatique
         }
         yield return null;

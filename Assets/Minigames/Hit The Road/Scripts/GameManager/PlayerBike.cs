@@ -67,7 +67,13 @@ public class PlayerBike : SingletonMB<PlayerBike>
 
     public void StartTurnLeft()
     {
-        if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
+        if (HitTheRoadController.Instance.invertButtons)
+        {
+            HitTheRoadController.Instance.invertButtons = false;
+            StartTurnRight();
+        }
+
+        else if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
         {
             isTurningLeft = true;
             isTurningRight = false;
@@ -77,7 +83,12 @@ public class PlayerBike : SingletonMB<PlayerBike>
 
     public void StartTurnRight()
     {
-        if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
+        if (HitTheRoadController.Instance.invertButtons)
+        {
+            HitTheRoadController.Instance.invertButtons = false;
+            StartTurnLeft();
+        }
+        else if (!hasCollided && !hasTurned) // Vérifie si le joueur n'a pas encore tourné
         {
             isTurningRight = true;
             isTurningLeft = false;

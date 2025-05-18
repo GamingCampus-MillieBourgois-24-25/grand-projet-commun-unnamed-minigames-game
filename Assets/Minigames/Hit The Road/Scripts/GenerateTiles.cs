@@ -15,6 +15,8 @@ public class GenerateTiles : MonoBehaviour
     public GameObject[] tile;
     public GameObject CamPosition1; /*position where the tile will be set to once it reaches the endPoint*/
     public GameObject CamPosition2; 
+    public GameObject CamPosition3; 
+    public GameObject CamPosition4; 
     public GameObject emptyObject; //parent des objets généré dynamiquement par Instantiate
     public GameObject Light;
     private int index;
@@ -62,17 +64,31 @@ public class GenerateTiles : MonoBehaviour
         tile[index].GetComponent<MovingTile>().setSpeed(tileSpeed);
 
         /* Choix aleatoire de la position de la camera*/
-        int camPos = Random.Range(0, 2);
-        if (camPos == 0)
+        int camPos = Random.Range(0, 4);
+        Transform position;
+        bool inverse = false;
+        switch (camPos)
         {
-            Camera.main.transform.position = CamPosition1.transform.position;
-            Camera.main.transform.rotation = CamPosition1.transform.rotation;
+            case 0:
+                position = CamPosition1.transform;
+                break;
+            case 1:
+                position = CamPosition2.transform;
+                break;
+            case 2:
+                position = CamPosition3.transform;
+                HitTheRoadController.Instance.invertButtons = true;
+                break;
+            case 3:
+            default:
+                position = CamPosition4.transform;
+                HitTheRoadController.Instance.invertButtons = true;
+                break;
         }
-        if (camPos == 1)
-        {
-            Camera.main.transform.position = CamPosition2.transform.position;
-            Camera.main.transform.rotation = CamPosition2.transform.rotation;
-        }
+
+        Camera.main.transform.position = position.position;
+        Camera.main.transform.rotation = position.rotation;
+
 
         /* Choix aleatoire de la rotation de la light*/
         float randomX = Random.Range(25.5f, 149.4f);     // Inclinaison verticale
