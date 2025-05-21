@@ -5,6 +5,8 @@ using AxoLoop.Minigames.HitTheRoad;
 
 public class PlayerBike : SingletonMB<PlayerBike>
 {
+    [SerializeField] AnimationClip[] victoryAnims, defeatAnims, spotAnims;
+    [SerializeField] Animator animator;
     public float moveSpeed = 10f; // Vitesse de déplacement vers l'avant
     public float turnSpeed = 4f; // Vitesse de déplacement latéral
     public float leanAngle = 30f; // Angle d'inclinaison maximal
@@ -41,6 +43,16 @@ public class PlayerBike : SingletonMB<PlayerBike>
         {
             HandleTurning();
         }
+    }
+
+    public void PlaySpotAnimation()
+    {
+        animator.Play(spotAnims[Random.Range(0, spotAnims.Length)].name);
+    }
+    public void PlayEndAnimation(bool victory)
+    {
+        var anims = victory ? victoryAnims : defeatAnims;
+        animator.Play(anims[Random.Range(0, anims.Length)].name);
     }
 
     private void HandleTurning()

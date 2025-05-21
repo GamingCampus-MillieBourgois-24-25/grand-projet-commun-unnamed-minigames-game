@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Assets._Common.Scripts;
 using Assets.Code.GLOBAL;
 using Axoloop.Global;
 using UnityEngine;
@@ -11,7 +12,22 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     [SerializeField] public MinigameObject[] minigames;
     public List<MinigameObject> MiniGameUnlocked = new List<MinigameObject>();
     [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
-    
+    AudioClip victoryClip;
+    AudioClip defeatClip;
+
+    public void PlayEndSound(bool victory)
+    {
+        if (victory)
+        {
+            GlobalAudioManager.Instance.PlaySound(victoryClip);
+        }
+        else
+        {
+
+            GlobalAudioManager.Instance.PlaySound(defeatClip);
+
+        }
+    }
 
     public void MiniGameFinished(bool victory)
     {

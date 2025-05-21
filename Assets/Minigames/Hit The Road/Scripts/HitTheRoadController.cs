@@ -1,4 +1,5 @@
 using Axoloop.Global;
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,7 +49,7 @@ namespace AxoLoop.Minigames.HitTheRoad
 
             if (rivalBike)
             {
-                if(easy(difficultyLevel))
+                if (easy(difficultyLevel))
                 {
                     rivalBike.setSpeed(12);
                 }
@@ -80,7 +81,13 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         IEnumerator SpawnRivalBike()
         {
-            yield return new WaitForSeconds(Random.Range(1f, 3f)); // Attendre 1 seconde avant de faire apparaître le vélo rival
+            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
+            PlayerBike.Instance.PlaySpotAnimation();
+
+            yield return new WaitForSeconds(0.2f);
+            SpawnButtons();
+
+            yield return new WaitForSeconds(0.8f);
             if (rivalBike)
             {
                 rivalBike.gameObject.SetActive(true);
@@ -92,6 +99,18 @@ namespace AxoLoop.Minigames.HitTheRoad
             foreach (var item in buttons)
             {
                 item.gameObject.SetActive(false);
+            }
+        }
+
+        void SpawnButtons()
+        {
+            foreach (var item in buttons)
+            {
+                item.gameObject.SetActive(true);
+
+                // make a dotween animation to scale up item
+                item.transform.localScale = Vector3.zero;
+                item.transform.DOScale(Vector3.one, 0.8f).SetEase(Ease.OutBounce).SetAutoKill();
             }
         }
     }

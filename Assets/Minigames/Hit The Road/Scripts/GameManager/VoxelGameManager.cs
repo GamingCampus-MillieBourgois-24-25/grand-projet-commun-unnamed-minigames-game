@@ -23,7 +23,6 @@ public class VoxelGameManager : MonoBehaviour
     // Appelé lorsque le joueur gagne
     public void PlayerWins()
     {
-        defeatTrigger.SetActive(false);
         EndGame(true);
     }
 
@@ -35,14 +34,15 @@ public class VoxelGameManager : MonoBehaviour
 
     public void EndGame(bool won)
     {
+        defeatTrigger.SetActive(false);
         hasWon = won;
-
+        MiniGameManager.Instance?.PlayEndSound(won); // Joue le son de victoire ou de défaite
+        PlayerBike.Instance.PlayEndAnimation(won);
+        
         if (won)
         {
             Debug.Log("Victoire !");
-  
             rivalBike.ExplodeAndEject();
-
             MinigameHelper.IncrementMinigamePlayed(HitTheRoadController.Instance.hitTheRoad);
         }
         else

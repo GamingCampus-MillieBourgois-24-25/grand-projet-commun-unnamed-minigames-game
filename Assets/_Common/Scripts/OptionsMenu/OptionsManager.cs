@@ -30,11 +30,11 @@ public class OptionsManager : MonoBehaviour
         _bgmOn = !_bgmOn;
         if(_bgmOn)
         {
-            MusicManager.Instance.UnmuteMusic();
+            GlobalAudioManager.Instance.UnmuteMusic();
         }
         else
         {
-            MusicManager.Instance.MuteMusic();
+            GlobalAudioManager.Instance.MuteMusic();
         }
 
         PlayerPrefs.SetInt("BgmOn", _bgmOn ? 1 : 0);
