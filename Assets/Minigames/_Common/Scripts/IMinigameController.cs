@@ -1,9 +1,11 @@
+using System.Threading.Tasks;
+
 public interface IMinigameController
 {
     /// <summary>
     /// Generer le minijeu
     /// </summary>
-    public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel);
+    public Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel);
 
     /// <summary>
     /// Jouer les éventuelles animations pour ammener le mini-jeu dans sa configuration de départ du jeu

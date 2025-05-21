@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using DG.Tweening;
+using System.Threading.Tasks;
+using Axoloop.Scripts.Global;
 
 public class PointerController : MonoBehaviour, IMinigameController
 {
@@ -92,19 +94,9 @@ public class PointerController : MonoBehaviour, IMinigameController
         DOTween.SetTweensCapacity(500, 50);
     }
 
-    private void Start()
+    private async void Start()
     {
-        if (!InitializeComponents()) return;
-
-        ResetGameState();
-        InitializeUI();
-
-        if (spriteAnimator != null)
-        {
-            spriteAnimator.StartRotation();
-        }
-
-        StartGameSequence();
+        await GenerateMinigame(0, MinigameDifficultyLevel.Impossible);
     }
 
     private void Update()
@@ -194,30 +186,57 @@ public class PointerController : MonoBehaviour, IMinigameController
 
     #region IMinigameController Implementation
 
-    public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+    public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
     {
-        Debug.Log($"Generating minigame with seed {seed} and difficulty {difficultyLevel}");
-        UnityEngine.Random.InitState(seed);
+        if (!InitializeComponents()) return;
 
-        // Configure game parameters based on difficulty
-        ConfigureDifficulty(difficultyLevel);
-
-        // Reset game state
-        ResetPlankState();
         ResetGameState();
+        //InitializeUI();
+
+        //if (spriteAnimator != null)
+        //{
+        //    spriteAnimator.StartRotation();
+        //}
+
+        //StartGameSequence();
+
+
+        //Debug.Log($"Generating minigame with seed {seed} and difficulty {difficultyLevel}");
+        //UnityEngine.Random.InitState(seed);
+
+        //// Configure game parameters based on difficulty
+        //ConfigureDifficulty(difficultyLevel);
+
+        //// Reset game state
+        //ResetPlankState();
+        //ResetGameState();
+
+        InitializeMinigame();
     }
 
     public void InitializeMinigame()
     {
-        Debug.Log("Initializing minigame...");
-        UpdateCharacterState(CharacterState.Waiting);
-        StartGameSequence();
+        SceneLoader.FinishLoading();
+
+        //Debug.Log("Initializing minigame...");
+        //UpdateCharacterState(CharacterState.Waiting);
+        //StartGameSequence();
+
+        InitializeUI();
+
+        if (spriteAnimator != null)
+        {
+            spriteAnimator.StartRotation();
+        }
+
+        StartMinigame();
     }
 
     public void StartMinigame()
     {
         Debug.Log("Starting minigame...");
-        _canMove = true;
+        //_canMove = true;
+        StartGameSequence();
     }
 
     private void ConfigureDifficulty(MinigameDifficultyLevel difficultyLevel)
@@ -426,9 +445,11 @@ public class PointerController : MonoBehaviour, IMinigameController
         switch (state)
         {
             case CharacterState.Victory:
+                MiniGameManager.Instance?.PlayEndSound(true);
                 axoVictory?.SetActive(true);
                 break;
             case CharacterState.Lose:
+                MiniGameManager.Instance?.PlayEndSound(false);
                 axoLose?.SetActive(true);
                 break;
             case CharacterState.Waiting:

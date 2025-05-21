@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using AxoLoop.Minigames.HitTheRoad;
+using Axoloop.Global;
 
 /*
  * Script for generating tile and moving them at start position when colliding with endpoint
  */
 
-public class GenerateTiles : MonoBehaviour
+public class GenerateTiles : SingletonMB<GenerateTiles>
 {
     public float tileSpeed = 40f;
   
     public GameObject[] tile;
-    public GameObject CamPosition1; /*position where the tile will be set to once it reaches the endPoint*/
-    public GameObject CamPosition2; 
-    public GameObject CamPosition3; 
-    public GameObject CamPosition4; 
+    public CameraPosition CamPosition1; /*position where the tile will be set to once it reaches the endPoint*/
+    public CameraPosition CamPosition2; 
+    public CameraPosition CamPosition3; 
+    public CameraPosition CamPosition4;
+    public Onomatopea activeOnomatopea;
     public GameObject emptyObject; //parent des objets généré dynamiquement par Instantiate
     public GameObject Light;
     private int index;
@@ -45,6 +47,11 @@ public class GenerateTiles : MonoBehaviour
         }
     }
 
+    public void ShowOnomatopea()
+    {
+        activeOnomatopea.enabled = true;
+    }
+
     public void SettingUpTheScene()
     {
         /* Choix aleatoire de la tuile */
@@ -66,22 +73,25 @@ public class GenerateTiles : MonoBehaviour
         /* Choix aleatoire de la position de la camera*/
         int camPos = Random.Range(0, 4);
         Transform position;
-        bool inverse = false;
         switch (camPos)
         {
             case 0:
                 position = CamPosition1.transform;
+                activeOnomatopea = CamPosition1.GetOnomatopea;
                 break;
             case 1:
                 position = CamPosition2.transform;
+                activeOnomatopea = CamPosition2.GetOnomatopea;
                 break;
             case 2:
                 position = CamPosition3.transform;
+                activeOnomatopea = CamPosition3.GetOnomatopea;
                 HitTheRoadController.Instance.invertButtons = true;
                 break;
             case 3:
             default:
                 position = CamPosition4.transform;
+                activeOnomatopea = CamPosition4.GetOnomatopea;
                 HitTheRoadController.Instance.invertButtons = true;
                 break;
         }

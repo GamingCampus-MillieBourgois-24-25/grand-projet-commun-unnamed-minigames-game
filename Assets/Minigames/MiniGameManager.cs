@@ -12,8 +12,8 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     [SerializeField] public MinigameObject[] minigames;
     public List<MinigameObject> MiniGameUnlocked = new List<MinigameObject>();
     [SerializeField] private CalculScoreAndCombo _calculScoreAndCombo;
-    AudioClip victoryClip;
-    AudioClip defeatClip;
+    [SerializeField] AudioClip victoryClip;
+    [SerializeField] AudioClip defeatClip;
 
     public void PlayEndSound(bool victory)
     {

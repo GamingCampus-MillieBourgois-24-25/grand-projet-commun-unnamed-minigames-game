@@ -14,9 +14,13 @@ namespace Assets.Scripts.GLOBAL
 
         public SceneLevel SceneLevel { get => SceneLevel.Level1; }
 
+        public bool AsyncLoading { get => false; }
+        
         public Action<string> SceneLoaded { get; set; }
 
         public Action<string> SceneUnloaded { get; set; }
+
+
 
 
         #endregion
@@ -49,7 +53,7 @@ namespace Assets.Scripts.GLOBAL
         public void LoadScene(Action<string> callBack)
         {
             SceneLoaded = new(callBack);
-            StartCoroutine(SceneLoader.LoadingProcess(SceneName, SceneLoaded));
+            StartCoroutine(SceneLoader.LoadingProcess(SceneName, SceneLoaded, false));
         }
 
         /// <summary>

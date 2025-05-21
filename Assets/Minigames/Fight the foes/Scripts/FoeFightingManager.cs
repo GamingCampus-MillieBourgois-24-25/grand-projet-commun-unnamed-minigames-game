@@ -8,7 +8,7 @@ namespace AxoLoop.Minigames.FightTheFoes
     {
 
         FoeType foeType;
-        private bool blocking = false;
+
 
         [SerializeField] GameObject[] GreenVariant;
         [SerializeField] GameObject[] GreyVariant;
@@ -36,12 +36,6 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightMinigameData.LockedAttack = true;
 
             var attackObject = FoeFightMinigameData.AttackObjectList.FirstOrDefault(item => item.attackType == type);
-
-            blocking = false;
-            if (attackObject == null)
-            {
-                blocking = true;
-            }
 
             FoeFightMinigameData.Axo.PlayAttack(attackObject.attackAnimation, () => OnAttackHit(attackObject.attackType));
         }

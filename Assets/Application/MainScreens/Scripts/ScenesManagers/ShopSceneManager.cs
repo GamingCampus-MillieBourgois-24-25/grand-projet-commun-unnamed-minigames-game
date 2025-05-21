@@ -6,7 +6,7 @@ public class ShopSceneManager : BaseSceneManager<ShopSceneManager>, ISceneManage
 
     public override SceneLevel SceneLevel { get => SceneLevel.Level2; }
 
-
+    public override bool AsyncLoading { get => false; }
     protected override void DisableScene()
     {
         // désactiver les inputs et toute action potentielle future

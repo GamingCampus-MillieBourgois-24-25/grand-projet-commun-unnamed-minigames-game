@@ -1,12 +1,14 @@
 using AxoLoop.Minigames.MatchTheStars;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Unity.Burst;
 using UnityEngine;
 using UnityEngine.UI;
 
 public static class StarsColorsGenerator
 {
 
-    public static void SetStarsColor()
+    public async static Task SetStarsColor()
     {
         // récupère les sprites et les couleurs disponibles
         var starsSpritesList = MatchTheStarsMinigameData.AvailableSpritesList;
@@ -36,7 +38,7 @@ public static class StarsColorsGenerator
             Color color = availableColors[randomColorIndex];
             string colorName = ColorUtility.ToHtmlStringRGB(color);
 
-            Sprite colored = CreateColoredSprite(
+            Sprite colored = await CreateColoredSpriteAsync(
                 starsSpritesList[i],
                 color,
                 $"stars_{i}_{colorName}"
@@ -78,36 +80,46 @@ public static class StarsColorsGenerator
         MatchTheStarsMinigameData.CrownStarsImages = starImages;
     }
 
-
-    private static Sprite CreateColoredSprite(Sprite originalSprite, Color color, string name)
+    [BurstCompile]
+    public static async Task<Sprite> CreateColoredSpriteAsync(Sprite originalSprite, Color color, string name)
     {
         Texture2D originalTexture = originalSprite.texture;
-        Texture2D newTexture = new Texture2D(originalTexture.width, originalTexture.height);
-        newTexture.filterMode = FilterMode.Point;
+        Color32[] originalPixels = originalTexture.GetPixels32();
 
-        for (int x = 0; x < originalTexture.width; x++)
+        // Traitement lourd en tâche parallèle
+        Color32[] newPixels = await Task.Run(() =>
         {
-            for (int y = 0; y < originalTexture.height; y++)
+            Color32[] tempPixels = new Color32[originalPixels.Length];
+
+            for (int i = 0; i < originalPixels.Length; i++)
             {
-                Color pixel = originalTexture.GetPixel(x, y);
-                if (pixel.a > 0.1f)
+                Color32 pixel = originalPixels[i];
+
+                if (pixel.a > 25)
                 {
-                    pixel = color * pixel;
-                    pixel.a = 1f;
-                    newTexture.SetPixel(x, y, pixel);
+                    float alpha = pixel.a / 255f;
+                    Color blended = color * new Color(pixel.r / 255f, pixel.g / 255f, pixel.b / 255f, alpha);
+                    blended.a = 1f;
+
+                    tempPixels[i] = blended;
                 }
                 else
                 {
-                    newTexture.SetPixel(x, y, pixel);
+                    tempPixels[i] = pixel;
                 }
             }
-        }
+            return tempPixels;
+        });
 
+        Texture2D newTexture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
+        newTexture.filterMode = FilterMode.Point;
+        newTexture.SetPixels32(newPixels);
         newTexture.Apply();
 
-        Sprite newSprite = Sprite.Create(newTexture, new Rect(0, 0, newTexture.width, newTexture.height), new Vector2(0.5f, 0.5f), originalSprite.pixelsPerUnit);
-        newSprite.name = name; // Donne un nom utile
+        Sprite newSprite = Sprite.Create(newTexture, originalSprite.rect, new Vector2(0.5f, 0.5f), originalSprite.pixelsPerUnit);
+        newSprite.name = name;
 
         return newSprite;
     }
+
 }

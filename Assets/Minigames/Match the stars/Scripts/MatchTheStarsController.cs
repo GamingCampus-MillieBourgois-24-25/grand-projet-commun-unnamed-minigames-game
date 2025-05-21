@@ -1,8 +1,11 @@
 
+using Assets._Common.Scripts;
 using Assets.Minigames.Match_the_stars.Scripts;
 using Assets.Scripts.GLOBAL;
 using Axoloop.Global;
+using Axoloop.Scripts.Global;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace AxoLoop.Minigames.MatchTheStars
@@ -23,34 +26,36 @@ namespace AxoLoop.Minigames.MatchTheStars
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
-        public void Start()
+        private async void Start()
         {
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(matchTheStars));
+                await GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(matchTheStars));
             else
-                GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
+                await GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
 
             MatchingTheStarsSceneManager.Instance.SceneLoaded += (_) => StartMinigame(); ;
-
         }
 
         #endregion
         #region METHODS-------------------------------------------------------------------------
 
-        public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             UnityEngine.Random.InitState(seed);
             MatchTheStarsMinigameData.Difficulty = MTSUtils.SetDifficulty(difficultyLevel);
 
-            StarsColorsGenerator.SetStarsColor();
+            await StarsColorsGenerator.SetStarsColor();
             StarsColorsGenerator.SetThreeStars();
 
             wallPosters[Random.Range(0, wallPosters.Length)].SetActive(true);
+
+
+            InitializeMinigame();
         }
 
         public void InitializeMinigame()
         {
-            
+            SceneLoader.FinishLoading();
         }
 
         public void StartMinigame()
@@ -97,6 +102,8 @@ namespace AxoLoop.Minigames.MatchTheStars
             openBag.ForceCloseTheBag();
             openBag.enabled = false;
             yield return new WaitForSeconds(1f);
+
+            MiniGameManager.Instance?.PlayEndSound(win);
 
             if (win)
             {

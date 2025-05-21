@@ -34,7 +34,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void DieFromFoe(FoeType type)
         {
-            if(FoeFightMinigameData.IsBlocking)
+            MiniGameManager.Instance?.PlayEndSound(false);
+            if (FoeFightMinigameData.IsBlocking)
             {
                 animator.Play("Tank", -1, 0);
                 FoeFightingUtils.ButtonsHit?.Invoke();

@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GLOBAL
       objectReference: {fileID: 0}
+    - target: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5051077555749104462, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -188,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: testScene
-      value: Main Fight The Foes
+      value: AxoMatching
       objectReference: {fileID: 0}
     - target: {fileID: 7796564779650927414, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
@@ -225,6 +230,16 @@ PrefabInstance:
       propertyPath: Transition_Scene
       value: MAIN_TransitionMinigames
       objectReference: {fileID: 0}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: defeatClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c01bf320c35a1b4a8e64177c0ef794b, type: 3}
+    - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
+      propertyPath: victoryClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ba6fb4e8d15cb9242a23e0ab09697bb4, type: 3}
     - target: {fileID: 7818080230778137772, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
       propertyPath: minigames.Array.size
@@ -280,6 +295,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
         type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 509492245}
+    - targetCorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
+        type: 3}
       insertIndex: -1
       addedObject: {fileID: 509492224}
     - targetCorrespondingSourceObject: {fileID: 1065501564649373458, guid: f3dc4e862096bbd40aa57ce294aeedea,
@@ -320,7 +339,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: 26e620cec411d374e8702c3e25dd147a, type: 3}
-  volume: 1
+  volume: 80
+  audioSourcesPoolSize: 5
+--- !u!114 &509492245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509492223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab552a34261bb5488cd8a023613049d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

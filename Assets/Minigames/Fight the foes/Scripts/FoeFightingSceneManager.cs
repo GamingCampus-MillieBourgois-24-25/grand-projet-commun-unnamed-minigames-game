@@ -12,8 +12,8 @@ namespace AxoLoop.Minigames.FightTheFoes
         public override string SceneName { get => "MAIN Fight The Foes"; }
              
         public override SceneLevel SceneLevel { get => SceneLevel.Level1; }
-        
 
+                public override bool AsyncLoading { get => true; }
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 

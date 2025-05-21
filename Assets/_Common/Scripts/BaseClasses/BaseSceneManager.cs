@@ -8,6 +8,8 @@ namespace Axoloop.Global
     {
         public abstract string SceneName { get; }
         public abstract SceneLevel SceneLevel { get; }
+        public abstract bool AsyncLoading { get; }
+
         public Action<string> SceneLoaded { get; set; }
         public Action<string> SceneUnloaded { get; set; }
 
@@ -23,7 +25,7 @@ namespace Axoloop.Global
         public void LoadScene(Action<string> callBack = null)
         {
             SceneLoaded += callBack;
-            StartCoroutine(SceneLoader.LoadingProcess(SceneName, SceneLoaded));
+            StartCoroutine(SceneLoader.LoadingProcess(SceneName, SceneLoaded, AsyncLoading));
         }
 
         public void UnloadScene(Action<string> callBack = null)

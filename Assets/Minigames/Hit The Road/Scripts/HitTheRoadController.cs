@@ -1,6 +1,8 @@
 using Axoloop.Global;
+using Axoloop.Scripts.Global;
 using DG.Tweening;
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,25 +27,37 @@ namespace AxoLoop.Minigames.HitTheRoad
         bool medium(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.Medium || dif == MinigameDifficultyLevel.Hard;
         bool hard(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.VeryHard || dif == MinigameDifficultyLevel.Impossible;
 
-        private void Start()
+        protected override void Awake()
+        {
+            base.Awake();
+            foreach (var item in buttons)
+            {
+                item.gameObject.SetActive(true);
+                item.gameObject.SetActive(false);
+            }
+        }
+
+        private async void Start()
         {
 
-            if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(hitTheRoad));
+            if (ScoreManager.Instance)
+                await GenerateMinigame(ScoreManager.Instance.GetTotalScore() + 1 * GameSettings.RandomInt, MinigameHelper.GetDifficulty(hitTheRoad));
             else
-                GenerateMinigame(Random.Range(0, 1000), testDifficulty);
-            InitializeMinigame();
+            {
+                await GenerateMinigame(Random.Range(0, 1000), testDifficulty);
+                DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(50, 20);
+            }
 
 
         }
 
-        public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             if (road)
             {
                 Random.InitState(seed);
-                road.GetComponent<GenerateTiles>().check();
-                road.GetComponent<GenerateTiles>().SettingUpTheScene();
+                GenerateTiles.Instance.check();
+                GenerateTiles.Instance.SettingUpTheScene();
                 Debug.Log("Seed Controller : " + seed);
             }
 
@@ -65,29 +79,31 @@ namespace AxoLoop.Minigames.HitTheRoad
             }
 
 
-            // générer le mini-jeu (biome et autres paramètres qui influenceront la partie)
-
+            InitializeMinigame();
         }
 
         public void InitializeMinigame()
         {
-            StartCoroutine(SpawnRivalBike());
+            SceneLoader.FinishLoading();
+            StartMinigame();
         }
 
         public void StartMinigame()
         {
-            // Début officiel du mini-jeu où le joueur peut commencer à jouer
+            StartCoroutine(SpawnRivalBike());
         }
 
         IEnumerator SpawnRivalBike()
         {
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
+            yield return new WaitForSeconds(Random.Range(0.8f, 2.5f));
+            GenerateTiles.Instance.ShowOnomatopea();
+
+            yield return new WaitForSeconds(0.3f);
             PlayerBike.Instance.PlaySpotAnimation();
 
             yield return new WaitForSeconds(0.2f);
             SpawnButtons();
 
-            yield return new WaitForSeconds(0.8f);
             if (rivalBike)
             {
                 rivalBike.gameObject.SetActive(true);

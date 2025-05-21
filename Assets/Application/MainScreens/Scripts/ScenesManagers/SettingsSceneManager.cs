@@ -6,6 +6,8 @@ public class SettingsSceneManager : BaseSceneManager<SettingsSceneManager>, ISce
 
     public override SceneLevel SceneLevel { get => SceneLevel.Level2; }
 
+    public override bool AsyncLoading { get => false; }
+
     protected override void DisableScene()
     {
         // d�sactiver les inputs et toute action potentielle future

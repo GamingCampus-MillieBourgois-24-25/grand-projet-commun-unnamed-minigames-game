@@ -14,7 +14,6 @@ public class RivalBike : SingletonMB<RivalBike>
     private float laneOffset = 4f;
     private bool willTurn = false;
     public float finalLane;
-    private bool isTurning = false;
     private bool hasDecided = false;
 
     bool accident = false;
@@ -44,7 +43,8 @@ public class RivalBike : SingletonMB<RivalBike>
 
     void Spawn()
     {
-        int spawnType = Random.Range(0, 3);
+        // Si speed < 13 alors difficulté facile et on empeche la moto de rester au centre. C'est dégeulasse, il faudra évidemment changer ça.
+        int spawnType = Random.Range(0, speed < 13 ? 2 : 3);
         if (spawnType == 0) // gauche
         {
             rb.position = new Vector3(-laneOffset, transform.position.y, transform.position.z);
@@ -98,7 +98,7 @@ public class RivalBike : SingletonMB<RivalBike>
         float elapsedTime = 0f;
 
         Vector3 startPosition = transform.position;
-        Vector3 endPosition = new Vector3(targetX, startPosition.y, startPosition.z + 5f); // Avance légèrement pendant le virage
+        Vector3 endPosition = new Vector3(targetX, startPosition.y, startPosition.z + 8f); // Avance légèrement pendant le virage
 
         float maxLeanAngle = 30f; // Augmenter l'angle pour une inclinaison plus réaliste
 
@@ -121,6 +121,8 @@ public class RivalBike : SingletonMB<RivalBike>
 
         // Réinitialiser l'inclinaison après le virage
         transform.rotation = Quaternion.Euler(0, 0, 0);
+        rb.rotation = transform.rotation;
+        rb.position = transform.position;
     }
 
 

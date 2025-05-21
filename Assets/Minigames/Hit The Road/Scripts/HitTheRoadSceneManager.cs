@@ -8,6 +8,9 @@ public class HitTheRoadSceneManager : BaseSceneManager<HitTheRoadSceneManager>, 
 
     public override SceneLevel SceneLevel { get => SceneLevel.Level1; }
 
+            public override bool AsyncLoading { get => true; }
+
+
     protected override void DisableScene()
     {
         // d�sactiver les inputs et toute action potentielle future

@@ -14,6 +14,8 @@ namespace Assets.Scripts.GLOBAL
 
         public override SceneLevel SceneLevel { get => SceneLevel.Level1; }
 
+                public override bool AsyncLoading { get => true; }
+
 
         #endregion
         #region METHODS-------------------------------------------------------------------------

@@ -1,3 +1,6 @@
+using DG.Tweening;
+using UnityEngine;
+
 namespace Axoloop.Global
 {
     public class GameManager : SingletonMB<GameManager>
@@ -10,7 +13,14 @@ namespace Axoloop.Global
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
+        protected override void Awake()
+        {
+            base.Awake();
+            Application.targetFrameRate = 60;
+            QualitySettings.vSyncCount = 0;
 
+            DOTween.Init(true, true, LogBehaviour.Verbose).SetCapacity(50, 20);
+        }
 
         #endregion
         #region METHODS-------------------------------------------------------------------------

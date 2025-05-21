@@ -7,18 +7,35 @@ namespace Axoloop.Scripts.Global
 {
     public static class SceneLoader
     {
+        private static Action callback;
+
         // Ctrl + M + O pour déplier toutes les régions
 
         #region API-----------------------------------------------------------------------------
 
+        public static void FinishLoading()
+        {
+            callback?.Invoke();
+            callback = null;
+        }
+
         #endregion
         #region COROUTINES----------------------------------------------------------------------
 
-        public static IEnumerator LoadingProcess(string sceneName, Action<string> onFinishedCallback)
+        public static IEnumerator LoadingProcess(string sceneName, Action<string> onFinishedCallback, bool asyncLoading = false)
         {
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
 
-            asyncLoad.completed += (operation) => onFinishedCallback.Invoke(sceneName);
+            if (asyncLoading)
+            {
+                // Let the scene execute some additional initialization logic in parallel and wait for it to finish by calling FinishLoading()
+                callback = () => onFinishedCallback?.Invoke(sceneName);
+            }
+            else
+            {
+                // Finish the loading process as soon as the scene is loaded
+                asyncLoad.completed += (operation) => onFinishedCallback.Invoke(sceneName);
+            }
 
             asyncLoad.allowSceneActivation = false;
 

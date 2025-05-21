@@ -17,8 +17,8 @@ namespace Assets._Common.Scripts
         
         [Header("Music Settings")]
         [SerializeField] private AudioClip musicClip;
-        [Range(0f, 1f)]
-        [SerializeField] private float volume = 1f;
+        [Range(0f, 100f)]
+        [SerializeField] private float volume = 80f;
         [SerializeField] private int audioSourcesPoolSize = 5;
 
 
@@ -161,7 +161,7 @@ namespace Assets._Common.Scripts
         {
             if (!BM_muted)
             {
-                savedVolume = BGM_AudioSource.volume;
+                //savedVolume = BGM_AudioSource.volume;
                 BGM_AudioSource.volume = 0f;
                 BM_muted = true;
             }
@@ -180,7 +180,7 @@ namespace Assets._Common.Scripts
         {
             if (!SFX_muted)
             {
-                savedVolume = BGM_AudioSource.volume;
+                //savedVolume = BGM_AudioSource.volume;
                 foreach(var source in audioSources)
                 {
                     source.volume = 0f;

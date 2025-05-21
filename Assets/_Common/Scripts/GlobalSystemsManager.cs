@@ -15,10 +15,13 @@ public class GlobalSystemManager : MonoBehaviour
         _audioListener = GetComponentInChildren<AudioListener>();
 
         // D�sactiver les composants si la sc�ne est charg�e en mode additif
-        if (IsSceneAdditive() && _eventSystem && _audioListener)
+        if (IsSceneAdditive())
         {
-            _eventSystem.enabled = false;
-            _audioListener.enabled = false;
+            if(_eventSystem)
+                _eventSystem.enabled = false;
+
+            if (_audioListener)
+                _audioListener.enabled = false;
         }
     }
 

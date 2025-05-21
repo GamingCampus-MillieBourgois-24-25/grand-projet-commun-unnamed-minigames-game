@@ -8,6 +8,9 @@ public class ReviveSceneManager : BaseSceneManager<ReviveSceneManager>, ISceneMa
 
     public override SceneLevel SceneLevel { get => SceneLevel.Level2; }
 
+    public override bool AsyncLoading { get => false; }
+
+
     [SerializeField] RectTransform rect;
 
     protected override void DisableScene()

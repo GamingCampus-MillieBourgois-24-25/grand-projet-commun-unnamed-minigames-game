@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using System.Threading.Tasks;
 using Axoloop.Global;
+using Axoloop.Scripts.Global;
 using UnityEngine;
 
 namespace AxoLoop.Minigames.FightTheFoes
@@ -32,21 +34,20 @@ namespace AxoLoop.Minigames.FightTheFoes
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
-        public void Start()
+        public async void Start()
         {
             if (ScoreManager.Instance != null)
-                GenerateMinigame(ScoreManager.Instance.GetTotalScore()+1*GameSettings.RandomInt, MinigameHelper.GetDifficulty(fightTheFoes));
+                await GenerateMinigame(ScoreManager.Instance.GetTotalScore()+1*GameSettings.RandomInt, MinigameHelper.GetDifficulty(fightTheFoes));
             else
-                GenerateMinigame(UnityEngine.Random.Range(0, 1000), testDifficulty);
+                await GenerateMinigame(UnityEngine.Random.Range(0, 1000), testDifficulty);
 
-            StartMinigame();
 
         }
 
         #endregion
         #region METHODS-------------------------------------------------------------------------
 
-        public void GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             UnityEngine.Random.InitState(seed);
 
@@ -57,11 +58,14 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightingManager.Instance.SetLogoVariant((UnityEngine.Random.value > 0.5f));
             
             RageBar.Instance.SetFillSpeed(FoeFightMinigameData.Difficulty);
+
+            InitializeMinigame();
         }
 
         public void InitializeMinigame()
         {
-            
+            SceneLoader.FinishLoading();
+            StartMinigame();
         }
 
         public void StartMinigame()
@@ -83,6 +87,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             }
             else
             {
+                MiniGameManager.Instance?.PlayEndSound(true);
                 ContinueText.Enable(true);
                 MinigameHelper.IncrementMinigamePlayed(fightTheFoes);
             }
@@ -138,7 +143,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             // make axointro move upward then downward in 2.5 seconds : 
             AxoIntro.SetActive(true);
             Vector2 axoIntroBasePosition = AxoIntro.transform.position;
-            float time = 2f;
+            float time = 1.8f;
             float elapsedTime = 0f;
             while (elapsedTime < time)
             {
@@ -148,7 +153,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 yield return null;
             }
             AxoIntro.SetActive(false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.15f);
 
 
 
@@ -163,20 +168,17 @@ namespace AxoLoop.Minigames.FightTheFoes
                 FoeFightMinigameData.Axo.transform.position = Vector2.Lerp(spawnPosition, AxoSpawnPoint.transform.position, elapsedTime / time);
                 yield return null;
             }
-
-
-            yield return new WaitForSeconds(0.5f);
             callback?.Invoke();
         }
 
 
         private IEnumerator SpawnFoe(Action callback)
         {
-            Vector2 spawnPosition = new Vector2(FoeSpawnPoint.transform.position.x + 10, FoeSpawnPoint.transform.position.y);
+            Vector2 spawnPosition = new Vector2(FoeSpawnPoint.transform.position.x + 7, FoeSpawnPoint.transform.position.y);
 
             FoeFightMinigameData.CurrentFoe = Instantiate(FoeFightMinigameData.GameFoes[0], spawnPosition, Quaternion.identity, FoeSpawnPoint.transform);
 
-            float time = 1f;
+            float time = 0.7f;
             float elapsedTime = 0f;
             while (elapsedTime < time)
             {

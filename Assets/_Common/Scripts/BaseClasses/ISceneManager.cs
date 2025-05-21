@@ -15,6 +15,7 @@ namespace Axoloop.Global
         /// </summary>
         public SceneLevel SceneLevel { get; }
 
+        public bool AsyncLoading { get; }
 
         /// <summary>
         /// This method should handle the loading of the scene and its initialization

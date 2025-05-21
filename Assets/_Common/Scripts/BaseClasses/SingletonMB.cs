@@ -15,6 +15,7 @@ namespace Axoloop.Global
         {
             if (Instance != null && Instance != this)
             {
+                Debug.Log("Destroying duplicate singleton instance of " + typeof(T).Name + " in " + gameObject.name);
                 Destroy(gameObject);
             }
             else
