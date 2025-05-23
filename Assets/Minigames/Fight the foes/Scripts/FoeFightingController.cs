@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using Axoloop.Global;
 using Axoloop.Scripts.Global;
+using DG.Tweening;
 using UnityEngine;
 
 namespace AxoLoop.Minigames.FightTheFoes
@@ -12,6 +13,8 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
+        public Action OnTutorialSignal { get; set; }
+        public Action OnStartSignal { get; set; }
 
         [SerializeField] MinigameDifficultyLevel testDifficulty;
 
@@ -74,7 +77,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             FoeFightMinigameData.LockedAttack = true;
             RageBar.Instance.StopFill();
 
-            StartCoroutine(AxoAnimation(() => NextRound()));
+            StartCoroutine(AxoAnimation(NextRound));
         }
 
 
@@ -142,32 +145,21 @@ namespace AxoLoop.Minigames.FightTheFoes
         {
             // make axointro move upward then downward in 2.5 seconds : 
             AxoIntro.SetActive(true);
-            Vector2 axoIntroBasePosition = AxoIntro.transform.position;
-            float time = 1.8f;
-            float elapsedTime = 0f;
-            while (elapsedTime < time)
-            {
-                elapsedTime += Time.deltaTime;
-                float t = Mathf.Sin((elapsedTime / time) * Mathf.PI); // Sinusoidal interpolation  
-                AxoIntro.transform.position = Vector2.Lerp(axoIntroBasePosition, AxoIntroTop.position, t);
-                yield return null;
-            }
-            AxoIntro.SetActive(false);
-            yield return new WaitForSeconds(0.15f);
+            AxoIntro.transform.DOMove(AxoIntroTop.position, 1.2f)
+                .From()
+                .SetEase(Ease.InBack)
+                .OnComplete(() => OnTutorialSignal.Invoke());
 
-
+            yield return new WaitForSeconds(1.5f);
 
             Vector2 spawnPosition = new Vector2(AxoSpawnPoint.transform.position.x, AxoSpawnPoint.transform.position.y - 15);
-            FoeFightMinigameData.Axo.transform.position = spawnPosition;
             FoeFightMinigameData.Axo.gameObject.SetActive(true);
-            time = 0.8f;
-            elapsedTime = 0f;
-            while (elapsedTime < time)
-            {
-                elapsedTime += Time.deltaTime;
-                FoeFightMinigameData.Axo.transform.position = Vector2.Lerp(spawnPosition, AxoSpawnPoint.transform.position, elapsedTime / time);
-                yield return null;
-            }
+            FoeFightMinigameData.Axo.transform
+                .DOMove(spawnPosition, 1.5f)
+                .From()
+                .SetEase(Ease.OutQuart);
+
+            yield return new WaitForSeconds(2f);
             callback?.Invoke();
         }
 

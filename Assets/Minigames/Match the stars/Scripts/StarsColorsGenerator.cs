@@ -80,13 +80,21 @@ public static class StarsColorsGenerator
         MatchTheStarsMinigameData.CrownStarsImages = starImages;
     }
 
-    [BurstCompile]
     public static async Task<Sprite> CreateColoredSpriteAsync(Sprite originalSprite, Color color, string name)
     {
+        // Mise en cache des éléments
         Texture2D originalTexture = originalSprite.texture;
         Color32[] originalPixels = originalTexture.GetPixels32();
+        Rect rect = originalSprite.rect;
+        float pixelsPerUnit = originalSprite.pixelsPerUnit;
+        int width = originalTexture.width;
+        int height = originalTexture.height;
 
-        // Traitement lourd en tâche parallèle
+        byte colorR = (byte)(color.r * 255f);
+        byte colorG = (byte)(color.g * 255f);
+        byte colorB = (byte)(color.b * 255f);
+
+        // Traitement parallèle, sans toucher à UnityEngine
         Color32[] newPixels = await Task.Run(() =>
         {
             Color32[] tempPixels = new Color32[originalPixels.Length];
@@ -97,31 +105,32 @@ public static class StarsColorsGenerator
 
                 if (pixel.a > 25)
                 {
-                    float alpha = pixel.a / 255f;
-                    Color blended = color * new Color(pixel.r / 255f, pixel.g / 255f, pixel.b / 255f, alpha);
-                    blended.a = 1f;
+                    byte r = (byte)((colorR * pixel.r) / 255);
+                    byte g = (byte)((colorG * pixel.g) / 255);
+                    byte b = (byte)((colorB * pixel.b) / 255);
 
-                    tempPixels[i] = blended;
+                    tempPixels[i] = new Color32(r, g, b, 255);
                 }
                 else
                 {
                     tempPixels[i] = pixel;
                 }
             }
+
             return tempPixels;
         });
 
-        await Task.Delay(500);
-
-        Texture2D newTexture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
+        // Retour au thread principal, application des calculs effectués en parallèle
+        Texture2D newTexture = new Texture2D(width, height, TextureFormat.ARGB32, false);
         newTexture.filterMode = FilterMode.Point;
         newTexture.SetPixels32(newPixels);
         newTexture.Apply();
 
-        Sprite newSprite = Sprite.Create(newTexture, originalSprite.rect, new Vector2(0.5f, 0.5f), originalSprite.pixelsPerUnit);
+        Sprite newSprite = Sprite.Create(newTexture, rect, new Vector2(0.5f, 0.5f), pixelsPerUnit);
         newSprite.name = name;
 
         return newSprite;
     }
+
 
 }

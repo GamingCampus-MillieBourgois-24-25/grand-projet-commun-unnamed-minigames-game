@@ -10,6 +10,7 @@ TagManager:
   - Tuile
   - Persistent
   - Boundary
+  - ROOT Controller
   layers:
   - Default
   - TransparentFX

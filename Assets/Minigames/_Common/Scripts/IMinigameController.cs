@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 
 public interface IMinigameController
@@ -17,7 +18,8 @@ public interface IMinigameController
     /// </summary>
     public void StartMinigame();
 
-
+    Action OnTutorialSignal { get; set; }
+    Action OnStartSignal { get; set; }
 }
 
 public enum MinigameDifficultyLevel

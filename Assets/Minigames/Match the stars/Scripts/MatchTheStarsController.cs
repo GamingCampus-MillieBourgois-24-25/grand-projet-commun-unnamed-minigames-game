@@ -23,6 +23,8 @@ namespace AxoLoop.Minigames.MatchTheStars
         [SerializeField] OpenBag openBag;
         [SerializeField] ContinueText continueText;
 
+        public System.Action OnStartSignal { get; set; }
+        public System.Action OnTutorialSignal { get; set; }
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
@@ -33,7 +35,7 @@ namespace AxoLoop.Minigames.MatchTheStars
             else
                 await GenerateMinigame(UnityEngine.Random.Range(0, 1000), MinigameDifficultyLevel.VeryEasy);
 
-            MatchingTheStarsSceneManager.Instance.SceneLoaded += (_) => StartMinigame(); ;
+            
         }
 
         #endregion
@@ -56,11 +58,12 @@ namespace AxoLoop.Minigames.MatchTheStars
         public void InitializeMinigame()
         {
             SceneLoader.FinishLoading();
+            StartMinigame();
         }
 
         public void StartMinigame()
         {
-           
+            OnTutorialSignal?.Invoke();
         }
 
 
@@ -68,6 +71,7 @@ namespace AxoLoop.Minigames.MatchTheStars
         {
             StartCoroutine(EndAnimation(checkWin()));
         }
+        
 
 
         #endregion

@@ -84,6 +84,9 @@ public class PointerController : MonoBehaviour, IMinigameController
     private Sequence _cameraShakeSequence;
     private Tween _safeZoneFadeTween;
 
+    public Action OnTutorialSignal { get; set; }
+    public Action OnStartSignal { get; set; }
+
     #endregion
 
     #region Lifecycle Methods
@@ -236,7 +239,11 @@ public class PointerController : MonoBehaviour, IMinigameController
     {
         Debug.Log("Starting minigame...");
         //_canMove = true;
-        StartGameSequence();
+
+        //Should not be null
+        OnTutorialSignal.Invoke();
+        OnStartSignal += StartGameSequence;
+    
     }
 
     private void ConfigureDifficulty(MinigameDifficultyLevel difficultyLevel)

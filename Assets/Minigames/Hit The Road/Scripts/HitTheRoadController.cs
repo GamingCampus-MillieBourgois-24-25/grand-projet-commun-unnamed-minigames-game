@@ -22,6 +22,9 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         public bool loose = false;
 
+        public System.Action OnTutorialSignal { get; set; }
+        public System.Action OnStartSignal { get; set; }
+
         bool easy(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.FirstTime || dif == MinigameDifficultyLevel.VeryEasy
                     || dif == MinigameDifficultyLevel.Easy;
         bool medium(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.Medium || dif == MinigameDifficultyLevel.Hard;
@@ -90,7 +93,8 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         public void StartMinigame()
         {
-            StartCoroutine(SpawnRivalBike());
+            OnTutorialSignal.Invoke();
+            OnStartSignal += () => StartCoroutine(SpawnRivalBike());
         }
 
         IEnumerator SpawnRivalBike()
