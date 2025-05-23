@@ -415,6 +415,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         }
 
         Debug.Log("You lost!");
+        MiniGameManager.Instance?.PlayEndSound(false);
         continueText.Enable(false);
     }
 
@@ -445,11 +446,10 @@ public class PointerController : MonoBehaviour, IMinigameController
         switch (state)
         {
             case CharacterState.Victory:
-                MiniGameManager.Instance?.PlayEndSound(true);
+                
                 axoVictory?.SetActive(true);
                 break;
             case CharacterState.Lose:
-                MiniGameManager.Instance?.PlayEndSound(false);
                 axoLose?.SetActive(true);
                 break;
             case CharacterState.Waiting:
@@ -648,6 +648,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         victorySequence.AppendInterval(2f);
 
         // Step 3: Load next minigame
+        MiniGameManager.Instance?.PlayEndSound(true);
         continueText.Enable(true);
     }
 

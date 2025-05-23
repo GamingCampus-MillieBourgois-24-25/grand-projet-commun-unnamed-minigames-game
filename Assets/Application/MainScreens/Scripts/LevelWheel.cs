@@ -9,13 +9,20 @@ public class LevelWheel : MonoBehaviour
     [SerializeField] private float rotationDuration = 5f;
     [SerializeField] private Ease easeType = Ease.OutBack;
     [SerializeField] private TextMeshProUGUI _textScore;
+    [SerializeField] bool fromZero = true;
     
     private float _lastTargetRotation = -1f;
     void Start()
     {
         int score = ScoreManager.Instance.GetTotalScore();
         float targetRotation = GetTargetRotationFromScore(score);
-        
+
+        if (!fromZero)
+        {
+            _lastTargetRotation = GetTargetRotationFromScore(score - ComboManager.Instance.GetCombo());
+            wheel.transform.rotation = Quaternion.Euler(0, 0, _lastTargetRotation);
+        }
+
         if (!Mathf.Approximately(targetRotation, _lastTargetRotation))
         {
             if (score != 0)

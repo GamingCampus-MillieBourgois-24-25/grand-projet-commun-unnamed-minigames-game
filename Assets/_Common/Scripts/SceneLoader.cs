@@ -29,7 +29,7 @@ namespace Axoloop.Scripts.Global
             if (asyncLoading)
             {
                 // Let the scene execute some additional initialization logic in parallel and wait for it to finish by calling FinishLoading()
-                callback = () => onFinishedCallback?.Invoke(sceneName);
+                callback += () => onFinishedCallback?.Invoke(sceneName);
             }
             else
             {

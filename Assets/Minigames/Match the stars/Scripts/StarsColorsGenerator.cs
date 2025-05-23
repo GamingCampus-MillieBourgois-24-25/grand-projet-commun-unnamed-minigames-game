@@ -111,6 +111,8 @@ public static class StarsColorsGenerator
             return tempPixels;
         });
 
+        await Task.Delay(500);
+
         Texture2D newTexture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
         newTexture.filterMode = FilterMode.Point;
         newTexture.SetPixels32(newPixels);

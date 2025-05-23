@@ -9,7 +9,7 @@ public class DropCoin : MonoBehaviour
     [SerializeField] private RectTransform _parent;
     [SerializeField] private Vector2 _spawnPosition = new Vector2(0f, 1250f);
     [SerializeField] private float _endY = -260f; 
-    private float _duration = 1f;
+    private float _duration = 1.5f;
     private int _coinCount; 
     private float _spawnInterval = 0.05f;
 

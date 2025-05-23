@@ -4,6 +4,8 @@ public class WheelRotatorMobile : MonoBehaviour
 {
     public float rotationSpeed = 0.5f;
 
+
+
     void Update()
     {
         if (Input.touchCount > 0)

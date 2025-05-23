@@ -32,9 +32,8 @@ namespace AxoLoop.Minigames.FightTheFoes
             attackCallback = null;
         }
 
-        public void DieFromFoe(FoeType type)
+        public void TakeDamages(FoeType type)
         {
-            MiniGameManager.Instance?.PlayEndSound(false);
             if (FoeFightMinigameData.IsBlocking)
             {
                 animator.Play("Tank", -1, 0);
@@ -42,6 +41,7 @@ namespace AxoLoop.Minigames.FightTheFoes
                 return;
             }
 
+            MiniGameManager.Instance?.PlayEndSound(false);
             switch (type)
             {
                 case FoeType.Liquid:

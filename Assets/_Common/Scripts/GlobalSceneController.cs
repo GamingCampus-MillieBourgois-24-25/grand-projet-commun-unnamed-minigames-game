@@ -19,6 +19,8 @@ namespace Assets.Code.GLOBAL
         private ISceneManager _loadedScene;
         private ISceneManager _loadedOverlayScene;
 
+        public Action onHideLoader;
+
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
@@ -35,7 +37,7 @@ namespace Assets.Code.GLOBAL
         {
             if (GameSettings.IsTesting)
             {
-                OpenScene(GameSettings.TestScene);
+                OpenScene(GameSettings.TestScene, true);
             }
             else
             {
@@ -95,6 +97,12 @@ namespace Assets.Code.GLOBAL
             return sceneManager;
         }
 
+
+        void UnloadFrontScene()
+        {
+            _loadedScene?.UnloadScene();
+        }
+
         #endregion
         #region API-----------------------------------------------------------------------------
 
@@ -104,10 +112,15 @@ namespace Assets.Code.GLOBAL
         /// Si la scène est de niveau 2, elle sera ouverte immédiatement.
         /// </summary>
         /// <param name="targetScene"></param>
-        public static void OpenScene(string targetScene)
+        public static void OpenScene(string targetScene, bool asyncLoading = false)
         {
             ShowLoader();
-            Instance.StartCoroutine(SceneLoader.LoadingProcess(targetScene, Instance.SceneLoadedHandler));
+            Instance.StartCoroutine(SceneLoader.LoadingProcess(targetScene, Instance.SceneLoadedHandler, asyncLoading));
+        }
+        public static void OpenScene(MinigameObject minigameObject)
+        {
+            ShowLoader();
+            Instance.StartCoroutine(SceneLoader.LoadingProcess(minigameObject.name, Instance.SceneLoadedHandler, true));
         }
 
         public static void ReloadScene()
@@ -115,7 +128,10 @@ namespace Assets.Code.GLOBAL
             Instance.StartCoroutine(Instance.ReloadSceneCoroutine());
         }
         
-        
+        public static void RestartGame()
+        {
+            SceneManager.LoadScene("Main_MainScene");
+        }
 
         /// <summary>
         /// Si une scène de niveau 2 est ouverte, elle sera déchargée.
@@ -140,6 +156,7 @@ namespace Assets.Code.GLOBAL
 
         public static void HideLoader()
         {
+            Instance.onHideLoader?.Invoke();
             Instance._LoaderObject?.DisableComponent();
             Instance._BlackScreen?.DisableComponent();
         }
@@ -150,41 +167,48 @@ namespace Assets.Code.GLOBAL
         IEnumerator ReloadSceneCoroutine()
         {
             string targetScene = Instance._loadedScene.SceneName;
+            bool asyncLoading = Instance._loadedScene.AsyncLoading;
             ShowBlackScreen();
             ShowLoader();
 
+            //minimal delay to let the black screen appear
             yield return new WaitForSeconds(0.5f);
 
-            bool sceneUnloadedCalled = false;
+            bool sceneUnloaded = false;
 
-            Action<string> sceneUnloaded = null;
-            sceneUnloaded = (string sceneName) =>
-            {
-                if (sceneUnloadedCalled) return; // Éviter double appel
-                sceneUnloadedCalled = true;
+            //Action<string> sceneUnloaded = null;
+            //sceneUnloaded = (string sceneName) =>
+            //{
+            //    if (sceneUnloadedCalled) 
+            //        return; // Éviter double appel
 
-                Instance._loadedScene.SceneUnloaded -= sceneUnloaded;
-                Instance._loadedScene = null;
-                OpenScene(sceneName);
-            };
+            //    sceneUnloadedCalled = true;
 
-            Instance._loadedScene.SceneUnloaded += sceneUnloaded;
-            Instance._loadedScene?.UnloadScene(sceneUnloaded);
+            //    Instance._loadedScene.SceneUnloaded -= sceneUnloaded;
+            //    Instance._loadedScene = null;
+            //    OpenScene(sceneName);
+            //};
+
+            //Instance._loadedScene.SceneUnloaded += sceneUnloaded;
+            //Instance._loadedScene?.UnloadScene(sceneUnloaded);
+            Instance._loadedScene?.UnloadScene((string _) => sceneUnloaded = true);
 
             // Timeout de sécurité : attendre jusqu’à 5 secondes
             float timeout = 5f;
             float elapsed = 0f;
-            while (!sceneUnloadedCalled && elapsed < timeout)
+            while (!sceneUnloaded && elapsed < timeout)
             {
                 elapsed += Time.deltaTime;
                 yield return null;
             }
 
-            if (!sceneUnloadedCalled)
+            if (!sceneUnloaded)
             {
-                Debug.LogWarning("Timeout atteint : événement SceneUnloaded non reçu. Forçage de l'action.");
-                sceneUnloaded(targetScene); // Forçage manuel
+                Debug.LogError("Timeout atteint : événement SceneUnloaded non reçu. Forçage de l'action.");
             }
+
+            Instance._loadedScene = null;
+            OpenScene(targetScene, asyncLoading);
         }
 
         #endregion

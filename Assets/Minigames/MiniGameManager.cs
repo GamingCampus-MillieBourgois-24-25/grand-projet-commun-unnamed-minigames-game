@@ -15,6 +15,13 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     [SerializeField] AudioClip victoryClip;
     [SerializeField] AudioClip defeatClip;
 
+    [SerializeField] public GameObject minigameUI;
+
+    private void Start()
+    {
+        minigameUI.SetActive(false);
+    }
+
     public void PlayEndSound(bool victory)
     {
         if (victory)
@@ -31,6 +38,8 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
 
     public void MiniGameFinished(bool victory)
     {
+        minigameUI.SetActive(false);
+
         if (victory)
         {
             _calculScoreAndCombo.OnMiniGameWon();
@@ -53,8 +62,9 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     //}
     private IEnumerator DelayToStartMiniGame()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(2.8f);
         LoadNextMinigame();
+
     }
 
 
@@ -97,13 +107,21 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         if (MiniGameUnlocked.Count > 0)
         {
             MinigameObject nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
-            
-            GlobalSceneController.OpenScene(nextGame.sceneName);
+            GlobalSceneController.Instance.onHideLoader += ShowMinigameUI;
+            GlobalSceneController.OpenScene(nextGame.sceneName, true);
+
         }
         else
         {
             Debug.Log("Aucun mini-jeu débloqué n’est disponible !");
         }
+    }
+
+
+    private void ShowMinigameUI()
+    {
+        Instance.minigameUI.SetActive(true);
+        GlobalSceneController.Instance.onHideLoader -= ShowMinigameUI;
     }
 }
 

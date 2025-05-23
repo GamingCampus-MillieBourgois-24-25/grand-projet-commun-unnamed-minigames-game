@@ -4,7 +4,7 @@ using System;
 
 namespace Assets.Scripts.GLOBAL
 {
-    public class TransitionMenuManager : BaseSceneManager<TransitionMenuManager>, ISceneManager
+    public class TransitionMenuSceneManager : BaseSceneManager<TransitionMenuSceneManager>, ISceneManager
     {
 
         // Ctrl + M + O pour déplier toutes les régions

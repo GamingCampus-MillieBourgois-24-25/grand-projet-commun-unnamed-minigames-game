@@ -180,111 +180,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2037659220322419900, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _localizationKey
-      value: StartScreen.Play
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.data[4]
-      value: 
-      objectReference: {fileID: 21300000, guid: bc625deca65a1034780013c869181bd6,
-        type: 3}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.data[5]
-      value: 
-      objectReference: {fileID: 21300000, guid: d8fb7cd4f8fe7264e995a08626f04644,
-        type: 3}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.data[6]
-      value: 
-      objectReference: {fileID: 21300000, guid: 06fc1ce747e2e3d4b8900b6d990056d6,
-        type: 3}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.data[7]
-      value: 
-      objectReference: {fileID: 21300000, guid: f00cd1bb2835eb84c88cc6181fe2031a,
-        type: 3}
-    - target: {fileID: 5305521349331030190, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: _axolotSpritesList.Array.data[8]
-      value: 
-      objectReference: {fileID: 21300000, guid: 7fdddf89a938d5c45a572c949859a1fd,
-        type: 3}
-    - target: {fileID: 5525551126295750735, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 775
-      objectReference: {fileID: 0}
     - target: {fileID: 5622696809810616240, guid: ae711cbd1e33d524b8330551b5130d06,
         type: 3}
       propertyPath: m_Name
       value: ROOT START SCREEN
       objectReference: {fileID: 0}
+    - target: {fileID: 9033008414231860702, guid: ae711cbd1e33d524b8330551b5130d06,
+        type: 3}
+      propertyPath: changeBeatSync
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2500649163036639342, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2413912039567206739}
-    - targetCorrespondingSourceObject: {fileID: 986530505550169122, guid: ae711cbd1e33d524b8330551b5130d06,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2413912039567206741}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae711cbd1e33d524b8330551b5130d06, type: 3}
---- !u!1 &2413912039567206738 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2500649163036639342, guid: ae711cbd1e33d524b8330551b5130d06,
-    type: 3}
-  m_PrefabInstance: {fileID: 2413912039567206737}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2413912039567206739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413912039567206738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beatBehaviour: 0
-  beatStrengthAmount: 1.03
-  posMult: 20
---- !u!1 &2413912039567206740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 986530505550169122, guid: ae711cbd1e33d524b8330551b5130d06,
-    type: 3}
-  m_PrefabInstance: {fileID: 2413912039567206737}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2413912039567206741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2413912039567206740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ddc9f475031374cbde690315ee824d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beatBehaviour: 0
-  beatStrengthAmount: 1.03
-  posMult: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

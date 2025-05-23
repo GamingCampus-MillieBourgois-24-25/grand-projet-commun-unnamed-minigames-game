@@ -7,28 +7,40 @@ public class Random_Axolot : MonoBehaviour
 {
     [SerializeField] private GameObject _axolotSprite;
     [SerializeField] private Sprite[] _axolotSpritesList;
+    [SerializeField] bool changeBeatSync = true; 
 
-    private int _lastIndex = -1;
+    private int _currentIndex = -1;
 
     void Start()
     {
-        ChangeAxolot();
+        FirstChange();
+    }
+
+
+    void FirstChange()
+    {
+        DoChange(6);
     }
 
     public void ChangeAxolot()
+    {
+        DoChange(9);
+    }
+
+    void DoChange(int lastIndex)
     {
         int newIndex;
 
         do
         {
-            newIndex = Random.Range(0, 9);
+            newIndex = Random.Range(0, lastIndex);
         }
-        while (newIndex == _lastIndex);
+        while (newIndex == _currentIndex);
 
-        _lastIndex = newIndex;
+        _currentIndex = newIndex;
         _axolotSprite.GetComponent<Image>().sprite = _axolotSpritesList[newIndex];
 
-
-        _axolotSprite.GetComponent<BeatSyncListener>()?.SetBeatBehaviour((BeatSyncListener.BeatBehaviour)Random.Range(0, System.Enum.GetValues(typeof(BeatSyncListener.BeatBehaviour)).Length));
+        if(changeBeatSync)
+            _axolotSprite.GetComponent<BeatSyncListener>()?.SetBeatBehaviour((BeatSyncListener.BeatBehaviour)Random.Range(0, System.Enum.GetValues(typeof(BeatSyncListener.BeatBehaviour)).Length));
     }
 }

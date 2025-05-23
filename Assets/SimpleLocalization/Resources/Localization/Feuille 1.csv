@@ -1,10 +1,10 @@
 Key,English,French
 Shop.Title,Shop,Boutique
 MainMenu.Shop,Shop,Boutique
-MainMenu.Play,Play,Jouer
-Setting.Title,Settings,Parametre
-Settings.Account,Account,Compte
-Settings.ColorblindMode,Colorblind mode : ,Mode daltonien : 
+MainMenu.Play,BEGIN,COMMENCER
+Setting.Title,Settings,PARAMETRES
+Settings.Account,ACCOUNT,COMPTE
+Settings.ColorblindMode,COLORBLIND MODE:,MODE DALTONNIEN : 
 Settings.ResetSave,Reset save,Effacer la sauvegarde
 StartScreen.Play,Play,Jouer
 FightTheFoes.Fang,Bite,Morsure
@@ -16,4 +16,4 @@ Revive.Title,Retry?,Encore ?
 Revive.Subtitle,Save your combo!,Ne perds pas ton combo !
 Revive.Ticket,Tickets : ,Tickets : 
 Revive.Revive,Revive,Recommencer
-Application.TapToContinue,Tap to continue,Appuyez pour continuer
+Application.TapToContinue,TAP TO CONTINUE,Appuyez pour cOntinuer

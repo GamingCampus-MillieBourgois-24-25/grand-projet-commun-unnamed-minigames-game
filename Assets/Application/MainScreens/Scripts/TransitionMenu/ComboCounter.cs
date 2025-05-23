@@ -13,7 +13,7 @@ public class ComboCounter : MonoBehaviour
         }
         else
         {
-            comboText.text = "x" + _combo.ToString("n0");
+            comboText.text = "+" + _combo.ToString("n0");
         }
     }
 }

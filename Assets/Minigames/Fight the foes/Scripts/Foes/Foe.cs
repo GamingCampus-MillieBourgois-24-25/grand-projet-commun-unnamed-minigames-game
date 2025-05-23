@@ -44,7 +44,7 @@ namespace AxoLoop.Minigames.FightTheFoes
 
         public void FoeAttackTouched()
         {
-            Axo.Instance.DieFromFoe(FoeType);
+            Axo.Instance.TakeDamages(FoeType);
         }
 
         public virtual void AttackAnimation(Action callBack)

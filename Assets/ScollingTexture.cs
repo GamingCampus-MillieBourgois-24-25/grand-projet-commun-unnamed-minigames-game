@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
-[ExecuteInEditMode]
+[ExecuteAlways]
 public class ScrollingTexture : MonoBehaviour
 {
     [SerializeField] Vector2 scroll = Vector2.right;

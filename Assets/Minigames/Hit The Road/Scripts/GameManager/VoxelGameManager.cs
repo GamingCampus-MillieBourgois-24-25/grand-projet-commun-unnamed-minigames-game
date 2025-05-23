@@ -12,7 +12,7 @@ public class VoxelGameManager : MonoBehaviour
 
     public RivalBike rivalBike;
 
-    private bool hasWon; // Vérifie si le joueur a gagné
+    bool gameEnd = false; // Vérifie si le jeu est terminé
 
     void Awake()
     {
@@ -34,8 +34,11 @@ public class VoxelGameManager : MonoBehaviour
 
     public void EndGame(bool won)
     {
+        if (gameEnd) return;
+
+        gameEnd = true;
+
         defeatTrigger.SetActive(false);
-        hasWon = won;
         MiniGameManager.Instance?.PlayEndSound(won); // Joue le son de victoire ou de défaite
         PlayerBike.Instance.PlayEndAnimation(won);
         
