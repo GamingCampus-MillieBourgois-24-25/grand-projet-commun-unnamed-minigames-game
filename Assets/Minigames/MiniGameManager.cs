@@ -36,9 +36,13 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
         }
     }
 
-    public void MiniGameFinished(bool victory)
+    public void HideMinigameUI()
     {
         minigameUI.SetActive(false);
+    }
+
+    public void MiniGameFinished(bool victory)
+    {
 
         if (victory)
         {
@@ -101,12 +105,21 @@ public class MiniGameManager : SingletonMB<MiniGameManager>
     
     public void LoadNextMinigame()
     {
+        int previousCount = MiniGameUnlocked.Count;
         UnlockMinigames();
         Debug.Log($"Nombre de mini-jeux débloqués disponibles : {MiniGameUnlocked.Count}");
-
+        
         if (MiniGameUnlocked.Count > 0)
         {
-            MinigameObject nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
+            MinigameObject nextGame;
+            if (previousCount != MiniGameUnlocked.Count)
+            {
+                nextGame = MiniGameUnlocked[MiniGameUnlocked.Count - 1];
+            }
+            else
+            {
+                nextGame = MiniGameUnlocked[Random.Range(0, MiniGameUnlocked.Count)];
+            }
             GlobalSceneController.Instance.onHideLoader += ShowMinigameUI;
             GlobalSceneController.OpenScene(nextGame.sceneName, true);
 

@@ -200,6 +200,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1801560115468935099, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
+        type: 3}
+      propertyPath: localizationKey
+      value: Tutorial.MatchTheStars
+      objectReference: {fileID: 0}
     - target: {fileID: 2348666221222425733, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -365,6 +370,11 @@ PrefabInstance:
       propertyPath: localizationKey
       value: Tutorial.MatchTheStars
       objectReference: {fileID: 0}
+    - target: {fileID: 7133963019387204885, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
+        type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 8432698174687753557}
     - target: {fileID: 8128694422105129091, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -435,6 +445,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc1e25d7fb8324f40ae4ffb61a84b16c, type: 3}
+--- !u!114 &8432698174687753557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1801560115468935099, guid: bc1e25d7fb8324f40ae4ffb61a84b16c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8432698174687753556}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191965bef0e14eb4f8b85b535c07c28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

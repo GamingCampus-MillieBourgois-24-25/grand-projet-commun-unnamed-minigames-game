@@ -7,6 +7,7 @@ using UnityEngine;
 namespace Assets._Common.Scripts
 {
     using System.Threading;
+    using System.Threading.Tasks;
     using Unity.VisualScripting;
     using UnityEngine;
 
@@ -42,14 +43,18 @@ namespace Assets._Common.Scripts
             SetupAudioSourcesPool();
         }
 
-        private void Start()
+        private async void Start()
         {
-            if (PlayerPrefs.GetInt("BgmOn") == 0)
-                MuteMusic();
-            if (PlayerPrefs.GetInt("SfxOn") == 0)
-                MuteSFX();
-            if (PlayerPrefs.GetInt("VibrationOn") == 0)
-                MuteVibration();
+            StartCoroutine(WaitNextFrame(() =>
+            {
+                if (PlayerPrefs.GetInt("BgmOn", 1) == 0)
+                    MuteMusic();
+                if (PlayerPrefs.GetInt("SfxOn", 1) == 0)
+                    MuteSFX();
+                if (PlayerPrefs.GetInt("VibrationOn", 1) == 0)
+                    MuteVibration();
+            }));
+
 
 
             if (musicClip != null)
@@ -64,6 +69,12 @@ namespace Assets._Common.Scripts
 
         #endregion
         #region METHODS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+        IEnumerator WaitNextFrame(Action action)
+        {
+            yield return null;
+            action.Invoke();
+        }
 
         private void SetupBgmAudioSource()
         {

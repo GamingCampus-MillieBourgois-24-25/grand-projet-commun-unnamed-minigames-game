@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 namespace AxoLoop.Minigames.HitTheRoad
 {
-    public class HitTheRoadController : SingletonMB<HitTheRoadController>, IMinigameController
+    public class HitTheRoadController : BaseMinigameController<HitTheRoadController>
     {
         [SerializeField] MinigameDifficultyLevel testDifficulty;
 
@@ -22,8 +22,7 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         public bool loose = false;
 
-        public System.Action OnTutorialSignal { get; set; }
-        public System.Action OnStartSignal { get; set; }
+        public override System.Action OnStartSignal { get; set; }
 
         bool easy(MinigameDifficultyLevel dif) => dif == MinigameDifficultyLevel.FirstTime || dif == MinigameDifficultyLevel.VeryEasy
                     || dif == MinigameDifficultyLevel.Easy;
@@ -54,7 +53,7 @@ namespace AxoLoop.Minigames.HitTheRoad
 
         }
 
-        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        protected override async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             if (road)
             {
@@ -80,21 +79,22 @@ namespace AxoLoop.Minigames.HitTheRoad
                     rivalBike.setSpeed(Random.Range(16f, 18f));
                 }
             }
-
+            
+            await Task.Yield();
 
             InitializeMinigame();
         }
 
-        public void InitializeMinigame()
+        protected override void InitializeMinigame()
         {
             SceneLoader.FinishLoading();
             StartMinigame();
         }
 
-        public void StartMinigame()
+        protected override void StartMinigame()
         {
-            OnTutorialSignal.Invoke();
             OnStartSignal += () => StartCoroutine(SpawnRivalBike());
+            tutorialText.Enable(OnStartSignal);
         }
 
         IEnumerator SpawnRivalBike()

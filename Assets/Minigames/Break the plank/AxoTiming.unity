@@ -1188,6 +1188,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8160868723029274379, guid: 5513e39ed19956e418612dad8c5a3325,
+        type: 3}
+      propertyPath: localizationKey
+      value: Tutorial.BreakThePlank
+      objectReference: {fileID: 0}
     - target: {fileID: 8931602269412243733, guid: 5513e39ed19956e418612dad8c5a3325,
         type: 3}
       propertyPath: m_fontSize
@@ -1213,6 +1218,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5513e39ed19956e418612dad8c5a3325, type: 3}
+--- !u!114 &1232427867 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8160868723029274379, guid: 5513e39ed19956e418612dad8c5a3325,
+    type: 3}
+  m_PrefabInstance: {fileID: 1232427866}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191965bef0e14eb4f8b85b535c07c28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1324056113 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1223366425768855605, guid: ccd7ad8abb752624f9cfc7d2a8fbe37f,
@@ -2190,6 +2207,11 @@ PrefabInstance:
       objectReference: {fileID: 1192788070}
     - target: {fileID: 2357796978849917654, guid: ccd7ad8abb752624f9cfc7d2a8fbe37f,
         type: 3}
+      propertyPath: tutorialText
+      value: 
+      objectReference: {fileID: 1232427867}
+    - target: {fileID: 2357796978849917654, guid: ccd7ad8abb752624f9cfc7d2a8fbe37f,
+        type: 3}
       propertyPath: plankBreakLeft
       value: 
       objectReference: {fileID: 2092554311}
@@ -3037,10 +3059,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2698372317606044402}
-    - targetCorrespondingSourceObject: {fileID: 2504326531728434540, guid: ccd7ad8abb752624f9cfc7d2a8fbe37f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2698372317606044404}
     - targetCorrespondingSourceObject: {fileID: 7359656820174443932, guid: ccd7ad8abb752624f9cfc7d2a8fbe37f,
         type: 3}
       insertIndex: -1
@@ -3146,21 +3164,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2698372317606044400}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2698372317606044404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2698372317606044401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!114 &2698372317606044405
 MonoBehaviour:
   m_ObjectHideFlags: 0

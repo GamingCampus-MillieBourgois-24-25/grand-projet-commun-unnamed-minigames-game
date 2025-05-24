@@ -2521,6 +2521,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8160868723029274379, guid: 5513e39ed19956e418612dad8c5a3325,
+        type: 3}
+      propertyPath: localizationKey
+      value: Tutorial.FightTheFoes
+      objectReference: {fileID: 0}
     - target: {fileID: 8931602269412243733, guid: 5513e39ed19956e418612dad8c5a3325,
         type: 3}
       propertyPath: m_fontSize
@@ -4202,6 +4207,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 10592910}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1822841129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8160868723029274379, guid: 5513e39ed19956e418612dad8c5a3325,
+    type: 3}
+  m_PrefabInstance: {fileID: 882080908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 191965bef0e14eb4f8b85b535c07c28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1826535301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4927,6 +4944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9c56bc4745b6546af182b37a8a1022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialText: {fileID: 1822841129}
   testDifficulty: 5
   attackButtons:
   - {fileID: 501842180}

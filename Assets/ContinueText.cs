@@ -16,6 +16,8 @@ public class ContinueText : MonoBehaviour
         rect = GetComponent<RectTransform>();
         StartCoroutine(Spawn());
         StartCoroutine(WaitForInput());
+
+        MiniGameManager.Instance?.HideMinigameUI();
     }
 
     public void Enable(bool _victory)

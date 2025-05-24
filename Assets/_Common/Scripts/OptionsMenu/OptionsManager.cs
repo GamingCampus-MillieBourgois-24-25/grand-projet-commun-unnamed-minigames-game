@@ -83,6 +83,13 @@ public class OptionsManager : MonoBehaviour
 
     private void LoadSettings()
     {
+        if (!PlayerPrefs.HasKey("BgmOn"))
+        {
+            PlayerPrefs.SetInt("BgmOn", 1);
+            PlayerPrefs.SetInt("SfxOn", 1);
+            PlayerPrefs.SetInt("VibrationOn", 1);
+            PlayerPrefs.SetString("ColorblindMode", "False");
+        }
         _bgmOn = PlayerPrefs.GetInt("BgmOn", 1) == 1;
         _sfxOn = PlayerPrefs.GetInt("SfxOn", 1) == 1;
         _vibrationOn = PlayerPrefs.GetInt("VibrationOn", 1) == 1;
@@ -90,6 +97,7 @@ public class OptionsManager : MonoBehaviour
 
         audioMixer.SetFloat("BGMVolume", _bgmOn ? 0f : -80f);
         audioMixer.SetFloat("SFXVolume", _sfxOn ? 0f : -80f);
+        PlayerPrefs.Save();
     }
 
     private void UpdateButtons()

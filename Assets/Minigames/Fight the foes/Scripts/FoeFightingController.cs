@@ -8,13 +8,12 @@ using UnityEngine;
 
 namespace AxoLoop.Minigames.FightTheFoes
 {
-    public class FoeFightingController : SingletonMB<FoeFightingController>, IMinigameController
+    public class FoeFightingController : BaseMinigameController<FoeFightingController>
     {
 
         // Ctrl + M + O pour déplier toutes les régions
         #region PROPERTIES----------------------------------------------------------------------
-        public Action OnTutorialSignal { get; set; }
-        public Action OnStartSignal { get; set; }
+
 
         [SerializeField] MinigameDifficultyLevel testDifficulty;
 
@@ -33,6 +32,8 @@ namespace AxoLoop.Minigames.FightTheFoes
         public MinigameObject fightTheFoes;
 
         public bool canBegin = true;
+        public override System.Action OnStartSignal { get; set; }
+
 
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
@@ -50,7 +51,7 @@ namespace AxoLoop.Minigames.FightTheFoes
         #endregion
         #region METHODS-------------------------------------------------------------------------
 
-        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        protected override async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             UnityEngine.Random.InitState(seed);
 
@@ -65,13 +66,13 @@ namespace AxoLoop.Minigames.FightTheFoes
             InitializeMinigame();
         }
 
-        public void InitializeMinigame()
+        protected override void InitializeMinigame()
         {
             SceneLoader.FinishLoading();
             StartMinigame();
         }
 
-        public void StartMinigame()
+        protected override void StartMinigame()
         {
             FoeFightMinigameData.CurrentTurn = 0;
             FoeFightMinigameData.LockedAttack = true;
@@ -148,7 +149,7 @@ namespace AxoLoop.Minigames.FightTheFoes
             AxoIntro.transform.DOMove(AxoIntroTop.position, 1.2f)
                 .From()
                 .SetEase(Ease.InBack)
-                .OnComplete(() => OnTutorialSignal.Invoke());
+                .OnComplete(() => tutorialText.Enable(OnStartSignal));
 
             yield return new WaitForSeconds(1.5f);
 

@@ -1,6 +1,7 @@
 using Assets.SimpleLocalization.Scripts;
 using AxoLoop.Minigames.MatchTheStars;
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -8,21 +9,23 @@ using UnityEngine;
 
 public class TutorialText : MonoBehaviour
 {
-    IMinigameController minigameController;
     [SerializeField] string localizationKey;
+    Action callback;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        gameObject.SetActive(false);
+    }
+
     void Start()
     {
-        minigameController = GameObject.FindGameObjectWithTag("ROOT Controller").GetComponent<IMinigameController>();
-        minigameController.OnTutorialSignal += Enable;
-        gameObject.SetActive(false);
-
         GetComponentInChildren<TextMeshProUGUI>().text = LocalizationManager.Localize(localizationKey);
     }
 
     public void AnimationFinished()
     {
-        minigameController.OnStartSignal?.Invoke();
+        callback?.Invoke();
         StartCoroutine(Delay(() => gameObject.SetActive(false)));
     }
     IEnumerator Delay(System.Action action)
@@ -30,8 +33,9 @@ public class TutorialText : MonoBehaviour
         yield return new WaitForSeconds(1f);
         action?.Invoke();
     }
-    private void Enable()
+    public void Enable(Action _callback)
     {
+        callback = _callback;
         gameObject.SetActive(true);
     }
     //private void OnEnable()

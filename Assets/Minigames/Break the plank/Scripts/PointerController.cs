@@ -8,7 +8,7 @@ using DG.Tweening;
 using System.Threading.Tasks;
 using Axoloop.Scripts.Global;
 
-public class PointerController : MonoBehaviour, IMinigameController
+public class PointerController : BaseMinigameController<PointerController>
 {
     #region Inspector Properties
 
@@ -84,19 +84,12 @@ public class PointerController : MonoBehaviour, IMinigameController
     private Sequence _cameraShakeSequence;
     private Tween _safeZoneFadeTween;
 
-    public Action OnTutorialSignal { get; set; }
-    public Action OnStartSignal { get; set; }
+    public override System.Action OnStartSignal { get; set; }
+
 
     #endregion
 
     #region Lifecycle Methods
-
-    private void Awake()
-    {
-        // Initialize DOTween (only needed once)
-        DOTween.SetTweensCapacity(500, 50);
-    }
-
     private async void Start()
     {
         await GenerateMinigame(0, MinigameDifficultyLevel.Impossible);
@@ -110,7 +103,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         CheckForInput();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         // Kill all tweens when object is destroyed
         DOTween.Kill(transform);
@@ -121,6 +114,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         _hammerSequence?.Kill();
         _cameraShakeSequence?.Kill();
         _safeZoneFadeTween?.Kill();
+        base.OnDestroy();
     }
 
     #endregion
@@ -189,7 +183,7 @@ public class PointerController : MonoBehaviour, IMinigameController
 
     #region IMinigameController Implementation
 
-    public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+    protected override async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
     {
         if (!InitializeComponents()) return;
 
@@ -217,7 +211,7 @@ public class PointerController : MonoBehaviour, IMinigameController
         InitializeMinigame();
     }
 
-    public void InitializeMinigame()
+    protected override void InitializeMinigame()
     {
         SceneLoader.FinishLoading();
 
@@ -235,14 +229,14 @@ public class PointerController : MonoBehaviour, IMinigameController
         StartMinigame();
     }
 
-    public void StartMinigame()
+    protected override void StartMinigame()
     {
         Debug.Log("Starting minigame...");
         //_canMove = true;
 
         //Should not be null
-        OnTutorialSignal.Invoke();
         OnStartSignal += StartGameSequence;
+        tutorialText.Enable(OnStartSignal);
     
     }
 

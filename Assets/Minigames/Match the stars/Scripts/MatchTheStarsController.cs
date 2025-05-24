@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace AxoLoop.Minigames.MatchTheStars
 {
-    public class MatchTheStarsController : SingletonMB<MatchTheStarsController>, IMinigameController
+    public class MatchTheStarsController : BaseMinigameController<MatchTheStarsController>
     {
 
         // Ctrl + M + O pour déplier toutes les régions
@@ -22,9 +22,8 @@ namespace AxoLoop.Minigames.MatchTheStars
         [SerializeField] AxoMTS axo;
         [SerializeField] OpenBag openBag;
         [SerializeField] ContinueText continueText;
+        public override System.Action OnStartSignal { get; set; }
 
-        public System.Action OnStartSignal { get; set; }
-        public System.Action OnTutorialSignal { get; set; }
         #endregion
         #region LIFECYCLE-----------------------------------------------------------------------
 
@@ -41,7 +40,7 @@ namespace AxoLoop.Minigames.MatchTheStars
         #endregion
         #region METHODS-------------------------------------------------------------------------
 
-        public async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
+        protected override async Task GenerateMinigame(int seed, MinigameDifficultyLevel difficultyLevel)
         {
             UnityEngine.Random.InitState(seed);
             MatchTheStarsMinigameData.Difficulty = MTSUtils.SetDifficulty(difficultyLevel);
@@ -55,15 +54,15 @@ namespace AxoLoop.Minigames.MatchTheStars
             InitializeMinigame();
         }
 
-        public void InitializeMinigame()
+        protected override void InitializeMinigame()
         {
             SceneLoader.FinishLoading();
             StartMinigame();
         }
 
-        public void StartMinigame()
+        protected override void StartMinigame()
         {
-            OnTutorialSignal?.Invoke();
+            tutorialText.Enable(OnStartSignal);
         }
 
 
